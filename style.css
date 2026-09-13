@@ -1,1 +1,221 @@
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #080b09;
+  color: white;
+}
+
+header {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  background: #080b09;
+  border-bottom: 1px solid #173b2a;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  color: #20b26b;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+nav a:hover {
+  color: #20b26b;
+}
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 8%;
+  background:
+    linear-gradient(90deg, #080b09 20%, rgba(8,11,9,.75)),
+    url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1800&q=90")
+    center/cover;
+}
+
+.hero h1 {
+  font-size: 60px;
+  line-height: 1.1;
+  margin: 15px 0;
+}
+
+.hero h1 span {
+  color: #20b26b;
+}
+
+.small {
+  color: #20b26b;
+  letter-spacing: 4px;
+}
+
+.hero p {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: #20b26b;
+  color: #061009;
+  padding: 14px 28px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background: #29d17e;
+}
+
+.products {
+  padding: 90px 7%;
+  text-align: center;
+}
+
+.products h2,
+.about h2,
+.contact h2 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #999;
+  margin-bottom: 45px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.product {
+  background: #101512;
+  border: 1px solid #1c392b;
+  padding-bottom: 20px;
+  transition: .3s;
+}
+
+.product:hover {
+  transform: translateY(-7px);
+  border-color: #20b26b;
+}
+
+.product img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.product h3 {
+  margin: 18px 0 8px;
+}
+
+.product p {
+  color: #20b26b;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.whatsapp {
+  display: inline-block;
+  color: white;
+  border: 1px solid #20b26b;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.whatsapp:hover {
+  background: #20b26b;
+  color: #061009;
+}
+
+.about,
+.contact {
+  padding: 90px 10%;
+  text-align: center;
+  background: #0d120f;
+}
+
+.about p,
+.contact p {
+  color: #aaa;
+  max-width: 650px;
+  margin: 20px auto 30px;
+  line-height: 1.8;
+}
+
+footer {
+  padding: 35px;
+  text-align: center;
+  background: #050705;
+}
+
+footer p {
+  color: #777;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 0 20px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    min-height: 80vh;
+    padding: 30px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
