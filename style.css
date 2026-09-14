@@ -604,3 +604,102 @@ right: 10px;
 }
 
 }
+
+/* ================= CART BUTTON ================= */
+
+.cart-button {
+background: transparent;
+color: #fff;
+border: 1px solid #20b26b;
+padding: 9px 16px;
+border-radius: 5px;
+cursor: pointer;
+font-weight: bold;
+transition: 0.25s ease;
+}
+
+.cart-button:hover {
+background: #20b26b;
+color: #061009;
+}
+
+#cartCount {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+min-width: 22px;
+height: 22px;
+
+margin-right: 5px;
+
+background: #20b26b;
+color: #061009;
+
+border-radius: 50%;
+font-size: 12px;
+}
+
+/* ================= ADD TO CART ================= */
+
+.add-cart {
+width: calc(100% - 30px);
+
+margin: 0 15px 10px;
+
+padding: 11px;
+
+background: #20b26b;
+color: #061009;
+
+border: none;
+border-radius: 5px;
+
+font-size: 14px;
+font-weight: bold;
+
+cursor: pointer;
+
+transition: 0.25s ease;
+}
+
+.add-cart:hover {
+background: #29d17e;
+transform: translateY(-2px);
+}
+
+/* ================= CART OVERLAY ================= */
+
+.cart-overlay {
+position: fixed;
+inset: 0;
+
+background: rgba(0, 0, 0, 0.65);
+
+opacity: 0;
+visibility: hidden;
+
+transition: 0.3s ease;
+
+z-index: 5998;
+}
+
+.cart-overlay.active {
+opacity: 1;
+visibility: visible;
+}
+
+/* ================= CART PANEL ================= */
+
+.cart-panel {
+position: fixed;
+
+top: 0;
+right: -430px;
+
+width: 430px;
+max-width: 100%;
+
+height: 100vh;
+
+background: #0b
