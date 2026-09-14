@@ -32,8 +32,6 @@
   </button>
 </header>
 
-<!-- HERO -->
-
 <section class="hero" id="home">
   <div class="hero-content">
 
@@ -57,8 +55,6 @@
   </div>
 </section>
 
-<!-- PRODUCTS -->
-
 <section class="products" id="products">
 
   <h2>منتجاتنا</h2>
@@ -77,14 +73,11 @@
   <div class="product-grid">
 
 ```
-<!-- PRODUCT 1 -->
-<div class="product"
+<div
+  class="product"
   data-category="necklace"
-  onclick="openProduct(
-    'Collier Éclat',
-    119,
-    'IMG_20260726_171518.jpg'
-  )">
+  onclick="openProduct('Collier Éclat',119,'IMG_20260726_171518.jpg')"
+>
 
   <img
     src="IMG_20260726_171518.jpg"
@@ -97,11 +90,8 @@
 
   <button
     class="add-cart"
-    onclick="event.stopPropagation(); addToCart(
-      'Collier Éclat',
-      119,
-      'IMG_20260726_171518.jpg'
-    )">
+    onclick="event.stopPropagation(); addToCart('Collier Éclat',119,'IMG_20260726_171518.jpg')"
+  >
     أضف للسلة
   </button>
 
@@ -109,21 +99,19 @@
     class="whatsapp"
     href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Collier%20Éclat"
     onclick="event.stopPropagation()"
-    target="_blank">
+    target="_blank"
+  >
     طلب عبر WhatsApp
   </a>
 
 </div>
 
 
-<!-- PRODUCT 2 -->
-<div class="product"
+<div
+  class="product"
   data-category="ring"
-  onclick="openProduct(
-    'Bague Élégance',
-    119,
-    'IMG_20260726_171656.jpg'
-  )">
+  onclick="openProduct('Bague Élégance',119,'IMG_20260726_171656.jpg')"
+>
 
   <img
     src="IMG_20260726_171656.jpg"
@@ -136,11 +124,8 @@
 
   <button
     class="add-cart"
-    onclick="event.stopPropagation(); addToCart(
-      'Bague Élégance',
-      119,
-      'IMG_20260726_171656.jpg'
-    )">
+    onclick="event.stopPropagation(); addToCart('Bague Élégance',119,'IMG_20260726_171656.jpg')"
+  >
     أضف للسلة
   </button>
 
@@ -148,21 +133,19 @@
     class="whatsapp"
     href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Bague%20Élégance"
     onclick="event.stopPropagation()"
-    target="_blank">
+    target="_blank"
+  >
     طلب عبر WhatsApp
   </a>
 
 </div>
 
 
-<!-- PRODUCT 3 -->
-<div class="product"
+<div
+  class="product"
   data-category="bracelet"
-  onclick="openProduct(
-    'Bracelet Luna',
-    149,
-    'IMG_20260726_171921.jpg'
-  )">
+  onclick="openProduct('Bracelet Luna',149,'IMG_20260726_171921.jpg')"
+>
 
   <img
     src="IMG_20260726_171921.jpg"
@@ -175,11 +158,8 @@
 
   <button
     class="add-cart"
-    onclick="event.stopPropagation(); addToCart(
-      'Bracelet Luna',
-      149,
-      'IMG_20260726_171921.jpg'
-    )">
+    onclick="event.stopPropagation(); addToCart('Bracelet Luna',149,'IMG_20260726_171921.jpg')"
+  >
     أضف للسلة
   </button>
 
@@ -187,7 +167,8 @@
     class="whatsapp"
     href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Bracelet%20Luna"
     onclick="event.stopPropagation()"
-    target="_blank">
+    target="_blank"
+  >
     طلب عبر WhatsApp
   </a>
 
@@ -196,8 +177,6 @@
 
   </div>
 </section>
-
-<!-- ABOUT -->
 
 <section class="about" id="about">
 
@@ -210,8 +189,6 @@
 
 </section>
 
-<!-- CONTACT -->
-
 <section class="contact" id="contact">
 
   <h2>تواصل معنا</h2>
@@ -221,14 +198,19 @@
   </p>
 
 <a
- class="btn"
- href="https://wa.me/212765333754"
- target="_blank">
-تواصل عبر WhatsApp </a>
+class="btn"
+href="https://wa.me/212765333754"
+target="_blank"
+
+>
+
+```
+تواصل عبر WhatsApp
+```
+
+  </a>
 
 </section>
-
-<!-- PRODUCT MODAL -->
 
 <div id="productModal" class="modal">
 
@@ -237,9 +219,306 @@
 ```
 <button
   class="close"
-  onclick="closeProduct()">
+  onclick="closeProduct()"
+>
   ×
 </button>
 
-<img id="modalIma
+<img
+  id="modalImage"
+  src=""
+  alt=""
+>
+
+<h2 id="modalName"></h2>
+
+<p id="modalPrice"></p>
+
+<button
+  class="add-cart"
+  onclick="addModalProductToCart()"
+>
+  أضف للسلة
+</button>
+
+<a
+  id="modalWhatsapp"
+  class="whatsapp"
+  target="_blank"
+>
+  طلب عبر WhatsApp
+</a>
 ```
+
+  </div>
+
+</div>
+
+<div id="cartModal" class="modal">
+
+  <div class="modal-content">
+
+```
+<button
+  class="close"
+  onclick="closeCart()"
+>
+  ×
+</button>
+
+<h2>سلة المشتريات</h2>
+
+<div id="cartItems"></div>
+
+<h3>
+  المجموع:
+  <span id="cartTotal">0</span> DH
+</h3>
+
+<a
+  id="cartWhatsapp"
+  class="whatsapp"
+  target="_blank"
+>
+  إتمام الطلب عبر WhatsApp
+</a>
+```
+
+  </div>
+
+</div>
+
+<footer>
+
+  <div class="logo">ZOREVA</div>
+
+  <p>
+    © 2026 Zoreva Jewelry
+  </p>
+
+</footer>
+
+<script>
+
+let cart = [];
+
+let selectedProduct = null;
+
+
+function filterProducts(category) {
+
+  const products = document.querySelectorAll(".product");
+
+  products.forEach(function(product) {
+
+    if (
+      category === "all" ||
+      product.dataset.category === category
+    ) {
+
+      product.style.display = "";
+
+    } else {
+
+      product.style.display = "none";
+
+    }
+
+  });
+
+}
+
+
+function openProduct(name, price, image) {
+
+  selectedProduct = {
+    name: name,
+    price: price,
+    image: image
+  };
+
+  document.getElementById("modalName").textContent = name;
+
+  document.getElementById("modalPrice").textContent =
+    price + " DH";
+
+  document.getElementById("modalImage").src = image;
+
+  document.getElementById("modalImage").alt = name;
+
+  document.getElementById("modalWhatsapp").href =
+    "https://wa.me/212765333754?text=" +
+    encodeURIComponent(
+      "سلام، بغيت نطلب " + name
+    );
+
+  document.getElementById("productModal").style.display =
+    "flex";
+
+}
+
+
+function closeProduct() {
+
+  document.getElementById("productModal").style.display =
+    "none";
+
+}
+
+
+function addToCart(name, price, image) {
+
+  cart.push({
+    name: name,
+    price: price,
+    image: image
+  });
+
+  updateCart();
+
+}
+
+
+function addModalProductToCart() {
+
+  if (!selectedProduct) {
+    return;
+  }
+
+  addToCart(
+    selectedProduct.name,
+    selectedProduct.price,
+    selectedProduct.image
+  );
+
+  closeProduct();
+
+}
+
+
+function updateCart() {
+
+  document.getElementById("cartCount").textContent =
+    cart.length;
+
+  const cartItems =
+    document.getElementById("cartItems");
+
+  cartItems.innerHTML = "";
+
+  let total = 0;
+
+  cart.forEach(function(item, index) {
+
+    total += item.price;
+
+    const div = document.createElement("div");
+
+    div.className = "cart-item";
+
+    div.innerHTML =
+      '<img src="' + item.image + '" alt="' + item.name + '">' +
+      '<div>' +
+      '<strong>' + item.name + '</strong>' +
+      '<p>' + item.price + ' DH</p>' +
+      '<button onclick="removeFromCart(' + index + ')">حذف</button>' +
+      '</div>';
+
+    cartItems.appendChild(div);
+
+  });
+
+  document.getElementById("cartTotal").textContent =
+    total;
+
+  updateWhatsappOrder();
+
+}
+
+
+function removeFromCart(index) {
+
+  cart.splice(index, 1);
+
+  updateCart();
+
+}
+
+
+function updateWhatsappOrder() {
+
+  let message = "سلام، بغيت نطلب:%0A%0A";
+
+  cart.forEach(function(item) {
+
+    message +=
+      "- " +
+      item.name +
+      " : " +
+      item.price +
+      " DH%0A";
+
+  });
+
+  const total = cart.reduce(
+    function(sum, item) {
+      return sum + item.price;
+    },
+    0
+  );
+
+  message +=
+    "%0Aالمجموع: " +
+    total +
+    " DH";
+
+  document.getElementById("cartWhatsapp").href =
+    "https://wa.me/212765333754?text=" +
+    message;
+
+}
+
+
+function openCart() {
+
+  updateCart();
+
+  document.getElementById("cartModal").style.display =
+    "flex";
+
+}
+
+
+function closeCart() {
+
+  document.getElementById("cartModal").style.display =
+    "none";
+
+}
+
+
+window.addEventListener("click", function(event) {
+
+  const productModal =
+    document.getElementById("productModal");
+
+  const cartModal =
+    document.getElementById("cartModal");
+
+  if (event.target === productModal) {
+    closeProduct();
+  }
+
+  if (event.target === cartModal) {
+    closeCart();
+  }
+
+});
+
+
+filterProducts("all");
+
+</script>
+
+</body>
+</html>
