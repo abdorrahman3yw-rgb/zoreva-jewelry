@@ -122,18 +122,50 @@ nav a:hover {
   text-align: center;
 }
 
-.products h2,
-.about h2,
-.contact h2 {
-  font-size: 40px;
-  margin-bottom: 10px;
+/* كبرنا عنوان منتجاتنا */
+
+.products h2 {
+  font-size: 50px;
+  margin-bottom: 14px;
 }
 
+/* كبرنا الجملة اللي تحت */
+
 .subtitle {
-  color: #8e9691;
+  color: #aeb5b0;
   margin-bottom: 50px;
-  font-size: 15px;
+  font-size: 21px;
 }
+
+/* ================= CATEGORIES ================= */
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.categories button {
+  background: transparent;
+  color: #ddd;
+  border: 1px solid #245239;
+  padding: 13px 27px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.25s ease;
+}
+
+.categories button:hover {
+  background: #20b26b;
+  color: #061009;
+  border-color: #20b26b;
+}
+
+/* ================= PRODUCT GRID ================= */
 
 .product-grid {
   display: grid;
@@ -221,6 +253,12 @@ nav a:hover {
   border-top: 1px solid #12281d;
 }
 
+.about h2,
+.contact h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
 .about p,
 .contact p {
   color: #aaa;
@@ -247,6 +285,7 @@ footer p {
 /* ================= TABLET ================= */
 
 @media (max-width: 1100px) {
+
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -254,11 +293,13 @@ footer p {
   .hero h1 {
     font-size: 55px;
   }
+
 }
 
 /* ================= MOBILE ================= */
 
 @media (max-width: 800px) {
+
   header {
     padding: 0 25px;
   }
@@ -291,11 +332,21 @@ footer p {
   .hero h1 {
     font-size: 45px;
   }
+
+  .products h2 {
+    font-size: 44px;
+  }
+
+  .subtitle {
+    font-size: 19px;
+  }
+
 }
 
 /* ================= SMALL PHONES ================= */
 
 @media (max-width: 600px) {
+
   header {
     height: 70px;
     padding: 0 20px;
@@ -326,10 +377,22 @@ footer p {
     padding: 70px 18px;
   }
 
-  .products h2,
-  .about h2,
-  .contact h2 {
-    font-size: 32px;
+  .products h2 {
+    font-size: 38px;
+  }
+
+  .subtitle {
+    font-size: 17px;
+    margin-bottom: 35px;
+  }
+
+  .categories {
+    gap: 8px;
+  }
+
+  .categories button {
+    padding: 10px 18px;
+    font-size: 15px;
   }
 
   .product-grid {
@@ -345,42 +408,5 @@ footer p {
   .contact {
     padding: 70px 25px;
   }
-}
 
-/* ================= CATEGORIES ================= */
-
-.categories {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 45px;
-  flex-wrap: wrap;
-}
-
-.categories button {
-  background: transparent;
-  color: #ddd;
-  border: 1px solid #245239;
-  padding: 10px 22px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: 0.25s ease;
-}
-
-.categories button:hover {
-  background: #20b26b;
-  color: #061009;
-  border-color: #20b26b;
-}
-
-@media (max-width: 600px) {
-  .categories {
-    gap: 8px;
-  }
-
-  .categories button {
-    padding: 9px 16px;
-    font-size: 13px;
-  }
 }
