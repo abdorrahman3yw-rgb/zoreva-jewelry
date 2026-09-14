@@ -4,9 +4,6 @@
 
 <head>
   <meta charset="UTF-8">
-
-  <meta name="google-site-verification" content="6dTShbk4Yt8gvQV6VCmURDFVjkcE3vLr48iIs6aVjt8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zoreva Jewelry</title>
   <link rel="stylesheet" href="style.css">
@@ -15,6 +12,7 @@
 <body>
 
 <header>
+
   <div class="logo">ZOREVA</div>
 
   <nav>
@@ -27,55 +25,91 @@
   <button class="cart-button" onclick="openCart()">
     السلة <span id="cartCount">0</span>
   </button>
+
 </header>
 
 <section class="hero" id="home">
+
   <div>
-    <p class="small">ZOREVA JEWELRY</p>
 
 ```
+<p class="small">ZOREVA JEWELRY</p>
+
 <h1>
   أناقتك تبدأ من<br>
   <span>تفاصيلك</span>
 </h1>
 
-<p>مجوهرات أنيقة وعصرية بتصاميم تناسب كل إطلالة.</p>
+<p>
+  مجوهرات أنيقة وعصرية بتصاميم تناسب كل إطلالة.
+</p>
 
-<a href="#products" class="btn">تصفح المجموعة</a>
+<a href="#products" class="btn">
+  تصفح المجموعة
+</a>
 ```
 
   </div>
+
 </section>
 
 <section class="products" id="products">
 
   <h2>منتجاتنا</h2>
-  <p class="subtitle">اختر القطعة التي تناسب أناقتك</p>
+
+  <p class="subtitle">
+    اختر القطعة التي تناسب أناقتك
+  </p>
 
   <div class="categories">
-    <button onclick="filterProducts('all')">الكل</button>
-    <button onclick="filterProducts('ring')">خواتم</button>
-    <button onclick="filterProducts('bracelet')">أساور</button>
-    <button onclick="filterProducts('necklace')">قلادات</button>
+
+```
+<button onclick="filterProducts('all')">
+  الكل
+</button>
+
+<button onclick="filterProducts('ring')">
+  خواتم
+</button>
+
+<button onclick="filterProducts('bracelet')">
+  أساور
+</button>
+
+<button onclick="filterProducts('necklace')">
+  قلادات
+</button>
+```
+
   </div>
 
   <div class="product-grid">
 
 ```
-<div class="product" data-category="necklace"
-  onclick="openProduct('Collier Éclat',119,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg')">
+<!-- PRODUCT 1 -->
 
-  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg" alt="Collier Éclat">
+<div class="product"
+  data-category="necklace"
+  onclick="openProduct(
+    'Collier Éclat',
+    119,
+    'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg'
+  )">
+
+  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg">
 
   <h3>Collier Éclat</h3>
+
   <p>119 DH</p>
 
-  <button class="add-cart"
-    onclick="event.stopPropagation(); addToCart('Collier Éclat',119,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg')">
+  <button
+    class="add-cart"
+    onclick="event.stopPropagation(); addToCart('Collier Éclat',119)">
     أضف للسلة
   </button>
 
-  <a class="whatsapp"
+  <a
+    class="whatsapp"
     href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Collier%20Éclat"
     onclick="event.stopPropagation()">
     طلب عبر WhatsApp
@@ -83,20 +117,31 @@
 
 </div>
 
-<div class="product" data-category="ring"
-  onclick="openProduct('Bague Élégance',119,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg')">
 
-  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg" alt="Bague Élégance">
+<!-- PRODUCT 2 -->
+
+<div class="product"
+  data-category="ring"
+  onclick="openProduct(
+    'Bague Élégance',
+    119,
+    'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg'
+  )">
+
+  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg">
 
   <h3>Bague Élégance</h3>
+
   <p>119 DH</p>
 
-  <button class="add-cart"
-    onclick="event.stopPropagation(); addToCart('Bague Élégance',119,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg')">
+  <button
+    class="add-cart"
+    onclick="event.stopPropagation(); addToCart('Bague Élégance',119)">
     أضف للسلة
   </button>
 
-  <a class="whatsapp"
+  <a
+    class="whatsapp"
     href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Bague%20Élégance"
     onclick="event.stopPropagation()">
     طلب عبر WhatsApp
@@ -104,20 +149,31 @@
 
 </div>
 
-<div class="product" data-category="bracelet"
-  onclick="openProduct('Bracelet Luna',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg')">
 
-  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg" alt="Bracelet Luna">
+<!-- PRODUCT 3 -->
+
+<div class="product"
+  data-category="bracelet"
+  onclick="openProduct(
+    'Bracelet Luna',
+    149,
+    'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg'
+  )">
+
+  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg">
 
   <h3>Bracelet Luna</h3>
+
   <p>149 DH</p>
 
-  <button class="add-cart"
-    onclick="event.stopPropagation(); addToCart('Bracelet Luna',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg')">
+  <button
+    class="add-cart"
+    onclick="event.stopPropagation(); addToCart('Bracelet Luna',149)">
     أضف للسلة
   </button>
 
-  <a class="whatsapp"
+  <a
+    class="whatsapp"
     href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Bracelet%20Luna"
     onclick="event.stopPropagation()">
     طلب عبر WhatsApp
@@ -125,20 +181,31 @@
 
 </div>
 
-<div class="product" data-category="ring"
-  onclick="openProduct('Bague Signature',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_175331.jpg')">
 
-  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_175331.jpg" alt="Bague Signature">
+<!-- PRODUCT 4 -->
+
+<div class="product"
+  data-category="ring"
+  onclick="openProduct(
+    'Bague Signature',
+    149,
+    'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_175331.jpg'
+  )">
+
+  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_175331.jpg">
 
   <h3>Bague Signature</h3>
+
   <p>149 DH</p>
 
-  <button class="add-cart"
-    onclick="event.stopPropagation(); addToCart('Bague Signature',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_175331.jpg')">
+  <button
+    class="add-cart"
+    onclick="event.stopPropagation(); addToCart('Bague Signature',149)">
     أضف للسلة
   </button>
 
-  <a class="whatsapp"
+  <a
+    class="whatsapp"
     href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Bague%20Signature"
     onclick="event.stopPropagation()">
     طلب عبر WhatsApp
@@ -146,20 +213,31 @@
 
 </div>
 
-<div class="product" data-category="necklace"
-  onclick="openProduct('Collier Perla',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg')">
 
-  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg" alt="Collier Perla">
+<!-- PRODUCT 5 -->
+
+<div class="product"
+  data-category="necklace"
+  onclick="openProduct(
+    'Collier Perla',
+    149,
+    'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg'
+  )">
+
+  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg">
 
   <h3>Collier Perla</h3>
+
   <p>149 DH</p>
 
-  <button class="add-cart"
-    onclick="event.stopPropagation(); addToCart('Collier Perla',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg')">
+  <button
+    class="add-cart"
+    onclick="event.stopPropagation(); addToCart('Collier Perla',149)">
     أضف للسلة
   </button>
 
-  <a class="whatsapp"
+  <a
+    class="whatsapp"
     href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Collier%20Perla"
     onclick="event.stopPropagation()">
     طلب عبر WhatsApp
@@ -167,20 +245,31 @@
 
 </div>
 
-<div class="product" data-category="bracelet"
-  onclick="openProduct('Bracelet Élégance',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg')">
 
-  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg" alt="Bracelet Élégance">
+<!-- PRODUCT 6 -->
+
+<div class="product"
+  data-category="bracelet"
+  onclick="openProduct(
+    'Bracelet Élégance',
+    149,
+    'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg'
+  )">
+
+  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg">
 
   <h3>Bracelet Élégance</h3>
+
   <p>149 DH</p>
 
-  <button class="add-cart"
-    onclick="event.stopPropagation(); addToCart('Bracelet Élégance',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg')">
+  <button
+    class="add-cart"
+    onclick="event.stopPropagation(); addToCart('Bracelet Élégance',149)">
     أضف للسلة
   </button>
 
-  <a class="whatsapp"
+  <a
+    class="whatsapp"
     href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Bracelet%20Élégance"
     onclick="event.stopPropagation()">
     طلب عبر WhatsApp
@@ -188,20 +277,31 @@
 
 </div>
 
-<div class="product" data-category="ring"
-  onclick="openProduct('Bague Royale',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg')">
 
-  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg" alt="Bague Royale">
+<!-- PRODUCT 7 -->
+
+<div class="product"
+  data-category="ring"
+  onclick="openProduct(
+    'Bague Royale',
+    149,
+    'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg'
+  )">
+
+  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg">
 
   <h3>Bague Royale</h3>
+
   <p>149 DH</p>
 
-  <button class="add-cart"
-    onclick="event.stopPropagation(); addToCart('Bague Royale',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg')">
+  <button
+    class="add-cart"
+    onclick="event.stopPropagation(); addToCart('Bague Royale',149)">
     أضف للسلة
   </button>
 
-  <a class="whatsapp"
+  <a
+    class="whatsapp"
     href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Bague%20Royale"
     onclick="event.stopPropagation()">
     طلب عبر WhatsApp
@@ -211,6 +311,7 @@
 ```
 
   </div>
+
 </section>
 
 <section class="about" id="about">
@@ -228,45 +329,70 @@
 
   <h2>تواصل معنا</h2>
 
-  <p>للطلب والاستفسار تواصل معنا مباشرة عبر WhatsApp.</p>
+  <p>
+    للطلب والاستفسار تواصل معنا مباشرة عبر WhatsApp.
+  </p>
 
-<a class="btn"
- href="https://wa.me/212765333754"
- target="_blank">
-تواصل معنا </a>
+<a
+ class="btn"
+ href="https://wa.me/212765333754">
+WhatsApp </a>
 
 </section>
 
 <footer>
-  <p>© 2026 ZOREVA JEWELRY — جميع الحقوق محفوظة</p>
+
+  <div class="logo">ZOREVA</div>
+
+  <p>
+    © 2026 Zoreva Jewelry — جميع الحقوق محفوظة
+  </p>
+
 </footer>
+
+<!-- PRODUCT MODAL -->
 
 <div class="product-modal" id="productModal">
 
   <div class="modal-content">
 
 ```
-<button class="close-modal" onclick="closeProduct()">×</button>
+<button
+  class="close-modal"
+  onclick="closeProduct()">
+  ×
+</button>
 
-<img id="modalImage" src="" alt="Zoreva Product">
+<img
+  id="modalImage"
+  src=""
+  alt="Zoreva Product">
 
 <div class="modal-info">
 
-  <p class="modal-brand">ZOREVA JEWELRY</p>
+  <p class="modal-brand">
+    ZOREVA JEWELRY
+  </p>
 
   <h2 id="modalName"></h2>
 
-  <p class="modal-price" id="modalPrice"></p>
+  <p
+    class="modal-price"
+    id="modalPrice">
+  </p>
 
   <p class="modal-description">
     تصميم أنيق وعصري من مجموعة Zoreva Jewelry.
   </p>
 
-  <button class="add-cart modal-add" onclick="addModalProduct()">
+  <button
+    class="add-cart modal-add"
+    onclick="addModalProduct()">
     أضف للسلة
   </button>
 
-  <a id="modalWhatsapp"
+  <a
+    id="modalWhatsapp"
     class="modal-order"
     href=""
     target="_blank">
@@ -280,11 +406,24 @@
 
 </div>
 
-<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<!-- CART OVERLAY -->
 
-<div class="cart-panel" id="cartPanel">
+<div
+  class="cart-overlay"
+  id="cartOverlay"
+  onclick="closeCart()">
+</div>
 
-<button class="close-cart" onclick="closeCart()">×</button>
+<!-- CART -->
+
+<div
+  class="cart-panel"
+  id="cartPanel">
+
+<button
+ class="close-cart"
+ onclick="closeCart()">
+× </button>
 
   <h2>سلة الطلب</h2>
 
@@ -295,161 +434,217 @@
 ```
 <span>المجموع:</span>
 
-<strong id="cartTotal">0 DH</strong>
+<strong id="cartTotal">
+  0 DH
+</strong>
 ```
 
   </div>
 
-  <button class="checkout-btn" onclick="sendCartToWhatsApp()">
-    إرسال الطلب عبر WhatsApp
-  </button>
+<button
+ class="checkout-btn"
+ onclick="sendCartToWhatsApp()">
+إرسال الطلب عبر WhatsApp </button>
 
 </div>
 
-<a class="floating-whatsapp"
-href="https://wa.me/212765333754"
+<!-- FLOATING WHATSAPP -->
+
+<a
+href="https://wa.me/212765333754?text=سلام،%20بغيت%20نستفسر%20على%20منتجات%20Zoreva"
+class="floating-whatsapp"
 target="_blank">
 WhatsApp </a>
 
 <script>
 
 let cart = [];
-let currentModalProduct = null;
+
+let currentModalProduct = {
+  name: "",
+  price: 0
+};
+
+
+/* PRODUCT MODAL */
 
 function openProduct(name, price, image) {
 
-  currentModalProduct = {
-    name: name,
-    price: Number(price),
-    image: image
-  };
+  currentModalProduct.name = name;
+  currentModalProduct.price = Number(price);
 
   document.getElementById("modalName").textContent = name;
 
   document.getElementById("modalPrice").textContent =
-    Number(price) + " DH";
+    price + " DH";
 
   document.getElementById("modalImage").src = image;
 
   document.getElementById("modalWhatsapp").href =
     "https://wa.me/212765333754?text=" +
-    encodeURIComponent("سلام، بغيت نطلب " + name);
+    encodeURIComponent(
+      "سلام، بغيت نطلب " +
+      name +
+      " بثمن " +
+      price +
+      " DH"
+    );
 
-  document.getElementById("productModal").classList.add("active");
+  document
+    .getElementById("productModal")
+    .classList.add("active");
+
+  document.body.style.overflow = "hidden";
 }
+
 
 function closeProduct() {
-  document.getElementById("productModal").classList.remove("active");
+
+  document
+    .getElementById("productModal")
+    .classList.remove("active");
+
+  document.body.style.overflow = "auto";
 }
+
 
 function addModalProduct() {
 
-  if (!currentModalProduct) return;
-
   addToCart(
     currentModalProduct.name,
-    currentModalProduct.price,
-    currentModalProduct.image
+    currentModalProduct.price
   );
 
   closeProduct();
 }
 
-function addToCart(name, price, image) {
 
-  price = Number(price);
+/* CART */
 
-  const existing = cart.find(item => item.name === name);
+function addToCart(name, price) {
+
+  const existing =
+    cart.find(item => item.name === name);
 
   if (existing) {
+
     existing.quantity++;
+
   } else {
+
     cart.push({
       name: name,
-      price: price,
-      image: image,
+      price: Number(price),
       quantity: 1
     });
+
   }
 
   updateCart();
+
   openCart();
 }
 
+
 function updateCart() {
 
-  const cartItems = document.getElementById("cartItems");
-  const cartCount = document.getElementById("cartCount");
-  const cartTotal = document.getElementById("cartTotal");
+  const items =
+    document.getElementById("cartItems");
 
-  cartItems.innerHTML = "";
+  const count =
+    document.getElementById("cartCount");
+
+  const totalElement =
+    document.getElementById("cartTotal");
+
+  items.innerHTML = "";
 
   let total = 0;
-  let count = 0;
+  let countProducts = 0;
+
 
   if (cart.length === 0) {
 
-    cartItems.innerHTML =
-      '<p class="empty-cart">السلة فارغة</p>';
+    items.innerHTML =
+      '<p class="empty-cart">السلة فارغة حالياً.</p>';
 
-  }
+  } else {
 
-  cart.forEach((item, index) => {
+    cart.forEach((item, index) => {
 
-    total += item.price * item.quantity;
-    count += item.quantity;
+      const subtotal =
+        item.price * item.quantity;
 
-    const div = document.createElement("div");
+      total += subtotal;
 
-    div.className = "cart-item";
+      countProducts += item.quantity;
 
-    div.innerHTML = `
 
-      <img src="${item.image}" alt="${item.name}">
+      items.innerHTML += `
 
-      <div class="cart-item-info">
+        <div class="cart-item">
 
-        <h3>${item.name}</h3>
+          <div>
 
-        <p>${item.price} DH</p>
+            <h3>${item.name}</h3>
 
-        <div class="quantity">
+            <p>${item.price} DH</p>
 
-          <button onclick="changeQuantity(${index},1)">+</button>
+          </div>
 
-          <span>${item.quantity}</span>
+          <div class="quantity">
 
-          <button onclick="changeQuantity(${index},-1)">−</button>
+            <button
+              onclick="changeQuantity(${index}, -1)">
+              −
+            </button>
+
+            <span>
+              ${item.quantity}
+            </span>
+
+            <button
+              onclick="changeQuantity(${index}, 1)">
+              +
+            </button>
+
+          </div>
+
+          <button
+            class="remove-item"
+            onclick="removeFromCart(${index})">
+            حذف
+          </button>
 
         </div>
 
-      </div>
+      `;
 
-      <button class="remove-item"
-        onclick="removeFromCart(${index})">
-        حذف
-      </button>
+    });
 
-    `;
+  }
 
-    cartItems.appendChild(div);
 
-  });
+  count.textContent = countProducts;
 
-  cartCount.textContent = count;
-  cartTotal.textContent = total + " DH";
+  totalElement.textContent =
+    total + " DH";
 }
+
 
 function changeQuantity(index, change) {
 
   cart[index].quantity += change;
 
   if (cart[index].quantity <= 0) {
+
     cart.splice(index, 1);
+
   }
 
   updateCart();
 }
+
 
 function removeFromCart(index) {
 
@@ -458,53 +653,86 @@ function removeFromCart(index) {
   updateCart();
 }
 
+
 function openCart() {
 
-  document.getElementById("cartPanel").classList.add("active");
+  document
+    .getElementById("cartPanel")
+    .classList.add("active");
 
-  document.getElementById("cartOverlay").classList.add("active");
+  document
+    .getElementById("cartOverlay")
+    .classList.add("active");
+
+  document.body.style.overflow = "hidden";
 }
+
 
 function closeCart() {
 
-  document.getElementById("cartPanel").classList.remove("active");
+  document
+    .getElementById("cartPanel")
+    .classList.remove("active");
 
-  document.getElementById("cartOverlay").classList.remove("active");
+  document
+    .getElementById("cartOverlay")
+    .classList.remove("active");
+
+  document.body.style.overflow = "auto";
 }
+
+
+/* WHATSAPP ORDER */
 
 function sendCartToWhatsApp() {
 
   if (cart.length === 0) {
 
-    alert("السلة فارغة");
+    alert("السلة فارغة.");
 
     return;
   }
 
-  let message = "سلام، بغيت نطلب:\n\n";
+
+  let message =
+    "سلام، بغيت ندير هاد الطلب من Zoreva:\n\n";
 
   let total = 0;
 
+
   cart.forEach(item => {
 
-    const subtotal = item.price * item.quantity;
+    const subtotal =
+      item.price * item.quantity;
 
     total += subtotal;
 
     message +=
-      "• " + item.name +
-      " × " + item.quantity +
-      " = " + subtotal + " DH\n";
+      item.name +
+      " × " +
+      item.quantity +
+      " = " +
+      subtotal +
+      " DH\n";
+
   });
 
-  message += "\nالمجموع: " + total + " DH";
 
-  const url =
+  message +=
+    "\nالمجموع: " +
+    total +
+    " DH";
+
+
+  window.open(
     "https://wa.me/212765333754?text=" +
-    encodeURIComponent(message);
-
-  window.open(url, "_blank");
+    encodeURIComponent(message),
+    "_blank"
+  );
 }
+
+
+/* FILTER */
 
 function filterProducts(category) {
 
@@ -518,7 +746,7 @@ function filterProducts(category) {
       product.dataset.category === category
     ) {
 
-      product.style.display = "";
+      product.style.display = "block";
 
     } else {
 
@@ -527,18 +755,24 @@ function filterProducts(category) {
     }
 
   });
+
 }
 
-document.getElementById("productModal").addEventListener(
-  "click",
-  function(event) {
+
+/* CLOSE MODAL OUTSIDE */
+
+document
+  .getElementById("productModal")
+  .addEventListener("click", function(event) {
 
     if (event.target === this) {
       closeProduct();
     }
 
-  }
-);
+  });
+
+
+/* START */
 
 updateCart();
 
