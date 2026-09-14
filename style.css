@@ -446,3 +446,161 @@ footer p {
     font-size: 14px;
   }
 }
+
+/* ================= PRODUCT MODAL ================= */
+
+.product {
+cursor: pointer;
+}
+
+.product-modal {
+position: fixed;
+inset: 0;
+background: rgba(0, 0, 0, 0.78);
+display: none;
+align-items: center;
+justify-content: center;
+padding: 25px;
+z-index: 5000;
+backdrop-filter: blur(8px);
+}
+
+.product-modal.active {
+display: flex;
+}
+
+.modal-content {
+width: min(900px, 100%);
+max-height: 90vh;
+overflow-y: auto;
+
+display: grid;
+grid-template-columns: 1fr 1fr;
+
+background: #0c120f;
+border: 1px solid #245239;
+border-radius: 12px;
+position: relative;
+overflow: hidden;
+
+box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+}
+
+.modal-content > img {
+width: 100%;
+height: 520px;
+object-fit: contain;
+background: #080b09;
+padding: 25px;
+}
+
+.modal-info {
+padding: 60px 45px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.modal-brand {
+color: #20b26b;
+font-size: 13px;
+font-weight: bold;
+letter-spacing: 4px;
+margin-bottom: 15px;
+}
+
+.modal-info h2 {
+font-size: 34px;
+margin-bottom: 15px;
+}
+
+.modal-price {
+color: #20b26b;
+font-size: 25px;
+font-weight: bold;
+margin-bottom: 20px;
+}
+
+.modal-description {
+color: #aaa;
+line-height: 1.8;
+margin-bottom: 30px;
+}
+
+.modal-order {
+display: block;
+text-align: center;
+background: #20b26b;
+color: #061009;
+padding: 15px 20px;
+border-radius: 5px;
+text-decoration: none;
+font-weight: bold;
+transition: 0.25s ease;
+}
+
+.modal-order:hover {
+background: #29d17e;
+transform: translateY(-2px);
+}
+
+.close-modal {
+position: absolute;
+top: 15px;
+right: 18px;
+
+width: 40px;
+height: 40px;
+
+border: 1px solid #355a45;
+border-radius: 50%;
+
+background: rgba(5, 8, 6, 0.8);
+color: white;
+
+font-size: 25px;
+cursor: pointer;
+z-index: 10;
+}
+
+.close-modal:hover {
+background: #20b26b;
+color: #061009;
+}
+
+/* ================= MODAL MOBILE ================= */
+
+@media (max-width: 700px) {
+
+.product-modal {
+padding: 15px;
+}
+
+.modal-content {
+grid-template-columns: 1fr;
+max-height: 92vh;
+}
+
+.modal-content > img {
+height: 330px;
+padding: 20px;
+}
+
+.modal-info {
+padding: 30px 25px 35px;
+}
+
+.modal-info h2 {
+font-size: 27px;
+}
+
+.modal-price {
+font-size: 22px;
+}
+
+.close-modal {
+top: 10px;
+right: 10px;
+}
+
+}
