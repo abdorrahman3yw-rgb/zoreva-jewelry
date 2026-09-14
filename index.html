@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 
 <html lang="ar" dir="rtl">
-
 <head>
   <meta charset="UTF-8">
 
   <meta name="google-site-verification" content="6dTShbk4Yt8gvQV6VCmURDFVjkcE3vLr48iIs6aVjt8" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zoreva Jewelry</title>
+
+  <title>Zoreva Jewelry | مجوهرات أنيقة</title>
+
+  <meta name="description" content="Zoreva Jewelry - مجوهرات أنيقة وعصرية. اكتشف مجموعتنا من الخواتم والأساور والقلادات واطلب عبر WhatsApp.">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -29,28 +32,40 @@
   </button>
 </header>
 
+<!-- HERO -->
+
 <section class="hero" id="home">
-  <div>
-    <p class="small">ZOREVA JEWELRY</p>
+  <div class="hero-content">
 
 ```
+<p class="small">ZOREVA JEWELRY</p>
+
 <h1>
   أناقتك تبدأ من<br>
   <span>تفاصيلك</span>
 </h1>
 
-<p>مجوهرات أنيقة وعصرية بتصاميم تناسب كل إطلالة.</p>
+<p>
+  مجوهرات أنيقة وعصرية بتصاميم تناسب كل إطلالة.
+</p>
 
-<a href="#products" class="btn">تصفح المجموعة</a>
+<a href="#products" class="btn">
+  تصفح المجموعة
+</a>
 ```
 
   </div>
 </section>
 
+<!-- PRODUCTS -->
+
 <section class="products" id="products">
 
   <h2>منتجاتنا</h2>
-  <p class="subtitle">اختر القطعة التي تناسب أناقتك</p>
+
+  <p class="subtitle">
+    اختر القطعة التي تناسب أناقتك
+  </p>
 
   <div class="categories">
     <button onclick="filterProducts('all')">الكل</button>
@@ -62,61 +77,169 @@
   <div class="product-grid">
 
 ```
-<div class="product" data-category="necklace"
-  onclick="openProduct('Collier Éclat',119,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg')">
+<!-- PRODUCT 1 -->
+<div class="product"
+  data-category="necklace"
+  onclick="openProduct(
+    'Collier Éclat',
+    119,
+    'IMG_20260726_171518.jpg'
+  )">
 
-  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg" alt="Collier Éclat">
+  <img
+    src="IMG_20260726_171518.jpg"
+    alt="Collier Éclat"
+  >
 
   <h3>Collier Éclat</h3>
+
   <p>119 DH</p>
 
-  <button class="add-cart"
-    onclick="event.stopPropagation(); addToCart('Collier Éclat',119,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg')">
+  <button
+    class="add-cart"
+    onclick="event.stopPropagation(); addToCart(
+      'Collier Éclat',
+      119,
+      'IMG_20260726_171518.jpg'
+    )">
     أضف للسلة
   </button>
 
-  <a class="whatsapp"
+  <a
+    class="whatsapp"
     href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Collier%20Éclat"
-    onclick="event.stopPropagation()">
+    onclick="event.stopPropagation()"
+    target="_blank">
     طلب عبر WhatsApp
   </a>
 
 </div>
 
-<div class="product" data-category="ring"
-  onclick="openProduct('Bague Élégance',119,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg')">
 
-  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg" alt="Bague Élégance">
+<!-- PRODUCT 2 -->
+<div class="product"
+  data-category="ring"
+  onclick="openProduct(
+    'Bague Élégance',
+    119,
+    'IMG_20260726_171656.jpg'
+  )">
+
+  <img
+    src="IMG_20260726_171656.jpg"
+    alt="Bague Élégance"
+  >
 
   <h3>Bague Élégance</h3>
+
   <p>119 DH</p>
 
-  <button class="add-cart"
-    onclick="event.stopPropagation(); addToCart('Bague Élégance',119,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg')">
+  <button
+    class="add-cart"
+    onclick="event.stopPropagation(); addToCart(
+      'Bague Élégance',
+      119,
+      'IMG_20260726_171656.jpg'
+    )">
     أضف للسلة
   </button>
 
-  <a class="whatsapp"
+  <a
+    class="whatsapp"
     href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Bague%20Élégance"
-    onclick="event.stopPropagation()">
+    onclick="event.stopPropagation()"
+    target="_blank">
     طلب عبر WhatsApp
   </a>
 
 </div>
 
-<div class="product" data-category="bracelet"
-  onclick="openProduct('Bracelet Luna',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg')">
 
-  <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg" alt="Bracelet Luna">
+<!-- PRODUCT 3 -->
+<div class="product"
+  data-category="bracelet"
+  onclick="openProduct(
+    'Bracelet Luna',
+    149,
+    'IMG_20260726_171921.jpg'
+  )">
+
+  <img
+    src="IMG_20260726_171921.jpg"
+    alt="Bracelet Luna"
+  >
 
   <h3>Bracelet Luna</h3>
+
   <p>149 DH</p>
 
-  <button class="add-cart"
-    onclick="event.stopPropagation(); addToCart('Bracelet Luna',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg')">
+  <button
+    class="add-cart"
+    onclick="event.stopPropagation(); addToCart(
+      'Bracelet Luna',
+      149,
+      'IMG_20260726_171921.jpg'
+    )">
     أضف للسلة
   </button>
 
-  <a class="whatsapp"
-    href="https://wa.me/21276
+  <a
+    class="whatsapp"
+    href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Bracelet%20Luna"
+    onclick="event.stopPropagation()"
+    target="_blank">
+    طلب عبر WhatsApp
+  </a>
+
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+  <h2>من نحن</h2>
+
+  <p>
+    Zoreva Jewelry هي علامة تهتم بتقديم مجوهرات أنيقة
+    وعصرية بتصاميم بسيطة ومميزة تناسب مختلف الإطلالات.
+  </p>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <h2>تواصل معنا</h2>
+
+  <p>
+    للطلب أو الاستفسار، تواصل معنا مباشرة عبر WhatsApp.
+  </p>
+
+<a
+ class="btn"
+ href="https://wa.me/212765333754"
+ target="_blank">
+تواصل عبر WhatsApp </a>
+
+</section>
+
+<!-- PRODUCT MODAL -->
+
+<div id="productModal" class="modal">
+
+  <div class="modal-content">
+
+```
+<button
+  class="close"
+  onclick="closeProduct()">
+  ×
+</button>
+
+<img id="modalIma
 ```
