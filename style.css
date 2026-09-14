@@ -410,3 +410,39 @@ footer p {
   }
 
 }
+
+/* ================= FLOATING WHATSAPP ================= */
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 2000;
+
+  background: #20b26b;
+  color: #061009;
+
+  padding: 14px 21px;
+  border-radius: 50px;
+
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+  transition: 0.25s ease;
+}
+
+.floating-whatsapp:hover {
+  background: #29d17e;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+  .floating-whatsapp {
+    bottom: 18px;
+    left: 18px;
+    padding: 12px 17px;
+    font-size: 14px;
+  }
+}
