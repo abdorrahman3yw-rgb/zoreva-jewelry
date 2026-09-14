@@ -346,3 +346,41 @@ footer p {
     padding: 70px 25px;
   }
 }
+
+/* ================= CATEGORIES ================= */
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 45px;
+  flex-wrap: wrap;
+}
+
+.categories button {
+  background: transparent;
+  color: #ddd;
+  border: 1px solid #245239;
+  padding: 10px 22px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+.categories button:hover {
+  background: #20b26b;
+  color: #061009;
+  border-color: #20b26b;
+}
+
+@media (max-width: 600px) {
+  .categories {
+    gap: 8px;
+  }
+
+  .categories button {
+    padding: 9px 16px;
+    font-size: 13px;
+  }
+}
