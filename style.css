@@ -851,3 +851,26 @@ footer p {
     font-size: 12px;
   }
 }
+
+/* إصلاح خانات التصنيفات في الهاتف */
+@media (max-width: 600px) {
+
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 360px;
+    margin: 20px auto 30px;
+  }
+
+  .categories button {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 8px;
+    font-size: 14px;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+
+}
