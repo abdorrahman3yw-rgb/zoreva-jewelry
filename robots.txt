@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abdorrahman3yw-rgb.github.io/zoreva-jewelry/sitemap.xml
