@@ -10,38 +10,443 @@
     content="ZOREVA Jewelry — Bijoux élégants et raffinés au Maroc."
   >
 
+  <meta name="theme-color" content="#111111">
+
   <title>ZOREVA Jewelry — Bijoux Élégants</title>
 
   <link rel="icon" type="image/svg+xml" href="logo.svg">
 
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ==================================================
+       ZOREVA PREMIUM OVERRIDES
+    ================================================== */
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    /* ==================================================
+       LOGO
+    ================================================== */
+
+    .site-header .logo,
+    .site-footer .logo {
+      display: flex !important;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .site-header .logo img,
+    .site-footer .logo img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .site-header .logo > div,
+    .site-footer .logo > div {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .site-header .logo strong,
+    .site-footer .logo strong {
+      font-size: 17px;
+      letter-spacing: 2px;
+    }
+
+    .site-header .logo span,
+    .site-footer .logo span {
+      font-size: 8px;
+      letter-spacing: 4px;
+      margin-top: 5px;
+      opacity: .7;
+    }
+
+    /* ==================================================
+       HERO ANIMATION
+    ================================================== */
+
+    .hero-content {
+      opacity: 0;
+      transform: translateY(35px);
+      animation: heroContentIn 1s cubic-bezier(.22,1,.36,1) .15s forwards;
+    }
+
+    .hero-eyebrow {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeUp .7s ease .35s forwards;
+    }
+
+    .hero h1 {
+      opacity: 0;
+      transform: translateY(25px);
+      animation: fadeUp .8s ease .48s forwards;
+    }
+
+    .hero-content > p {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp .8s ease .62s forwards;
+    }
+
+    .hero-buttons {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp .8s ease .76s forwards;
+    }
+
+    .hero-scroll {
+      opacity: 0;
+      animation: fadeOnly 1s ease 1.2s forwards;
+    }
+
+    /* ==================================================
+       SECTION REVEAL
+    ================================================== */
+
+    .section-header,
+    .collections-grid,
+    .best-sellers-grid,
+    .products-grid,
+    .why-grid,
+    .about-content,
+    .contact-inner {
+      animation: sectionReveal .8s cubic-bezier(.22,1,.36,1) both;
+    }
+
+    /* ==================================================
+       PRODUCT CARDS
+    ================================================== */
+
+    .product-card,
+    .best-seller-card,
+    .collection-card,
+    .why-card {
+      transition:
+        transform .5s cubic-bezier(.22,1,.36,1),
+        box-shadow .5s ease;
+    }
+
+    .product-card:hover,
+    .best-seller-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .collection-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .why-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* ==================================================
+       PRODUCT IMAGES
+    ================================================== */
+
+    .product-card-image,
+    .product-image-link {
+      overflow: hidden;
+    }
+
+    .product-card-image img,
+    .product-image-link img,
+    .collection-image img {
+      object-fit: contain !important;
+      transition: transform .7s cubic-bezier(.22,1,.36,1);
+    }
+
+    .product-card:hover .product-card-image img,
+    .best-seller-card:hover .product-image-link img {
+      transform: scale(1.045);
+    }
+
+    .collection-card:hover .collection-image img {
+      transform: scale(1.035);
+    }
+
+    /* ==================================================
+       GOLD DETAILS
+    ================================================== */
+
+    .product-price,
+    .product-card-info strong {
+      color: #b8944e;
+    }
+
+    .section-eyebrow,
+    .hero-eyebrow {
+      color: #b8944e;
+    }
+
+    /* ==================================================
+       FILTER BUTTONS
+    ================================================== */
+
+    .filter-btn {
+      transition:
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease,
+        transform .3s ease;
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* ==================================================
+       BUTTONS
+    ================================================== */
+
+    .btn,
+    .product-view-btn,
+    .add-cart {
+      transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease;
+    }
+
+    .btn:hover,
+    .product-view-btn:hover,
+    .add-cart:hover {
+      transform: translateY(-2px);
+    }
+
+    /* ==================================================
+       BRAND MESSAGE
+    ================================================== */
+
+    .brand-message {
+      overflow: hidden;
+    }
+
+    .brand-message-inner {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: brandReveal 1s cubic-bezier(.22,1,.36,1) .2s forwards;
+    }
+
+    /* ==================================================
+       FOOTER
+    ================================================== */
+
+    .site-footer .logo img {
+      width: 40px;
+      height: 40px;
+    }
+
+    /* ==================================================
+       FLOATING WHATSAPP
+    ================================================== */
+
+    .floating-whatsapp {
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+    }
+
+    .floating-whatsapp:hover {
+      transform: translateY(-4px);
+    }
+
+    /* ==================================================
+       CART
+    ================================================== */
+
+    .cart-panel {
+      z-index: 9999;
+    }
+
+    .cart-overlay {
+      z-index: 9998;
+    }
+
+    /* ==================================================
+       ANIMATIONS
+    ================================================== */
+
+    @keyframes heroContentIn {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeOnly {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes sectionReveal {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes brandReveal {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ==================================================
+       MOBILE
+    ================================================== */
+
+    @media (max-width: 700px) {
+
+      .site-header .logo img,
+      .site-footer .logo img {
+        width: 36px;
+        height: 36px;
+      }
+
+      .site-header .logo strong,
+      .site-footer .logo strong {
+        font-size: 14px;
+      }
+
+      .site-header .logo span,
+      .site-footer .logo span {
+        font-size: 7px;
+        letter-spacing: 3px;
+      }
+
+      .hero-content {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .product-card-image img,
+      .product-image-link img {
+        object-fit: contain !important;
+      }
+    }
+
+    /* ==================================================
+       REDUCED MOTION
+    ================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- HEADER -->
   <header class="site-header">
+
     <div class="header-inner">
 
       <a href="index.html" class="logo">
-        <strong>ZOREVA</strong>
-        <span>JEWELRY</span>
+
+        <img
+          src="logo.svg"
+          alt="ZOREVA Jewelry"
+        >
+
+        <div>
+          <strong>ZOREVA</strong>
+          <span>JEWELRY</span>
+        </div>
+
       </a>
 
+
       <nav class="main-nav">
-        <a href="#home">Accueil</a>
-        <a href="#collections">Collections</a>
-        <a href="#products">Bijoux</a>
-        <a href="#about">À propos</a>
-        <a href="#contact">Contact</a>
+
+        <a href="#home">
+          Accueil
+        </a>
+
+        <a href="#collections">
+          Collections
+        </a>
+
+        <a href="#products">
+          Bijoux
+        </a>
+
+        <a href="#about">
+          À propos
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
       </nav>
 
-      <button class="cart-btn" type="button" onclick="openCart()">
+
+      <button
+        class="cart-btn"
+        type="button"
+        onclick="openCart()"
+      >
         Panier
         <span id="cartCount">0</span>
       </button>
 
     </div>
+
   </header>
 
 
@@ -69,11 +474,17 @@
 
       <div class="hero-buttons">
 
-        <a href="#products" class="btn btn-primary">
+        <a
+          href="#products"
+          class="btn btn-primary"
+        >
           Découvrir la collection
         </a>
 
-        <a href="#collections" class="btn btn-secondary">
+        <a
+          href="#collections"
+          class="btn btn-secondary"
+        >
           Explorer les collections
         </a>
 
@@ -81,9 +492,15 @@
 
     </div>
 
+
     <div class="hero-scroll">
+
       <span></span>
-      <small>Découvrir</small>
+
+      <small>
+        Découvrir
+      </small>
+
     </div>
 
   </section>
@@ -93,34 +510,75 @@
   <section class="trust-bar">
 
     <div class="trust-item">
-      <span class="trust-number">01</span>
+
+      <span class="trust-number">
+        01
+      </span>
+
       <div>
-        <strong>Sélection soignée</strong>
-        <small>Des pièces choisies avec attention</small>
+
+        <strong>
+          Sélection soignée
+        </strong>
+
+        <small>
+          Des pièces choisies avec attention
+        </small>
+
       </div>
+
     </div>
 
-    <div class="trust-item">
-      <span class="trust-number">02</span>
-      <div>
-        <strong>Commande simple</strong>
-        <small>Commandez directement sur WhatsApp</small>
-      </div>
-    </div>
 
     <div class="trust-item">
-      <span class="trust-number">03</span>
+
+      <span class="trust-number">
+        02
+      </span>
+
       <div>
-        <strong>Style intemporel</strong>
-        <small>Des bijoux faciles à porter</small>
+
+        <strong>
+          Commande simple
+        </strong>
+
+        <small>
+          Commandez directement sur WhatsApp
+        </small>
+
       </div>
+
+    </div>
+
+
+    <div class="trust-item">
+
+      <span class="trust-number">
+        03
+      </span>
+
+      <div>
+
+        <strong>
+          Style intemporel
+        </strong>
+
+        <small>
+          Des bijoux faciles à porter
+        </small>
+
+      </div>
+
     </div>
 
   </section>
 
 
   <!-- COLLECTIONS -->
-  <section class="collections section" id="collections">
+  <section
+    class="collections section"
+    id="collections"
+  >
 
     <div class="section-header">
 
@@ -139,6 +597,7 @@
 
     </div>
 
+
     <div class="collections-grid">
 
       <div
@@ -147,16 +606,29 @@
       >
 
         <div class="collection-image">
+
           <img
             src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg"
             alt="Collection bagues ZOREVA"
           >
+
         </div>
 
+
         <div class="collection-overlay">
-          <span>COLLECTION 01</span>
-          <h3>Bagues</h3>
-          <p>Explorer la collection →</p>
+
+          <span>
+            COLLECTION 01
+          </span>
+
+          <h3>
+            Bagues
+          </h3>
+
+          <p>
+            Explorer la collection →
+          </p>
+
         </div>
 
       </div>
@@ -168,16 +640,29 @@
       >
 
         <div class="collection-image">
+
           <img
             src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg"
             alt="Collection bracelets ZOREVA"
           >
+
         </div>
 
+
         <div class="collection-overlay">
-          <span>COLLECTION 02</span>
-          <h3>Bracelets</h3>
-          <p>Explorer la collection →</p>
+
+          <span>
+            COLLECTION 02
+          </span>
+
+          <h3>
+            Bracelets
+          </h3>
+
+          <p>
+            Explorer la collection →
+          </p>
+
         </div>
 
       </div>
@@ -189,16 +674,29 @@
       >
 
         <div class="collection-image">
+
           <img
             src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg"
             alt="Collection colliers ZOREVA"
           >
+
         </div>
 
+
         <div class="collection-overlay">
-          <span>COLLECTION 03</span>
-          <h3>Colliers</h3>
-          <p>Explorer la collection →</p>
+
+          <span>
+            COLLECTION 03
+          </span>
+
+          <h3>
+            Colliers
+          </h3>
+
+          <p>
+            Explorer la collection →
+          </p>
+
         </div>
 
       </div>
@@ -237,17 +735,23 @@
           href="product.html?product=collier-eclat"
           class="product-image-link"
         >
-          <span class="product-badge">ZOREVA</span>
+
+          <span class="product-badge">
+            ZOREVA
+          </span>
 
           <img
             src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg"
             alt="Collier Éclat"
+            loading="lazy"
           >
 
           <span class="image-view">
             Voir le produit
           </span>
+
         </a>
+
 
         <div class="product-info">
 
@@ -255,7 +759,9 @@
             Collier
           </span>
 
-          <h3>Collier Éclat</h3>
+          <h3>
+            Collier Éclat
+          </h3>
 
           <p class="product-price">
             119 DH
@@ -279,17 +785,23 @@
           href="product.html?product=bague-elegance"
           class="product-image-link"
         >
-          <span class="product-badge">ZOREVA</span>
+
+          <span class="product-badge">
+            ZOREVA
+          </span>
 
           <img
             src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg"
             alt="Bague Élégance"
+            loading="lazy"
           >
 
           <span class="image-view">
             Voir le produit
           </span>
+
         </a>
+
 
         <div class="product-info">
 
@@ -297,7 +809,9 @@
             Bague
           </span>
 
-          <h3>Bague Élégance</h3>
+          <h3>
+            Bague Élégance
+          </h3>
 
           <p class="product-price">
             119 DH
@@ -321,17 +835,23 @@
           href="product.html?product=bracelet-luna"
           class="product-image-link"
         >
-          <span class="product-badge">ZOREVA</span>
+
+          <span class="product-badge">
+            ZOREVA
+          </span>
 
           <img
             src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg"
             alt="Bracelet Luna"
+            loading="lazy"
           >
 
           <span class="image-view">
             Voir le produit
           </span>
+
         </a>
+
 
         <div class="product-info">
 
@@ -339,7 +859,9 @@
             Bracelet
           </span>
 
-          <h3>Bracelet Luna</h3>
+          <h3>
+            Bracelet Luna
+          </h3>
 
           <p class="product-price">
             149 DH
@@ -362,7 +884,10 @@
 
 
   <!-- PRODUCTS -->
-  <section class="products section" id="products">
+  <section
+    class="products section"
+    id="products"
+  >
 
     <div class="section-header">
 
@@ -416,27 +941,43 @@
 
     <div class="products-grid">
 
-      <article class="product-card" data-category="necklace">
+      <!-- 01 -->
+      <article
+        class="product-card"
+        data-category="necklace"
+      >
 
         <a
           href="product.html?product=collier-eclat"
           class="product-card-image"
         >
-          <span class="product-number">01</span>
+
+          <span class="product-number">
+            01
+          </span>
 
           <img
             src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg"
             alt="Collier Éclat"
+            loading="lazy"
           >
+
         </a>
+
 
         <div class="product-card-info">
 
-          <span>Collier</span>
+          <span>
+            Collier
+          </span>
 
-          <h3>Collier Éclat</h3>
+          <h3>
+            Collier Éclat
+          </h3>
 
-          <strong>119 DH</strong>
+          <strong>
+            119 DH
+          </strong>
 
           <a
             href="product.html?product=collier-eclat"
@@ -450,27 +991,43 @@
       </article>
 
 
-      <article class="product-card" data-category="ring">
+      <!-- 02 -->
+      <article
+        class="product-card"
+        data-category="ring"
+      >
 
         <a
           href="product.html?product=bague-elegance"
           class="product-card-image"
         >
-          <span class="product-number">02</span>
+
+          <span class="product-number">
+            02
+          </span>
 
           <img
             src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg"
             alt="Bague Élégance"
+            loading="lazy"
           >
+
         </a>
+
 
         <div class="product-card-info">
 
-          <span>Bague</span>
+          <span>
+            Bague
+          </span>
 
-          <h3>Bague Élégance</h3>
+          <h3>
+            Bague Élégance
+          </h3>
 
-          <strong>119 DH</strong>
+          <strong>
+            119 DH
+          </strong>
 
           <a
             href="product.html?product=bague-elegance"
@@ -484,27 +1041,43 @@
       </article>
 
 
-      <article class="product-card" data-category="bracelet">
+      <!-- 03 -->
+      <article
+        class="product-card"
+        data-category="bracelet"
+      >
 
         <a
           href="product.html?product=bracelet-luna"
           class="product-card-image"
         >
-          <span class="product-number">03</span>
+
+          <span class="product-number">
+            03
+          </span>
 
           <img
             src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg"
             alt="Bracelet Luna"
+            loading="lazy"
           >
+
         </a>
+
 
         <div class="product-card-info">
 
-          <span>Bracelet</span>
+          <span>
+            Bracelet
+          </span>
 
-          <h3>Bracelet Luna</h3>
+          <h3>
+            Bracelet Luna
+          </h3>
 
-          <strong>149 DH</strong>
+          <strong>
+            149 DH
+          </strong>
 
           <a
             href="product.html?product=bracelet-luna"
@@ -518,27 +1091,43 @@
       </article>
 
 
-      <article class="product-card" data-category="ring">
+      <!-- 04 -->
+      <article
+        class="product-card"
+        data-category="ring"
+      >
 
         <a
           href="product.html?product=bague-signature"
           class="product-card-image"
         >
-          <span class="product-number">04</span>
+
+          <span class="product-number">
+            04
+          </span>
 
           <img
             src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_175331.jpg"
             alt="Bague Signature"
+            loading="lazy"
           >
+
         </a>
+
 
         <div class="product-card-info">
 
-          <span>Bague</span>
+          <span>
+            Bague
+          </span>
 
-          <h3>Bague Signature</h3>
+          <h3>
+            Bague Signature
+          </h3>
 
-          <strong>149 DH</strong>
+          <strong>
+            149 DH
+          </strong>
 
           <a
             href="product.html?product=bague-signature"
@@ -552,27 +1141,43 @@
       </article>
 
 
-      <article class="product-card" data-category="necklace">
+      <!-- 05 -->
+      <article
+        class="product-card"
+        data-category="necklace"
+      >
 
         <a
           href="product.html?product=collier-perla"
           class="product-card-image"
         >
-          <span class="product-number">05</span>
+
+          <span class="product-number">
+            05
+          </span>
 
           <img
             src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"
             alt="Collier Perla"
+            loading="lazy"
           >
+
         </a>
+
 
         <div class="product-card-info">
 
-          <span>Collier</span>
+          <span>
+            Collier
+          </span>
 
-          <h3>Collier Perla</h3>
+          <h3>
+            Collier Perla
+          </h3>
 
-          <strong>149 DH</strong>
+          <strong>
+            149 DH
+          </strong>
 
           <a
             href="product.html?product=collier-perla"
@@ -586,27 +1191,43 @@
       </article>
 
 
-      <article class="product-card" data-category="bracelet">
+      <!-- 06 -->
+      <article
+        class="product-card"
+        data-category="bracelet"
+      >
 
         <a
           href="product.html?product=bracelet-elegance"
           class="product-card-image"
         >
-          <span class="product-number">06</span>
+
+          <span class="product-number">
+            06
+          </span>
 
           <img
             src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg"
             alt="Bracelet Élégance"
+            loading="lazy"
           >
+
         </a>
+
 
         <div class="product-card-info">
 
-          <span>Bracelet</span>
+          <span>
+            Bracelet
+          </span>
 
-          <h3>Bracelet Élégance</h3>
+          <h3>
+            Bracelet Élégance
+          </h3>
 
-          <strong>149 DH</strong>
+          <strong>
+            149 DH
+          </strong>
 
           <a
             href="product.html?product=bracelet-elegance"
@@ -620,27 +1241,43 @@
       </article>
 
 
-      <article class="product-card" data-category="ring">
+      <!-- 07 -->
+      <article
+        class="product-card"
+        data-category="ring"
+      >
 
         <a
           href="product.html?product=bague-royale"
           class="product-card-image"
         >
-          <span class="product-number">07</span>
+
+          <span class="product-number">
+            07
+          </span>
 
           <img
             src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg"
             alt="Bague Royale"
+            loading="lazy"
           >
+
         </a>
+
 
         <div class="product-card-info">
 
-          <span>Bague</span>
+          <span>
+            Bague
+          </span>
 
-          <h3>Bague Royale</h3>
+          <h3>
+            Bague Royale
+          </h3>
 
-          <strong>149 DH</strong>
+          <strong>
+            149 DH
+          </strong>
 
           <a
             href="product.html?product=bague-royale"
@@ -663,7 +1300,9 @@
 
     <div class="brand-message-inner">
 
-      <span>LA SIGNATURE ZOREVA</span>
+      <span>
+        LA SIGNATURE ZOREVA
+      </span>
 
       <h2>
         Des bijoux simples.<br>
@@ -700,33 +1339,60 @@
 
     </div>
 
+
     <div class="why-grid">
 
       <div class="why-card">
-        <span>01</span>
-        <h3>Style raffiné</h3>
+
+        <span>
+          01
+        </span>
+
+        <h3>
+          Style raffiné
+        </h3>
+
         <p>
           Des designs élégants qui s'intègrent
           facilement à votre style.
         </p>
+
       </div>
 
+
       <div class="why-card">
-        <span>02</span>
-        <h3>Commande directe</h3>
+
+        <span>
+          02
+        </span>
+
+        <h3>
+          Commande directe
+        </h3>
+
         <p>
           Une commande simple et rapide
           directement via WhatsApp.
         </p>
+
       </div>
 
+
       <div class="why-card">
-        <span>03</span>
-        <h3>À votre écoute</h3>
+
+        <span>
+          03
+        </span>
+
+        <h3>
+          À votre écoute
+        </h3>
+
         <p>
           Une communication directe pour répondre
           à vos questions avant votre commande.
         </p>
+
       </div>
 
     </div>
@@ -735,7 +1401,10 @@
 
 
   <!-- ABOUT -->
-  <section class="about section" id="about">
+  <section
+    class="about section"
+    id="about"
+  >
 
     <div class="about-content">
 
@@ -758,7 +1427,10 @@
         avec une approche accessible et moderne.
       </p>
 
-      <a href="#products" class="about-link">
+      <a
+        href="#products"
+        class="about-link"
+      >
         Découvrir les bijoux →
       </a>
 
@@ -768,7 +1440,10 @@
 
 
   <!-- CONTACT -->
-  <section class="contact section" id="contact">
+  <section
+    class="contact section"
+    id="contact"
+  >
 
     <div class="contact-inner">
 
@@ -806,10 +1481,23 @@
 
       <div class="footer-brand">
 
-        <a href="index.html" class="logo">
-          <strong>ZOREVA</strong>
-          <span>JEWELRY</span>
+        <a
+          href="index.html"
+          class="logo"
+        >
+
+          <img
+            src="logo.svg"
+            alt="ZOREVA Jewelry"
+          >
+
+          <div>
+            <strong>ZOREVA</strong>
+            <span>JEWELRY</span>
+          </div>
+
         </a>
+
 
         <p>
           L'élégance, simplement.
@@ -820,29 +1508,53 @@
 
       <div class="footer-column">
 
-        <h4>Navigation</h4>
+        <h4>
+          Navigation
+        </h4>
 
-        <a href="#home">Accueil</a>
-        <a href="#collections">Collections</a>
-        <a href="#products">Bijoux</a>
-        <a href="#about">À propos</a>
+        <a href="#home">
+          Accueil
+        </a>
+
+        <a href="#collections">
+          Collections
+        </a>
+
+        <a href="#products">
+          Bijoux
+        </a>
+
+        <a href="#about">
+          À propos
+        </a>
 
       </div>
 
 
       <div class="footer-column">
 
-        <h4>Collections</h4>
+        <h4>
+          Collections
+        </h4>
 
-        <a href="#products" onclick="filterProducts('ring')">
+        <a
+          href="#products"
+          onclick="filterProducts('ring')"
+        >
           Bagues
         </a>
 
-        <a href="#products" onclick="filterProducts('bracelet')">
+        <a
+          href="#products"
+          onclick="filterProducts('bracelet')"
+        >
           Bracelets
         </a>
 
-        <a href="#products" onclick="filterProducts('necklace')">
+        <a
+          href="#products"
+          onclick="filterProducts('necklace')"
+        >
           Colliers
         </a>
 
@@ -851,7 +1563,9 @@
 
       <div class="footer-column">
 
-        <h4>Contact</h4>
+        <h4>
+          Contact
+        </h4>
 
         <a
           href="https://wa.me/212765333754"
@@ -886,7 +1600,10 @@
 
 
   <!-- CART -->
-  <aside class="cart-panel" id="cartPanel">
+  <aside
+    class="cart-panel"
+    id="cartPanel"
+  >
 
     <div class="cart-header">
 
@@ -915,13 +1632,16 @@
 
       <div class="cart-total">
 
-        <span>Total</span>
+        <span>
+          Total
+        </span>
 
         <strong id="cartTotal">
           0 DH
         </strong>
 
       </div>
+
 
       <button
         type="button"
@@ -957,6 +1677,10 @@
       ) || [];
 
 
+    /* ==================================================
+       SAVE CART
+    ================================================== */
+
     function saveCart() {
 
       localStorage.setItem(
@@ -966,6 +1690,10 @@
 
     }
 
+
+    /* ==================================================
+       UPDATE CART
+    ================================================== */
 
     function updateCart() {
 
@@ -995,12 +1723,19 @@
         );
 
 
-      countElement.textContent =
-        totalQuantity;
+      if (countElement) {
+        countElement.textContent =
+          totalQuantity;
+      }
 
 
-      totalElement.textContent =
-        `${totalPrice} DH`;
+      if (totalElement) {
+        totalElement.textContent =
+          `${totalPrice} DH`;
+      }
+
+
+      if (!itemsElement) return;
 
 
       if (cart.length === 0) {
@@ -1025,6 +1760,7 @@
         `;
 
         return;
+
       }
 
 
@@ -1089,6 +1825,10 @@
     }
 
 
+    /* ==================================================
+       CHANGE QUANTITY
+    ================================================== */
+
     function changeQuantity(
       productId,
       change
@@ -1124,6 +1864,10 @@
     }
 
 
+    /* ==================================================
+       REMOVE
+    ================================================== */
+
     function removeFromCart(productId) {
 
       cart =
@@ -1132,11 +1876,16 @@
             item.id !== productId
         );
 
+
       saveCart();
       updateCart();
 
     }
 
+
+    /* ==================================================
+       OPEN CART
+    ================================================== */
 
     function openCart() {
 
@@ -1144,16 +1893,25 @@
         .getElementById("cartPanel")
         .classList.add("active");
 
+
       document
         .getElementById("cartOverlay")
         .classList.add("active");
 
-      updateCart();
 
-      document.body.classList.add("cart-open");
+      document.body.classList.add(
+        "cart-open"
+      );
+
+
+      updateCart();
 
     }
 
+
+    /* ==================================================
+       CLOSE CART
+    ================================================== */
 
     function closeCart() {
 
@@ -1161,14 +1919,22 @@
         .getElementById("cartPanel")
         .classList.remove("active");
 
+
       document
         .getElementById("cartOverlay")
         .classList.remove("active");
 
-      document.body.classList.remove("cart-open");
+
+      document.body.classList.remove(
+        "cart-open"
+      );
 
     }
 
+
+    /* ==================================================
+       WHATSAPP ORDER
+    ================================================== */
 
     function sendCartToWhatsApp() {
 
@@ -1185,6 +1951,7 @@
 
       let message =
         "Bonjour ZOREVA Jewelry,%0A%0A";
+
 
       message +=
         "Je souhaite commander :%0A%0A";
@@ -1211,6 +1978,7 @@
       message +=
         `%0ATotal : ${total} DH%0A%0A`;
 
+
       message +=
         "Merci.";
 
@@ -1223,12 +1991,17 @@
     }
 
 
+    /* ==================================================
+       FILTER PRODUCTS
+    ================================================== */
+
     function filterProducts(category) {
 
       const products =
         document.querySelectorAll(
           ".product-card"
         );
+
 
       const buttons =
         document.querySelectorAll(
@@ -1238,21 +2011,27 @@
 
       buttons.forEach(
         button =>
-          button.classList.remove("active")
+          button.classList.remove(
+            "active"
+          )
       );
 
 
       const clickedButton =
         [...buttons].find(
           button =>
-            button.getAttribute("onclick") ===
+            button.getAttribute(
+              "onclick"
+            ) ===
             `filterProducts('${category}')`
         );
 
 
       if (clickedButton) {
 
-        clickedButton.classList.add("active");
+        clickedButton.classList.add(
+          "active"
+        );
 
       }
 
@@ -1281,14 +2060,46 @@
       );
 
 
-      document
-        .getElementById("products")
-        .scrollIntoView({
+      const productsSection =
+        document.getElementById(
+          "products"
+        );
+
+
+      if (productsSection) {
+
+        productsSection.scrollIntoView({
           behavior: "smooth"
         });
 
+      }
+
     }
 
+
+    /* ==================================================
+       ESC = CLOSE CART
+    ================================================== */
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          closeCart();
+
+        }
+
+      }
+    );
+
+
+    /* ==================================================
+       INIT
+    ================================================== */
 
     updateCart();
 
