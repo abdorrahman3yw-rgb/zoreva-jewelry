@@ -2844,3 +2844,177 @@ button {
   }
 
 }
+
+/* =========================
+   ZOREVA LOGO
+========================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo > div {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo strong {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.logo span {
+  margin-top: 7px;
+  color: var(--gold);
+  font-size: 8px;
+  letter-spacing: 4px;
+}
+
+/* =========================
+   OPENING ANIMATION
+========================= */
+
+.hero-content > * {
+  opacity: 0;
+  transform: translateY(35px);
+  animation: zorevaHero .8s ease forwards;
+}
+
+.hero-content .hero-eyebrow {
+  animation-delay: .15s;
+}
+
+.hero-content h1 {
+  animation-delay: .3s;
+}
+
+.hero-content p {
+  animation-delay: .45s;
+}
+
+.hero-content .hero-buttons {
+  animation-delay: .6s;
+}
+
+.hero-scroll {
+  opacity: 0;
+  animation: zorevaFade 1s ease 1s forwards;
+}
+
+@keyframes zorevaHero {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zorevaFade {
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   PRODUCTS REVEAL
+========================= */
+
+.product-card,
+.best-seller-card {
+  opacity: 0;
+  transform: translateX(55px);
+  transition:
+    opacity .8s ease,
+    transform .8s ease,
+    box-shadow .35s ease;
+}
+
+.product-card.show,
+.best-seller-card.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* الصور كبار وواضحين بلا cropping */
+
+.product-card-image {
+  height: 350px;
+}
+
+.product-card-image img {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  object-fit: contain;
+}
+
+.product-image-link {
+  height: 470px;
+}
+
+.product-image-link img {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  object-fit: contain;
+}
+
+/* دخول الصور من الجنب */
+
+.product-card-image img,
+.product-image-link img {
+  transition:
+    transform .7s ease,
+    opacity .7s ease;
+}
+
+.product-card.show .product-card-image img,
+.best-seller-card.show .product-image-link img {
+  transform: translateX(0) scale(1);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .logo img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logo strong {
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+
+  .logo span {
+    font-size: 7px;
+    letter-spacing: 3px;
+  }
+
+  .product-card-image {
+    height: 300px;
+  }
+
+  .product-image-link {
+    height: 400px;
+  }
+
+  .product-card-image img,
+  .product-image-link img {
+    padding: 8px;
+  }
+}
