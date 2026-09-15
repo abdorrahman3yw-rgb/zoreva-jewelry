@@ -1,7 +1,4 @@
-/* ================================
-   ZOREVA JEWELRY - STYLE
-================================ */
-
+```css
 * {
   margin: 0;
   padding: 0;
@@ -14,8 +11,8 @@ html {
 
 body {
   font-family: Arial, "Segoe UI", sans-serif;
-  background: #070a08;
-  color: #f5f5f5;
+  background: #ffffff;
+  color: #111111;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -35,16 +32,16 @@ img {
   display: block;
 }
 
-/* ================================
+/* =========================
    HEADER
-================================ */
+========================= */
 
 header {
   width: 100%;
   min-height: 75px;
   padding: 15px 6%;
-  background: #080c0a;
-  border-bottom: 1px solid rgba(52, 211, 153, 0.15);
+  background: #ffffff;
+  border-bottom: 1px solid #e7dfcf;
 
   display: flex;
   align-items: center;
@@ -57,7 +54,7 @@ header {
 }
 
 .logo {
-  color: #34d399;
+  color: #111111;
   font-size: 25px;
   font-weight: 800;
   letter-spacing: 2px;
@@ -72,28 +69,28 @@ nav {
 }
 
 nav a {
-  color: #ddd;
+  color: #222222;
   font-size: 15px;
   transition: 0.2s;
 }
 
 nav a:hover {
-  color: #34d399;
+  color: #b08a3c;
 }
 
 .cart-button {
-  border: 1px solid #34d399;
-  background: transparent;
-  color: #fff;
-  border-radius: 10px;
+  border: 1px solid #b08a3c;
+  background: #ffffff;
+  color: #111111;
+  border-radius: 8px;
   padding: 9px 14px;
   font-size: 14px;
   white-space: nowrap;
 }
 
 .cart-button:hover {
-  background: #34d399;
-  color: #06100b;
+  background: #b08a3c;
+  color: #ffffff;
 }
 
 #cartCount {
@@ -108,15 +105,16 @@ nav a:hover {
   padding: 0 5px;
 
   border-radius: 50%;
-  background: #34d399;
-  color: #06100b;
+  background: #111111;
+  color: #ffffff;
+
   font-size: 12px;
   font-weight: bold;
 }
 
-/* ================================
+/* =========================
    HERO
-================================ */
+========================= */
 
 .hero {
   min-height: 560px;
@@ -128,7 +126,7 @@ nav a:hover {
 
   text-align: center;
 
-  background: #070a08;
+  background: #ffffff;
 }
 
 .hero > div {
@@ -137,24 +135,25 @@ nav a:hover {
 }
 
 .hero .small {
-  color: #34d399;
+  color: #b08a3c;
   font-size: 13px;
   letter-spacing: 3px;
   margin-bottom: 15px;
 }
 
 .hero h1 {
+  color: #111111;
   font-size: clamp(40px, 7vw, 72px);
   line-height: 1.15;
   margin-bottom: 20px;
 }
 
 .hero h1 span {
-  color: #34d399;
+  color: #b08a3c;
 }
 
 .hero p:not(.small) {
-  color: #b8b8b8;
+  color: #666666;
   font-size: 17px;
   margin-bottom: 30px;
 }
@@ -164,46 +163,48 @@ nav a:hover {
   align-items: center;
   justify-content: center;
 
-  background: #34d399;
-  color: #06100b;
+  background: #111111;
+  color: #ffffff;
 
   padding: 13px 25px;
-  border-radius: 10px;
+  border-radius: 8px;
 
   font-weight: 700;
   transition: 0.2s;
 }
 
 .btn:hover {
+  background: #b08a3c;
   transform: translateY(-2px);
 }
 
-/* ================================
+/* =========================
    PRODUCTS
-================================ */
+========================= */
 
 .products {
   padding: 80px 6%;
-  background: #0a0e0c;
+  background: #faf9f6;
 }
 
 .products h2,
 .about h2,
 .contact h2 {
   text-align: center;
+  color: #111111;
   font-size: 34px;
   margin-bottom: 8px;
 }
 
 .subtitle {
   text-align: center;
-  color: #999;
+  color: #777777;
   margin-bottom: 30px;
 }
 
-/* ================================
+/* =========================
    CATEGORIES
-================================ */
+========================= */
 
 .categories {
   width: 100%;
@@ -218,9 +219,9 @@ nav a:hover {
 }
 
 .categories button {
-  border: 1px solid #244d3c;
-  background: #0d1511;
-  color: #ddd;
+  border: 1px solid #d2b878;
+  background: #ffffff;
+  color: #222222;
 
   padding: 10px 20px;
   min-width: 90px;
@@ -233,14 +234,14 @@ nav a:hover {
 
 .categories button:hover,
 .categories button:focus {
-  background: #34d399;
-  border-color: #34d399;
-  color: #06100b;
+  background: #b08a3c;
+  border-color: #b08a3c;
+  color: #ffffff;
 }
 
-/* ================================
+/* =========================
    PRODUCT GRID
-================================ */
+========================= */
 
 .product-grid {
   width: 100%;
@@ -255,9 +256,9 @@ nav a:hover {
 .product {
   min-width: 0;
 
-  background: #0e1411;
-  border: 1px solid #1b2922;
-  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #e5dfd2;
+  border-radius: 12px;
 
   padding: 12px;
 
@@ -265,12 +266,13 @@ nav a:hover {
 
   overflow: hidden;
 
-  transition: transform 0.2s, border-color 0.2s;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
 .product:hover {
   transform: translateY(-4px);
-  border-color: #34d399;
+  border-color: #b08a3c;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 .product img {
@@ -279,20 +281,20 @@ nav a:hover {
 
   object-fit: cover;
 
-  border-radius: 10px;
+  border-radius: 9px;
   margin-bottom: 12px;
 
-  background: #111;
+  background: #f4f2ed;
 }
 
 .product h3 {
-  color: #fff;
+  color: #111111;
   font-size: 17px;
   margin-bottom: 5px;
 }
 
 .product > p {
-  color: #34d399;
+  color: #b08a3c;
   font-weight: 700;
   margin-bottom: 12px;
 }
@@ -305,8 +307,8 @@ nav a:hover {
 
   padding: 10px;
 
-  background: #34d399;
-  color: #06100b;
+  background: #111111;
+  color: #ffffff;
 
   font-weight: 700;
 
@@ -316,7 +318,7 @@ nav a:hover {
 }
 
 .add-cart:hover {
-  opacity: 0.85;
+  background: #b08a3c;
 }
 
 .whatsapp {
@@ -325,84 +327,85 @@ nav a:hover {
 
   padding: 9px;
 
-  border: 1px solid #244d3c;
+  border: 1px solid #d2b878;
   border-radius: 8px;
 
-  color: #b9e8d2;
+  color: #8c6a25;
   font-size: 13px;
 
   transition: 0.2s;
 }
 
 .whatsapp:hover {
-  background: #10261b;
-  border-color: #34d399;
+  background: #faf6ea;
+  border-color: #b08a3c;
 }
 
-/* ================================
+/* =========================
    ABOUT
-================================ */
+========================= */
 
 .about {
   padding: 80px 7%;
   text-align: center;
-  background: #070a08;
+  background: #ffffff;
 }
 
 .about p {
   max-width: 700px;
   margin: 20px auto 0;
 
-  color: #aaa;
+  color: #666666;
   font-size: 16px;
 }
 
-/* ================================
+/* =========================
    CONTACT
-================================ */
+========================= */
 
 .contact {
   padding: 80px 7%;
   text-align: center;
-  background: #0a0e0c;
+  background: #faf9f6;
 }
 
 .contact p {
-  color: #aaa;
+  color: #666666;
   margin: 20px 0 25px;
 }
 
-/* ================================
+/* =========================
    FOOTER
-================================ */
+========================= */
 
 footer {
   padding: 30px 6%;
 
-  background: #050705;
-  border-top: 1px solid #17221c;
+  background: #111111;
+  color: #ffffff;
 
   text-align: center;
 }
 
 footer .logo {
+  color: #d2b878;
   margin-bottom: 10px;
 }
 
 footer p {
-  color: #777;
+  color: #bbbbbb;
   font-size: 13px;
 }
 
-/* ================================
+/* =========================
    PRODUCT MODAL
-================================ */
+========================= */
 
 .product-modal {
   position: fixed;
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.78);
+  background: rgba(0, 0, 0, 0.7);
 
   display: none;
   align-items: center;
@@ -424,9 +427,9 @@ footer p {
 
   overflow-y: auto;
 
-  background: #0d130f;
-  border: 1px solid #244d3c;
-  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #d2b878;
+  border-radius: 14px;
 
   padding: 20px;
 
@@ -448,8 +451,8 @@ footer p {
   border: none;
   border-radius: 50%;
 
-  background: #1b2720;
-  color: #fff;
+  background: #111111;
+  color: #ffffff;
 
   font-size: 25px;
   z-index: 2;
@@ -459,7 +462,7 @@ footer p {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 .modal-info {
@@ -469,26 +472,27 @@ footer p {
 }
 
 .modal-brand {
-  color: #34d399;
+  color: #b08a3c;
   font-size: 12px;
   letter-spacing: 2px;
   margin-bottom: 10px;
 }
 
 .modal-info h2 {
+  color: #111111;
   font-size: 30px;
   margin-bottom: 10px;
 }
 
 .modal-price {
-  color: #34d399;
+  color: #b08a3c;
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 15px;
 }
 
 .modal-description {
-  color: #aaa;
+  color: #666666;
   margin-bottom: 20px;
 }
 
@@ -500,21 +504,21 @@ footer p {
 
   padding: 11px;
 
-  border: 1px solid #34d399;
+  border: 1px solid #b08a3c;
   border-radius: 8px;
 
-  color: #34d399;
+  color: #8c6a25;
 }
 
-/* ================================
+/* =========================
    CART
-================================ */
+========================= */
 
 .cart-overlay {
   position: fixed;
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.6);
 
   opacity: 0;
   visibility: hidden;
@@ -537,9 +541,9 @@ footer p {
   width: min(420px, 92vw);
   height: 100vh;
 
-  background: #0b110e;
+  background: #ffffff;
 
-  border-left: 1px solid #244d3c;
+  border-left: 1px solid #d2b878;
 
   padding: 25px;
 
@@ -558,7 +562,7 @@ footer p {
 .close-cart {
   border: none;
   background: transparent;
-  color: #fff;
+  color: #111111;
 
   font-size: 30px;
 
@@ -568,6 +572,7 @@ footer p {
 }
 
 .cart-panel h2 {
+  color: #111111;
   margin: 30px 0 20px;
 }
 
@@ -578,15 +583,16 @@ footer p {
 
   padding: 15px 0;
 
-  border-bottom: 1px solid #1b2922;
+  border-bottom: 1px solid #e5dfd2;
 }
 
 .cart-item h3 {
+  color: #111111;
   font-size: 15px;
 }
 
 .cart-item p {
-  color: #34d399;
+  color: #b08a3c;
   font-size: 13px;
 }
 
@@ -600,9 +606,9 @@ footer p {
   width: 28px;
   height: 28px;
 
-  border: 1px solid #244d3c;
-  background: #101a14;
-  color: #fff;
+  border: 1px solid #d2b878;
+  background: #ffffff;
+  color: #111111;
 
   border-radius: 6px;
 }
@@ -617,13 +623,13 @@ footer p {
 
   border: none;
   background: transparent;
-  color: #e77;
+  color: #a33;
 
   text-align: right;
 }
 
 .empty-cart {
-  color: #888;
+  color: #888888;
   text-align: center;
   padding: 30px 0;
 }
@@ -638,7 +644,7 @@ footer p {
 }
 
 .cart-total strong {
-  color: #34d399;
+  color: #b08a3c;
 }
 
 .checkout-btn {
@@ -649,15 +655,19 @@ footer p {
 
   padding: 13px;
 
-  background: #34d399;
-  color: #06100b;
+  background: #111111;
+  color: #ffffff;
 
   font-weight: 700;
 }
 
-/* ================================
+.checkout-btn:hover {
+  background: #b08a3c;
+}
+
+/* =========================
    FLOATING WHATSAPP
-================================ */
+========================= */
 
 .floating-whatsapp {
   position: fixed;
@@ -665,8 +675,8 @@ footer p {
   bottom: 20px;
   left: 20px;
 
-  background: #34d399;
-  color: #06100b;
+  background: #111111;
+  color: #ffffff;
 
   padding: 11px 15px;
 
@@ -678,9 +688,13 @@ footer p {
   z-index: 1500;
 }
 
-/* ================================
+.floating-whatsapp:hover {
+  background: #b08a3c;
+}
+
+/* =========================
    TABLET
-================================ */
+========================= */
 
 @media (max-width: 900px) {
 
@@ -698,9 +712,9 @@ footer p {
 
 }
 
-/* ================================
+/* =========================
    MOBILE
-================================ */
+========================= */
 
 @media (max-width: 600px) {
 
@@ -747,7 +761,6 @@ footer p {
     padding: 8px 10px;
   }
 
-
   .hero {
     min-height: 470px;
     padding: 60px 20px;
@@ -761,7 +774,6 @@ footer p {
     font-size: 15px;
   }
 
-
   .products {
     padding: 55px 15px;
   }
@@ -772,8 +784,7 @@ footer p {
     font-size: 28px;
   }
 
-
-  /* التصنيفات في الهاتف */
+  /* التصنيفات */
   .categories {
     width: 100%;
     max-width: 360px;
@@ -799,8 +810,7 @@ footer p {
     border-radius: 8px;
   }
 
-
-  /* المنتجات في الهاتف */
+  /* المنتجات */
   .product-grid {
     width: 100%;
 
@@ -851,8 +861,7 @@ footer p {
     white-space: nowrap;
   }
 
-
-  /* Modal الهاتف */
+  /* Modal */
   .modal-content {
     grid-template-columns: 1fr;
 
@@ -872,13 +881,11 @@ footer p {
     font-size: 24px;
   }
 
-
   /* السلة */
   .cart-panel {
     width: 92vw;
     padding: 20px;
   }
-
 
   .floating-whatsapp {
     bottom: 15px;
@@ -888,13 +895,11 @@ footer p {
 
     font-size: 12px;
   }
-
 }
 
-
-/* ================================
+/* =========================
    SMALL PHONES
-================================ */
+========================= */
 
 @media (max-width: 380px) {
 
@@ -948,5 +953,5 @@ footer p {
   .whatsapp {
     font-size: 10px;
   }
-
 }
+```
