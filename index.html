@@ -1,612 +1,1362 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+/* =========================================================
+   ZOREVA JEWELRY — LUXURY PREMIUM
+   White / Black / Soft Gold
+========================================================= */
+
+:root {
+  --black: #111111;
+  --dark: #080808;
+  --gold: #b18a45;
+  --gold-light: #d5bd8b;
+  --cream: #f8f6f1;
+  --white: #ffffff;
+  --text: #202020;
+  --muted: #777777;
+  --border: #e8e1d5;
+  --green: #1d6b45;
+  --shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body,
+button,
+a {
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+  width: 100%;
+  height: 78px;
+  padding: 0 5%;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid rgba(177, 138, 69, 0.18);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Logo */
+
+.logo {
+  color: var(--black);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 5px;
+  white-space: nowrap;
+}
+
+header .logo {
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+header .logo:hover {
+  color: var(--gold);
+}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* Navigation */
 
-  <meta name="description" content="Zoreva Jewelry - مجوهرات أنيقة وعصرية بتصاميم تناسب كل إطلالة.">
-  <meta name="theme-color" content="#070a08">
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
 
-  <title>Zoreva Jewelry</title>
+nav a {
+  position: relative;
 
-  <link rel="stylesheet" href="style.css">
-</head>
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
 
-<body>
+  padding: 5px 0;
 
-  <header>
-    <div class="logo">ZOREVA</div>
+  transition: 0.25s ease;
+}
 
-    <nav>
-      <a href="#home">الرئيسية</a>
-      <a href="#products">المنتجات</a>
-      <a href="#about">من نحن</a>
-      <a href="#contact">تواصل معنا</a>
-    </nav>
+nav a::after {
+  content: "";
 
-    <button class="cart-button" type="button" onclick="openCart()">
-      السلة
-      <span id="cartCount">0</span>
-    </button>
-  </header>
+  position: absolute;
+  right: 0;
+  bottom: 0;
 
-  <section class="hero" id="home">
-    <div>
-      <p class="small">ZOREVA JEWELRY</p>
+  width: 0;
+  height: 1px;
 
-      <h1>
-        أناقتك تبدأ من<br>
-        <span>تفاصيلك</span>
-      </h1>
+  background: var(--gold);
 
-      <p>مجوهرات أنيقة وعصرية بتصاميم تناسب كل إطلالة.</p>
+  transition: width 0.25s ease;
+}
 
-      <a href="#products" class="btn">تصفح المجموعة</a>
-    </div>
-  </section>
+nav a:hover {
+  color: var(--gold);
+}
 
-  <section class="products" id="products">
+nav a:hover::after {
+  width: 100%;
+}
 
-    <h2>منتجاتنا</h2>
+/* Cart */
 
-    <p class="subtitle">اختر القطعة التي تناسب أناقتك</p>
+.cart-button {
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--black);
 
-    <div class="categories">
-      <button type="button" onclick="filterProducts('all')">الكل</button>
-      <button type="button" onclick="filterProducts('ring')">خواتم</button>
-      <button type="button" onclick="filterProducts('bracelet')">أساور</button>
-      <button type="button" onclick="filterProducts('necklace')">قلادات</button>
-    </div>
+  min-width: 82px;
+  padding: 9px 14px;
 
-    <div class="product-grid">
+  border-radius: 0;
 
-      <div class="product" data-category="necklace"
-        onclick="openProduct('Collier Éclat',119,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg')">
+  font-size: 13px;
+  font-weight: 600;
 
-        <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg"
-          alt="Collier Éclat" loading="lazy">
+  transition: 0.25s ease;
+}
 
-        <h3>Collier Éclat</h3>
-        <p>119 DH</p>
+.cart-button:hover {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
 
-        <button type="button" class="add-cart"
-          onclick="event.stopPropagation(); addToCart('Collier Éclat',119)">
-          أضف للسلة
-        </button>
+#cartCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-        <a class="whatsapp"
-          href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Collier%20Éclat"
-          target="_blank" rel="noopener"
-          onclick="event.stopPropagation()">
-          طلب عبر WhatsApp
-        </a>
-      </div>
+  min-width: 21px;
+  height: 21px;
 
+  margin-right: 5px;
 
-      <div class="product" data-category="ring"
-        onclick="openProduct('Bague Élégance',119,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg')">
+  border-radius: 50%;
 
-        <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg"
-          alt="Bague Élégance" loading="lazy">
+  background: var(--gold);
+  color: var(--white);
 
-        <h3>Bague Élégance</h3>
-        <p>119 DH</p>
+  font-size: 11px;
+  font-weight: 700;
+}
 
-        <button type="button" class="add-cart"
-          onclick="event.stopPropagation(); addToCart('Bague Élégance',119)">
-          أضف للسلة
-        </button>
+/* =========================================================
+   HERO
+========================================================= */
 
-        <a class="whatsapp"
-          href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Bague%20Élégance"
-          target="_blank" rel="noopener"
-          onclick="event.stopPropagation()">
-          طلب عبر WhatsApp
-        </a>
-      </div>
+.hero {
+  position: relative;
 
+  min-height: 620px;
 
-      <div class="product" data-category="bracelet"
-        onclick="openProduct('Bracelet Luna',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg')">
+  padding: 80px 7%;
 
-        <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg"
-          alt="Bracelet Luna" loading="lazy">
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-        <h3>Bracelet Luna</h3>
-        <p>149 DH</p>
+  text-align: center;
 
-        <button type="button" class="add-cart"
-          onclick="event.stopPropagation(); addToCart('Bracelet Luna',149)">
-          أضف للسلة
-        </button>
-
-        <a class="whatsapp"
-          href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Bracelet%20Luna"
-          target="_blank" rel="noopener"
-          onclick="event.stopPropagation()">
-          طلب عبر WhatsApp
-        </a>
-      </div>
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.88),
+      rgba(255, 255, 255, 0.88)
+    ),
+    url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1800&q=85")
+    center / cover no-repeat;
 
+  border-bottom: 1px solid var(--border);
+}
 
-      <div class="product" data-category="ring"
-        onclick="openProduct('Bague Signature',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_175331.jpg')">
+.hero::before {
+  content: "";
 
-        <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_175331.jpg"
-          alt="Bague Signature" loading="lazy">
+  position: absolute;
+  inset: 25px;
 
-        <h3>Bague Signature</h3>
-        <p>149 DH</p>
+  border: 1px solid rgba(177, 138, 69, 0.25);
 
-        <button type="button" class="add-cart"
-          onclick="event.stopPropagation(); addToCart('Bague Signature',149)">
-          أضف للسلة
-        </button>
+  pointer-events: none;
+}
 
-        <a class="whatsapp"
-          href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Bague%20Signature"
-          target="_blank" rel="noopener"
-          onclick="event.stopPropagation()">
-          طلب عبر WhatsApp
-        </a>
-      </div>
+.hero > div {
+  position: relative;
+  z-index: 1;
 
+  width: 100%;
+  max-width: 780px;
+}
 
-      <div class="product" data-category="necklace"
-        onclick="openProduct('Collier Perla',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg')">
+.hero .small {
+  color: var(--gold);
 
-        <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"
-          alt="Collier Perla" loading="lazy">
+  font-size: 12px;
+  font-weight: 700;
 
-        <h3>Collier Perla</h3>
-        <p>149 DH</p>
+  letter-spacing: 5px;
 
-        <button type="button" class="add-cart"
-          onclick="event.stopPropagation(); addToCart('Collier Perla',149)">
-          أضف للسلة
-        </button>
+  margin-bottom: 18px;
+}
 
-        <a class="whatsapp"
-          href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Collier%20Perla"
-          target="_blank" rel="noopener"
-          onclick="event.stopPropagation()">
-          طلب عبر WhatsApp
-        </a>
-      </div>
+.hero h1 {
+  color: var(--black);
 
+  font-family: Georgia, "Times New Roman", serif;
 
-      <div class="product" data-category="bracelet"
-        onclick="openProduct('Bracelet Élégance',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg')">
+  font-size: clamp(48px, 7vw, 82px);
 
-        <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg"
-          alt="Bracelet Élégance" loading="lazy">
+  font-weight: 500;
 
-        <h3>Bracelet Élégance</h3>
-        <p>149 DH</p>
+  line-height: 1.05;
 
-        <button type="button" class="add-cart"
-          onclick="event.stopPropagation(); addToCart('Bracelet Élégance',149)">
-          أضف للسلة
-        </button>
+  letter-spacing: -2px;
 
-        <a class="whatsapp"
-          href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Bracelet%20Élégance"
-          target="_blank" rel="noopener"
-          onclick="event.stopPropagation()">
-          طلب عبر WhatsApp
-        </a>
-      </div>
+  margin-bottom: 24px;
+}
 
+.hero h1 span {
+  color: var(--gold);
+}
 
-      <div class="product" data-category="ring"
-        onclick="openProduct('Bague Royale',149,'https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg')">
+.hero p:not(.small) {
+  max-width: 560px;
 
-        <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg"
-          alt="Bague Royale" loading="lazy">
+  margin: 0 auto 32px;
 
-        <h3>Bague Royale</h3>
-        <p>149 DH</p>
+  color: #666;
 
-        <button type="button" class="add-cart"
-          onclick="event.stopPropagation(); addToCart('Bague Royale',149)">
-          أضف للسلة
-        </button>
+  font-size: 16px;
+}
 
-        <a class="whatsapp"
-          href="https://wa.me/212765333754?text=سلام،%20بغيت%20نطلب%20Bague%20Royale"
-          target="_blank" rel="noopener"
-          onclick="event.stopPropagation()">
-          طلب عبر WhatsApp
-        </a>
-      </div>
+/* Main button */
 
-    </div>
-  </section>
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
+  min-width: 185px;
 
-  <section class="about" id="about">
-    <h2>عن Zoreva</h2>
+  padding: 13px 28px;
 
-    <p>
-      Zoreva Jewelry علامة مغربية تهتم بتقديم مجوهرات أنيقة
-      وعصرية بتصاميم مناسبة لكل إطلالة.
-    </p>
-  </section>
+  background: var(--black);
+  color: var(--white);
 
+  border: 1px solid var(--black);
 
-  <section class="contact" id="contact">
-    <h2>تواصل معنا</h2>
+  border-radius: 0;
 
-    <p>
-      للطلب والاستفسار تواصل معنا مباشرة عبر WhatsApp.
-    </p>
+  font-size: 13px;
+  font-weight: 700;
 
-    <a class="btn"
-      href="https://wa.me/212765333754"
-      target="_blank" rel="noopener">
-      WhatsApp
-    </a>
-  </section>
+  letter-spacing: 0.5px;
 
+  transition: 0.25s ease;
+}
 
-  <footer>
-    <div class="logo">ZOREVA</div>
+.btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
 
-    <p>© 2026 Zoreva Jewelry — جميع الحقوق محفوظة</p>
-  </footer>
+  transform: translateY(-2px);
+}
 
+/* =========================================================
+   PRODUCTS SECTION
+========================================================= */
 
-  <div class="product-modal" id="productModal" aria-hidden="true">
+.products {
+  padding: 100px 5%;
 
-    <div class="modal-content">
+  background: var(--white);
+}
 
-      <button class="close-modal"
-        type="button"
-        onclick="closeProduct()"
-        aria-label="إغلاق">
-        ×
-      </button>
+.products h2,
+.about h2,
+.contact h2 {
+  color: var(--black);
 
-      <img id="modalImage" src="" alt="Zoreva Product">
+  font-family: Georgia, "Times New Roman", serif;
 
-      <div class="modal-info">
+  font-size: clamp(30px, 4vw, 42px);
 
-        <p class="modal-brand">ZOREVA JEWELRY</p>
+  font-weight: 500;
 
-        <h2 id="modalName"></h2>
+  text-align: center;
 
-        <p class="modal-price" id="modalPrice"></p>
+  margin-bottom: 8px;
+}
 
-        <p class="modal-description">
-          تصميم أنيق وعصري من مجموعة Zoreva Jewelry.
-        </p>
+.subtitle {
+  text-align: center;
 
-        <button type="button"
-          class="add-cart modal-add"
-          onclick="addModalProduct()">
-          أضف للسلة
-        </button>
+  color: var(--muted);
 
-        <a id="modalWhatsapp"
-          class="modal-order"
-          href=""
-          target="_blank"
-          rel="noopener">
-          اطلب الآن عبر WhatsApp
-        </a>
+  font-size: 14px;
 
-      </div>
-    </div>
-  </div>
+  margin-bottom: 38px;
+}
 
+/* =========================================================
+   CATEGORIES
+========================================================= */
 
-  <div class="cart-overlay"
-    id="cartOverlay"
-    onclick="closeCart()">
-  </div>
+.categories {
+  width: 100%;
+  max-width: 700px;
 
+  margin: 0 auto 50px;
 
-  <div class="cart-panel"
-    id="cartPanel"
-    aria-hidden="true">
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    <button class="close-cart"
-      type="button"
-      onclick="closeCart()"
-      aria-label="إغلاق السلة">
-      ×
-    </button>
+  flex-wrap: wrap;
 
-    <h2>سلة الطلب</h2>
+  gap: 10px;
+}
 
-    <div id="cartItems"></div>
+.categories button {
+  border: 1px solid var(--border);
 
-    <div class="cart-total">
-      <span>المجموع:</span>
-      <strong id="cartTotal">0 DH</strong>
-    </div>
+  background: var(--white);
+  color: #444;
 
-    <button type="button"
-      class="checkout-btn"
-      onclick="sendCartToWhatsApp()">
-      إرسال الطلب عبر WhatsApp
-    </button>
+  padding: 10px 24px;
 
-  </div>
+  min-width: 90px;
 
+  border-radius: 0;
 
-  <a
-    href="https://wa.me/212765333754?text=سلام،%20بغيت%20نستفسر%20على%20منتجات%20Zoreva"
-    class="floating-whatsapp"
-    target="_blank"
-    rel="noopener">
-    WhatsApp
-  </a>
+  font-size: 13px;
 
+  transition: 0.25s ease;
+}
 
-  <script>
-    let cart = [];
+.categories button:hover,
+.categories button:focus {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+}
 
-    let currentModalProduct = {
-      name: "",
-      price: 0
-    };
+/* =========================================================
+   PRODUCT GRID
+========================================================= */
 
+.product-grid {
+  width: 100%;
+  max-width: 1250px;
 
-    function openProduct(name, price, image) {
-      currentModalProduct.name = name;
-      currentModalProduct.price = Number(price);
+  margin: 0 auto;
 
-      document.getElementById("modalName").textContent = name;
-      document.getElementById("modalPrice").textContent = price + " DH";
-      document.getElementById("modalImage").src = image;
+  display: grid;
 
-      document.getElementById("modalWhatsapp").href =
-        "https://wa.me/212765333754?text=" +
-        encodeURIComponent(
-          "سلام، بغيت نطلب " +
-          name +
-          " بثمن " +
-          price +
-          " DH"
-        );
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 
-      document.getElementById("productModal").classList.add("active");
-      document.getElementById("productModal").setAttribute("aria-hidden", "false");
+  gap: 28px;
+}
 
-      document.body.style.overflow = "hidden";
-    }
+.product {
+  min-width: 0;
 
+  background: var(--white);
 
-    function closeProduct() {
-      document.getElementById("productModal").classList.remove("active");
-      document.getElementById("productModal").setAttribute("aria-hidden", "true");
+  border: none;
 
-      document.body.style.overflow = "auto";
-    }
+  padding: 0;
 
+  text-align: center;
 
-    function addModalProduct() {
-      addToCart(
-        currentModalProduct.name,
-        currentModalProduct.price
-      );
+  overflow: hidden;
 
-      closeProduct();
-    }
+  transition: transform 0.3s ease;
+}
 
+.product:hover {
+  transform: translateY(-5px);
+}
 
-    function addToCart(name, price) {
-      const existing = cart.find(item => item.name === name);
+/* Product image */
 
-      if (existing) {
-        existing.quantity++;
-      } else {
-        cart.push({
-          name: name,
-          price: Number(price),
-          quantity: 1
-        });
-      }
+.product img {
+  width: 100%;
 
-      updateCart();
-      openCart();
-    }
+  aspect-ratio: 1 / 1;
 
+  object-fit: contain;
 
-    function updateCart() {
-      const items = document.getElementById("cartItems");
-      const count = document.getElementById("cartCount");
-      const totalElement = document.getElementById("cartTotal");
+  padding: 14px;
 
-      items.innerHTML = "";
+  background: var(--cream);
 
-      let total = 0;
-      let countProducts = 0;
+  border-radius: 0;
 
-      if (cart.length === 0) {
+  margin-bottom: 17px;
 
-        items.innerHTML =
-          '<p class="empty-cart">السلة فارغة حالياً.</p>';
+  transition: transform 0.4s ease;
+}
 
-      } else {
+.product:hover img {
+  transform: scale(1.025);
+}
 
-        cart.forEach((item, index) => {
+.product h3 {
+  color: var(--black);
 
-          const subtotal = item.price * item.quantity;
+  font-family: Georgia, "Times New Roman", serif;
 
-          total += subtotal;
-          countProducts += item.quantity;
+  font-size: 17px;
+  font-weight: 500;
 
-          items.innerHTML += `
-            <div class="cart-item">
+  margin-bottom: 5px;
+}
 
-              <div>
-                <h3>${item.name}</h3>
-                <p>${item.price} DH</p>
-              </div>
+.product > p {
+  color: var(--gold);
 
-              <div class="quantity">
+  font-size: 14px;
 
-                <button
-                  type="button"
-                  onclick="changeQuantity(${index}, -1)">
-                  −
-                </button>
+  font-weight: 700;
 
-                <span>${item.quantity}</span>
+  margin-bottom: 14px;
+}
 
-                <button
-                  type="button"
-                  onclick="changeQuantity(${index}, 1)">
-                  +
-                </button>
+/* Add cart */
 
-              </div>
+.add-cart {
+  width: 100%;
 
-              <button
-                type="button"
-                class="remove-item"
-                onclick="removeFromCart(${index})">
-                حذف
-              </button>
+  border: 1px solid var(--black);
 
-            </div>
-          `;
-        });
-      }
+  border-radius: 0;
 
-      count.textContent = countProducts;
-      totalElement.textContent = total + " DH";
-    }
+  padding: 10px;
 
+  background: var(--black);
+  color: var(--white);
 
-    function changeQuantity(index, change) {
-      if (!cart[index]) return;
+  font-size: 12px;
+  font-weight: 700;
 
-      cart[index].quantity += change;
+  transition: 0.25s ease;
 
-      if (cart[index].quantity <= 0) {
-        cart.splice(index, 1);
-      }
+  margin-bottom: 7px;
+}
 
-      updateCart();
-    }
+.add-cart:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+}
 
+/* WhatsApp */
 
-    function removeFromCart(index) {
-      if (!cart[index]) return;
+.whatsapp {
+  display: block;
+  width: 100%;
 
-      cart.splice(index, 1);
+  padding: 9px;
 
-      updateCart();
-    }
+  border: 1px solid var(--border);
 
+  border-radius: 0;
 
-    function openCart() {
-      document.getElementById("cartPanel").classList.add("active");
-      document.getElementById("cartOverlay").classList.add("active");
+  color: #555;
 
-      document.getElementById("cartPanel").setAttribute("aria-hidden", "false");
+  font-size: 11px;
 
-      document.body.style.overflow = "hidden";
-    }
+  transition: 0.25s ease;
+}
 
+.whatsapp:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
 
-    function closeCart() {
-      document.getElementById("cartPanel").classList.remove("active");
-      document.getElementById("cartOverlay").classList.remove("active");
+/* =========================================================
+   ABOUT
+========================================================= */
 
-      document.getElementById("cartPanel").setAttribute("aria-hidden", "true");
+.about {
+  padding: 100px 7%;
 
-      document.body.style.overflow = "auto";
-    }
+  text-align: center;
 
+  background: var(--cream);
+}
 
-    function sendCartToWhatsApp() {
+.about p {
+  max-width: 680px;
 
-      if (cart.length === 0) {
-        alert("السلة فارغة.");
-        return;
-      }
+  margin: 20px auto 0;
 
-      let message =
-        "سلام، بغيت ندير هاد الطلب من Zoreva:\n\n";
+  color: #666;
 
-      let total = 0;
+  font-size: 15px;
 
-      cart.forEach(item => {
+  line-height: 2;
+}
 
-        const subtotal = item.price * item.quantity;
+/* =========================================================
+   CONTACT
+========================================================= */
 
-        total += subtotal;
+.contact {
+  padding: 90px 7%;
 
-        message +=
-          item.name +
-          " × " +
-          item.quantity +
-          " = " +
-          subtotal +
-          " DH\n";
-      });
+  text-align: center;
 
-      message +=
-        "\nالمجموع: " +
-        total +
-        " DH";
+  background: var(--white);
+}
 
-      window.open(
-        "https://wa.me/212765333754?text=" +
-        encodeURIComponent(message),
-        "_blank"
-      );
-    }
+.contact p {
+  color: #666;
 
+  margin: 20px 0 28px;
 
-    function filterProducts(category) {
+  font-size: 15px;
+}
 
-      const products =
-        document.querySelectorAll(".product");
+/* =========================================================
+   FOOTER
+========================================================= */
 
-      products.forEach(product => {
+footer {
+  padding: 45px 6%;
 
-        if (
-          category === "all" ||
-          product.dataset.category === category
-        ) {
-          product.style.display = "";
-        } else {
-          product.style.display = "none";
-        }
+  background: var(--black);
 
-      });
-    }
+  color: var(--white);
 
+  text-align: center;
+}
 
-    document
-      .getElementById("productModal")
-      .addEventListener("click", function(event) {
+footer .logo {
+  color: var(--gold-light);
 
-        if (event.target === this) {
-          closeProduct();
-        }
+  margin-bottom: 12px;
+}
 
-      });
+footer p {
+  color: #aaa;
 
+  font-size: 12px;
+}
 
-    document.addEventListener("keydown", function(event) {
+/* =========================================================
+   PRODUCT MODAL
+========================================================= */
 
-      if (event.key === "Escape") {
-        closeProduct();
-        closeCart();
-      }
+.product-modal {
+  position: fixed;
+  inset: 0;
 
-    });
+  background: rgba(0, 0, 0, 0.75);
 
+  display: none;
 
-    updateCart();
-  </script>
+  align-items: center;
+  justify-content: center;
 
-</body>
-</html>
+  padding: 25px;
+
+  z-index: 2000;
+
+  backdrop-filter: blur(5px);
+}
+
+.product-modal.active {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+
+  width: 100%;
+  max-width: 900px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: var(--white);
+
+  border: 1px solid var(--gold);
+
+  padding: 25px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 30px;
+}
+
+.close-modal {
+  position: absolute;
+
+  top: 12px;
+  left: 12px;
+
+  width: 38px;
+  height: 38px;
+
+  border: none;
+
+  background: var(--black);
+  color: var(--white);
+
+  font-size: 24px;
+
+  z-index: 5;
+
+  transition: 0.2s;
+}
+
+.close-modal:hover {
+  background: var(--gold);
+}
+
+.modal-content > img {
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  object-fit: contain;
+
+  background: var(--cream);
+
+  border-radius: 0;
+}
+
+.modal-info {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.modal-brand {
+  color: var(--gold);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 10px;
+}
+
+.modal-info h2 {
+  color: var(--black);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 32px;
+
+  font-weight: 500;
+
+  margin-bottom: 10px;
+}
+
+.modal-price {
+  color: var(--gold);
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  margin-bottom: 15px;
+}
+
+.modal-description {
+  color: #666;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  margin-bottom: 22px;
+}
+
+.modal-order {
+  display: block;
+
+  width: 100%;
+
+  text-align: center;
+
+  padding: 11px;
+
+  border: 1px solid var(--gold);
+
+  border-radius: 0;
+
+  color: #8b692d;
+
+  font-size: 13px;
+
+  transition: 0.25s;
+}
+
+.modal-order:hover {
+  background: var(--gold);
+
+  color: var(--white);
+}
+
+/* =========================================================
+   CART
+========================================================= */
+
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition: 0.25s;
+
+  z-index: 3000;
+}
+
+.cart-overlay.active {
+  opacity: 1;
+
+  visibility: visible;
+}
+
+.cart-panel {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+
+  width: min(430px, 94vw);
+
+  height: 100vh;
+
+  background: var(--white);
+
+  border-left: 1px solid var(--gold);
+
+  padding: 28px;
+
+  overflow-y: auto;
+
+  transform: translateX(100%);
+
+  transition: 0.3s ease;
+
+  z-index: 3001;
+}
+
+.cart-panel.active {
+  transform: translateX(0);
+}
+
+.close-cart {
+  border: none;
+
+  background: transparent;
+
+  color: var(--black);
+
+  font-size: 30px;
+
+  position: absolute;
+
+  top: 12px;
+  left: 18px;
+}
+
+.cart-panel h2 {
+  color: var(--black);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 28px;
+
+  font-weight: 500;
+
+  margin: 32px 0 22px;
+}
+
+.cart-item {
+  display: grid;
+
+  grid-template-columns: 1fr auto;
+
+  gap: 10px;
+
+  padding: 16px 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-item h3 {
+  color: var(--black);
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.cart-item p {
+  color: var(--gold);
+
+  font-size: 13px;
+}
+
+.quantity {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.quantity button {
+  width: 28px;
+  height: 28px;
+
+  border: 1px solid var(--border);
+
+  background: var(--white);
+
+  color: var(--black);
+
+  border-radius: 0;
+}
+
+.quantity button:hover {
+  border-color: var(--gold);
+
+  color: var(--gold);
+}
+
+.quantity span {
+  min-width: 20px;
+
+  text-align: center;
+}
+
+.remove-item {
+  grid-column: 1 / -1;
+
+  border: none;
+
+  background: transparent;
+
+  color: #9b4444;
+
+  text-align: right;
+
+  font-size: 12px;
+}
+
+.empty-cart {
+  color: #888;
+
+  text-align: center;
+
+  padding: 35px 0;
+}
+
+.cart-total {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin: 28px 0;
+
+  padding-top: 18px;
+
+  border-top: 1px solid var(--border);
+
+  font-size: 17px;
+}
+
+.cart-total strong {
+  color: var(--gold);
+}
+
+.checkout-btn {
+  width: 100%;
+
+  border: 1px solid var(--black);
+
+  border-radius: 0;
+
+  padding: 13px;
+
+  background: var(--black);
+
+  color: var(--white);
+
+  font-weight: 700;
+
+  transition: 0.25s;
+}
+
+.checkout-btn:hover {
+  background: var(--gold);
+
+  border-color: var(--gold);
+}
+
+/* =========================================================
+   FLOATING WHATSAPP
+========================================================= */
+
+.floating-whatsapp {
+  position: fixed;
+
+  bottom: 20px;
+  left: 20px;
+
+  background: var(--black);
+
+  color: var(--white);
+
+  padding: 10px 17px;
+
+  border: 1px solid rgba(255,255,255,0.15);
+
+  border-radius: 30px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  z-index: 1500;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+
+  transition: 0.25s;
+}
+
+.floating-whatsapp:hover {
+  background: var(--gold);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  header {
+    padding: 0 4%;
+  }
+
+  nav {
+    gap: 20px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  header {
+    height: auto;
+
+    min-height: 68px;
+
+    padding: 12px 15px;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+
+    gap: 10px;
+  }
+
+  header .logo {
+    font-size: 20px;
+
+    letter-spacing: 4px;
+  }
+
+  nav {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 4px;
+
+    padding-top: 4px;
+  }
+
+  nav a {
+    text-align: center;
+
+    font-size: 10px;
+
+    padding: 7px 2px;
+
+    white-space: nowrap;
+  }
+
+  .cart-button {
+    min-width: 72px;
+
+    padding: 8px 9px;
+
+    font-size: 11px;
+  }
+
+  /* HERO */
+
+  .hero {
+    min-height: 520px;
+
+    padding: 60px 20px;
+
+    background:
+      linear-gradient(
+        rgba(255, 255, 255, 0.82),
+        rgba(255, 255, 255, 0.88)
+      ),
+      url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=85")
+      center / cover no-repeat;
+  }
+
+  .hero::before {
+    inset: 15px;
+  }
+
+  .hero .small {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 12vw, 58px);
+
+    line-height: 1.08;
+
+    letter-spacing: -1px;
+  }
+
+  .hero p:not(.small) {
+    font-size: 14px;
+
+    max-width: 330px;
+  }
+
+  .btn {
+    min-width: 165px;
+
+    padding: 12px 20px;
+
+    font-size: 12px;
+  }
+
+  /* PRODUCTS */
+
+  .products {
+    padding: 65px 15px;
+  }
+
+  .products h2,
+  .about h2,
+  .contact h2 {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+
+    margin-bottom: 28px;
+  }
+
+  /* CATEGORIES */
+
+  .categories {
+    max-width: 390px;
+
+    margin-bottom: 35px;
+
+    gap: 7px;
+  }
+
+  .categories button {
+    flex: 1;
+
+    min-width: 70px;
+
+    padding: 9px 7px;
+
+    font-size: 11px;
+  }
+
+  /* PRODUCTS */
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px 10px;
+  }
+
+  .product img {
+    aspect-ratio: 1 / 1;
+
+    padding: 9px;
+
+    margin-bottom: 11px;
+  }
+
+  .product h3 {
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+  }
+
+  .product > p {
+    font-size: 12px;
+
+    margin-bottom: 9px;
+  }
+
+  .add-cart {
+    padding: 9px 5px;
+
+    font-size: 10px;
+  }
+
+  .whatsapp {
+    padding: 8px 3px;
+
+    font-size: 9px;
+
+    white-space: nowrap;
+  }
+
+  /* ABOUT */
+
+  .about {
+    padding: 65px 20px;
+  }
+
+  .about p {
+    font-size: 13px;
+
+    line-height: 1.9;
+  }
+
+  /* CONTACT */
+
+  .contact {
+    padding: 65px 20px;
+  }
+
+  .contact p {
+    font-size: 13px;
+  }
+
+  /* MODAL */
+
+  .product-modal {
+    padding: 12px;
+  }
+
+  .modal-content {
+    grid-template-columns: 1fr;
+
+    max-height: 94vh;
+
+    padding: 14px;
+
+    gap: 16px;
+  }
+
+  .modal-content > img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    max-height: 42vh;
+
+    object-fit: contain;
+  }
+
+  .modal-info h2 {
+    font-size: 25px;
+  }
+
+  .modal-price {
+    font-size: 19px;
+  }
+
+  .modal-description {
+    font-size: 13px;
+
+    margin-bottom: 15px;
+  }
+
+  /* CART */
+
+  .cart-panel {
+    width: 94vw;
+
+    padding: 22px;
+  }
+
+  /* WHATSAPP */
+
+  .floating-whatsapp {
+    bottom: 14px;
+    left: 14px;
+
+    padding: 9px 13px;
+
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  header {
+    padding: 10px;
+  }
+
+  header .logo {
+    font-size: 18px;
+
+    letter-spacing: 3px;
+  }
+
+  nav a {
+    font-size: 9px;
+  }
+
+  .cart-button {
+    min-width: 65px;
+
+    font-size: 10px;
+
+    padding: 7px;
+  }
+
+  .hero {
+    min-height: 480px;
+
+    padding: 50px 15px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero p:not(.small) {
+    font-size: 13px;
+  }
+
+  .products {
+    padding: 55px 10px;
+  }
+
+  .product-grid {
+    gap: 15px 8px;
+  }
+
+  .product img {
+    padding: 6px;
+  }
+
+  .product h3 {
+    font-size: 12px;
+  }
+
+  .product > p {
+    font-size: 11px;
+  }
+
+  .add-cart {
+    font-size: 9px;
+
+    padding: 8px 3px;
+  }
+
+  .whatsapp {
+    font-size: 8px;
+  }
+}
