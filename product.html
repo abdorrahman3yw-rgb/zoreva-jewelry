@@ -8,11 +8,13 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="ZOREVA Jewelry — Découvrez les détails de nos bijoux élégants et commandez directement sur WhatsApp.">
+  <meta name="description" content="ZOREVA Jewelry — Bijoux élégants et modernes.">
 
   <title>ZOREVA — Produit</title>
 
+  <!-- FAVICON / LOGO TAB -->
   <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="shortcut icon" href="logo.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,13 +23,13 @@
 
   <style>
     :root{
-      --black:#111111;
+      --black:#111;
       --gold:#b9975b;
-      --gold-dark:#94763e;
+      --gold-dark:#92733c;
       --cream:#f8f6f1;
-      --white:#ffffff;
-      --border:#e7e2d8;
-      --text:#1a1a1a;
+      --white:#fff;
+      --border:#e6e0d5;
+      --text:#171717;
       --muted:#777;
     }
 
@@ -42,7 +44,7 @@
     }
 
     body{
-      background:var(--white);
+      background:#fff;
       color:var(--text);
       font-family:'Montserrat',sans-serif;
       overflow-x:hidden;
@@ -58,8 +60,8 @@
     }
 
     img{
-      max-width:100%;
       display:block;
+      max-width:100%;
     }
 
     /* ================= HEADER ================= */
@@ -71,16 +73,17 @@
       width:100%;
       height:82px;
       background:rgba(255,255,255,.96);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(0,0,0,.07);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(0,0,0,.06);
       z-index:1000;
     }
 
     .header-inner{
-      max-width:1400px;
       height:100%;
+      max-width:1400px;
       margin:auto;
       padding:0 30px;
+
       display:grid;
       grid-template-columns:1fr auto 1fr;
       align-items:center;
@@ -92,124 +95,138 @@
       width:44px;
       height:44px;
       border:0;
-      background:transparent;
+      background:none;
       cursor:pointer;
+
       display:flex;
       flex-direction:column;
       justify-content:center;
       gap:6px;
+
       padding:8px;
-      transition:.3s;
-      justify-self:start;
     }
 
     .menu-btn span{
       display:block;
       width:25px;
       height:1.5px;
-      background:var(--black);
+      background:#111;
       transition:.3s;
     }
 
     .menu-btn:hover span{
-      background:var(--gold);
+      background:var(--gold-dark);
     }
 
-    /* LOGO */
+    /* LOGO + NAME */
 
-    .logo{
+    .brand{
       display:flex;
-      justify-content:center;
       align-items:center;
+      justify-content:center;
+      gap:10px;
     }
 
-    .logo img{
-      width:72px;
-      height:72px;
+    .brand img{
+      width:58px;
+      height:58px;
       object-fit:contain;
     }
 
-    /* RIGHT */
+    .brand-name{
+      font-family:'Cormorant Garamond',serif;
+      font-size:25px;
+      font-weight:600;
+      letter-spacing:3px;
+      color:#111;
+    }
+
+    /* ACTIONS */
 
     .header-actions{
       display:flex;
       justify-content:flex-end;
       align-items:center;
-      gap:10px;
     }
 
     .cart-btn{
-      position:relative;
       width:44px;
       height:44px;
       border:0;
-      background:transparent;
+      background:none;
       cursor:pointer;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      font-size:20px;
-    }
-
-    .cart-icon{
-      width:21px;
-      height:21px;
-      border:1.7px solid var(--black);
-      border-top:0;
       position:relative;
-      margin-top:4px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
-    .cart-icon:before{
-      content:"";
-      position:absolute;
-      width:9px;
-      height:7px;
-      border:1.7px solid var(--black);
-      border-bottom:0;
-      border-radius:8px 8px 0 0;
-      top:-7px;
-      left:4px;
-    }
+    /* REALISTIC CART ICON */
 
-    .cart-icon:after{
-      content:"•  •";
-      position:absolute;
-      font-size:12px;
-      letter-spacing:3px;
-      bottom:-15px;
-      left:2px;
-      white-space:nowrap;
+    .cart-svg{
+      width:23px;
+      height:23px;
+      stroke:#111;
+      fill:none;
+      stroke-width:1.5;
     }
 
     .cart-count{
       position:absolute;
-      top:3px;
-      right:1px;
+      top:1px;
+      right:0;
+
       width:17px;
       height:17px;
       border-radius:50%;
+
       background:var(--gold);
-      color:white;
-      font-size:9px;
+      color:#fff;
+
       display:flex;
-      justify-content:center;
       align-items:center;
+      justify-content:center;
+
+      font-size:9px;
       font-weight:600;
     }
 
     /* ================= SIDE MENU ================= */
 
+    .menu-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.42);
+
+      opacity:0;
+      visibility:hidden;
+
+      transition:.3s;
+      z-index:1900;
+    }
+
+    .menu-overlay.active{
+      opacity:1;
+      visibility:visible;
+    }
+
     .side-menu{
       position:fixed;
       top:0;
-      left:-340px;
-      width:320px;
+      left:-350px;
+
+      width:330px;
       height:100vh;
+
       background:#fff;
+
       z-index:2000;
-      box-shadow:10px 0 35px rgba(0,0,0,.12);
-      padding:30px;
+
+      padding:28px;
+
+      box-shadow:15px 0 40px rgba(0,0,0,.12);
+
       transition:.45s ease;
     }
 
@@ -220,7 +237,7 @@
     .menu-close{
       border:0;
       background:none;
-      font-size:28px;
+      font-size:29px;
       cursor:pointer;
       margin-bottom:45px;
     }
@@ -229,15 +246,17 @@
       font-family:'Cormorant Garamond',serif;
       font-size:30px;
       font-weight:500;
+      letter-spacing:3px;
       margin-bottom:30px;
     }
 
     .side-menu a{
       display:block;
-      padding:15px 0;
+      padding:16px 0;
       border-bottom:1px solid var(--border);
-      font-size:13px;
-      letter-spacing:1px;
+
+      font-size:11px;
+      letter-spacing:1.5px;
       text-transform:uppercase;
     }
 
@@ -245,22 +264,7 @@
       color:var(--gold-dark);
     }
 
-    .menu-overlay{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.4);
-      z-index:1900;
-      opacity:0;
-      visibility:hidden;
-      transition:.3s;
-    }
-
-    .menu-overlay.active{
-      opacity:1;
-      visibility:visible;
-    }
-
-    /* ================= PRODUCT ================= */
+    /* ================= MAIN ================= */
 
     main{
       padding-top:82px;
@@ -269,10 +273,13 @@
     .breadcrumb{
       max-width:1400px;
       margin:auto;
+
       padding:25px 30px 10px;
-      font-size:11px;
-      letter-spacing:1px;
+
+      font-size:10px;
+      letter-spacing:1.5px;
       color:#888;
+
       text-transform:uppercase;
     }
 
@@ -280,28 +287,31 @@
       color:var(--gold-dark);
     }
 
+    /* ================= PRODUCT ================= */
+
     .product-section{
       max-width:1400px;
       margin:auto;
+
       padding:35px 30px 100px;
+
       display:grid;
       grid-template-columns:1.05fr .95fr;
       gap:80px;
+
       align-items:start;
     }
 
-    /* IMAGE */
-
     .product-gallery{
-      position:relative;
       background:#f7f5f0;
       overflow:hidden;
     }
 
     .product-gallery img{
       width:100%;
-      aspect-ratio:1 / 1.05;
+      aspect-ratio:1 / 1.04;
       object-fit:cover;
+
       transition:transform .8s ease;
     }
 
@@ -309,46 +319,48 @@
       transform:scale(1.025);
     }
 
-    /* DETAILS */
-
     .product-info{
       padding:35px 0;
-      max-width:550px;
+      max-width:540px;
     }
 
     .product-category{
-      font-size:11px;
+      font-size:10px;
       text-transform:uppercase;
       letter-spacing:3px;
       color:var(--gold-dark);
-      margin-bottom:20px;
+
+      margin-bottom:18px;
     }
 
     .product-title{
       font-family:'Cormorant Garamond',serif;
-      font-size:58px;
-      line-height:1;
+      font-size:60px;
+      line-height:.95;
       font-weight:500;
+
       margin-bottom:22px;
     }
 
     .product-price{
       font-size:18px;
       letter-spacing:1px;
-      margin-bottom:30px;
+      margin-bottom:28px;
     }
 
     .gold-line{
       width:55px;
       height:1px;
       background:var(--gold);
+
       margin-bottom:30px;
     }
 
     .product-description{
-      font-size:14px;
-      line-height:2;
       color:#666;
+      font-size:13px;
+      line-height:2;
+
       margin-bottom:35px;
     }
 
@@ -360,52 +372,57 @@
     /* QUANTITY */
 
     .quantity-title{
-      font-size:11px;
-      letter-spacing:2px;
+      font-size:10px;
       text-transform:uppercase;
-      margin-bottom:12px;
+      letter-spacing:2px;
+      margin-bottom:11px;
     }
 
     .quantity-box{
-      width:125px;
-      height:48px;
+      width:120px;
+      height:46px;
+
       border:1px solid var(--border);
+
       display:flex;
       align-items:center;
       justify-content:space-between;
+
       margin-bottom:25px;
     }
 
     .quantity-box button{
       width:40px;
       height:100%;
+
       border:0;
-      background:transparent;
+      background:none;
+
       cursor:pointer;
       font-size:18px;
     }
 
     .quantity-box span{
-      font-size:14px;
+      font-size:13px;
     }
 
-    /* BUTTONS */
-
-    .product-actions{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
+    /* ADD TO CART */
 
     .add-cart{
+      width:100%;
       height:56px;
-      background:var(--black);
+
+      background:#111;
       color:#fff;
-      border:1px solid var(--black);
+
+      border:1px solid #111;
+
       cursor:pointer;
-      font-size:12px;
+
+      font-size:11px;
       letter-spacing:2px;
       text-transform:uppercase;
+
       transition:.3s;
     }
 
@@ -414,45 +431,35 @@
       border-color:var(--gold-dark);
     }
 
-    .whatsapp-order{
-      height:56px;
-      background:#fff;
-      color:var(--black);
-      border:1px solid var(--black);
-      cursor:pointer;
-      font-size:12px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      transition:.3s;
-    }
-
-    .whatsapp-order:hover{
-      background:#f5f5f5;
-    }
-
     .product-note{
-      margin-top:25px;
+      margin-top:24px;
       padding-top:20px;
+
       border-top:1px solid var(--border);
-      font-size:11px;
+
+      font-size:10px;
       line-height:1.9;
+
       color:#888;
     }
 
     /* ================= BENEFITS ================= */
 
     .benefits{
-      border-top:1px solid var(--border);
-      border-bottom:1px solid var(--border);
       max-width:1400px;
       margin:auto;
+
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+
       display:grid;
       grid-template-columns:repeat(3,1fr);
     }
 
     .benefit{
-      text-align:center;
       padding:28px 20px;
+      text-align:center;
+
       border-right:1px solid var(--border);
     }
 
@@ -467,7 +474,7 @@
     }
 
     .benefit-text{
-      font-size:10px;
+      font-size:9px;
       color:#888;
       letter-spacing:1px;
       text-transform:uppercase;
@@ -478,6 +485,7 @@
     .related{
       max-width:1400px;
       margin:auto;
+
       padding:100px 30px;
     }
 
@@ -488,10 +496,13 @@
 
     .section-heading span{
       display:block;
-      font-size:10px;
+
       color:var(--gold-dark);
+
+      font-size:9px;
       letter-spacing:3px;
       text-transform:uppercase;
+
       margin-bottom:12px;
     }
 
@@ -511,7 +522,8 @@
       background:#f7f5f0;
       overflow:hidden;
       cursor:pointer;
-      transition:.3s;
+
+      transition:.35s;
     }
 
     .related-card:hover{
@@ -522,11 +534,12 @@
       width:100%;
       aspect-ratio:1;
       object-fit:cover;
+
       transition:.5s;
     }
 
     .related-card:hover img{
-      transform:scale(1.04);
+      transform:scale(1.035);
     }
 
     .related-info{
@@ -538,53 +551,64 @@
       font-family:'Cormorant Garamond',serif;
       font-size:21px;
       font-weight:500;
-      margin-bottom:7px;
+
+      margin-bottom:6px;
     }
 
     .related-info p{
-      font-size:12px;
+      font-size:11px;
       color:#555;
     }
 
-    /* ================= WHATSAPP ================= */
+    /* ================= REAL WHATSAPP BUTTON ================= */
 
     .whatsapp-float{
       position:fixed;
+
       right:24px;
       bottom:24px;
-      z-index:1500;
+
       width:58px;
       height:58px;
+
       border-radius:50%;
-      background:#111;
-      border:1px solid #222;
-      color:#fff;
+
+      background:#25D366;
+
       display:flex;
       align-items:center;
       justify-content:center;
+
+      z-index:1500;
+
       box-shadow:0 8px 25px rgba(0,0,0,.18);
+
       transition:.3s;
     }
 
     .whatsapp-float:hover{
-      background:#94763e;
-      transform:translateY(-4px);
+      transform:translateY(-4px) scale(1.04);
     }
 
-    .whatsapp-symbol{
-      font-size:22px;
-      font-weight:500;
+    .whatsapp-float svg{
+      width:31px;
+      height:31px;
+      fill:#fff;
     }
 
-    /* ================= CART ================= */
+    /* ================= CART DRAWER ================= */
 
     .cart-overlay{
       position:fixed;
       inset:0;
+
       background:rgba(0,0,0,.45);
+
       z-index:3000;
+
       opacity:0;
       visibility:hidden;
+
       transition:.3s;
     }
 
@@ -595,16 +619,27 @@
 
     .cart-panel{
       position:fixed;
+
       top:0;
-      right:-430px;
-      width:410px;
-      max-width:92%;
+      right:-450px;
+
+      width:420px;
+      max-width:94%;
+
       height:100vh;
+
       background:#fff;
+
       z-index:3100;
+
       transition:.45s ease;
+
       display:flex;
       flex-direction:column;
+
+      border-radius:22px 0 0 22px;
+
+      box-shadow:-15px 0 45px rgba(0,0,0,.13);
     }
 
     .cart-panel.active{
@@ -612,11 +647,13 @@
     }
 
     .cart-header{
-      padding:25px;
-      border-bottom:1px solid var(--border);
+      padding:25px 25px 20px;
+
       display:flex;
       justify-content:space-between;
       align-items:center;
+
+      border-bottom:1px solid var(--border);
     }
 
     .cart-header h2{
@@ -626,83 +663,131 @@
     }
 
     .cart-close{
-      border:0;
-      background:none;
-      font-size:25px;
+      width:36px;
+      height:36px;
+
+      border:1px solid var(--border);
+      border-radius:50%;
+
+      background:#fff;
+
       cursor:pointer;
+
+      font-size:20px;
+      line-height:1;
     }
 
     .cart-items{
       flex:1;
       overflow-y:auto;
-      padding:20px;
+
+      padding:10px 22px;
     }
 
     .cart-empty{
       text-align:center;
       color:#888;
-      font-size:13px;
-      padding:60px 20px;
+
+      font-size:12px;
+
+      padding:70px 20px;
     }
 
     .cart-item{
       display:grid;
-      grid-template-columns:70px 1fr auto;
-      gap:13px;
-      padding:15px 0;
+      grid-template-columns:72px 1fr 30px;
+
+      gap:14px;
+
+      padding:18px 0;
+
       border-bottom:1px solid var(--border);
+
       align-items:center;
     }
 
     .cart-item img{
-      width:70px;
-      height:70px;
+      width:72px;
+      height:72px;
+
       object-fit:cover;
+
       background:#f7f5f0;
+
+      border-radius:4px;
     }
 
     .cart-item h4{
       font-family:'Cormorant Garamond',serif;
       font-size:19px;
       font-weight:500;
+
       margin-bottom:5px;
     }
 
     .cart-item p{
-      font-size:11px;
+      font-size:10px;
       color:#777;
     }
 
     .remove-item{
+      width:28px;
+      height:28px;
+
       border:0;
-      background:none;
-      color:#999;
+      border-radius:50%;
+
+      background:#f5f3ef;
+
       cursor:pointer;
-      font-size:17px;
+
+      font-size:16px;
+      color:#777;
     }
 
     .cart-footer{
+      padding:20px 22px 24px;
+
       border-top:1px solid var(--border);
-      padding:20px;
+
+      background:#fff;
+
+      border-radius:0 0 0 22px;
     }
 
     .cart-total{
       display:flex;
       justify-content:space-between;
-      margin-bottom:15px;
-      font-size:14px;
+
+      margin-bottom:17px;
+
+      font-size:13px;
+    }
+
+    .cart-total strong{
+      font-weight:600;
     }
 
     .checkout-btn{
       width:100%;
       height:52px;
+
       border:0;
-      background:var(--black);
+
+      background:#111;
       color:#fff;
+
       cursor:pointer;
-      font-size:11px;
+
+      font-size:10px;
       letter-spacing:2px;
       text-transform:uppercase;
+
+      transition:.3s;
+    }
+
+    .checkout-btn:hover{
+      background:var(--gold-dark);
     }
 
     /* ================= FOOTER ================= */
@@ -710,6 +795,7 @@
     footer{
       background:#111;
       color:#fff;
+
       padding:70px 30px 30px;
     }
 
@@ -721,23 +807,28 @@
     .footer-main{
       display:grid;
       grid-template-columns:1.4fr 1fr 1fr;
+
       gap:70px;
+
       padding-bottom:60px;
+
       border-bottom:1px solid rgba(255,255,255,.15);
     }
 
     .footer-brand img{
-      width:80px;
-      height:80px;
+      width:75px;
+      height:75px;
       object-fit:contain;
-      filter:brightness(0) invert(1);
+
       margin-bottom:20px;
     }
 
     .footer-brand p{
       max-width:350px;
+
       color:#aaa;
-      font-size:12px;
+
+      font-size:11px;
       line-height:2;
     }
 
@@ -745,14 +836,19 @@
       font-family:'Cormorant Garamond',serif;
       font-size:24px;
       font-weight:500;
+
       margin-bottom:20px;
     }
 
     .footer-column a{
       display:block;
+
       color:#aaa;
-      font-size:11px;
+
+      font-size:10px;
+
       margin-bottom:13px;
+
       transition:.2s;
     }
 
@@ -762,9 +858,12 @@
 
     .copyright{
       padding-top:25px;
+
       text-align:center;
+
       color:#777;
-      font-size:10px;
+
+      font-size:9px;
       letter-spacing:1px;
     }
 
@@ -779,6 +878,7 @@
         opacity:0;
         transform:translateY(25px);
       }
+
       to{
         opacity:1;
         transform:translateY(0);
@@ -789,26 +889,33 @@
 
     @media(max-width:900px){
 
-      .header-inner{
-        padding:0 16px;
-      }
-
       header{
         height:72px;
-      }
-
-      .logo img{
-        width:62px;
-        height:62px;
       }
 
       main{
         padding-top:72px;
       }
 
+      .header-inner{
+        padding:0 16px;
+      }
+
+      .brand img{
+        width:51px;
+        height:51px;
+      }
+
+      .brand-name{
+        font-size:21px;
+        letter-spacing:2px;
+      }
+
       .product-section{
         grid-template-columns:1fr;
+
         gap:30px;
+
         padding:20px 16px 70px;
       }
 
@@ -818,7 +925,7 @@
       }
 
       .product-title{
-        font-size:46px;
+        font-size:48px;
       }
 
       .product-gallery img{
@@ -850,21 +957,26 @@
 
     @media(max-width:600px){
 
-      .breadcrumb{
-        padding:20px 16px 5px;
-        font-size:9px;
+      .brand{
+        gap:7px;
       }
 
-      .product-section{
-        padding-top:15px;
+      .brand img{
+        width:47px;
+        height:47px;
+      }
+
+      .brand-name{
+        font-size:19px;
+        letter-spacing:1.5px;
+      }
+
+      .breadcrumb{
+        padding:20px 16px 5px;
       }
 
       .product-title{
-        font-size:40px;
-      }
-
-      .product-description{
-        font-size:13px;
+        font-size:41px;
       }
 
       .benefits{
@@ -884,10 +996,6 @@
         font-size:38px;
       }
 
-      .related-grid{
-        grid-template-columns:1fr 1fr;
-      }
-
       .footer-main{
         grid-template-columns:1fr;
         gap:35px;
@@ -900,8 +1008,16 @@
       .whatsapp-float{
         right:16px;
         bottom:16px;
-        width:54px;
-        height:54px;
+
+        width:55px;
+        height:55px;
+      }
+
+      .cart-panel{
+        width:100%;
+        max-width:100%;
+
+        border-radius:20px 0 0 20px;
       }
     }
   </style>
@@ -912,6 +1028,7 @@
   <!-- ================= HEADER ================= -->
 
   <header>
+
     <div class="header-inner">
 
       <button class="menu-btn" id="menuBtn" aria-label="Menu">
@@ -920,18 +1037,32 @@
         <span></span>
       </button>
 
-      <a href="index.html" class="logo">
-        <img src="logo.svg" alt="ZOREVA Jewelry">
+      <a href="index.html" class="brand">
+
+        <img src="logo.svg" alt="ZOREVA">
+
+        <span class="brand-name">ZOREVA</span>
+
       </a>
 
       <div class="header-actions">
+
         <button class="cart-btn" id="cartBtn" aria-label="Panier">
-          <span class="cart-icon"></span>
+
+          <svg class="cart-svg" viewBox="0 0 24 24">
+            <path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 7H6"/>
+            <circle cx="10" cy="20" r="1"/>
+            <circle cx="18" cy="20" r="1"/>
+          </svg>
+
           <span class="cart-count" id="cartCount">0</span>
+
         </button>
+
       </div>
 
     </div>
+
   </header>
 
   <!-- ================= SIDE MENU ================= -->
@@ -957,25 +1088,27 @@
   <main>
 
     <div class="breadcrumb">
+
       <a href="index.html">Accueil</a>
+
       <span> / </span>
+
       <span id="breadcrumbProduct">Produit</span>
+
     </div>
 
     <section class="product-section">
 
-      <!-- IMAGE -->
-
       <div class="product-gallery fade-up">
-        <img id="productImage" src="" alt="">
-      </div>
 
-      <!-- INFO -->
+        <img id="productImage" src="" alt="">
+
+      </div>
 
       <div class="product-info fade-up">
 
         <div class="product-category" id="productCategory">
-          ZOREVA JEWELRY
+          Collection
         </div>
 
         <h1 class="product-title" id="productName">
@@ -989,10 +1122,15 @@
         <div class="gold-line"></div>
 
         <p class="product-description">
-          Une pièce pensée pour apporter une touche élégante et raffinée à votre style.
+
+          Une pièce pensée pour apporter une touche élégante
+          et raffinée à votre style.
+
           <br><br>
-          Chaque création <strong>ZOREVA</strong> est sélectionnée avec soin pour vous offrir
-          un bijou au design moderne et intemporel.
+
+          Chaque création est sélectionnée avec soin pour vous
+          offrir un design moderne et intemporel.
+
         </p>
 
         <div class="quantity-title">
@@ -1000,60 +1138,82 @@
         </div>
 
         <div class="quantity-box">
+
           <button id="minusBtn">−</button>
+
           <span id="quantity">1</span>
+
           <button id="plusBtn">+</button>
-        </div>
-
-        <div class="product-actions">
-
-          <button class="add-cart" id="addCartBtn">
-            Ajouter au panier
-          </button>
-
-          <button class="whatsapp-order" id="whatsappOrder">
-            Commander via WhatsApp
-          </button>
 
         </div>
+
+        <button class="add-cart" id="addCartBtn">
+          Ajouter au panier
+        </button>
 
         <div class="product-note">
-          Commande simple et rapide via WhatsApp.
-          Nous vous contacterons pour confirmer les détails de votre commande.
+
+          Commande simple et rapide.
+          Après l'ajout au panier, vous pourrez finaliser votre commande directement.
+
         </div>
 
       </div>
 
     </section>
 
-    <!-- ================= BENEFITS ================= -->
+    <!-- BENEFITS -->
 
     <section class="benefits">
 
       <div class="benefit">
-        <div class="benefit-title">Commande simple</div>
-        <div class="benefit-text">Directement via WhatsApp</div>
+
+        <div class="benefit-title">
+          Commande simple
+        </div>
+
+        <div class="benefit-text">
+          Un processus rapide
+        </div>
+
       </div>
 
       <div class="benefit">
-        <div class="benefit-title">Sélection ZOREVA</div>
-        <div class="benefit-text">Des pièces choisies avec soin</div>
+
+        <div class="benefit-title">
+          Sélection soignée
+        </div>
+
+        <div class="benefit-text">
+          Des pièces choisies avec soin
+        </div>
+
       </div>
 
       <div class="benefit">
-        <div class="benefit-title">Service direct</div>
-        <div class="benefit-text">Nous sommes à votre écoute</div>
+
+        <div class="benefit-title">
+          Service direct
+        </div>
+
+        <div class="benefit-text">
+          Nous sommes à votre écoute
+        </div>
+
       </div>
 
     </section>
 
-    <!-- ================= RELATED PRODUCTS ================= -->
+    <!-- RELATED -->
 
     <section class="related">
 
       <div class="section-heading">
-        <span>ZOREVA COLLECTION</span>
+
+        <span>COLLECTION</span>
+
         <h2>Vous pourriez aussi aimer</h2>
+
       </div>
 
       <div class="related-grid" id="relatedProducts"></div>
@@ -1062,7 +1222,7 @@
 
   </main>
 
-  <!-- ================= WHATSAPP ================= -->
+  <!-- ================= REAL WHATSAPP ================= -->
 
   <a
     href="https://wa.me/212765333754"
@@ -1070,7 +1230,13 @@
     class="whatsapp-float"
     aria-label="WhatsApp"
   >
-    <span class="whatsapp-symbol">◔</span>
+
+    <svg viewBox="0 0 32 32">
+
+      <path d="M16 3C8.82 3 3 8.6 3 15.5c0 2.43.72 4.69 1.96 6.59L3.1 29l7.1-1.82A13.24 13.24 0 0 0 16 28c7.18 0 13-5.6 13-12.5S23.18 3 16 3zm0 22.7c-1.82 0-3.51-.48-4.98-1.32l-.36-.21-4.21 1.08 1.12-3.98-.23-.37a10.8 10.8 0 0 1-1.64-5.4C5.7 9.75 10.32 5.3 16 5.3s10.3 4.45 10.3 10.2S21.68 25.7 16 25.7zm5.65-7.64c-.31-.16-1.84-.9-2.12-1-.29-.1-.5-.16-.71.16-.21.31-.81 1-.99 1.21-.18.21-.37.23-.68.08-.31-.16-1.3-.47-2.47-1.49-.91-.79-1.53-1.77-1.71-2.08-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.63-.52-.54-.71-.55h-.6c-.21 0-.55.08-.84.39-.29.31-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.21 3.36 5.36 4.71.75.32 1.33.51 1.79.65.75.24 1.43.21 1.97.13.6-.09 1.84-.75 2.1-1.47.26-.73.26-1.34.18-1.47-.08-.13-.29-.21-.6-.37z"/>
+
+    </svg>
+
   </a>
 
   <!-- ================= CART ================= -->
@@ -1080,25 +1246,37 @@
   <aside class="cart-panel" id="cartPanel">
 
     <div class="cart-header">
+
       <h2>Votre panier</h2>
-      <button class="cart-close" id="cartClose">×</button>
+
+      <button class="cart-close" id="cartClose">
+        ×
+      </button>
+
     </div>
 
     <div class="cart-items" id="cartItems">
+
       <div class="cart-empty">
         Votre panier est vide.
       </div>
+
     </div>
 
     <div class="cart-footer">
 
       <div class="cart-total">
+
         <span>Total</span>
-        <strong id="cartTotal">0 DH</strong>
+
+        <strong id="cartTotal">
+          0 DH
+        </strong>
+
       </div>
 
       <button class="checkout-btn" id="checkoutBtn">
-        Commander via WhatsApp
+        Finaliser la commande
       </button>
 
     </div>
@@ -1118,7 +1296,7 @@
           <img src="logo.svg" alt="ZOREVA">
 
           <p>
-            ZOREVA Jewelry — une sélection de bijoux élégants,
+            Une sélection de bijoux élégants,
             modernes et intemporels pour accompagner chaque style.
           </p>
 
@@ -1129,9 +1307,18 @@
           <h3>Navigation</h3>
 
           <a href="index.html">Accueil</a>
-          <a href="index.html#collections">Collections</a>
-          <a href="index.html#products">Produits</a>
-          <a href="index.html#about">À propos</a>
+
+          <a href="index.html#collections">
+            Collections
+          </a>
+
+          <a href="index.html#products">
+            Produits
+          </a>
+
+          <a href="index.html#about">
+            À propos
+          </a>
 
         </div>
 
@@ -1227,57 +1414,95 @@
 
     const params = new URLSearchParams(window.location.search);
 
-    const productId = Number(params.get("id")) || 1;
+    const productId =
+      Number(params.get("id")) || 1;
 
-    const product = products.find(item => item.id === productId) || products[0];
+    const product =
+      products.find(item => item.id === productId) ||
+      products[0];
 
-    document.title = `${product.name} — ZOREVA`;
+    document.title =
+      `${product.name} — ZOREVA`;
 
-    document.getElementById("productImage").src = product.image;
-    document.getElementById("productImage").alt = product.name;
+    document.getElementById("productImage").src =
+      product.image;
 
-    document.getElementById("productName").textContent = product.name;
-    document.getElementById("productCategory").textContent = product.category;
-    document.getElementById("productPrice").textContent = `${product.price} DH`;
-    document.getElementById("breadcrumbProduct").textContent = product.name;
+    document.getElementById("productImage").alt =
+      product.name;
+
+    document.getElementById("productName").textContent =
+      product.name;
+
+    document.getElementById("productCategory").textContent =
+      product.category;
+
+    document.getElementById("productPrice").textContent =
+      `${product.price} DH`;
+
+    document.getElementById("breadcrumbProduct").textContent =
+      product.name;
 
     /* ================= QUANTITY ================= */
 
     let quantity = 1;
 
-    const quantityElement = document.getElementById("quantity");
+    const quantityElement =
+      document.getElementById("quantity");
 
     document.getElementById("plusBtn").addEventListener("click", () => {
+
       quantity++;
-      quantityElement.textContent = quantity;
+
+      quantityElement.textContent =
+        quantity;
+
     });
 
     document.getElementById("minusBtn").addEventListener("click", () => {
+
       if(quantity > 1){
+
         quantity--;
-        quantityElement.textContent = quantity;
+
+        quantityElement.textContent =
+          quantity;
+
       }
+
     });
 
     /* ================= CART ================= */
 
-    let cart = JSON.parse(localStorage.getItem("zorevaCart")) || [];
+    let cart =
+      JSON.parse(localStorage.getItem("zorevaCart")) || [];
 
     function saveCart(){
-      localStorage.setItem("zorevaCart", JSON.stringify(cart));
+
+      localStorage.setItem(
+        "zorevaCart",
+        JSON.stringify(cart)
+      );
+
     }
 
     function updateCartCount(){
 
-      const count = cart.reduce((total,item) => total + item.quantity, 0);
+      const count =
+        cart.reduce(
+          (total,item) =>
+            total + item.quantity,
+          0
+        );
 
-      document.getElementById("cartCount").textContent = count;
+      document.getElementById("cartCount")
+        .textContent = count;
 
     }
 
     function addToCart(product, qty = 1){
 
-      const existing = cart.find(item => item.id === product.id);
+      const existing =
+        cart.find(item => item.id === product.id);
 
       if(existing){
 
@@ -1286,34 +1511,48 @@
       }else{
 
         cart.push({
+
           id:product.id,
+
           name:product.name,
+
           price:product.price,
+
           image:product.image,
+
           quantity:qty
+
         });
 
       }
 
       saveCart();
+
       updateCartCount();
+
       renderCart();
 
     }
 
     function removeFromCart(id){
 
-      cart = cart.filter(item => item.id !== id);
+      cart =
+        cart.filter(
+          item => item.id !== id
+        );
 
       saveCart();
+
       updateCartCount();
+
       renderCart();
 
     }
 
     function renderCart(){
 
-      const container = document.getElementById("cartItems");
+      const container =
+        document.getElementById("cartItems");
 
       if(cart.length === 0){
 
@@ -1323,9 +1562,11 @@
           </div>
         `;
 
-        document.getElementById("cartTotal").textContent = "0 DH";
+        document.getElementById("cartTotal")
+          .textContent = "0 DH";
 
         return;
+
       }
 
       container.innerHTML = "";
@@ -1334,19 +1575,32 @@
 
       cart.forEach(item => {
 
-        total += item.price * item.quantity;
+        total +=
+          item.price * item.quantity;
 
-        const div = document.createElement("div");
+        const div =
+          document.createElement("div");
 
-        div.className = "cart-item";
+        div.className =
+          "cart-item";
 
         div.innerHTML = `
 
-          <img src="${item.image}" alt="${item.name}">
+          <img
+            src="${item.image}"
+            alt="${item.name}"
+          >
 
           <div>
-            <h4>${item.name}</h4>
-            <p>${item.quantity} × ${item.price} DH</p>
+
+            <h4>
+              ${item.name}
+            </h4>
+
+            <p>
+              ${item.quantity} × ${item.price} DH
+            </p>
+
           </div>
 
           <button
@@ -1362,54 +1616,48 @@
 
       });
 
-      document.getElementById("cartTotal").textContent = `${total} DH`;
+      document.getElementById("cartTotal")
+        .textContent = `${total} DH`;
 
     }
 
-    /* ================= ADD BUTTON ================= */
+    /* ================= ADD ================= */
 
-    document.getElementById("addCartBtn").addEventListener("click", () => {
+    document.getElementById("addCartBtn")
+      .addEventListener("click", () => {
 
-      addToCart(product, quantity);
+        addToCart(product, quantity);
 
-      const button = document.getElementById("addCartBtn");
+        const button =
+          document.getElementById("addCartBtn");
 
-      const original = button.textContent;
+        const original =
+          button.textContent;
 
-      button.textContent = "Ajouté au panier";
+        button.textContent =
+          "Ajouté au panier";
 
-      setTimeout(() => {
-        button.textContent = original;
-      }, 1500);
+        setTimeout(() => {
 
-    });
+          button.textContent =
+            original;
 
-    /* ================= WHATSAPP PRODUCT ================= */
+        },1500);
 
-    document.getElementById("whatsappOrder").addEventListener("click", () => {
+      });
 
-      const message =
-        `Bonjour ZOREVA, je souhaite commander :%0A%0A` +
-        `Produit : ${product.name}%0A` +
-        `Prix : ${product.price} DH%0A` +
-        `Quantité : ${quantity}%0A%0A` +
-        `Merci.`;
+    /* ================= CART OPEN ================= */
 
-      window.open(
-        `https://wa.me/212765333754?text=${message}`,
-        "_blank"
-      );
+    const cartPanel =
+      document.getElementById("cartPanel");
 
-    });
-
-    /* ================= CART PANEL ================= */
-
-    const cartPanel = document.getElementById("cartPanel");
-    const cartOverlay = document.getElementById("cartOverlay");
+    const cartOverlay =
+      document.getElementById("cartOverlay");
 
     function openCart(){
 
       cartPanel.classList.add("active");
+
       cartOverlay.classList.add("active");
 
     }
@@ -1417,79 +1665,102 @@
     function closeCart(){
 
       cartPanel.classList.remove("active");
+
       cartOverlay.classList.remove("active");
 
     }
 
-    document.getElementById("cartBtn").addEventListener("click", openCart);
+    document.getElementById("cartBtn")
+      .addEventListener("click",openCart);
 
-    document.getElementById("cartClose").addEventListener("click", closeCart);
+    document.getElementById("cartClose")
+      .addEventListener("click",closeCart);
 
-    cartOverlay.addEventListener("click", closeCart);
+    cartOverlay.addEventListener(
+      "click",
+      closeCart
+    );
 
     /* ================= CHECKOUT ================= */
 
-    document.getElementById("checkoutBtn").addEventListener("click", () => {
+    document.getElementById("checkoutBtn")
+      .addEventListener("click", () => {
 
-      if(cart.length === 0){
+        if(cart.length === 0){
 
-        alert("Votre panier est vide.");
+          alert("Votre panier est vide.");
 
-        return;
+          return;
 
-      }
+        }
 
-      let message = "Bonjour ZOREVA, je souhaite passer une commande :%0A%0A";
+        let message =
+          "Bonjour ZOREVA, je souhaite passer une commande :\n\n";
 
-      let total = 0;
+        let total = 0;
 
-      cart.forEach(item => {
+        cart.forEach(item => {
 
-        const subtotal = item.price * item.quantity;
+          const subtotal =
+            item.price * item.quantity;
 
-        total += subtotal;
+          total += subtotal;
+
+          message +=
+            `${item.name} — ${item.quantity} × ${item.price} DH = ${subtotal} DH\n`;
+
+        });
 
         message +=
-          `• ${item.name} — ${item.quantity} × ${item.price} DH = ${subtotal} DH%0A`;
+          `\nTotal : ${total} DH`;
+
+        window.open(
+          "https://wa.me/212765333754?text=" +
+          encodeURIComponent(message),
+          "_blank"
+        );
 
       });
 
-      message += `%0ATotal : ${total} DH`;
-
-      window.open(
-        `https://wa.me/212765333754?text=${message}`,
-        "_blank"
-      );
-
-    });
-
-    /* ================= RELATED PRODUCTS ================= */
+    /* ================= RELATED ================= */
 
     function renderRelated(){
 
-      const container = document.getElementById("relatedProducts");
+      const container =
+        document.getElementById("relatedProducts");
 
-      const related = products
-        .filter(item => item.id !== product.id)
-        .slice(0,4);
+      const related =
+        products
+          .filter(item => item.id !== product.id)
+          .slice(0,4);
 
       related.forEach(item => {
 
-        const card = document.createElement("a");
+        const card =
+          document.createElement("a");
 
-        card.href = `product.html?id=${item.id}`;
+        card.href =
+          `product.html?id=${item.id}`;
 
-        card.className = "related-card";
+        card.className =
+          "related-card";
 
         card.innerHTML = `
 
-          <img src="${item.image}" alt="${item.name}">
+          <img
+            src="${item.image}"
+            alt="${item.name}"
+          >
 
           <div class="related-info">
 
-            <h3>${item.name}</h3>
+            <h3>
+              ${item.name}
+            </h3>
 
-            <p>${item.price} DH</p>
+            <p>
+              ${item.price} DH
+            </p>
 
           </div>
 
@@ -1503,14 +1774,22 @@
 
     /* ================= MENU ================= */
 
-    const menuBtn = document.getElementById("menuBtn");
-    const menuClose = document.getElementById("menuClose");
-    const sideMenu = document.getElementById("sideMenu");
-    const menuOverlay = document.getElementById("menuOverlay");
+    const menuBtn =
+      document.getElementById("menuBtn");
+
+    const menuClose =
+      document.getElementById("menuClose");
+
+    const sideMenu =
+      document.getElementById("sideMenu");
+
+    const menuOverlay =
+      document.getElementById("menuOverlay");
 
     function openMenu(){
 
       sideMenu.classList.add("active");
+
       menuOverlay.classList.add("active");
 
     }
@@ -1518,20 +1797,32 @@
     function closeMenu(){
 
       sideMenu.classList.remove("active");
+
       menuOverlay.classList.remove("active");
 
     }
 
-    menuBtn.addEventListener("click", openMenu);
+    menuBtn.addEventListener(
+      "click",
+      openMenu
+    );
 
-    menuClose.addEventListener("click", closeMenu);
+    menuClose.addEventListener(
+      "click",
+      closeMenu
+    );
 
-    menuOverlay.addEventListener("click", closeMenu);
+    menuOverlay.addEventListener(
+      "click",
+      closeMenu
+    );
 
     /* ================= INIT ================= */
 
     updateCartCount();
+
     renderCart();
+
     renderRelated();
 
   </script>
