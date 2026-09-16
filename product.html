@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -13,8 +12,9 @@
   <title>ZOREVA — Produit</title>
 
   <!-- FAVICON / LOGO TAB -->
-  <link rel="icon" type="image/svg+xml" href="logo.svg">
-  <link rel="shortcut icon" href="logo.svg">
+  <link rel="icon" href="./logo.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="./logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./logo.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1079,8 +1079,6 @@
 
 <body>
 
-  <!-- ================= ANNOUNCEMENT ================= -->
-
   <div class="announcement-bar">
     <div class="announcement-track">
       <span>Livraison gratuite</span>
@@ -1092,10 +1090,7 @@
     </div>
   </div>
 
-  <!-- ================= HEADER ================= -->
-
   <header>
-
     <div class="header-inner">
 
       <button class="menu-btn" id="menuBtn" aria-label="Menu">
@@ -1126,10 +1121,7 @@
       </div>
 
     </div>
-
   </header>
-
-  <!-- ================= SIDE MENU ================= -->
 
   <div class="menu-overlay" id="menuOverlay"></div>
 
@@ -1146,8 +1138,6 @@
     <a href="index.html#contact">Contact</a>
 
   </aside>
-
-  <!-- ================= MAIN ================= -->
 
   <main>
 
@@ -1226,49 +1216,36 @@
 
     </section>
 
-    <!-- BENEFITS -->
-
     <section class="benefits">
 
       <div class="benefit">
-
         <div class="benefit-title">
           Commande simple
         </div>
-
         <div class="benefit-text">
           Un processus rapide
         </div>
-
       </div>
 
       <div class="benefit">
-
         <div class="benefit-title">
           Sélection soignée
         </div>
-
         <div class="benefit-text">
           Des pièces choisies avec soin
         </div>
-
       </div>
 
       <div class="benefit">
-
         <div class="benefit-title">
           Service direct
         </div>
-
         <div class="benefit-text">
           Nous sommes à votre écoute
         </div>
-
       </div>
 
     </section>
-
-    <!-- RELATED -->
 
     <section class="related">
 
@@ -1286,8 +1263,6 @@
 
   </main>
 
-  <!-- ================= REAL WHATSAPP ================= -->
-
   <a
     href="https://wa.me/212765333754"
     target="_blank"
@@ -1302,8 +1277,6 @@
     </svg>
 
   </a>
-
-  <!-- ================= CART ================= -->
 
   <div class="cart-overlay" id="cartOverlay"></div>
 
@@ -1346,8 +1319,6 @@
     </div>
 
   </aside>
-
-  <!-- ================= FOOTER ================= -->
 
   <footer>
 
@@ -1412,8 +1383,6 @@
 
   <script>
 
-    /* ================= PRODUCTS ================= */
-
     const products = [
 
       {
@@ -1474,8 +1443,6 @@
 
     ];
 
-    /* ================= CURRENT PRODUCT ================= */
-
     const params = new URLSearchParams(window.location.search);
 
     const productId =
@@ -1506,8 +1473,6 @@
     document.getElementById("breadcrumbProduct").textContent =
       product.name;
 
-    /* ================= QUANTITY ================= */
-
     let quantity = 1;
 
     const quantityElement =
@@ -1534,8 +1499,6 @@
       }
 
     });
-
-    /* ================= CART ================= */
 
     let cart =
       JSON.parse(localStorage.getItem("zorevaCart")) || [];
@@ -1685,8 +1648,6 @@
 
     }
 
-    /* ================= ADD ================= */
-
     document.getElementById("addCartBtn")
       .addEventListener("click", () => {
 
@@ -1709,8 +1670,6 @@
         },1500);
 
       });
-
-    /* ================= CART OPEN ================= */
 
     const cartPanel =
       document.getElementById("cartPanel");
@@ -1745,8 +1704,6 @@
       closeCart
     );
 
-    /* ================= CHECKOUT ================= */
-
     document.getElementById("checkoutBtn")
       .addEventListener("click", () => {
 
@@ -1779,14 +1736,12 @@
           `\nTotal : ${total} DH`;
 
         window.open(
-          "https://wa.me/212765333754?text=" +
+          "https://wa.me/2127653333754?text=" +
           encodeURIComponent(message),
           "_blank"
         );
 
       });
-
-    /* ================= RELATED ================= */
 
     function renderRelated(){
 
@@ -1836,8 +1791,6 @@
 
     }
 
-    /* ================= MENU ================= */
-
     const menuBtn =
       document.getElementById("menuBtn");
 
@@ -1881,8 +1834,6 @@
       closeMenu
     );
 
-    /* ================= INIT ================= */
-
     updateCartCount();
 
     renderCart();
@@ -1893,4 +1844,3 @@
 
 </body>
 </html>
-```
