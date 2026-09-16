@@ -11,7 +11,6 @@
 
   <title>ZOREVA — Jewelry</title>
 
-  <!-- LOGO DANS L'ONGLET -->
   <link rel="icon" type="image/svg+xml" href="logo.svg">
   <link rel="shortcut icon" href="logo.svg">
 
@@ -63,10 +62,7 @@
       max-width:100%;
     }
 
-
-    /* =====================================================
-       ANNOUNCEMENT BAR
-    ===================================================== */
+    /* ANNOUNCEMENT BAR */
 
     .announcement-bar{
       position:fixed;
@@ -74,17 +70,12 @@
       left:0;
       width:100%;
       height:32px;
-
       background:#111;
       color:#fff;
-
       overflow:hidden;
-
       z-index:2500;
-
       display:flex;
       align-items:center;
-
       border-bottom:1px solid rgba(185,151,91,.35);
     }
 
@@ -92,18 +83,12 @@
       display:flex;
       align-items:center;
       justify-content:center;
-
       gap:18px;
-
       width:100%;
-
       white-space:nowrap;
-
-      font-size:9px;
-      letter-spacing:1.5px;
-
+      font-size:10px;
+      letter-spacing:1.4px;
       text-transform:uppercase;
-
       animation:announcementFade 1s ease both;
     }
 
@@ -116,84 +101,54 @@
         opacity:0;
         transform:translateY(-7px);
       }
-
       to{
         opacity:1;
         transform:translateY(0);
       }
     }
 
-
-    /* =====================================================
-       HEADER
-    ===================================================== */
+    /* HEADER */
 
     header{
       position:fixed;
-
       top:32px;
       left:0;
-
       width:100%;
       height:82px;
-
       background:rgba(255,255,255,.96);
-
       backdrop-filter:blur(16px);
-
       border-bottom:1px solid rgba(0,0,0,.06);
-
       z-index:1000;
     }
 
     .header-inner{
       max-width:1400px;
-
       height:100%;
-
       margin:auto;
-
       padding:0 30px;
-
       display:grid;
-
       grid-template-columns:1fr auto 1fr;
-
       align-items:center;
     }
-
-
-    /* MENU 3 LINES */
 
     .menu-btn{
       width:44px;
       height:44px;
-
       border:0;
-
       background:none;
-
       cursor:pointer;
-
       display:flex;
-
       flex-direction:column;
-
       justify-content:center;
-
       gap:6px;
-
       padding:8px;
     }
 
     .menu-btn span{
       width:25px;
       height:1.5px;
-
       display:block;
-
       background:#111;
-
       transition:.3s;
     }
 
@@ -201,148 +156,95 @@
       background:var(--gold-dark);
     }
 
-
-    /* LOGO + NOM */
-
     .brand{
       display:flex;
-
       align-items:center;
-
       justify-content:center;
-
       gap:10px;
     }
 
     .brand img{
       width:58px;
       height:58px;
-
       object-fit:contain;
     }
 
     .brand-name{
       font-family:'Cormorant Garamond',serif;
-
       font-size:25px;
-
       font-weight:600;
-
       letter-spacing:3px;
     }
 
-
-    /* CART */
-
     .header-actions{
       display:flex;
-
       justify-content:flex-end;
-
       align-items:center;
     }
 
     .cart-btn{
       width:44px;
       height:44px;
-
       border:0;
-
       background:none;
-
       cursor:pointer;
-
       position:relative;
-
       display:flex;
-
       justify-content:center;
-
       align-items:center;
     }
 
     .cart-svg{
       width:23px;
       height:23px;
-
       fill:none;
-
       stroke:#111;
-
       stroke-width:1.5;
     }
 
     .cart-count{
       position:absolute;
-
       top:1px;
       right:0;
-
       width:17px;
       height:17px;
-
       border-radius:50%;
-
       background:var(--gold);
-
       color:#fff;
-
       display:flex;
-
       justify-content:center;
-
       align-items:center;
-
       font-size:9px;
-
       font-weight:600;
     }
 
-
-    /* =====================================================
-       SIDE MENU
-    ===================================================== */
+    /* SIDE MENU */
 
     .menu-overlay{
       position:fixed;
-
       inset:0;
-
       background:rgba(0,0,0,.42);
-
       opacity:0;
-
       visibility:hidden;
-
       transition:.3s;
-
       z-index:1900;
     }
 
     .menu-overlay.active{
       opacity:1;
-
       visibility:visible;
     }
 
     .side-menu{
       position:fixed;
-
       top:0;
       left:-350px;
-
       width:330px;
-
       height:100vh;
-
       background:#fff;
-
       padding:28px;
-
       z-index:2000;
-
       box-shadow:15px 0 40px rgba(0,0,0,.12);
-
       transition:.45s ease;
     }
 
@@ -352,41 +254,27 @@
 
     .menu-close{
       border:0;
-
       background:none;
-
       font-size:29px;
-
       cursor:pointer;
-
       margin-bottom:45px;
     }
 
     .side-menu h3{
       font-family:'Cormorant Garamond',serif;
-
       font-size:30px;
-
       font-weight:500;
-
       letter-spacing:3px;
-
       margin-bottom:30px;
     }
 
     .side-menu a{
       display:block;
-
       padding:16px 0;
-
       border-bottom:1px solid var(--border);
-
       font-size:11px;
-
       letter-spacing:1.5px;
-
       text-transform:uppercase;
-
       transition:.2s;
     }
 
@@ -394,10 +282,7 @@
       color:var(--gold-dark);
     }
 
-
-    /* =====================================================
-       HERO
-    ===================================================== */
+    /* HERO */
 
     main{
       padding-top:114px;
@@ -405,23 +290,16 @@
 
     .hero{
       position:relative;
-
       min-height:calc(100vh - 114px);
-
       display:flex;
-
       align-items:center;
-
       overflow:hidden;
-
       background:#f5f2eb;
     }
 
     .hero-image{
       position:absolute;
-
       inset:0;
-
       background-image:
         linear-gradient(
           90deg,
@@ -429,172 +307,114 @@
           rgba(0,0,0,.10)
         ),
         url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=2200&q=90");
-
       background-size:cover;
-
       background-position:center;
     }
 
     .hero-content{
       position:relative;
-
       z-index:2;
-
       max-width:1400px;
-
       width:100%;
-
       margin:auto;
-
       padding:70px 30px;
-
       color:#fff;
     }
 
     .hero-small{
       font-size:10px;
-
       letter-spacing:4px;
-
       text-transform:uppercase;
-
       margin-bottom:22px;
-
       opacity:.9;
-
       animation:fadeUp .8s ease both;
     }
 
     .hero h1{
       max-width:700px;
-
       font-family:'Cormorant Garamond',serif;
-
       font-size:clamp(55px,8vw,105px);
-
       line-height:.88;
-
       font-weight:500;
-
       margin-bottom:28px;
-
       animation:fadeUp .9s .1s ease both;
     }
 
     .hero p{
       max-width:500px;
-
       font-size:13px;
-
       line-height:2;
-
       color:rgba(255,255,255,.85);
-
       margin-bottom:35px;
-
       animation:fadeUp 1s .2s ease both;
     }
 
     .hero-button{
       display:inline-flex;
-
       align-items:center;
-
       justify-content:center;
-
       min-width:190px;
-
       height:54px;
-
       padding:0 28px;
-
       background:#fff;
-
       color:#111;
-
       font-size:10px;
-
       letter-spacing:2px;
-
       text-transform:uppercase;
-
       transition:.3s;
-
       animation:fadeUp 1s .3s ease both;
     }
 
     .hero-button:hover{
       background:var(--gold);
-
       color:#fff;
     }
 
-
-    /* =====================================================
-       COLLECTIONS
-    ===================================================== */
+    /* COLLECTIONS */
 
     .collections{
       max-width:1400px;
-
       margin:auto;
-
       padding:110px 30px;
     }
 
     .section-heading{
       text-align:center;
-
       margin-bottom:55px;
     }
 
     .section-heading span{
       display:block;
-
       color:var(--gold-dark);
-
       font-size:9px;
-
       letter-spacing:3px;
-
       text-transform:uppercase;
-
       margin-bottom:12px;
     }
 
     .section-heading h2{
       font-family:'Cormorant Garamond',serif;
-
       font-size:50px;
-
       font-weight:500;
     }
 
     .collections-grid{
       display:grid;
-
       grid-template-columns:repeat(3,1fr);
-
       gap:18px;
     }
 
     .collection-card{
       position:relative;
-
       height:470px;
-
       overflow:hidden;
-
       background:#eee;
     }
 
     .collection-card img{
       width:100%;
-
       height:100%;
-
       object-fit:cover;
-
       transition:transform .8s ease;
     }
 
@@ -604,124 +424,86 @@
 
     .collection-overlay{
       position:absolute;
-
       inset:0;
-
       display:flex;
-
       flex-direction:column;
-
       align-items:center;
-
       justify-content:flex-end;
-
       padding:35px;
-
       text-align:center;
-
       background:linear-gradient(
         to top,
         rgba(0,0,0,.65),
         transparent 55%
       );
-
       color:#fff;
     }
 
     .collection-overlay h3{
       font-family:'Cormorant Garamond',serif;
-
       font-size:34px;
-
       font-weight:500;
-
       margin-bottom:8px;
     }
 
     .collection-overlay span{
       font-size:9px;
-
       letter-spacing:2px;
-
       text-transform:uppercase;
     }
 
-
-    /* =====================================================
-       PRODUCTS
-    ===================================================== */
+    /* PRODUCTS */
 
     .products-section{
       background:var(--cream);
-
       padding:110px 30px;
     }
 
     .products-inner{
       max-width:1400px;
-
       margin:auto;
     }
 
     .products-toolbar{
       display:flex;
-
       justify-content:space-between;
-
       align-items:center;
-
       margin-bottom:40px;
     }
 
     .products-count{
       font-size:10px;
-
       color:#888;
-
       letter-spacing:1px;
     }
 
     .filter-open{
       height:44px;
-
       padding:0 22px;
-
       border:1px solid #ccc;
-
       background:#fff;
-
       cursor:pointer;
-
       font-size:10px;
-
       letter-spacing:1.5px;
-
       text-transform:uppercase;
-
       transition:.3s;
     }
 
     .filter-open:hover{
       border-color:var(--gold);
-
       color:var(--gold-dark);
     }
 
     .products-grid{
       display:grid;
-
       grid-template-columns:repeat(4,1fr);
-
       gap:20px;
     }
 
     .product-card{
       background:#fff;
-
       overflow:hidden;
-
       cursor:pointer;
-
       transition:.35s;
     }
 
@@ -731,19 +513,14 @@
 
     .product-image{
       position:relative;
-
       overflow:hidden;
-
       background:#eee;
     }
 
     .product-image img{
       width:100%;
-
       aspect-ratio:1 / 1.08;
-
       object-fit:cover;
-
       transition:transform .7s ease;
     }
 
@@ -753,130 +530,85 @@
 
     .quick-add{
       position:absolute;
-
       left:15px;
-
       right:15px;
-
       bottom:15px;
-
       height:44px;
-
       background:rgba(255,255,255,.95);
-
       border:0;
-
       cursor:pointer;
-
       font-size:9px;
-
       letter-spacing:1.5px;
-
       text-transform:uppercase;
-
       opacity:0;
-
       transform:translateY(10px);
-
       transition:.3s;
     }
 
     .product-card:hover .quick-add{
       opacity:1;
-
       transform:translateY(0);
     }
 
     .product-info{
       display:block;
-
       padding:17px 15px 20px;
-
       background:#fff;
     }
 
     .product-info h3{
       font-family:'Cormorant Garamond',serif;
-
       font-size:22px;
-
       font-weight:500;
-
       margin-bottom:6px;
     }
 
     .product-info-bottom{
       display:flex;
-
       justify-content:space-between;
-
       align-items:center;
     }
 
     .product-category{
       font-size:9px;
-
       color:#888;
-
       letter-spacing:1px;
-
       text-transform:uppercase;
     }
 
     .product-price{
       font-size:12px;
-
       color:#222;
     }
 
-
-    /* =====================================================
-       FILTER PANEL
-    ===================================================== */
+    /* FILTER */
 
     .filter-overlay{
       position:fixed;
-
       inset:0;
-
       background:rgba(0,0,0,.4);
-
       z-index:3000;
-
       opacity:0;
-
       visibility:hidden;
-
       transition:.3s;
     }
 
     .filter-overlay.active{
       opacity:1;
-
       visibility:visible;
     }
 
     .filter-panel{
       position:fixed;
-
       top:0;
-
       left:-390px;
-
       width:370px;
-
       max-width:92%;
-
       height:100vh;
-
       background:#fff;
-
       z-index:3100;
-
       padding:28px;
-
       box-shadow:15px 0 40px rgba(0,0,0,.12);
-
       transition:.45s ease;
     }
 
@@ -886,39 +618,26 @@
 
     .filter-header{
       display:flex;
-
       justify-content:space-between;
-
       align-items:center;
-
       padding-bottom:25px;
-
       border-bottom:1px solid var(--border);
-
       margin-bottom:30px;
     }
 
     .filter-header h3{
       font-family:'Cormorant Garamond',serif;
-
       font-size:30px;
-
       font-weight:500;
     }
 
     .filter-close{
       width:36px;
-
       height:36px;
-
       border:1px solid var(--border);
-
       border-radius:50%;
-
       background:#fff;
-
       cursor:pointer;
-
       font-size:20px;
     }
 
@@ -928,182 +647,119 @@
 
     .filter-group h4{
       font-size:10px;
-
       text-transform:uppercase;
-
       letter-spacing:2px;
-
       margin-bottom:15px;
     }
 
     .filter-group button{
       width:100%;
-
       height:43px;
-
       margin-bottom:8px;
-
       border:1px solid var(--border);
-
       background:#fff;
-
       cursor:pointer;
-
       text-align:left;
-
       padding:0 14px;
-
       font-size:11px;
-
       transition:.2s;
     }
 
     .filter-group button:hover,
     .filter-group button.active{
       border-color:var(--gold);
-
       color:var(--gold-dark);
     }
 
     .reset-filter{
       width:100%;
-
       height:50px;
-
       background:#111;
-
       color:#fff;
-
       border:0;
-
       cursor:pointer;
-
       font-size:10px;
-
       letter-spacing:2px;
-
       text-transform:uppercase;
     }
 
-
-    /* =====================================================
-       ABOUT
-    ===================================================== */
+    /* ABOUT */
 
     .about{
       max-width:1400px;
-
       margin:auto;
-
       padding:120px 30px;
-
       display:grid;
-
       grid-template-columns:1fr 1fr;
-
       gap:90px;
-
       align-items:center;
     }
 
     .about-image{
       background:#eee;
-
       overflow:hidden;
     }
 
     .about-image img{
       width:100%;
-
       aspect-ratio:1 / 1.08;
-
       object-fit:cover;
     }
 
     .about-content span{
       color:var(--gold-dark);
-
       font-size:9px;
-
       letter-spacing:3px;
-
       text-transform:uppercase;
     }
 
     .about-content h2{
       font-family:'Cormorant Garamond',serif;
-
       font-size:58px;
-
       line-height:1;
-
       font-weight:500;
-
       margin:18px 0 25px;
     }
 
     .about-content p{
       color:#666;
-
       font-size:13px;
-
       line-height:2;
-
       max-width:500px;
     }
 
-
-    /* =====================================================
-       CONTACT
-    ===================================================== */
+    /* CONTACT */
 
     .contact{
       background:var(--cream);
-
       padding:100px 30px;
-
       text-align:center;
     }
 
     .contact h2{
       font-family:'Cormorant Garamond',serif;
-
       font-size:52px;
-
       font-weight:500;
-
       margin-bottom:15px;
     }
 
     .contact p{
       color:#777;
-
       font-size:12px;
-
       margin-bottom:30px;
     }
 
     .contact-button{
       display:inline-flex;
-
       align-items:center;
-
       justify-content:center;
-
       height:52px;
-
       padding:0 30px;
-
       background:#111;
-
       color:#fff;
-
       font-size:10px;
-
       letter-spacing:2px;
-
       text-transform:uppercase;
-
       transition:.3s;
     }
 
@@ -1111,36 +767,21 @@
       background:var(--gold-dark);
     }
 
-
-    /* =====================================================
-       REAL WHATSAPP
-    ===================================================== */
+    /* WHATSAPP */
 
     .whatsapp-float{
       position:fixed;
-
       right:24px;
-
       bottom:24px;
-
       width:58px;
-
       height:58px;
-
       border-radius:50%;
-
       background:#25D366;
-
       display:flex;
-
       justify-content:center;
-
       align-items:center;
-
       z-index:2500;
-
       box-shadow:0 8px 25px rgba(0,0,0,.18);
-
       transition:.3s;
     }
 
@@ -1150,64 +791,40 @@
 
     .whatsapp-float svg{
       width:31px;
-
       height:31px;
-
       fill:#fff;
     }
 
-
-    /* =====================================================
-       CART DRAWER
-    ===================================================== */
+    /* CART */
 
     .cart-overlay{
       position:fixed;
-
       inset:0;
-
       background:rgba(0,0,0,.45);
-
       z-index:3000;
-
       opacity:0;
-
       visibility:hidden;
-
       transition:.3s;
     }
 
     .cart-overlay.active{
       opacity:1;
-
       visibility:visible;
     }
 
     .cart-panel{
       position:fixed;
-
       top:0;
-
       right:-450px;
-
       width:420px;
-
       max-width:94%;
-
       height:100vh;
-
       background:#fff;
-
       z-index:3100;
-
       transition:.45s ease;
-
       display:flex;
-
       flex-direction:column;
-
       border-radius:22px 0 0 22px;
-
       box-shadow:-15px 0 45px rgba(0,0,0,.13);
     }
 
@@ -1217,157 +834,105 @@
 
     .cart-header{
       padding:25px;
-
       border-bottom:1px solid var(--border);
-
       display:flex;
-
       justify-content:space-between;
-
       align-items:center;
     }
 
     .cart-header h2{
       font-family:'Cormorant Garamond',serif;
-
       font-size:30px;
-
       font-weight:500;
     }
 
     .cart-close{
       width:36px;
-
       height:36px;
-
       border:1px solid var(--border);
-
       border-radius:50%;
-
       background:#fff;
-
       cursor:pointer;
-
       font-size:20px;
     }
 
     .cart-items{
       flex:1;
-
       overflow-y:auto;
-
       padding:10px 22px;
     }
 
     .cart-empty{
       text-align:center;
-
       color:#888;
-
       font-size:12px;
-
       padding:70px 20px;
     }
 
     .cart-item{
       display:grid;
-
       grid-template-columns:72px 1fr 30px;
-
       gap:14px;
-
       padding:18px 0;
-
       border-bottom:1px solid var(--border);
-
       align-items:center;
     }
 
     .cart-item img{
       width:72px;
-
       height:72px;
-
       object-fit:cover;
-
       background:#f7f5f0;
-
       border-radius:4px;
     }
 
     .cart-item h4{
       font-family:'Cormorant Garamond',serif;
-
       font-size:19px;
-
       font-weight:500;
-
       margin-bottom:5px;
     }
 
     .cart-item p{
       font-size:10px;
-
       color:#777;
     }
 
     .remove-item{
       width:28px;
-
       height:28px;
-
       border:0;
-
       border-radius:50%;
-
       background:#f5f3ef;
-
       cursor:pointer;
-
       font-size:16px;
-
       color:#777;
     }
 
     .cart-footer{
       padding:20px 22px 24px;
-
       border-top:1px solid var(--border);
-
       background:#fff;
-
       border-radius:0 0 0 22px;
     }
 
     .cart-total{
       display:flex;
-
       justify-content:space-between;
-
       margin-bottom:17px;
-
       font-size:13px;
     }
 
     .checkout-btn{
       width:100%;
-
       height:52px;
-
       border:0;
-
       background:#111;
-
       color:#fff;
-
       cursor:pointer;
-
       font-size:10px;
-
       letter-spacing:2px;
-
       text-transform:uppercase;
-
       transition:.3s;
     }
 
@@ -1375,76 +940,53 @@
       background:var(--gold-dark);
     }
 
-
-    /* =====================================================
-       FOOTER
-    ===================================================== */
+    /* FOOTER */
 
     footer{
       background:#111;
-
       color:#fff;
-
       padding:70px 30px 30px;
     }
 
     .footer-inner{
       max-width:1400px;
-
       margin:auto;
     }
 
     .footer-main{
       display:grid;
-
       grid-template-columns:1.4fr 1fr 1fr;
-
       gap:70px;
-
       padding-bottom:60px;
-
       border-bottom:1px solid rgba(255,255,255,.15);
     }
 
     .footer-brand img{
       width:75px;
-
       height:75px;
-
       object-fit:contain;
-
       margin-bottom:20px;
     }
 
     .footer-brand p{
       max-width:350px;
-
       color:#aaa;
-
       font-size:11px;
-
       line-height:2;
     }
 
     .footer-column h3{
       font-family:'Cormorant Garamond',serif;
-
       font-size:24px;
-
       font-weight:500;
-
       margin-bottom:20px;
     }
 
     .footer-column a{
       display:block;
-
       color:#aaa;
-
       font-size:10px;
-
       margin-bottom:13px;
-
       transition:.2s;
     }
 
@@ -1454,41 +996,26 @@
 
     .copyright{
       padding-top:25px;
-
       text-align:center;
-
       color:#777;
-
       font-size:9px;
-
       letter-spacing:1px;
     }
 
-
-    /* =====================================================
-       ANIMATIONS
-    ===================================================== */
+    /* ANIMATIONS */
 
     @keyframes fadeUp{
-
       from{
         opacity:0;
-
         transform:translateY(25px);
       }
-
       to{
         opacity:1;
-
         transform:translateY(0);
       }
-
     }
 
-
-    /* =====================================================
-       MOBILE
-    ===================================================== */
+    /* MOBILE */
 
     @media(max-width:1000px){
 
@@ -1502,12 +1029,10 @@
 
     }
 
-
     @media(max-width:800px){
 
       header{
         top:32px;
-
         height:72px;
       }
 
@@ -1521,11 +1046,8 @@
 
       .announcement-track{
         justify-content:flex-start;
-
         width:max-content;
-
         padding-left:18px;
-
         gap:15px;
       }
 
@@ -1535,13 +1057,11 @@
 
       .brand img{
         width:50px;
-
         height:50px;
       }
 
       .brand-name{
         font-size:21px;
-
         letter-spacing:2px;
       }
 
@@ -1571,21 +1091,17 @@
 
       .products-grid{
         grid-template-columns:repeat(2,1fr);
-
         gap:12px;
       }
 
       .quick-add{
         opacity:1;
-
         transform:none;
       }
 
       .about{
         padding:80px 16px;
-
         grid-template-columns:1fr;
-
         gap:40px;
       }
 
@@ -1595,7 +1111,6 @@
 
       .footer-main{
         grid-template-columns:1fr 1fr;
-
         gap:40px;
       }
 
@@ -1605,12 +1120,10 @@
 
     }
 
-
     @media(max-width:600px){
 
       .announcement-track{
-        font-size:8px;
-
+        font-size:10px;
         letter-spacing:1.2px;
       }
 
@@ -1620,13 +1133,11 @@
 
       .brand img{
         width:46px;
-
         height:46px;
       }
 
       .brand-name{
         font-size:19px;
-
         letter-spacing:1.5px;
       }
 
@@ -1680,19 +1191,14 @@
 
       .whatsapp-float{
         width:55px;
-
         height:55px;
-
         right:16px;
-
         bottom:16px;
       }
 
       .cart-panel{
         width:100%;
-
         max-width:100%;
-
         border-radius:20px 0 0 20px;
       }
 
@@ -1703,189 +1209,67 @@
 
 <body>
 
-
-  <!-- =====================================================
-       ANNOUNCEMENT BAR
-  ===================================================== -->
-
   <div class="announcement-bar">
-
     <div class="announcement-track">
-
-      <span>
-        Livraison gratuite
-      </span>
-
-      <span class="separator">
-        •
-      </span>
-
-      <span>
-        Livraison partout au Maroc
-      </span>
-
-      <span class="separator">
-        •
-      </span>
-
-      <span>
-        Bijoux en acier inoxydable
-      </span>
-
-      <span class="separator">
-        •
-      </span>
-
+      <span>Livraison gratuite</span>
+      <span class="separator">•</span>
+      <span>Livraison partout au Maroc</span>
+      <span class="separator">•</span>
+      <span>Bijoux en acier inoxydable</span>
+      <span class="separator">•</span>
     </div>
-
   </div>
 
-
-  <!-- =====================================================
-       HEADER
-  ===================================================== -->
-
   <header>
-
     <div class="header-inner">
 
-      <button
-        class="menu-btn"
-        id="menuBtn"
-        aria-label="Menu"
-      >
-
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">
         <span></span>
         <span></span>
         <span></span>
-
       </button>
 
-
-      <a
-        href="index.html"
-        class="brand"
-      >
-
-        <img
-          src="logo.svg"
-          alt="ZOREVA"
-        >
-
-        <span class="brand-name">
-          ZOREVA
-        </span>
-
+      <a href="index.html" class="brand">
+        <img src="logo.svg" alt="ZOREVA">
+        <span class="brand-name">ZOREVA</span>
       </a>
 
-
       <div class="header-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Panier">
 
-        <button
-          class="cart-btn"
-          id="cartBtn"
-          aria-label="Panier"
-        >
-
-          <svg
-            class="cart-svg"
-            viewBox="0 0 24 24"
-          >
-
+          <svg class="cart-svg" viewBox="0 0 24 24">
             <path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 7H6"/>
-
-            <circle
-              cx="10"
-              cy="20"
-              r="1"
-            />
-
-            <circle
-              cx="18"
-              cy="20"
-              r="1"
-            />
-
+            <circle cx="10" cy="20" r="1"/>
+            <circle cx="18" cy="20" r="1"/>
           </svg>
 
-          <span
-            class="cart-count"
-            id="cartCount"
-          >
-            0
-          </span>
+          <span class="cart-count" id="cartCount">0</span>
 
         </button>
-
       </div>
 
     </div>
-
   </header>
 
+  <div class="menu-overlay" id="menuOverlay"></div>
 
-  <!-- =====================================================
-       SIDE MENU
-  ===================================================== -->
+  <aside class="side-menu" id="sideMenu">
 
-  <div
-    class="menu-overlay"
-    id="menuOverlay"
-  ></div>
+    <button class="menu-close" id="menuClose">×</button>
 
+    <h3>ZOREVA</h3>
 
-  <aside
-    class="side-menu"
-    id="sideMenu"
-  >
-
-    <button
-      class="menu-close"
-      id="menuClose"
-    >
-      ×
-    </button>
-
-    <h3>
-      ZOREVA
-    </h3>
-
-    <a href="#home">
-      Accueil
-    </a>
-
-    <a href="#collections">
-      Collections
-    </a>
-
-    <a href="#products">
-      Produits
-    </a>
-
-    <a href="#about">
-      À propos
-    </a>
-
-    <a href="#contact">
-      Contact
-    </a>
+    <a href="#home">Accueil</a>
+    <a href="#collections">Collections</a>
+    <a href="#products">Produits</a>
+    <a href="#about">À propos</a>
+    <a href="#contact">Contact</a>
 
   </aside>
 
-
-  <!-- =====================================================
-       MAIN
-  ===================================================== -->
-
   <main>
 
-
-    <!-- HERO -->
-
-    <section
-      class="hero"
-      id="home"
-    >
+    <section class="hero" id="home">
 
       <div class="hero-image"></div>
 
@@ -1907,10 +1291,7 @@
           chaque style.
         </p>
 
-        <a
-          href="#products"
-          class="hero-button"
-        >
+        <a href="#products" class="hero-button">
           Découvrir la collection
         </a>
 
@@ -1918,36 +1299,19 @@
 
     </section>
 
-
-    <!-- =====================================================
-         COLLECTIONS
-    ===================================================== -->
-
-    <section
-      class="collections"
-      id="collections"
-    >
+    <section class="collections" id="collections">
 
       <div class="section-heading">
 
-        <span>
-          Nos collections
-        </span>
+        <span>Nos collections</span>
 
-        <h2>
-          Choisissez votre style
-        </h2>
+        <h2>Choisissez votre style</h2>
 
       </div>
 
-
       <div class="collections-grid">
 
-
-        <a
-          href="#products"
-          class="collection-card"
-        >
+        <a href="#products" class="collection-card">
 
           <img
             src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1000&q=85"
@@ -1955,24 +1319,13 @@
           >
 
           <div class="collection-overlay">
-
-            <h3>
-              Bagues
-            </h3>
-
-            <span>
-              Découvrir
-            </span>
-
+            <h3>Bagues</h3>
+            <span>Découvrir</span>
           </div>
 
         </a>
 
-
-        <a
-          href="#products"
-          class="collection-card"
-        >
+        <a href="#products" class="collection-card">
 
           <img
             src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1000&q=85"
@@ -1980,24 +1333,13 @@
           >
 
           <div class="collection-overlay">
-
-            <h3>
-              Bracelets
-            </h3>
-
-            <span>
-              Découvrir
-            </span>
-
+            <h3>Bracelets</h3>
+            <span>Découvrir</span>
           </div>
 
         </a>
 
-
-        <a
-          href="#products"
-          class="collection-card"
-        >
+        <a href="#products" class="collection-card">
 
           <img
             src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85"
@@ -2005,86 +1347,47 @@
           >
 
           <div class="collection-overlay">
-
-            <h3>
-              Colliers
-            </h3>
-
-            <span>
-              Découvrir
-            </span>
-
+            <h3>Colliers</h3>
+            <span>Découvrir</span>
           </div>
 
         </a>
-
 
       </div>
 
     </section>
 
-
-    <!-- =====================================================
-         PRODUCTS
-    ===================================================== -->
-
-    <section
-      class="products-section"
-      id="products"
-    >
+    <section class="products-section" id="products">
 
       <div class="products-inner">
 
         <div class="section-heading">
 
-          <span>
-            Collection
-          </span>
+          <span>Collection</span>
 
-          <h2>
-            Nos bijoux
-          </h2>
+          <h2>Nos bijoux</h2>
 
         </div>
 
-
         <div class="products-toolbar">
 
-          <div
-            class="products-count"
-            id="productsCount"
-          >
+          <div class="products-count" id="productsCount">
             7 produits
           </div>
 
-          <button
-            class="filter-open"
-            id="filterOpen"
-          >
+          <button class="filter-open" id="filterOpen">
             Filtrer & Trier
           </button>
 
         </div>
 
-
-        <div
-          class="products-grid"
-          id="productsGrid"
-        ></div>
+        <div class="products-grid" id="productsGrid"></div>
 
       </div>
 
     </section>
 
-
-    <!-- =====================================================
-         ABOUT
-    ===================================================== -->
-
-    <section
-      class="about"
-      id="about"
-    >
+    <section class="about" id="about">
 
       <div class="about-image">
 
@@ -2095,12 +1398,9 @@
 
       </div>
 
-
       <div class="about-content">
 
-        <span>
-          L'univers ZOREVA
-        </span>
+        <span>L'univers ZOREVA</span>
 
         <h2>
           Des détails qui font la différence.
@@ -2117,19 +1417,9 @@
 
     </section>
 
+    <section class="contact" id="contact">
 
-    <!-- =====================================================
-         CONTACT
-    ===================================================== -->
-
-    <section
-      class="contact"
-      id="contact"
-    >
-
-      <h2>
-        Une question ?
-      </h2>
+      <h2>Une question ?</h2>
 
       <p>
         Contactez-nous directement pour plus d'informations
@@ -2148,11 +1438,6 @@
 
   </main>
 
-
-  <!-- =====================================================
-       REAL WHATSAPP BUTTON
-  ===================================================== -->
-
   <a
     href="https://wa.me/212765333754"
     target="_blank"
@@ -2168,115 +1453,63 @@
 
   </a>
 
+  <div class="filter-overlay" id="filterOverlay"></div>
 
-  <!-- =====================================================
-       FILTER
-  ===================================================== -->
-
-  <div
-    class="filter-overlay"
-    id="filterOverlay"
-  ></div>
-
-
-  <aside
-    class="filter-panel"
-    id="filterPanel"
-  >
+  <aside class="filter-panel" id="filterPanel">
 
     <div class="filter-header">
 
-      <h3>
-        Filtrer
-      </h3>
+      <h3>Filtrer</h3>
 
-      <button
-        class="filter-close"
-        id="filterClose"
-      >
-        ×
-      </button>
+      <button class="filter-close" id="filterClose">×</button>
 
     </div>
 
-
     <div class="filter-group">
 
-      <h4>
-        Catégorie
-      </h4>
+      <h4>Catégorie</h4>
 
-      <button
-        data-category="all"
-        class="category-filter active"
-      >
+      <button data-category="all" class="category-filter active">
         Tous les produits
       </button>
 
-      <button
-        data-category="Bagues"
-        class="category-filter"
-      >
+      <button data-category="Bagues" class="category-filter">
         Bagues
       </button>
 
-      <button
-        data-category="Bracelets"
-        class="category-filter"
-      >
+      <button data-category="Bracelets" class="category-filter">
         Bracelets
       </button>
 
-      <button
-        data-category="Colliers"
-        class="category-filter"
-      >
+      <button data-category="Colliers" class="category-filter">
         Colliers
       </button>
 
     </div>
 
-
     <div class="filter-group">
 
-      <h4>
-        Prix
-      </h4>
+      <h4>Prix</h4>
 
-      <button
-        data-price="all"
-        class="price-filter active"
-      >
+      <button data-price="all" class="price-filter active">
         Tous les prix
       </button>
 
-      <button
-        data-price="under120"
-        class="price-filter"
-      >
+      <button data-price="under120" class="price-filter">
         Moins de 120 DH
       </button>
 
-      <button
-        data-price="149"
-        class="price-filter"
-      >
+      <button data-price="149" class="price-filter">
         149 DH
       </button>
 
     </div>
 
-
     <div class="filter-group">
 
-      <h4>
-        Trier par
-      </h4>
+      <h4>Trier par</h4>
 
-      <button
-        data-sort="default"
-        class="sort-filter active"
-      >
+      <button data-sort="default" class="sort-filter active">
         Recommandés
       </button>
 
@@ -2290,52 +1523,25 @@
 
     </div>
 
-
-    <button
-      class="reset-filter"
-      id="resetFilter"
-    >
+    <button class="reset-filter" id="resetFilter">
       Réinitialiser
     </button>
 
   </aside>
 
+  <div class="cart-overlay" id="cartOverlay"></div>
 
-  <!-- =====================================================
-       CART
-  ===================================================== -->
-
-  <div
-    class="cart-overlay"
-    id="cartOverlay"
-  ></div>
-
-
-  <aside
-    class="cart-panel"
-    id="cartPanel"
-  >
+  <aside class="cart-panel" id="cartPanel">
 
     <div class="cart-header">
 
-      <h2>
-        Votre panier
-      </h2>
+      <h2>Votre panier</h2>
 
-      <button
-        class="cart-close"
-        id="cartClose"
-      >
-        ×
-      </button>
+      <button class="cart-close" id="cartClose">×</button>
 
     </div>
 
-
-    <div
-      class="cart-items"
-      id="cartItems"
-    >
+    <div class="cart-items" id="cartItems">
 
       <div class="cart-empty">
         Votre panier est vide.
@@ -2343,14 +1549,11 @@
 
     </div>
 
-
     <div class="cart-footer">
 
       <div class="cart-total">
 
-        <span>
-          Total
-        </span>
+        <span>Total</span>
 
         <strong id="cartTotal">
           0 DH
@@ -2358,21 +1561,13 @@
 
       </div>
 
-      <button
-        class="checkout-btn"
-        id="checkoutBtn"
-      >
+      <button class="checkout-btn" id="checkoutBtn">
         Finaliser la commande
       </button>
 
     </div>
 
   </aside>
-
-
-  <!-- =====================================================
-       FOOTER
-  ===================================================== -->
 
   <footer>
 
@@ -2382,10 +1577,7 @@
 
         <div class="footer-brand">
 
-          <img
-            src="logo.svg"
-            alt="ZOREVA"
-          >
+          <img src="logo.svg" alt="ZOREVA">
 
           <p>
             Une sélection de bijoux élégants,
@@ -2394,37 +1586,20 @@
 
         </div>
 
-
         <div class="footer-column">
 
-          <h3>
-            Navigation
-          </h3>
+          <h3>Navigation</h3>
 
-          <a href="#home">
-            Accueil
-          </a>
-
-          <a href="#collections">
-            Collections
-          </a>
-
-          <a href="#products">
-            Produits
-          </a>
-
-          <a href="#about">
-            À propos
-          </a>
+          <a href="#home">Accueil</a>
+          <a href="#collections">Collections</a>
+          <a href="#products">Produits</a>
+          <a href="#about">À propos</a>
 
         </div>
 
-
         <div class="footer-column">
 
-          <h3>
-            Contact
-          </h3>
+          <h3>Contact</h3>
 
           <a
             href="https://wa.me/212765333754"
@@ -2441,7 +1616,6 @@
 
       </div>
 
-
       <div class="copyright">
         © 2026 ZOREVA JEWELRY — Tous droits réservés.
       </div>
@@ -2450,12 +1624,7 @@
 
   </footer>
 
-
   <script>
-
-    /* =====================================================
-       PRODUCTS
-    ===================================================== */
 
     const products = [
 
@@ -2517,85 +1686,48 @@
 
     ];
 
-
-    /* =====================================================
-       PRODUCT FILTER
-    ===================================================== */
-
     let currentCategory = "all";
     let currentPrice = "all";
     let currentSort = "default";
-
 
     function renderProducts(){
 
       let filtered = [...products];
 
-
       if(currentCategory !== "all"){
-
-        filtered =
-          filtered.filter(
-            product =>
-              product.category === currentCategory
-          );
-
+        filtered = filtered.filter(
+          product => product.category === currentCategory
+        );
       }
-
 
       if(currentPrice === "under120"){
-
-        filtered =
-          filtered.filter(
-            product =>
-              product.price < 120
-          );
-
+        filtered = filtered.filter(
+          product => product.price < 120
+        );
       }
-
 
       if(currentPrice === "149"){
-
-        filtered =
-          filtered.filter(
-            product =>
-              product.price === 149
-          );
-
+        filtered = filtered.filter(
+          product => product.price === 149
+        );
       }
-
 
       if(currentSort === "low"){
-
-        filtered.sort(
-          (a,b) =>
-            a.price - b.price
-        );
-
+        filtered.sort((a,b) => a.price - b.price);
       }
-
 
       if(currentSort === "high"){
-
-        filtered.sort(
-          (a,b) =>
-            b.price - a.price
-        );
-
+        filtered.sort((a,b) => b.price - a.price);
       }
-
 
       const grid =
         document.getElementById("productsGrid");
 
-
       grid.innerHTML = "";
-
 
       document.getElementById("productsCount")
         .textContent =
         `${filtered.length} produit${filtered.length > 1 ? "s" : ""}`;
-
 
       filtered.forEach(product => {
 
@@ -2605,6 +1737,11 @@
         card.className =
           "product-card";
 
+        /* فتح صفحة المنتج عند الضغط على الكارت كاملة */
+        card.addEventListener("click", () => {
+          window.location.href =
+            `product.html?id=${product.id}`;
+        });
 
         card.innerHTML = `
 
@@ -2625,11 +1762,7 @@
 
           </div>
 
-
-          <a
-            href="product.html?id=${product.id}"
-            class="product-info"
-          >
+          <div class="product-info">
 
             <h3>
               ${product.name}
@@ -2647,15 +1780,13 @@
 
             </div>
 
-          </a>
+          </div>
 
         `;
-
 
         grid.appendChild(card);
 
       });
-
 
       document
         .querySelectorAll(".quick-add")
@@ -2666,7 +1797,6 @@
             event => {
 
               event.preventDefault();
-
               event.stopPropagation();
 
               const id =
@@ -2696,57 +1826,34 @@
 
     }
 
-
-    /* =====================================================
-       FILTER PANEL
-    ===================================================== */
-
     const filterPanel =
       document.getElementById("filterPanel");
 
     const filterOverlay =
       document.getElementById("filterOverlay");
 
-
     function openFilter(){
-
       filterPanel.classList.add("active");
-
       filterOverlay.classList.add("active");
-
     }
-
 
     function closeFilter(){
-
       filterPanel.classList.remove("active");
-
       filterOverlay.classList.remove("active");
-
     }
-
 
     document
       .getElementById("filterOpen")
-      .addEventListener(
-        "click",
-        openFilter
-      );
-
+      .addEventListener("click",openFilter);
 
     document
       .getElementById("filterClose")
-      .addEventListener(
-        "click",
-        closeFilter
-      );
-
+      .addEventListener("click",closeFilter);
 
     filterOverlay.addEventListener(
       "click",
       closeFilter
     );
-
 
     document
       .querySelectorAll(".category-filter")
@@ -2774,7 +1881,6 @@
 
       });
 
-
     document
       .querySelectorAll(".price-filter")
       .forEach(button => {
@@ -2800,7 +1906,6 @@
         );
 
       });
-
 
     document
       .querySelectorAll("[data-sort]")
@@ -2828,7 +1933,6 @@
 
       });
 
-
     document
       .getElementById("resetFilter")
       .addEventListener(
@@ -2836,11 +1940,8 @@
         () => {
 
           currentCategory = "all";
-
           currentPrice = "all";
-
           currentSort = "default";
-
 
           document
             .querySelectorAll(".filter-group button")
@@ -2848,37 +1949,27 @@
               btn.classList.remove("active")
             );
 
-
           document
             .querySelector('[data-category="all"]')
             .classList.add("active");
-
 
           document
             .querySelector('[data-price="all"]')
             .classList.add("active");
 
-
           document
             .querySelector('[data-sort="default"]')
             .classList.add("active");
-
 
           renderProducts();
 
         }
       );
 
-
-    /* =====================================================
-       CART
-    ===================================================== */
-
     let cart =
       JSON.parse(
         localStorage.getItem("zorevaCart")
       ) || [];
-
 
     function saveCart(){
 
@@ -2889,7 +1980,6 @@
 
     }
 
-
     function updateCartCount(){
 
       const count =
@@ -2899,13 +1989,11 @@
           0
         );
 
-
       document
         .getElementById("cartCount")
         .textContent = count;
 
     }
-
 
     function addToCart(product,quantity=1){
 
@@ -2914,7 +2002,6 @@
           item =>
             item.id === product.id
         );
-
 
       if(existing){
 
@@ -2925,28 +2012,20 @@
         cart.push({
 
           id:product.id,
-
           name:product.name,
-
           price:product.price,
-
           image:product.image,
-
           quantity:quantity
 
         });
 
       }
 
-
       saveCart();
-
       updateCartCount();
-
       renderCart();
 
     }
-
 
     function removeFromCart(id){
 
@@ -2956,32 +2035,24 @@
             item.id !== id
         );
 
-
       saveCart();
-
       updateCartCount();
-
       renderCart();
 
     }
-
 
     function renderCart(){
 
       const container =
         document.getElementById("cartItems");
 
-
       if(cart.length === 0){
 
         container.innerHTML = `
-
           <div class="cart-empty">
             Votre panier est vide.
           </div>
-
         `;
-
 
         document
           .getElementById("cartTotal")
@@ -2991,28 +2062,22 @@
 
       }
 
-
       container.innerHTML = "";
 
       let total = 0;
-
 
       cart.forEach(item => {
 
         const subtotal =
           item.price * item.quantity;
 
-
         total += subtotal;
-
 
         const div =
           document.createElement("div");
 
-
         div.className =
           "cart-item";
-
 
         div.innerHTML = `
 
@@ -3042,11 +2107,9 @@
 
         `;
 
-
         container.appendChild(div);
 
       });
-
 
       document
         .getElementById("cartTotal")
@@ -3055,61 +2118,38 @@
 
     }
 
-
-    /* =====================================================
-       CART OPEN / CLOSE
-    ===================================================== */
-
     const cartPanel =
       document.getElementById("cartPanel");
 
     const cartOverlay =
       document.getElementById("cartOverlay");
 
-
     function openCart(){
 
       cartPanel.classList.add("active");
-
       cartOverlay.classList.add("active");
 
     }
 
-
     function closeCart(){
 
       cartPanel.classList.remove("active");
-
       cartOverlay.classList.remove("active");
 
     }
 
-
     document
       .getElementById("cartBtn")
-      .addEventListener(
-        "click",
-        openCart
-      );
-
+      .addEventListener("click",openCart);
 
     document
       .getElementById("cartClose")
-      .addEventListener(
-        "click",
-        closeCart
-      );
-
+      .addEventListener("click",closeCart);
 
     cartOverlay.addEventListener(
       "click",
       closeCart
     );
-
-
-    /* =====================================================
-       WHATSAPP CHECKOUT
-    ===================================================== */
 
     document
       .getElementById("checkoutBtn")
@@ -3119,118 +2159,83 @@
 
           if(cart.length === 0){
 
-            alert(
-              "Votre panier est vide."
-            );
-
+            alert("Votre panier est vide.");
             return;
 
           }
 
-
           let message =
             "Bonjour ZOREVA, je souhaite passer une commande :\n\n";
 
-
           let total = 0;
-
 
           cart.forEach(item => {
 
             const subtotal =
               item.price * item.quantity;
 
-
             total += subtotal;
-
 
             message +=
               `${item.name} — ${item.quantity} × ${item.price} DH = ${subtotal} DH\n`;
 
           });
 
-
           message +=
             `\nTotal : ${total} DH`;
 
-
           window.open(
-
             "https://wa.me/212765333754?text=" +
             encodeURIComponent(message),
-
             "_blank"
-
           );
 
         }
       );
 
-
-    /* =====================================================
-       MENU
-    ===================================================== */
-
     const menuBtn =
       document.getElementById("menuBtn");
-
 
     const menuClose =
       document.getElementById("menuClose");
 
-
     const sideMenu =
       document.getElementById("sideMenu");
-
 
     const menuOverlay =
       document.getElementById("menuOverlay");
 
-
     function openMenu(){
 
       sideMenu.classList.add("active");
-
       menuOverlay.classList.add("active");
 
     }
 
-
     function closeMenu(){
 
       sideMenu.classList.remove("active");
-
       menuOverlay.classList.remove("active");
 
     }
-
 
     menuBtn.addEventListener(
       "click",
       openMenu
     );
 
-
     menuClose.addEventListener(
       "click",
       closeMenu
     );
-
 
     menuOverlay.addEventListener(
       "click",
       closeMenu
     );
 
-
-    /* =====================================================
-       INIT
-    ===================================================== */
-
     renderProducts();
-
     updateCartCount();
-
     renderCart();
 
   </script>
