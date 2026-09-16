@@ -469,7 +469,7 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
-      margin-bottom:40px;
+      margin-bottom:22px;
     }
 
     .products-count{
@@ -493,6 +493,37 @@
     .filter-open:hover{
       border-color:var(--gold);
       color:var(--gold-dark);
+    }
+
+    /* VISIBLE CATEGORY FILTER */
+
+    .visible-filters{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:35px;
+    }
+
+    .visible-filter{
+      height:40px;
+      padding:0 20px;
+      border:1px solid var(--border);
+      background:#fff;
+      color:#222;
+      cursor:pointer;
+      font-size:9px;
+      letter-spacing:1.3px;
+      text-transform:uppercase;
+      transition:.25s;
+    }
+
+    .visible-filter:hover,
+    .visible-filter.active{
+      background:#111;
+      color:#fff;
+      border-color:#111;
     }
 
     .products-grid{
@@ -1155,7 +1186,20 @@
       }
 
       .products-toolbar{
+        margin-bottom:18px;
+      }
+
+      .visible-filters{
+        justify-content:flex-start;
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        padding-bottom:5px;
         margin-bottom:25px;
+      }
+
+      .visible-filter{
+        flex:0 0 auto;
+        padding:0 17px;
       }
 
       .products-grid{
@@ -1341,7 +1385,7 @@
         >
 
           <img
-            src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1000&q=85"
+            src="https://images.unsplash.com/photo-1668365179846-3333fe14f552?auto=format&fit=crop&w=1000&q=85"
             alt="Bracelets"
           >
 
@@ -1396,6 +1440,40 @@
 
           <button class="filter-open" id="filterOpen">
             Filtrer & Trier
+          </button>
+
+        </div>
+
+        <!-- FILTRATION VISIBLE -->
+
+        <div class="visible-filters">
+
+          <button
+            class="visible-filter active"
+            data-visible-category="all"
+          >
+            Tous
+          </button>
+
+          <button
+            class="visible-filter"
+            data-visible-category="Bagues"
+          >
+            Bagues
+          </button>
+
+          <button
+            class="visible-filter"
+            data-visible-category="Bracelets"
+          >
+            Bracelets
+          </button>
+
+          <button
+            class="visible-filter"
+            data-visible-category="Colliers"
+          >
+            Colliers
           </button>
 
         </div>
@@ -1532,11 +1610,11 @@
         Recommandés
       </button>
 
-      <button data-sort="low">
+      <button data-sort="low" class="sort-filter">
         Prix croissant
       </button>
 
-      <button data-sort="high">
+      <button data-sort="high" class="sort-filter">
         Prix décroissant
       </button>
 
@@ -1892,6 +1970,36 @@
     }
 
 
+    /* UPDATE ALL CATEGORY BUTTONS */
+
+    function updateCategoryButtons(){
+
+      document
+        .querySelectorAll(".category-filter")
+        .forEach(button => {
+
+          button.classList.toggle(
+            "active",
+            button.dataset.category === currentCategory
+          );
+
+        });
+
+
+      document
+        .querySelectorAll(".visible-filter")
+        .forEach(button => {
+
+          button.classList.toggle(
+            "active",
+            button.dataset.visibleCategory === currentCategory
+          );
+
+        });
+
+    }
+
+
     /* COLLECTION FILTER */
 
     document
@@ -1919,35 +2027,8 @@
               "default";
 
 
-            /* CATEGORY ACTIVE */
+            updateCategoryButtons();
 
-            document
-              .querySelectorAll(".category-filter")
-              .forEach(btn => {
-
-                btn.classList.remove(
-                  "active"
-                );
-
-              });
-
-
-            const activeCategory =
-              document.querySelector(
-                `.category-filter[data-category="${category}"]`
-              );
-
-
-            if(activeCategory){
-
-              activeCategory.classList.add(
-                "active"
-              );
-
-            }
-
-
-            /* PRICE RESET */
 
             document
               .querySelectorAll(".price-filter")
@@ -1969,10 +2050,8 @@
               );
 
 
-            /* SORT RESET */
-
             document
-              .querySelectorAll("[data-sort]")
+              .querySelectorAll(".sort-filter")
               .forEach(btn => {
 
                 btn.classList.remove(
@@ -1991,18 +2070,85 @@
               );
 
 
-            /* SHOW PRODUCTS */
-
             renderProducts();
 
-
-            /* SCROLL TO PRODUCTS */
 
             document
               .getElementById("products")
               .scrollIntoView({
                 behavior:"smooth"
               });
+
+          }
+        );
+
+      });
+
+
+    /* VISIBLE CATEGORY FILTER */
+
+    document
+      .querySelectorAll(".visible-filter")
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            currentCategory =
+              button.dataset.visibleCategory;
+
+            currentPrice =
+              "all";
+
+            currentSort =
+              "default";
+
+
+            updateCategoryButtons();
+
+
+            document
+              .querySelectorAll(".price-filter")
+              .forEach(btn => {
+
+                btn.classList.remove(
+                  "active"
+                );
+
+              });
+
+
+            document
+              .querySelector(
+                '[data-price="all"]'
+              )
+              .classList.add(
+                "active"
+              );
+
+
+            document
+              .querySelectorAll(".sort-filter")
+              .forEach(btn => {
+
+                btn.classList.remove(
+                  "active"
+                );
+
+              });
+
+
+            document
+              .querySelector(
+                '[data-sort="default"]'
+              )
+              .classList.add(
+                "active"
+              );
+
+
+            renderProducts();
 
           }
         );
@@ -2071,7 +2217,7 @@
     );
 
 
-    /* CATEGORY FILTER */
+    /* CATEGORY FILTER PANEL */
 
     document
       .querySelectorAll(".category-filter")
@@ -2081,24 +2227,11 @@
           "click",
           () => {
 
-            document
-              .querySelectorAll(
-                ".category-filter"
-              )
-              .forEach(btn =>
-                btn.classList.remove(
-                  "active"
-                )
-              );
-
-
-            button.classList.add(
-              "active"
-            );
-
-
             currentCategory =
               button.dataset.category;
+
+
+            updateCategoryButtons();
 
 
             renderProducts();
@@ -2150,7 +2283,7 @@
     /* SORT */
 
     document
-      .querySelectorAll("[data-sort]")
+      .querySelectorAll(".sort-filter")
       .forEach(button => {
 
         button.addEventListener(
@@ -2159,7 +2292,7 @@
 
             document
               .querySelectorAll(
-                "[data-sort]"
+                ".sort-filter"
               )
               .forEach(btn =>
                 btn.classList.remove(
@@ -2240,6 +2373,8 @@
               "active"
             );
 
+
+          updateCategoryButtons();
 
           renderProducts();
 
@@ -2381,7 +2516,6 @@
 
 
       container.innerHTML = "";
-
 
       let total = 0;
 
@@ -2637,6 +2771,8 @@
     /* INITIALIZE */
 
     renderProducts();
+
+    updateCategoryButtons();
 
     updateCartCount();
 
