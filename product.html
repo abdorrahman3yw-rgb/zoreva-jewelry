@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -64,11 +63,57 @@
       max-width:100%;
     }
 
+    /* ================= ANNOUNCEMENT BAR ================= */
+
+    .announcement-bar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:32px;
+      background:#111;
+      color:#fff;
+      overflow:hidden;
+      z-index:2500;
+      display:flex;
+      align-items:center;
+      border-bottom:1px solid rgba(185,151,91,.35);
+    }
+
+    .announcement-track{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+      width:100%;
+      white-space:nowrap;
+      font-size:9px;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      animation:announcementFade 1s ease both;
+    }
+
+    .announcement-track .separator{
+      color:var(--gold);
+    }
+
+    @keyframes announcementFade{
+      from{
+        opacity:0;
+        transform:translateY(-7px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
     /* ================= HEADER ================= */
 
     header{
       position:fixed;
-      top:0;
+      top:32px;
       left:0;
       width:100%;
       height:82px;
@@ -161,8 +206,6 @@
       align-items:center;
       justify-content:center;
     }
-
-    /* REALISTIC CART ICON */
 
     .cart-svg{
       width:23px;
@@ -267,7 +310,7 @@
     /* ================= MAIN ================= */
 
     main{
-      padding-top:82px;
+      padding-top:114px;
     }
 
     .breadcrumb{
@@ -889,12 +932,20 @@
 
     @media(max-width:900px){
 
+      .announcement-track{
+        width:max-content;
+        justify-content:flex-start;
+        padding-left:18px;
+        gap:15px;
+      }
+
       header{
+        top:32px;
         height:72px;
       }
 
       main{
-        padding-top:72px;
+        padding-top:104px;
       }
 
       .header-inner{
@@ -1024,6 +1075,19 @@
 </head>
 
 <body>
+
+  <!-- ================= ANNOUNCEMENT ================= -->
+
+  <div class="announcement-bar">
+    <div class="announcement-track">
+      <span>Livraison gratuite</span>
+      <span class="separator">•</span>
+      <span>Livraison partout au Maroc</span>
+      <span class="separator">•</span>
+      <span>Bijoux en acier inoxydable</span>
+      <span class="separator">•</span>
+    </div>
+  </div>
 
   <!-- ================= HEADER ================= -->
 
@@ -1829,4 +1893,3 @@
 
 </body>
 </html>
-```
