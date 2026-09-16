@@ -1,1797 +1,2707 @@
 ```html
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="fr" dir="ltr">
 <head>
-<meta charset="UTF-8">
-
-<meta name="google-site-verification" content="6dTShbk4Yt8gvQV6VCmURDFVjkcE3vLr48iIs6aVjt8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ZOREVA JEWELRY | مجوهرات فاخرة</title>
-
-<meta name="description" content="ZOREVA JEWELRY — مجوهرات أنيقة وعصرية بتفاصيل فاخرة.">
-
-<link rel="icon" type="image/svg+xml" href="logo.svg">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-  --black:#080808;
-  --black2:#111111;
-  --gold:#c7a15a;
-  --gold2:#e0c98e;
-  --cream:#f5f1e9;
-  --white:#ffffff;
-  --gray:#aaa;
-  --line:rgba(255,255,255,.12);
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:var(--black);
-  color:#fff;
-  font-family:"Cairo",sans-serif;
-  overflow-x:hidden;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-button{
-  font-family:inherit;
-}
-
-img{
-  display:block;
-  max-width:100%;
-}
-
-
-/* ================= HEADER ================= */
-
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:82px;
-  z-index:1000;
-  transition:.4s ease;
-  border-bottom:1px solid transparent;
-}
-
-header.scrolled{
-  height:70px;
-  background:rgba(8,8,8,.92);
-  backdrop-filter:blur(15px);
-  border-bottom-color:var(--line);
-}
-
-.header-inner{
-  width:min(1300px,92%);
-  height:100%;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.logo{
-  width:58px;
-  height:58px;
-  object-fit:contain;
-  filter:brightness(0) invert(1);
-  transition:.3s;
-}
-
-header.scrolled .logo{
-  width:48px;
-  height:48px;
-}
-
-nav{
-  display:flex;
-  align-items:center;
-  gap:35px;
-}
-
-nav a{
-  font-size:12px;
-  color:#eee;
-  position:relative;
-  transition:.3s;
-}
-
-nav a:hover{
-  color:var(--gold2);
-}
-
-nav a::after{
-  content:"";
-  position:absolute;
-  bottom:-9px;
-  right:0;
-  width:0;
-  height:1px;
-  background:var(--gold);
-  transition:.3s;
-}
-
-nav a:hover::after{
-  width:100%;
-}
-
-.header-actions{
-  display:flex;
-  gap:10px;
-}
-
-.cart-btn{
-  width:44px;
-  height:44px;
-  border:1px solid rgba(255,255,255,.2);
-  background:rgba(255,255,255,.04);
-  color:#fff;
-  border-radius:50%;
-  cursor:pointer;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.cart-count{
-  position:absolute;
-  top:-4px;
-  right:-3px;
-  background:var(--gold);
-  color:#000;
-  width:18px;
-  height:18px;
-  border-radius:50%;
-  font-size:9px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-
-/* ================= HERO ================= */
-
-.hero{
-  min-height:100vh;
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#050505;
-}
-
-.hero-bg{
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(
-      circle at 50% 48%,
-      rgba(199,161,90,.15),
-      transparent 30%
-    ),
-    linear-gradient(
-      90deg,
-      rgba(0,0,0,.95),
-      rgba(0,0,0,.25),
-      rgba(0,0,0,.95)
-    );
-}
-
-.hero-image{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:.72;
-  transform:scale(1.08);
-  animation:heroZoom 10s ease-out forwards;
-}
-
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,.45),
-      rgba(0,0,0,.12) 40%,
-      rgba(0,0,0,.85)
-    );
-}
-
-.hero-content{
-  position:relative;
-  z-index:3;
-  width:min(1100px,90%);
-  text-align:center;
-  padding-top:70px;
-  animation:heroText 1.2s ease both;
-}
-
-.hero-small{
-  color:var(--gold2);
-  letter-spacing:7px;
-  font-size:11px;
-  margin-bottom:22px;
-}
-
-.hero h1{
-  font-family:"Cormorant Garamond",serif;
-  font-size:clamp(65px,10vw,145px);
-  font-weight:500;
-  line-height:.78;
-  letter-spacing:-3px;
-  margin-bottom:30px;
-}
-
-.hero h1 span{
-  color:var(--gold2);
-}
-
-.hero p{
-  max-width:580px;
-  margin:auto;
-  color:#ddd;
-  font-size:14px;
-  line-height:2;
-}
-
-.hero-buttons{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  margin-top:38px;
-}
-
-.btn{
-  min-height:52px;
-  padding:0 30px;
-  border:1px solid var(--gold);
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  font-size:12px;
-  transition:.35s;
-}
-
-.btn-gold{
-  background:var(--gold);
-  color:#080808;
-}
-
-.btn-gold:hover{
-  background:var(--gold2);
-  transform:translateY(-3px);
-}
-
-.btn-outline{
-  background:transparent;
-  color:#fff;
-}
-
-.btn-outline:hover{
-  background:#fff;
-  color:#000;
-  border-color:#fff;
-}
-
-.hero-bottom{
-  position:absolute;
-  bottom:35px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:5;
-  color:#aaa;
-  font-size:9px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  animation:float 3s ease-in-out infinite;
-}
-
-
-/* ================= MARQUEE ================= */
-
-.marquee{
-  background:var(--gold);
-  color:#090909;
-  overflow:hidden;
-  white-space:nowrap;
-  padding:14px 0;
-}
-
-.marquee-track{
-  display:inline-block;
-  animation:marquee 25s linear infinite;
-}
-
-.marquee span{
-  margin:0 30px;
-  font-family:"Cormorant Garamond",serif;
-  font-size:19px;
-}
-
-
-/* ================= SECTIONS ================= */
-
-.section{
-  width:min(1250px,92%);
-  margin:auto;
-  padding:115px 0;
-}
-
-.section-head{
-  text-align:center;
-  margin-bottom:55px;
-}
-
-.section-kicker{
-  color:var(--gold);
-  font-size:10px;
-  letter-spacing:5px;
-  margin-bottom:15px;
-}
-
-.section-title{
-  font-family:"Cormorant Garamond",serif;
-  font-size:58px;
-  font-weight:500;
-}
-
-.section-description{
-  color:#999;
-  font-size:13px;
-  line-height:2;
-  max-width:600px;
-  margin:15px auto 0;
-}
-
-
-/* ================= COLLECTIONS ================= */
-
-.collections{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.collection{
-  position:relative;
-  height:530px;
-  overflow:hidden;
-  cursor:pointer;
-  background:#111;
-}
-
-.collection img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:1s;
-  opacity:.8;
-}
-
-.collection:hover img{
-  transform:scale(1.08);
-  opacity:1;
-}
-
-.collection::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    transparent 30%,
-    rgba(0,0,0,.85)
-  );
-}
-
-.collection-content{
-  position:absolute;
-  z-index:2;
-  bottom:30px;
-  right:30px;
-  left:30px;
-}
-
-.collection-content span{
-  color:var(--gold2);
-  font-size:10px;
-  letter-spacing:3px;
-}
-
-.collection-content h3{
-  font-family:"Cormorant Garamond",serif;
-  font-size:39px;
-  font-weight:500;
-  margin:5px 0 10px;
-}
-
-.collection-content a{
-  font-size:11px;
-  border-bottom:1px solid var(--gold);
-  padding-bottom:4px;
-}
-
-
-/* ================= PRODUCTS ================= */
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-
-.product{
-  background:#101010;
-  border:1px solid var(--line);
-  cursor:pointer;
-  transition:.4s;
-}
-
-.product:hover{
-  transform:translateY(-7px);
-  border-color:rgba(199,161,90,.4);
-}
-
-.product-image{
-  aspect-ratio:1/1;
-  overflow:hidden;
-  background:#161616;
-}
-
-.product-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.7s;
-}
-
-.product:hover .product-image img{
-  transform:scale(1.07);
-}
-
-.product-info{
-  padding:20px;
-}
-
-.product-info small{
-  color:var(--gold);
-  font-size:9px;
-  letter-spacing:2px;
-}
-
-.product-info h3{
-  font-family:"Cormorant Garamond",serif;
-  font-size:24px;
-  font-weight:500;
-  margin:6px 0;
-}
-
-.product-price{
-  color:#ccc;
-  font-size:12px;
-}
-
-
-/* ================= BRAND ================= */
-
-.brand-section{
-  background:
-    linear-gradient(
-      90deg,
-      #080808,
-      #17130c,
-      #080808
-    );
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-
-.brand-content{
-  width:min(1000px,90%);
-  margin:auto;
-  padding:130px 0;
-  text-align:center;
-}
-
-.brand-content h2{
-  font-family:"Cormorant Garamond",serif;
-  font-size:70px;
-  font-weight:500;
-}
-
-.brand-content h2 span{
-  color:var(--gold);
-}
-
-.brand-content p{
-  color:#999;
-  line-height:2;
-  max-width:650px;
-  margin:20px auto 0;
-}
-
-
-/* ================= FEATURES ================= */
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-
-.feature{
-  padding:45px 25px;
-  text-align:center;
-  border-left:1px solid var(--line);
-}
-
-.feature:last-child{
-  border-left:0;
-}
-
-.feature-number{
-  color:var(--gold);
-  font-family:"Cormorant Garamond",serif;
-  font-size:25px;
-}
-
-.feature h3{
-  font-family:"Cormorant Garamond",serif;
-  font-size:25px;
-  font-weight:500;
-  margin:8px 0;
-}
-
-.feature p{
-  color:#888;
-  font-size:12px;
-  line-height:1.8;
-}
-
-
-/* ================= CONTACT ================= */
-
-.contact{
-  text-align:center;
-}
-
-.contact-box{
-  border:1px solid var(--line);
-  padding:80px 30px;
-  background:
-    radial-gradient(
-      circle,
-      rgba(199,161,90,.1),
-      transparent 60%
-    );
-}
-
-.contact-box h2{
-  font-family:"Cormorant Garamond",serif;
-  font-size:58px;
-  font-weight:500;
-}
-
-.contact-box p{
-  color:#999;
-  margin:15px auto 30px;
-}
-
-
-/* ================= FOOTER ================= */
-
-footer{
-  background:#030303;
-  border-top:1px solid var(--line);
-  padding:60px 0 25px;
-}
-
-.footer-inner{
-  width:min(1200px,92%);
-  margin:auto;
-}
-
-.footer-top{
-  display:grid;
-  grid-template-columns:1.5fr 1fr 1fr;
-  gap:50px;
-  padding-bottom:40px;
-  border-bottom:1px solid var(--line);
-}
-
-.footer-logo{
-  width:62px;
-  filter:brightness(0) invert(1);
-  margin-bottom:18px;
-}
-
-.footer-top p{
-  color:#777;
-  font-size:12px;
-  line-height:2;
-  max-width:350px;
-}
-
-.footer-col h4{
-  font-family:"Cormorant Garamond",serif;
-  font-size:23px;
-  font-weight:500;
-  margin-bottom:15px;
-}
-
-.footer-col a{
-  display:block;
-  color:#777;
-  font-size:12px;
-  margin-bottom:10px;
-  transition:.3s;
-}
-
-.footer-col a:hover{
-  color:var(--gold);
-}
-
-.copyright{
-  text-align:center;
-  color:#555;
-  font-size:10px;
-  padding-top:22px;
-}
-
-
-/* ================= CART ================= */
-
-.cart-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.7);
-  opacity:0;
-  visibility:hidden;
-  transition:.3s;
-  z-index:1998;
-}
-
-.cart-overlay.active{
-  opacity:1;
-  visibility:visible;
-}
-
-.cart-panel{
-  position:fixed;
-  top:0;
-  right:0;
-  width:min(430px,92vw);
-  height:100vh;
-  background:#101010;
-  border-left:1px solid var(--line);
-  z-index:1999;
-  transform:translateX(100%);
-  transition:.45s;
-  display:flex;
-  flex-direction:column;
-}
-
-.cart-panel.active{
-  transform:translateX(0);
-}
-
-.cart-header{
-  height:75px;
-  padding:0 22px;
-  border-bottom:1px solid var(--line);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.cart-header h3{
-  font-family:"Cormorant Garamond",serif;
-  font-size:28px;
-}
-
-.close-cart{
-  width:36px;
-  height:36px;
-  border:1px solid var(--line);
-  background:transparent;
-  color:#fff;
-  border-radius:50%;
-  cursor:pointer;
-}
-
-#cartItems{
-  flex:1;
-  overflow:auto;
-  padding:20px;
-}
-
-.empty-cart{
-  text-align:center;
-  color:#777;
-  padding-top:60px;
-}
-
-.cart-item{
-  display:flex;
-  gap:14px;
-  padding:14px 0;
-  border-bottom:1px solid var(--line);
-}
-
-.cart-item img{
-  width:70px;
-  height:70px;
-  object-fit:cover;
-}
-
-.cart-item-info{
-  flex:1;
-}
-
-.cart-item-info h4{
-  font-family:"Cormorant Garamond",serif;
-  font-size:20px;
-}
-
-.cart-item-info p{
-  color:var(--gold);
-  font-size:11px;
-  margin-top:5px;
-}
-
-.remove-item{
-  background:none;
-  border:0;
-  color:#666;
-  cursor:pointer;
-  font-size:10px;
-}
-
-.cart-footer{
-  padding:20px;
-  border-top:1px solid var(--line);
-}
-
-.cart-total{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:15px;
-}
-
-.cart-total strong{
-  color:var(--gold);
-}
-
-.checkout{
-  width:100%;
-  min-height:52px;
-  border:0;
-  background:var(--gold);
-  color:#000;
-  cursor:pointer;
-  font-weight:600;
-}
-
-
-/* ================= ANIMATIONS ================= */
-
-@keyframes heroZoom{
-  from{
-    transform:scale(1.08);
-  }
-  to{
-    transform:scale(1);
-  }
-}
-
-@keyframes heroText{
-  from{
-    opacity:0;
-    transform:translateY(35px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-@keyframes float{
-  0%,100%{
-    transform:translate(-50%,0);
-  }
-  50%{
-    transform:translate(-50%,-8px);
-  }
-}
-
-@keyframes marquee{
-  from{
-    transform:translateX(0);
-  }
-  to{
-    transform:translateX(-50%);
-  }
-}
-
-
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-
-  nav{
-    display:none;
-  }
-
-  .hero h1{
-    font-size:75px;
-  }
-
-  .collections{
-    grid-template-columns:1fr;
-  }
-
-  .collection{
-    height:430px;
-  }
-
-  .products{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .features{
-    grid-template-columns:1fr;
-  }
-
-  .feature{
-    border-left:0;
-    border-bottom:1px solid var(--line);
-  }
-
-  .feature:last-child{
-    border-bottom:0;
-  }
-
-  .footer-top{
-    grid-template-columns:1fr 1fr;
-  }
-}
-
-@media(max-width:600px){
-
-  .hero{
-    min-height:90vh;
-  }
-
-  .hero-image{
-    object-position:center;
-  }
-
-  .hero h1{
-    font-size:63px;
-    letter-spacing:-1px;
-  }
-
-  .hero p{
-    font-size:12px;
-  }
-
-  .hero-buttons{
-    flex-direction:column;
-    width:100%;
-  }
-
-  .hero-buttons .btn{
-    width:100%;
-  }
-
-  .section{
-    padding:80px 0;
-  }
-
-  .section-title{
-    font-size:45px;
-  }
-
-  .products{
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-  }
-
-  .product-info{
-    padding:13px;
-  }
-
-  .product-info h3{
-    font-size:20px;
-  }
-
-  .brand-content h2{
-    font-size:52px;
-  }
-
-  .contact-box h2{
-    font-size:44px;
-  }
-
-  .footer-top{
-    grid-template-columns:1fr;
-  }
-}
-
-</style>
+  <meta charset="UTF-8">
+
+  <meta name="google-site-verification" content="6dTShbk4Yt8gvQV6VCmURDFVjkcE3vLr48iIs6aVjt8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ZOREVA JEWELRY — Bijoux élégants</title>
+
+  <meta
+    name="description"
+    content="ZOREVA JEWELRY — Découvrez notre sélection de bijoux élégants et modernes."
+  >
+
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="shortcut icon" href="logo.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root{
+      --white:#ffffff;
+      --cream:#f8f6f1;
+      --black:#111111;
+      --dark:#1b1b1b;
+      --gold:#b8944e;
+      --gold-light:#d5bd87;
+      --gray:#77736d;
+      --light-gray:#ebe8e1;
+      --border:#e5e1d9;
+      --shadow:0 18px 55px rgba(0,0,0,.08);
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--white);
+      color:var(--black);
+      font-family:"Montserrat",Arial,sans-serif;
+      overflow-x:hidden;
+    }
+
+    body.no-scroll{
+      overflow:hidden;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button,
+    select{
+      font-family:inherit;
+    }
+
+    button{
+      cursor:pointer;
+    }
+
+    /* ================= HEADER ================= */
+
+    .header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:84px;
+      z-index:1000;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(15px);
+      -webkit-backdrop-filter:blur(15px);
+      border-bottom:1px solid transparent;
+      transition:.35s ease;
+    }
+
+    .header.scrolled{
+      height:70px;
+      border-bottom-color:var(--border);
+      box-shadow:0 8px 30px rgba(0,0,0,.04);
+    }
+
+    .header-inner{
+      width:min(1380px,94%);
+      height:100%;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      align-items:center;
+    }
+
+    .header-left{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    /* 3 LINES */
+
+    .menu-filter-btn{
+      width:42px;
+      height:42px;
+      border:1px solid var(--border);
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:5px;
+      transition:.3s ease;
+    }
+
+    .menu-filter-btn:hover{
+      border-color:var(--gold);
+    }
+
+    .menu-filter-btn span{
+      display:block;
+      width:17px;
+      height:1.5px;
+      background:#111;
+      transition:.3s ease;
+    }
+
+    .menu-filter-btn:hover span:nth-child(1){
+      width:12px;
+    }
+
+    .menu-filter-btn:hover span:nth-child(3){
+      width:12px;
+    }
+
+    /* LOGO */
+
+    .logo-link{
+      display:flex;
+      align-items:center;
+    }
+
+    .logo{
+      width:130px;
+      height:auto;
+      max-height:55px;
+      object-fit:contain;
+      transition:.3s ease;
+    }
+
+    .header.scrolled .logo{
+      width:115px;
+    }
+
+    .main-nav{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:35px;
+    }
+
+    .main-nav a{
+      position:relative;
+      font-size:11px;
+      font-weight:500;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:#292929;
+      transition:.3s;
+    }
+
+    .main-nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-9px;
+      width:0;
+      height:1px;
+      background:var(--gold);
+      transition:.3s;
+    }
+
+    .main-nav a:hover{
+      color:var(--gold);
+    }
+
+    .main-nav a:hover::after{
+      width:100%;
+    }
+
+    .header-right{
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+      gap:10px;
+    }
+
+    .header-icon{
+      width:42px;
+      height:42px;
+      border:1px solid var(--border);
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:.3s;
+      position:relative;
+    }
+
+    .header-icon:hover{
+      border-color:var(--gold);
+      color:var(--gold);
+    }
+
+    .cart-count{
+      position:absolute;
+      top:-5px;
+      right:-5px;
+      width:18px;
+      height:18px;
+      background:var(--black);
+      color:#fff;
+      border-radius:50%;
+      font-size:9px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* ================= FILTER PANEL ================= */
+
+    .filter-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.35);
+      opacity:0;
+      visibility:hidden;
+      transition:.3s;
+      z-index:1998;
+    }
+
+    .filter-overlay.active{
+      opacity:1;
+      visibility:visible;
+    }
+
+    .filter-panel{
+      position:fixed;
+      top:0;
+      left:0;
+      width:min(390px,90vw);
+      height:100vh;
+      background:#fff;
+      z-index:1999;
+      transform:translateX(-100%);
+      transition:.45s cubic-bezier(.2,.8,.2,1);
+      box-shadow:15px 0 50px rgba(0,0,0,.12);
+      padding:30px;
+      overflow:auto;
+    }
+
+    .filter-panel.active{
+      transform:translateX(0);
+    }
+
+    .filter-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding-bottom:25px;
+      border-bottom:1px solid var(--border);
+      margin-bottom:30px;
+    }
+
+    .filter-head h3{
+      font-family:"Cormorant Garamond",serif;
+      font-size:30px;
+      font-weight:500;
+    }
+
+    .close-filter{
+      width:38px;
+      height:38px;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:50%;
+      font-size:20px;
+    }
+
+    .filter-group{
+      margin-bottom:30px;
+    }
+
+    .filter-group-title{
+      font-size:11px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      margin-bottom:15px;
+    }
+
+    .filter-options{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .filter-option{
+      border:1px solid var(--border);
+      background:#fff;
+      padding:11px 15px;
+      font-size:11px;
+      transition:.3s;
+    }
+
+    .filter-option:hover,
+    .filter-option.active{
+      background:var(--black);
+      color:#fff;
+      border-color:var(--black);
+    }
+
+    .price-range{
+      width:100%;
+      accent-color:var(--gold);
+    }
+
+    .price-value{
+      display:flex;
+      justify-content:space-between;
+      margin-top:12px;
+      font-size:12px;
+      color:var(--gray);
+    }
+
+    .sort-select{
+      width:100%;
+      height:48px;
+      border:1px solid var(--border);
+      background:#fff;
+      padding:0 13px;
+      outline:none;
+    }
+
+    .filter-reset{
+      width:100%;
+      height:50px;
+      background:var(--black);
+      color:#fff;
+      border:0;
+      font-size:12px;
+      margin-top:10px;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      position:relative;
+      min-height:100vh;
+      margin-top:0;
+      overflow:hidden;
+      background:#eee;
+    }
+
+    /*
+      صورة Hero مستقلة، ماشي من صور المنتجات.
+      إذا بغيتي تبدلها من بعد، بدل غير الرابط هنا.
+    */
+
+    .hero-image{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      transform:scale(1.04);
+      animation:heroZoom 8s ease-out forwards;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.63) 0%,
+          rgba(0,0,0,.22) 52%,
+          rgba(0,0,0,.05) 100%
+        );
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      width:min(1380px,90%);
+      min-height:100vh;
+      margin:auto;
+      display:flex;
+      align-items:center;
+    }
+
+    .hero-copy{
+      width:min(560px,100%);
+      color:#fff;
+      animation:heroIn 1s ease both;
+    }
+
+    .hero-kicker{
+      font-size:10px;
+      letter-spacing:5px;
+      text-transform:uppercase;
+      color:var(--gold-light);
+      margin-bottom:20px;
+    }
+
+    .hero-title{
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(65px,8vw,118px);
+      line-height:.82;
+      font-weight:500;
+      margin-bottom:30px;
+    }
+
+    .hero-title span{
+      color:var(--gold-light);
+    }
+
+    .hero-text{
+      max-width:480px;
+      color:rgba(255,255,255,.82);
+      font-size:13px;
+      line-height:2;
+      margin-bottom:35px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      min-height:53px;
+      padding:0 29px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:11px;
+      letter-spacing:.7px;
+      transition:.35s ease;
+    }
+
+    .btn-gold{
+      background:var(--gold);
+      color:#fff;
+      border:1px solid var(--gold);
+    }
+
+    .btn-gold:hover{
+      background:#fff;
+      color:#111;
+      border-color:#fff;
+      transform:translateY(-3px);
+    }
+
+    .btn-light{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.6);
+    }
+
+    .btn-light:hover{
+      background:#fff;
+      color:#111;
+      border-color:#fff;
+      transform:translateY(-3px);
+    }
+
+    .hero-scroll{
+      position:absolute;
+      bottom:30px;
+      left:50%;
+      transform:translateX(-50%);
+      color:#fff;
+      font-size:9px;
+      letter-spacing:4px;
+      opacity:.65;
+      z-index:3;
+      animation:scrollFloat 2.5s ease-in-out infinite;
+    }
+
+    /* ================= INTRO ================= */
+
+    .intro{
+      background:var(--cream);
+      padding:110px 0;
+    }
+
+    .container{
+      width:min(1250px,92%);
+      margin:auto;
+    }
+
+    .intro-content{
+      max-width:800px;
+      margin:auto;
+      text-align:center;
+    }
+
+    .eyebrow{
+      font-size:9px;
+      letter-spacing:4px;
+      color:var(--gold);
+      text-transform:uppercase;
+      margin-bottom:18px;
+    }
+
+    .section-title{
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(42px,5vw,67px);
+      line-height:1;
+      font-weight:500;
+    }
+
+    .section-text{
+      color:var(--gray);
+      font-size:13px;
+      line-height:2;
+      max-width:620px;
+      margin:20px auto 0;
+    }
+
+    /* ================= COLLECTIONS ================= */
+
+    .collections-section{
+      padding:110px 0;
+      background:#fff;
+    }
+
+    .section-header{
+      text-align:center;
+      margin-bottom:55px;
+    }
+
+    .collections-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .collection-card{
+      position:relative;
+      height:570px;
+      overflow:hidden;
+      background:#eee;
+      cursor:pointer;
+    }
+
+    .collection-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:1s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .collection-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to top,
+        rgba(0,0,0,.75),
+        transparent 55%
+      );
+    }
+
+    .collection-card:hover img{
+      transform:scale(1.07);
+    }
+
+    .collection-content{
+      position:absolute;
+      z-index:2;
+      left:30px;
+      right:30px;
+      bottom:30px;
+      color:#fff;
+    }
+
+    .collection-content small{
+      color:var(--gold-light);
+      letter-spacing:3px;
+      font-size:9px;
+    }
+
+    .collection-content h3{
+      font-family:"Cormorant Garamond",serif;
+      font-size:40px;
+      font-weight:500;
+      margin:5px 0 12px;
+    }
+
+    .collection-content span{
+      font-size:10px;
+      border-bottom:1px solid var(--gold-light);
+      padding-bottom:4px;
+    }
+
+    /* ================= PRODUCTS ================= */
+
+    .products-section{
+      background:var(--cream);
+      padding:110px 0;
+    }
+
+    .products-top{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:20px;
+      margin-bottom:45px;
+    }
+
+    .products-top .section-header{
+      text-align:left;
+      margin:0;
+    }
+
+    .product-count{
+      color:var(--gray);
+      font-size:11px;
+    }
+
+    .products-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+
+    .product-card{
+      background:#fff;
+      cursor:pointer;
+      transition:.4s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .product-card:hover{
+      transform:translateY(-6px);
+      box-shadow:var(--shadow);
+    }
+
+    .product-image{
+      width:100%;
+      aspect-ratio:1/1.08;
+      overflow:hidden;
+      background:#f1eee8;
+      position:relative;
+    }
+
+    .product-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:.7s ease;
+    }
+
+    .product-card:hover .product-image img{
+      transform:scale(1.06);
+    }
+
+    .product-badge{
+      position:absolute;
+      top:14px;
+      left:14px;
+      background:#fff;
+      padding:7px 10px;
+      font-size:8px;
+      letter-spacing:1px;
+      z-index:2;
+    }
+
+    .product-info{
+      padding:20px;
+    }
+
+    .product-category{
+      color:var(--gold);
+      font-size:9px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+
+    .product-name{
+      font-family:"Cormorant Garamond",serif;
+      font-size:25px;
+      font-weight:500;
+      margin:6px 0;
+    }
+
+    .product-price{
+      font-size:12px;
+      color:#555;
+    }
+
+    .product-arrow{
+      position:absolute;
+      right:20px;
+      bottom:20px;
+      width:32px;
+      height:32px;
+      border:1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      opacity:0;
+      transform:translateX(-5px);
+      transition:.35s;
+    }
+
+    .product-card:hover .product-arrow{
+      opacity:1;
+      transform:translateX(0);
+    }
+
+    /* ================= BRAND ================= */
+
+    .brand-section{
+      background:#111;
+      color:#fff;
+      padding:125px 0;
+      text-align:center;
+    }
+
+    .brand-section .section-text{
+      color:#999;
+    }
+
+    .brand-name{
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(65px,10vw,145px);
+      line-height:.75;
+      font-weight:500;
+      margin:20px 0;
+      letter-spacing:-3px;
+    }
+
+    .brand-name span{
+      color:var(--gold);
+    }
+
+    /* ================= FEATURES ================= */
+
+    .features-section{
+      background:#fff;
+      padding:90px 0;
+    }
+
+    .features-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+    }
+
+    .feature{
+      padding:45px 30px;
+      text-align:center;
+      border-right:1px solid var(--border);
+    }
+
+    .feature:first-child{
+      border-right:0;
+    }
+
+    .feature-number{
+      color:var(--gold);
+      font-family:"Cormorant Garamond",serif;
+      font-size:27px;
+      margin-bottom:10px;
+    }
+
+    .feature h3{
+      font-family:"Cormorant Garamond",serif;
+      font-size:26px;
+      font-weight:500;
+      margin-bottom:8px;
+    }
+
+    .feature p{
+      color:var(--gray);
+      font-size:11px;
+      line-height:1.9;
+    }
+
+    /* ================= WHATSAPP ================= */
+
+    .whatsapp-float{
+      position:fixed;
+      right:24px;
+      bottom:24px;
+      z-index:1200;
+      display:flex;
+      align-items:center;
+      gap:9px;
+      background:#111;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.15);
+      padding:12px 17px 12px 13px;
+      box-shadow:0 10px 35px rgba(0,0,0,.2);
+      transition:.35s;
+    }
+
+    .whatsapp-float:hover{
+      background:#fff;
+      color:#111;
+      transform:translateY(-4px);
+      border-color:var(--gold);
+    }
+
+    .whatsapp-icon{
+      width:32px;
+      height:32px;
+      border-radius:50%;
+      background:#25d366;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:16px;
+      font-weight:700;
+    }
+
+    .whatsapp-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .whatsapp-text strong{
+      font-size:10px;
+      font-weight:600;
+    }
+
+    .whatsapp-text span{
+      font-size:8px;
+      color:#999;
+    }
+
+    .whatsapp-float:hover .whatsapp-text span{
+      color:#666;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-section{
+      background:var(--cream);
+      padding:110px 0;
+    }
+
+    .contact-box{
+      background:#111;
+      color:#fff;
+      padding:90px 30px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .contact-box::before{
+      content:"";
+      position:absolute;
+      width:400px;
+      height:400px;
+      border:1px solid rgba(184,148,78,.18);
+      border-radius:50%;
+      top:-200px;
+      left:-150px;
+    }
+
+    .contact-box h2{
+      position:relative;
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(45px,6vw,75px);
+      font-weight:500;
+    }
+
+    .contact-box p{
+      position:relative;
+      color:#999;
+      font-size:12px;
+      margin:15px auto 30px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      background:#0c0c0c;
+      color:#fff;
+      padding:65px 0 25px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.5fr 1fr 1fr;
+      gap:60px;
+      padding-bottom:45px;
+      border-bottom:1px solid rgba(255,255,255,.1);
+    }
+
+    .footer-logo{
+      width:125px;
+      max-height:60px;
+      object-fit:contain;
+      filter:brightness(0) invert(1);
+      margin-bottom:18px;
+    }
+
+    .footer-brand p{
+      max-width:360px;
+      color:#777;
+      font-size:11px;
+      line-height:2;
+    }
+
+    .footer-col h4{
+      font-family:"Cormorant Garamond",serif;
+      font-size:25px;
+      font-weight:500;
+      margin-bottom:17px;
+    }
+
+    .footer-col a{
+      display:block;
+      color:#777;
+      font-size:11px;
+      margin-bottom:11px;
+      transition:.3s;
+    }
+
+    .footer-col a:hover{
+      color:var(--gold-light);
+    }
+
+    .copyright{
+      text-align:center;
+      color:#555;
+      font-size:9px;
+      padding-top:22px;
+      letter-spacing:.5px;
+    }
+
+    /* ================= CART ================= */
+
+    .cart-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.4);
+      z-index:1998;
+      opacity:0;
+      visibility:hidden;
+      transition:.3s;
+    }
+
+    .cart-overlay.active{
+      opacity:1;
+      visibility:visible;
+    }
+
+    .cart-panel{
+      position:fixed;
+      top:0;
+      right:0;
+      width:min(430px,92vw);
+      height:100vh;
+      background:#fff;
+      z-index:1999;
+      transform:translateX(100%);
+      transition:.45s cubic-bezier(.2,.8,.2,1);
+      display:flex;
+      flex-direction:column;
+      box-shadow:-20px 0 60px rgba(0,0,0,.12);
+    }
+
+    .cart-panel.active{
+      transform:translateX(0);
+    }
+
+    .cart-header{
+      height:78px;
+      padding:0 24px;
+      border-bottom:1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .cart-header h3{
+      font-family:"Cormorant Garamond",serif;
+      font-size:30px;
+      font-weight:500;
+    }
+
+    .close-cart{
+      width:38px;
+      height:38px;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:50%;
+      font-size:19px;
+    }
+
+    #cartItems{
+      flex:1;
+      overflow:auto;
+      padding:20px;
+    }
+
+    .empty-cart{
+      text-align:center;
+      color:#888;
+      padding-top:70px;
+      font-size:12px;
+    }
+
+    .cart-item{
+      display:flex;
+      align-items:center;
+      gap:13px;
+      padding:15px 0;
+      border-bottom:1px solid var(--border);
+    }
+
+    .cart-item img{
+      width:72px;
+      height:72px;
+      object-fit:cover;
+      background:#f2f0eb;
+    }
+
+    .cart-item-info{
+      flex:1;
+    }
+
+    .cart-item-info h4{
+      font-family:"Cormorant Garamond",serif;
+      font-size:20px;
+      font-weight:500;
+    }
+
+    .cart-item-info p{
+      color:var(--gold);
+      font-size:11px;
+      margin-top:5px;
+    }
+
+    .remove-item{
+      background:none;
+      border:0;
+      color:#999;
+      font-size:10px;
+    }
+
+    .cart-footer{
+      border-top:1px solid var(--border);
+      padding:20px;
+    }
+
+    .cart-total{
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:15px;
+      font-size:12px;
+    }
+
+    .cart-total strong{
+      font-size:17px;
+    }
+
+    .checkout-btn{
+      width:100%;
+      height:53px;
+      border:0;
+      background:#111;
+      color:#fff;
+      font-size:11px;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .checkout-btn:hover{
+      background:var(--gold);
+    }
+
+    /* ================= ANIMATIONS ================= */
+
+    @keyframes heroZoom{
+      from{
+        transform:scale(1.08);
+      }
+      to{
+        transform:scale(1);
+      }
+    }
+
+    @keyframes heroIn{
+      from{
+        opacity:0;
+        transform:translateY(35px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes scrollFloat{
+      0%,100%{
+        transform:translate(-50%,0);
+      }
+      50%{
+        transform:translate(-50%,-8px);
+      }
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media(max-width:1000px){
+
+      .header-inner{
+        grid-template-columns:1fr auto 1fr;
+      }
+
+      .main-nav{
+        display:none;
+      }
+
+      .header-left{
+        justify-self:start;
+      }
+
+      .header-right{
+        justify-self:end;
+      }
+
+      .collections-grid{
+        grid-template-columns:1fr;
+      }
+
+      .collection-card{
+        height:500px;
+      }
+
+      .products-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .features-grid{
+        grid-template-columns:1fr;
+      }
+
+      .feature{
+        border-right:0;
+        border-bottom:1px solid var(--border);
+      }
+
+      .feature:last-child{
+        border-bottom:0;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .footer-brand{
+        grid-column:1/-1;
+      }
+
+    }
+
+    @media(max-width:600px){
+
+      .header{
+        height:72px;
+      }
+
+      .header.scrolled{
+        height:65px;
+      }
+
+      .header-inner{
+        width:92%;
+      }
+
+      .logo{
+        width:100px;
+      }
+
+      .header.scrolled .logo{
+        width:95px;
+      }
+
+      .menu-filter-btn,
+      .header-icon{
+        width:38px;
+        height:38px;
+      }
+
+      .hero{
+        min-height:88vh;
+      }
+
+      .hero-image{
+        object-position:58% center;
+      }
+
+      .hero-overlay{
+        background:
+          linear-gradient(
+            90deg,
+            rgba(0,0,0,.72),
+            rgba(0,0,0,.22)
+          );
+      }
+
+      .hero-content{
+        width:90%;
+      }
+
+      .hero-title{
+        font-size:64px;
+      }
+
+      .hero-text{
+        font-size:11px;
+      }
+
+      .hero-buttons{
+        flex-direction:column;
+      }
+
+      .hero-buttons .btn{
+        width:100%;
+      }
+
+      .intro,
+      .collections-section,
+      .products-section,
+      .features-section,
+      .contact-section{
+        padding:75px 0;
+      }
+
+      .section-title{
+        font-size:48px;
+      }
+
+      .products-top{
+        display:block;
+      }
+
+      .products-top .section-header{
+        margin-bottom:15px;
+      }
+
+      .products-grid{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+      }
+
+      .product-info{
+        padding:14px;
+      }
+
+      .product-name{
+        font-size:21px;
+      }
+
+      .product-arrow{
+        display:none;
+      }
+
+      .collection-card{
+        height:430px;
+      }
+
+      .brand-section{
+        padding:90px 0;
+      }
+
+      .brand-name{
+        font-size:75px;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .footer-brand{
+        grid-column:auto;
+      }
+
+      .whatsapp-float{
+        right:14px;
+        bottom:14px;
+        padding:9px 12px 9px 9px;
+      }
+
+      .whatsapp-icon{
+        width:30px;
+        height:30px;
+      }
+
+      .whatsapp-text strong{
+        font-size:9px;
+      }
+
+      .whatsapp-text span{
+        font-size:7px;
+      }
+
+    }
+
+    @media(prefers-reduced-motion:reduce){
+
+      *,
+      *::before,
+      *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
+      }
+
+    }
+
+  </style>
 </head>
 
 <body>
 
+  <!-- HEADER -->
 
-<!-- HEADER -->
+  <header class="header" id="header">
 
-<header id="header">
+    <div class="header-inner">
 
-<div class="header-inner">
+      <div class="header-left">
 
-<a href="index.html">
-<img src="logo.svg" class="logo" alt="ZOREVA JEWELRY">
-</a>
+        <button
+          class="menu-filter-btn"
+          id="filterOpen"
+          aria-label="Ouvrir les filtres"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-<nav>
-<a href="#home">الرئيسية</a>
-<a href="#collections">المجموعات</a>
-<a href="#products">المنتجات</a>
-<a href="#about">من نحن</a>
-<a href="#contact">تواصل معنا</a>
-</nav>
+        <a href="index.html" class="logo-link">
+          <img
+            src="logo.svg"
+            class="logo"
+            alt="ZOREVA JEWELRY"
+          >
+        </a>
 
-<div class="header-actions">
+      </div>
 
-<button class="cart-btn" onclick="openCart()">
-🛒
-<span class="cart-count" id="cartCount">0</span>
-</button>
 
-</div>
+      <nav class="main-nav">
 
-</div>
+        <a href="#home">Accueil</a>
 
-</header>
+        <a href="#collections">Collections</a>
 
+        <a href="#products">Bijoux</a>
 
-<!-- HERO -->
+        <a href="#about">La marque</a>
 
-<section class="hero" id="home">
+        <a href="#contact">Contact</a>
 
-<img
-class="hero-image"
-src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"
-alt="ZOREVA Jewelry"
->
+      </nav>
 
-<div class="hero-bg"></div>
-<div class="hero-overlay"></div>
 
-<div class="hero-content">
+      <div class="header-right">
 
-<div class="hero-small">
-ZOREVA JEWELRY
-</div>
+        <button
+          class="header-icon"
+          onclick="openCart()"
+          aria-label="Panier"
+        >
+          🛍
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
 
-<h1>
-أناقة<br>
-<span>تُرى.</span>
-</h1>
+      </div>
 
-<p>
-اكتشف مجوهرات صُممت لتمنح كل إطلالة
-تفصيلاً مختلفاً، بلمسة عصرية وفاخرة.
-</p>
+    </div>
 
-<div class="hero-buttons">
+  </header>
 
-<a href="#collections" class="btn btn-gold">
-تصفح المجموعة
-</a>
 
-<a href="#products" class="btn btn-outline">
-اكتشف المنتجات
-</a>
+  <!-- HERO -->
 
-</div>
+  <section class="hero" id="home">
 
-</div>
+    <!-- Image indépendante du catalogue -->
+    <img
+      class="hero-image"
+      src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=2200&q=90"
+      alt="ZOREVA Jewelry"
+    >
 
-<div class="hero-bottom">
-SCROLL TO DISCOVER
-</div>
+    <div class="hero-overlay"></div>
 
-</section>
+    <div class="hero-content">
 
+      <div class="hero-copy">
 
-<!-- MARQUEE -->
+        <div class="hero-kicker">
+          ZOREVA JEWELRY
+        </div>
 
-<div class="marquee">
+        <h1 class="hero-title">
+          L'élégance<br>
+          <span>en détail.</span>
+        </h1>
 
-<div class="marquee-track">
+        <p class="hero-text">
+          Découvrez une sélection de bijoux élégants et modernes,
+          pensés pour accompagner chaque style avec subtilité.
+        </p>
 
-<span>ZOREVA JEWELRY</span>
-<span>ÉLÉGANCE</span>
-<span>DETAILS</span>
-<span>STYLE</span>
-<span>ZOREVA JEWELRY</span>
-<span>ÉLÉGANCE</span>
-<span>DETAILS</span>
-<span>STYLE</span>
+        <div class="hero-buttons">
 
-</div>
+          <a
+            href="#collections"
+            class="btn btn-gold"
+          >
+            Découvrir la collection
+          </a>
 
-</div>
+          <a
+            href="#products"
+            class="btn btn-light"
+          >
+            Voir les bijoux
+          </a>
 
+        </div>
 
-<!-- COLLECTIONS -->
+      </div>
 
-<section class="section" id="collections">
+    </div>
 
-<div class="section-head">
+    <div class="hero-scroll">
+      DÉCOUVRIR
+    </div>
 
-<div class="section-kicker">
-NOS COLLECTIONS
-</div>
+  </section>
 
-<h2 class="section-title">
-اختَر أسلوبك
-</h2>
 
-<p class="section-description">
-مجموعة مختارة من الخواتم والقلادات والأساور
-بتصاميم عصرية تناسب مختلف الإطلالات.
-</p>
+  <!-- INTRO -->
 
-</div>
+  <section class="intro">
 
+    <div class="container">
 
-<div class="collections">
+      <div class="intro-content">
 
-<div class="collection" onclick="filterProducts('necklace')">
+        <div class="eyebrow">
+          L'UNIVERS ZOREVA
+        </div>
 
-<img
-src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"
-alt="Colliers"
->
+        <h2 class="section-title">
+          Des détails qui font la différence.
+        </h2>
 
-<div class="collection-content">
+        <p class="section-text">
+          ZOREVA sélectionne des bijoux au style élégant,
+          moderne et intemporel pour celles et ceux qui
+          accordent de l'importance aux détails.
+        </p>
 
-<span>COLLECTION 01</span>
+      </div>
 
-<h3>قلادات</h3>
+    </div>
 
-<a href="#products">
-تصفح المجموعة
-</a>
+  </section>
 
-</div>
 
-</div>
+  <!-- COLLECTIONS -->
 
+  <section
+    class="collections-section"
+    id="collections"
+  >
 
-<div class="collection" onclick="filterProducts('ring')">
+    <div class="container">
 
-<img
-src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg"
-alt="Bagues"
->
+      <div class="section-header">
 
-<div class="collection-content">
+        <div class="eyebrow">
+          NOS COLLECTIONS
+        </div>
 
-<span>COLLECTION 02</span>
+        <h2 class="section-title">
+          Trouvez votre style
+        </h2>
 
-<h3>خواتم</h3>
+        <p class="section-text">
+          Explorez nos différentes catégories et trouvez
+          la pièce qui correspond à votre style.
+        </p>
 
-<a href="#products">
-تصفح المجموعة
-</a>
+      </div>
 
-</div>
 
-</div>
+      <div class="collections-grid">
 
 
-<div class="collection" onclick="filterProducts('bracelet')">
+        <article
+          class="collection-card"
+          onclick="applyCategory('necklace')"
+        >
 
-<img
-src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg"
-alt="Bracelets"
->
+          <img
+            src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"
+            alt="Colliers ZOREVA"
+            loading="lazy"
+          >
 
-<div class="collection-content">
+          <div class="collection-content">
 
-<span>COLLECTION 03</span>
+            <small>
+              COLLECTION 01
+            </small>
 
-<h3>أساور</h3>
+            <h3>
+              Colliers
+            </h3>
 
-<a href="#products">
-تصفح المجموعة
-</a>
+            <span>
+              Découvrir
+            </span>
 
-</div>
+          </div>
 
-</div>
+        </article>
 
-</div>
 
-</section>
+        <article
+          class="collection-card"
+          onclick="applyCategory('ring')"
+        >
 
+          <img
+            src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg"
+            alt="Bagues ZOREVA"
+            loading="lazy"
+          >
 
-<!-- PRODUCTS -->
+          <div class="collection-content">
 
-<section class="section" id="products">
+            <small>
+              COLLECTION 02
+            </small>
 
-<div class="section-head">
+            <h3>
+              Bagues
+            </h3>
 
-<div class="section-kicker">
-ZOREVA SELECTION
-</div>
+            <span>
+              Découvrir
+            </span>
 
-<h2 class="section-title">
-اختياراتنا
-</h2>
+          </div>
 
-<p class="section-description">
-قطع مختارة بعناية لإضافة لمسة مميزة إلى أسلوبك.
-</p>
+        </article>
 
-</div>
 
+        <article
+          class="collection-card"
+          onclick="applyCategory('bracelet')"
+        >
 
-<div class="products" id="productsGrid"></div>
+          <img
+            src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg"
+            alt="Bracelets ZOREVA"
+            loading="lazy"
+          >
 
-</section>
+          <div class="collection-content">
 
+            <small>
+              COLLECTION 03
+            </small>
 
-<!-- BRAND -->
+            <h3>
+              Bracelets
+            </h3>
 
-<section class="brand-section" id="about">
+            <span>
+              Découvrir
+            </span>
 
-<div class="brand-content">
+          </div>
 
-<div class="section-kicker">
-THE ZOREVA STORY
-</div>
+        </article>
 
-<h2>
-أكثر من<br>
-<span>مجوهرات.</span>
-</h2>
 
-<p>
-ZOREVA هي مساحة تجمع بين البساطة والأناقة والتفاصيل.
-نختار قطعاً عصرية يمكن أن تصبح جزءاً من أسلوبك اليومي،
-مع تجربة طلب بسيطة ومباشرة.
-</p>
+      </div>
 
-</div>
+    </div>
 
-</section>
+  </section>
 
 
-<!-- FEATURES -->
+  <!-- PRODUCTS -->
 
-<section class="section">
+  <section
+    class="products-section"
+    id="products"
+  >
 
-<div class="features">
+    <div class="container">
 
-<div class="feature">
+      <div class="products-top">
 
-<div class="feature-number">
-01
-</div>
+        <div class="section-header">
 
-<h3>
-تصاميم مختارة
-</h3>
+          <div class="eyebrow">
+            SÉLECTION ZOREVA
+          </div>
 
-<p>
-قطع عصرية بتفاصيل أنيقة.
-</p>
+          <h2 class="section-title">
+            Nos bijoux
+          </h2>
 
-</div>
+        </div>
 
+        <div
+          class="product-count"
+          id="productCount"
+        >
+          7 produits
+        </div>
 
-<div class="feature">
+      </div>
 
-<div class="feature-number">
-02
-</div>
 
-<h3>
-طلب بسيط
-</h3>
+      <div
+        class="products-grid"
+        id="productsGrid"
+      ></div>
 
-<p>
-اطلب مباشرة عبر WhatsApp.
-</p>
+    </div>
 
-</div>
+  </section>
 
 
-<div class="feature">
+  <!-- BRAND -->
 
-<div class="feature-number">
-03
-</div>
+  <section
+    class="brand-section"
+    id="about"
+  >
 
-<h3>
-ZOREVA
-</h3>
+    <div class="container">
 
-<p>
-أسلوب بسيط، تفاصيل مختلفة.
-</p>
+      <div class="eyebrow">
+        NOTRE UNIVERS
+      </div>
 
-</div>
+      <div class="brand-name">
+        ZOREVA<span>.</span>
+      </div>
 
-</div>
+      <p class="section-text">
+        Une identité pensée autour de l'élégance,
+        de la simplicité et de la beauté des détails.
+      </p>
 
-</section>
+    </div>
 
+  </section>
 
-<!-- CONTACT -->
 
-<section class="section contact" id="contact">
+  <!-- FEATURES -->
 
-<div class="contact-box">
+  <section class="features-section">
 
-<div class="section-kicker">
-CONTACT
-</div>
+    <div class="container">
 
-<h2>
-جاهز تختار قطعتك؟
-</h2>
+      <div class="features-grid">
 
-<p>
-تواصل معنا مباشرة عبر WhatsApp للطلب أو الاستفسار.
-</p>
+        <div class="feature">
 
-<a
-href="https://wa.me/212765333754"
-target="_blank"
-class="btn btn-gold"
->
-تواصل عبر WhatsApp
-</a>
+          <div class="feature-number">
+            01
+          </div>
 
-</div>
+          <h3>
+            Sélection soignée
+          </h3>
 
-</section>
+          <p>
+            Des modèles choisis avec attention
+            pour leur style et leur élégance.
+          </p>
 
+        </div>
 
-<!-- FOOTER -->
 
-<footer>
+        <div class="feature">
 
-<div class="footer-inner">
+          <div class="feature-number">
+            02
+          </div>
 
-<div class="footer-top">
+          <h3>
+            Commande simple
+          </h3>
 
-<div>
+          <p>
+            Commandez facilement et directement
+            via WhatsApp.
+          </p>
 
-<img src="logo.svg" class="footer-logo" alt="ZOREVA">
+        </div>
 
-<p>
-ZOREVA JEWELRY — مجوهرات أنيقة وعصرية
-بتفاصيل صُممت لتكمل أسلوبك.
-</p>
 
-</div>
+        <div class="feature">
 
+          <div class="feature-number">
+            03
+          </div>
 
-<div class="footer-col">
+          <h3>
+            Style intemporel
+          </h3>
 
-<h4>
-Navigation
-</h4>
+          <p>
+            Des pièces faciles à porter
+            et à associer à différents styles.
+          </p>
 
-<a href="#home">الرئيسية</a>
-<a href="#collections">المجموعات</a>
-<a href="#products">المنتجات</a>
-<a href="#about">من نحن</a>
+        </div>
 
-</div>
+      </div>
 
+    </div>
 
-<div class="footer-col">
+  </section>
 
-<h4>
-Contact
-</h4>
 
-<a href="https://wa.me/212765333754" target="_blank">
-WhatsApp
-</a>
+  <!-- CONTACT -->
 
-<a href="#contact">
-تواصل معنا
-</a>
+  <section
+    class="contact-section"
+    id="contact"
+  >
 
-</div>
+    <div class="container">
 
-</div>
+      <div class="contact-box">
 
-<div class="copyright">
-© 2026 ZOREVA JEWELRY — Tous droits réservés.
-</div>
+        <div class="eyebrow">
+          CONTACT
+        </div>
 
-</div>
+        <h2>
+          Une pièce vous plaît ?
+        </h2>
 
-</footer>
+        <p>
+          Contactez-nous directement pour passer votre commande.
+        </p>
 
+        <a
+          href="https://wa.me/212765333754"
+          target="_blank"
+          class="btn btn-gold"
+        >
+          Commander sur WhatsApp
+        </a>
 
-<!-- CART -->
+      </div>
 
-<div
-class="cart-overlay"
-id="cartOverlay"
-onclick="closeCart()"
-></div>
+    </div>
 
-<aside class="cart-panel" id="cartPanel">
+  </section>
 
-<div class="cart-header">
 
-<h3>
-سلة التسوق
-</h3>
+  <!-- FOOTER -->
 
-<button
-class="close-cart"
-onclick="closeCart()"
->
-×
-</button>
+  <footer>
 
-</div>
+    <div class="container">
 
-<div id="cartItems"></div>
+      <div class="footer-grid">
 
-<div class="cart-footer">
+        <div class="footer-brand">
 
-<div class="cart-total">
+          <img
+            src="logo.svg"
+            class="footer-logo"
+            alt="ZOREVA JEWELRY"
+          >
 
-<span>
-المجموع
-</span>
+          <p>
+            ZOREVA JEWELRY — une sélection de bijoux
+            élégants et modernes pour accompagner
+            votre style au quotidien.
+          </p>
 
-<strong id="cartTotal">
-0 DH
-</strong>
+        </div>
 
-</div>
 
-<button
-class="checkout"
-onclick="checkoutWhatsApp()"
->
-اطلب عبر WhatsApp
-</button>
+        <div class="footer-col">
 
-</div>
+          <h4>
+            Navigation
+          </h4>
 
-</aside>
+          <a href="#home">
+            Accueil
+          </a>
 
+          <a href="#collections">
+            Collections
+          </a>
 
-<script>
+          <a href="#products">
+            Bijoux
+          </a>
 
+          <a href="#about">
+            La marque
+          </a>
 
-/* ================= PRODUCTS ================= */
+        </div>
 
-const products = [
 
-{
-id:"collier-eclat",
-name:"Collier Éclat",
-category:"necklace",
-categoryName:"قلادات",
-price:119,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg"
-},
+        <div class="footer-col">
 
-{
-id:"bague-elegance",
-name:"Bague Élégance",
-category:"ring",
-categoryName:"خواتم",
-price:119,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg"
-},
+          <h4>
+            Contact
+          </h4>
 
-{
-id:"bracelet-luna",
-name:"Bracelet Luna",
-category:"bracelet",
-categoryName:"أساور",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg"
-},
+          <a
+            href="https://wa.me/212765333754"
+            target="_blank"
+          >
+            WhatsApp
+          </a>
 
-{
-id:"bague-signature",
-name:"Bague Signature",
-category:"ring",
-categoryName:"خواتم",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_175331.jpg"
-},
+          <a href="#contact">
+            Nous contacter
+          </a>
 
-{
-id:"collier-perla",
-name:"Collier Perla",
-category:"necklace",
-categoryName:"قلادات",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"
-},
+        </div>
 
-{
-id:"bracelet-elegance",
-name:"Bracelet Élégance",
-category:"bracelet",
-categoryName:"أساور",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg"
-},
+      </div>
 
-{
-id:"bague-royale",
-name:"Bague Royale",
-category:"ring",
-categoryName:"خواتم",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg"
-}
 
-];
+      <div class="copyright">
+        © 2026 ZOREVA JEWELRY — Tous droits réservés.
+      </div>
 
+    </div>
 
-/* ================= RENDER PRODUCTS ================= */
+  </footer>
 
-const grid =
-document.getElementById("productsGrid");
 
-function renderProducts(filter="all"){
+  <!-- WHATSAPP FLOAT -->
 
-grid.innerHTML="";
+  <a
+    href="https://wa.me/212765333754"
+    target="_blank"
+    class="whatsapp-float"
+    aria-label="Contacter ZOREVA sur WhatsApp"
+  >
 
-const filtered =
-filter==="all"
-? products
-: products.filter(p=>p.category===filter);
+    <div class="whatsapp-icon">
+      W
+    </div>
 
-filtered.forEach(product=>{
+    <div class="whatsapp-text">
 
-const card =
-document.createElement("article");
+      <strong>
+        Commander sur WhatsApp
+      </strong>
 
-card.className="product";
+      <span>
+        Réponse directe
+      </span>
 
-card.onclick=()=>{
+    </div>
 
-window.location.href=
-`product.html?id=${product.id}`;
+  </a>
 
-};
 
-card.innerHTML=`
+  <!-- FILTER OVERLAY -->
 
-<div class="product-image">
+  <div
+    class="filter-overlay"
+    id="filterOverlay"
+  ></div>
 
-<img
-src="${product.image}"
-alt="${product.name}"
-loading="lazy"
->
 
-</div>
+  <!-- FILTER PANEL -->
 
-<div class="product-info">
+  <aside
+    class="filter-panel"
+    id="filterPanel"
+  >
 
-<small>
-${product.categoryName}
-</small>
+    <div class="filter-head">
 
-<h3>
-${product.name}
-</h3>
+      <h3>
+        Filtres
+      </h3>
 
-<div class="product-price">
-${product.price} DH
-</div>
+      <button
+        class="close-filter"
+        id="filterClose"
+      >
+        ×
+      </button>
 
-</div>
+    </div>
 
-`;
 
-grid.appendChild(card);
+    <div class="filter-group">
 
-});
+      <div class="filter-group-title">
+        Catégorie
+      </div>
 
-}
+      <div class="filter-options">
 
-renderProducts();
+        <button
+          class="filter-option active"
+          data-category="all"
+        >
+          Tous
+        </button>
 
+        <button
+          class="filter-option"
+          data-category="necklace"
+        >
+          Colliers
+        </button>
 
-/* ================= FILTER ================= */
+        <button
+          class="filter-option"
+          data-category="ring"
+        >
+          Bagues
+        </button>
 
-function filterProducts(category){
+        <button
+          class="filter-option"
+          data-category="bracelet"
+        >
+          Bracelets
+        </button>
 
-document
-.getElementById("products")
-.scrollIntoView({
-behavior:"smooth"
-});
+      </div>
 
-renderProducts(category);
+    </div>
 
-}
 
+    <div class="filter-group">
 
-/* ================= CART ================= */
+      <div class="filter-group-title">
+        Prix maximum
+      </div>
 
-let cart =
-JSON.parse(
-localStorage.getItem("zorevaCart") || "[]"
-);
+      <input
+        type="range"
+        class="price-range"
+        id="priceRange"
+        min="119"
+        max="149"
+        value="149"
+        step="10"
+      >
 
+      <div class="price-value">
 
-function saveCart(){
+        <span>
+          119 DH
+        </span>
 
-localStorage.setItem(
-"zorevaCart",
-JSON.stringify(cart)
-);
+        <strong id="priceValue">
+          149 DH
+        </strong>
 
-updateCart();
+      </div>
 
-}
+    </div>
 
 
-function updateCart(){
+    <div class="filter-group">
 
-const count =
-cart.reduce(
-(sum,item)=>sum+(item.quantity||1),
-0
-);
+      <div class="filter-group-title">
+        Trier par
+      </div>
 
-document.getElementById("cartCount")
-.textContent=count;
+      <select
+        class="sort-select"
+        id="sortSelect"
+      >
 
-renderCart();
+        <option value="default">
+          Par défaut
+        </option>
 
-}
+        <option value="low">
+          Prix : moins cher
+        </option>
 
+        <option value="high">
+          Prix : plus cher
+        </option>
 
-function renderCart(){
+        <option value="name">
+          Nom
+        </option>
 
-const container =
-document.getElementById("cartItems");
+      </select>
 
-if(!cart.length){
+    </div>
 
-container.innerHTML=`
 
-<div class="empty-cart">
-السلة فارغة حالياً.
-</div>
+    <button
+      class="filter-reset"
+      id="filterReset"
+    >
+      Réinitialiser les filtres
+    </button>
 
-`;
+  </aside>
 
-document.getElementById("cartTotal")
-.textContent="0 DH";
 
-return;
+  <!-- CART -->
 
-}
+  <div
+    class="cart-overlay"
+    id="cartOverlay"
+    onclick="closeCart()"
+  ></div>
 
-let total=0;
 
-container.innerHTML=
-cart.map((item,index)=>{
+  <aside
+    class="cart-panel"
+    id="cartPanel"
+  >
 
-const quantity =
-item.quantity||1;
+    <div class="cart-header">
 
-total+=
-item.price*quantity;
+      <h3>
+        Votre panier
+      </h3>
 
-return`
+      <button
+        class="close-cart"
+        onclick="closeCart()"
+      >
+        ×
+      </button>
 
-<div class="cart-item">
+    </div>
 
-<img
-src="${item.image}"
-alt="${item.name}"
->
 
-<div class="cart-item-info">
+    <div id="cartItems"></div>
 
-<h4>
-${item.name}
-</h4>
 
-<p>
-${item.price} DH × ${quantity}
-</p>
+    <div class="cart-footer">
 
-</div>
+      <div class="cart-total">
 
-<button
-class="remove-item"
-onclick="removeItem(${index})"
->
-حذف
-</button>
+        <span>
+          Total
+        </span>
 
-</div>
+        <strong id="cartTotal">
+          0 DH
+        </strong>
 
-`;
+      </div>
 
-}).join("");
+      <button
+        class="checkout-btn"
+        onclick="checkoutWhatsApp()"
+      >
+        Commander via WhatsApp
+      </button>
 
-document.getElementById("cartTotal")
-.textContent=
-`${total} DH`;
+    </div>
 
-}
+  </aside>
 
 
-function removeItem(index){
+  <script>
 
-cart.splice(index,1);
+    /* ================= PRODUCTS ================= */
 
-saveCart();
+    const products = [
 
-}
+      {
+        id:"collier-eclat",
+        name:"Collier Éclat",
+        category:"necklace",
+        categoryName:"Colliers",
+        price:119,
+        image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg"
+      },
 
+      {
+        id:"bague-elegance",
+        name:"Bague Élégance",
+        category:"ring",
+        categoryName:"Bagues",
+        price:119,
+        image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg"
+      },
 
-function openCart(){
+      {
+        id:"bracelet-luna",
+        name:"Bracelet Luna",
+        category:"bracelet",
+        categoryName:"Bracelets",
+        price:149,
+        image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg"
+      },
 
-document
-.getElementById("cartPanel")
-.classList.add("active");
+      {
+        id:"bague-signature",
+        name:"Bague Signature",
+        category:"ring",
+        categoryName:"Bagues",
+        price:149,
+        image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_175331.jpg"
+      },
 
-document
-.getElementById("cartOverlay")
-.classList.add("active");
+      {
+        id:"collier-perla",
+        name:"Collier Perla",
+        category:"necklace",
+        categoryName:"Colliers",
+        price:149,
+        image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"
+      },
 
-document.body.style.overflow="hidden";
+      {
+        id:"bracelet-elegance",
+        name:"Bracelet Élégance",
+        category:"bracelet",
+        categoryName:"Bracelets",
+        price:149,
+        image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg"
+      },
 
-}
+      {
+        id:"bague-royale",
+        name:"Bague Royale",
+        category:"ring",
+        categoryName:"Bagues",
+        price:149,
+        image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg"
+      }
 
+    ];
 
-function closeCart(){
 
-document
-.getElementById("cartPanel")
-.classList.remove("active");
+    /* ================= FILTER STATE ================= */
 
-document
-.getElementById("cartOverlay")
-.classList.remove("active");
+    let selectedCategory = "all";
+    let maxPrice = 149;
+    let sortType = "default";
 
-document.body.style.overflow="";
 
-}
+    /* ================= PRODUCTS RENDER ================= */
 
+    const productsGrid =
+      document.getElementById("productsGrid");
 
-/* ================= WHATSAPP ================= */
+    function renderProducts(){
 
-function checkoutWhatsApp(){
+      let result = products.filter(product => {
 
-if(!cart.length){
+        const categoryOK =
+          selectedCategory === "all" ||
+          product.category === selectedCategory;
 
-alert("السلة فارغة");
+        const priceOK =
+          product.price <= maxPrice;
 
-return;
+        return categoryOK && priceOK;
 
-}
+      });
 
-let message =
-"السلام عليكم، أريد طلب:%0A%0A";
 
-let total=0;
+      if(sortType === "low"){
+        result.sort((a,b) => a.price - b.price);
+      }
 
-cart.forEach(item=>{
+      if(sortType === "high"){
+        result.sort((a,b) => b.price - a.price);
+      }
 
-const quantity =
-item.quantity||1;
+      if(sortType === "name"){
+        result.sort((a,b) =>
+          a.name.localeCompare(b.name)
+        );
+      }
 
-const subtotal =
-item.price*quantity;
 
-total+=subtotal;
+      productsGrid.innerHTML = "";
 
-message+=
-`• ${item.name} × ${quantity} — ${subtotal} DH%0A`;
 
-});
+      result.forEach(product => {
 
-message+=
-`%0Aالمجموع: ${total} DH`;
+        const card =
+          document.createElement("article");
 
-window.open(
-`https://wa.me/212765333754?text=${message}`,
-"_blank"
-);
+        card.className = "product-card";
 
-}
+        card.onclick = () => {
 
+          window.location.href =
+            `product.html?id=${product.id}`;
 
-/* ================= HEADER ================= */
+        };
 
-const header =
-document.getElementById("header");
 
-window.addEventListener("scroll",()=>{
+        card.innerHTML = `
 
-if(window.scrollY>30){
+          <div class="product-image">
 
-header.classList.add("scrolled");
+            <span class="product-badge">
+              ZOREVA
+            </span>
 
-}else{
+            <img
+              src="${product.image}"
+              alt="${product.name}"
+              loading="lazy"
+            >
 
-header.classList.remove("scrolled");
+          </div>
 
-}
+          <div class="product-info">
 
-});
+            <div class="product-category">
+              ${product.categoryName}
+            </div>
 
+            <div class="product-name">
+              ${product.name}
+            </div>
 
-/* ================= INIT ================= */
+            <div class="product-price">
+              ${product.price} DH
+            </div>
 
-updateCart();
+          </div>
 
+          <div class="product-arrow">
+            →
+          </div>
 
-/* ESC */
+        `;
 
-document.addEventListener("keydown",e=>{
+        productsGrid.appendChild(card);
 
-if(e.key==="Escape"){
+      });
 
-closeCart();
 
-}
+      document.getElementById("productCount")
+        .textContent =
+        `${result.length} produits`;
 
-});
+    }
 
-</script>
+
+    renderProducts();
+
+
+    /* ================= CATEGORY ================= */
+
+    function applyCategory(category){
+
+      selectedCategory = category;
+
+      document.querySelectorAll(".filter-option")
+        .forEach(button => {
+
+          button.classList.toggle(
+            "active",
+            button.dataset.category === category
+          );
+
+        });
+
+      renderProducts();
+
+      document
+        .getElementById("products")
+        .scrollIntoView({
+          behavior:"smooth"
+        });
+
+    }
+
+
+    document.querySelectorAll(".filter-option")
+      .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+          selectedCategory =
+            button.dataset.category;
+
+          document.querySelectorAll(".filter-option")
+            .forEach(btn =>
+              btn.classList.remove("active")
+            );
+
+          button.classList.add("active");
+
+          renderProducts();
+
+        });
+
+      });
+
+
+    /* ================= PRICE ================= */
+
+    const priceRange =
+      document.getElementById("priceRange");
+
+    const priceValue =
+      document.getElementById("priceValue");
+
+    priceRange.addEventListener("input", () => {
+
+      maxPrice =
+        Number(priceRange.value);
+
+      priceValue.textContent =
+        `${maxPrice} DH`;
+
+      renderProducts();
+
+    });
+
+
+    /* ================= SORT ================= */
+
+    document.getElementById("sortSelect")
+      .addEventListener("change", event => {
+
+        sortType = event.target.value;
+
+        renderProducts();
+
+      });
+
+
+    /* ================= RESET ================= */
+
+    document.getElementById("filterReset")
+      .addEventListener("click", () => {
+
+        selectedCategory = "all";
+        maxPrice = 149;
+        sortType = "default";
+
+        priceRange.value = 149;
+        priceValue.textContent = "149 DH";
+
+        document.getElementById("sortSelect")
+          .value = "default";
+
+        document.querySelectorAll(".filter-option")
+          .forEach(button =>
+            button.classList.remove("active")
+          );
+
+        document
+          .querySelector('[data-category="all"]')
+          .classList.add("active");
+
+        renderProducts();
+
+      });
+
+
+    /* ================= FILTER PANEL ================= */
+
+    const filterPanel =
+      document.getElementById("filterPanel");
+
+    const filterOverlay =
+      document.getElementById("filterOverlay");
+
+
+    function openFilters(){
+
+      filterPanel.classList.add("active");
+      filterOverlay.classList.add("active");
+
+      document.body.classList.add("no-scroll");
+
+    }
+
+
+    function closeFilters(){
+
+      filterPanel.classList.remove("active");
+      filterOverlay.classList.remove("active");
+
+      document.body.classList.remove("no-scroll");
+
+    }
+
+
+    document.getElementById("filterOpen")
+      .addEventListener("click", openFilters);
+
+    document.getElementById("filterClose")
+      .addEventListener("click", closeFilters);
+
+    filterOverlay.addEventListener(
+      "click",
+      closeFilters
+    );
+
+
+    /* ================= CART ================= */
+
+    let cart =
+      JSON.parse(
+        localStorage.getItem("zorevaCart") || "[]"
+      );
+
+
+    function saveCart(){
+
+      localStorage.setItem(
+        "zorevaCart",
+        JSON.stringify(cart)
+      );
+
+      updateCart();
+
+    }
+
+
+    function updateCart(){
+
+      const count =
+        cart.reduce(
+          (sum,item) =>
+            sum + (item.quantity || 1),
+          0
+        );
+
+      document.getElementById("cartCount")
+        .textContent = count;
+
+      renderCart();
+
+    }
+
+
+    function renderCart(){
+
+      const container =
+        document.getElementById("cartItems");
+
+      if(!cart.length){
+
+        container.innerHTML = `
+          <div class="empty-cart">
+            Votre panier est vide.
+          </div>
+        `;
+
+        document.getElementById("cartTotal")
+          .textContent = "0 DH";
+
+        return;
+
+      }
+
+
+      let total = 0;
+
+
+      container.innerHTML =
+        cart.map((item,index) => {
+
+          const quantity =
+            item.quantity || 1;
+
+          total +=
+            item.price * quantity;
+
+
+          return `
+
+            <div class="cart-item">
+
+              <img
+                src="${item.image}"
+                alt="${item.name}"
+              >
+
+              <div class="cart-item-info">
+
+                <h4>
+                  ${item.name}
+                </h4>
+
+                <p>
+                  ${item.price} DH × ${quantity}
+                </p>
+
+              </div>
+
+              <button
+                class="remove-item"
+                onclick="removeItem(${index})"
+              >
+                Supprimer
+              </button>
+
+            </div>
+
+          `;
+
+        }).join("");
+
+
+      document.getElementById("cartTotal")
+        .textContent =
+        `${total} DH`;
+
+    }
+
+
+    function removeItem(index){
+
+      cart.splice(index,1);
+
+      saveCart();
+
+    }
+
+
+    function openCart(){
+
+      document
+        .getElementById("cartPanel")
+        .classList.add("active");
+
+      document
+        .getElementById("cartOverlay")
+        .classList.add("active");
+
+      document.body.classList.add("no-scroll");
+
+    }
+
+
+    function closeCart(){
+
+      document
+        .getElementById("cartPanel")
+        .classList.remove("active");
+
+      document
+        .getElementById("cartOverlay")
+        .classList.remove("active");
+
+      document.body.classList.remove("no-scroll");
+
+    }
+
+
+    /* ================= WHATSAPP ================= */
+
+    function checkoutWhatsApp(){
+
+      if(!cart.length){
+
+        alert("Votre panier est vide.");
+
+        return;
+
+      }
+
+
+      let message =
+        "Bonjour, je souhaite commander:%0A%0A";
+
+      let total = 0;
+
+
+      cart.forEach(item => {
+
+        const quantity =
+          item.quantity || 1;
+
+        const subtotal =
+          item.price * quantity;
+
+        total += subtotal;
+
+        message +=
+          `• ${item.name} × ${quantity} — ${subtotal} DH%0A`;
+
+      });
+
+
+      message +=
+        `%0ATotal : ${total} DH`;
+
+
+      window.open(
+        `https://wa.me/212765333754?text=${message}`,
+        "_blank"
+      );
+
+    }
+
+
+    /* ================= HEADER ================= */
+
+    const header =
+      document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+      if(window.scrollY > 30){
+
+        header.classList.add("scrolled");
+
+      }else{
+
+        header.classList.remove("scrolled");
+
+      }
+
+    });
+
+
+    /* ================= ESC ================= */
+
+    document.addEventListener("keydown", event => {
+
+      if(event.key === "Escape"){
+
+        closeFilters();
+        closeCart();
+
+      }
+
+    });
+
+
+    /* ================= INIT ================= */
+
+    updateCart();
+
+  </script>
 
 </body>
 </html>
