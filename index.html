@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="ZOREVA Jewelry — Bijoux élégants et modernes. Découvrez notre collection de bagues, bracelets et colliers.">
+  <meta name="description" content="ZOREVA Jewelry — Bijoux élégants et modernes. Découvrez notre collection de bagues, bracelets, colliers, montres et boucles d’oreilles.">
 
   <title>ZOREVA — Jewelry</title>
 
@@ -463,8 +463,8 @@
 
     .collections-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
+      grid-template-columns:repeat(5,1fr);
+      gap:14px;
     }
 
     .collection-card{
@@ -493,7 +493,7 @@
       flex-direction:column;
       align-items:center;
       justify-content:flex-end;
-      padding:35px;
+      padding:35px 15px;
       text-align:center;
       background:linear-gradient(
         to top,
@@ -505,7 +505,7 @@
 
     .collection-overlay h3{
       font-family:'Cormorant Garamond',serif;
-      font-size:34px;
+      font-size:31px;
       font-weight:500;
       margin-bottom:8px;
     }
@@ -1081,7 +1081,11 @@
 
     /* MOBILE */
 
-    @media(max-width:1000px){
+    @media(max-width:1100px){
+
+      .collections-grid{
+        grid-template-columns:repeat(3,1fr);
+      }
 
       .products-grid{
         grid-template-columns:repeat(3,1fr);
@@ -1142,7 +1146,7 @@
       }
 
       .collections-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr 1fr;
       }
 
       .collection-card{
@@ -1215,6 +1219,10 @@
 
       .section-heading h2{
         font-size:42px;
+      }
+
+      .collections-grid{
+        grid-template-columns:1fr;
       }
 
       .products-toolbar{
@@ -1335,8 +1343,6 @@
     <a href="#about">À propos</a>
     <a href="#contact">Contact</a>
 
-    <!-- FILTRATION DANS LE MENU -->
-
     <div class="menu-filter">
 
       <div class="menu-filter-title">
@@ -1347,32 +1353,28 @@
 
         <h4>Catégorie</h4>
 
-        <button
-          data-menu-category="all"
-          class="menu-category-filter active"
-        >
+        <button data-menu-category="all" class="menu-category-filter active">
           Tous les produits
         </button>
 
-        <button
-          data-menu-category="Bagues"
-          class="menu-category-filter"
-        >
+        <button data-menu-category="Bagues" class="menu-category-filter">
           Bagues
         </button>
 
-        <button
-          data-menu-category="Bracelets"
-          class="menu-category-filter"
-        >
+        <button data-menu-category="Bracelets" class="menu-category-filter">
           Bracelets
         </button>
 
-        <button
-          data-menu-category="Colliers"
-          class="menu-category-filter"
-        >
+        <button data-menu-category="Colliers" class="menu-category-filter">
           Colliers
+        </button>
+
+        <button data-menu-category="Montres" class="menu-category-filter">
+          Montres
+        </button>
+
+        <button data-menu-category="Boucles" class="menu-category-filter">
+          Boucles d’oreilles
         </button>
 
       </div>
@@ -1381,24 +1383,15 @@
 
         <h4>Prix</h4>
 
-        <button
-          data-menu-price="all"
-          class="menu-price-filter active"
-        >
+        <button data-menu-price="all" class="menu-price-filter active">
           Tous les prix
         </button>
 
-        <button
-          data-menu-price="under120"
-          class="menu-price-filter"
-        >
+        <button data-menu-price="under120" class="menu-price-filter">
           Moins de 120 DH
         </button>
 
-        <button
-          data-menu-price="149"
-          class="menu-price-filter"
-        >
+        <button data-menu-price="149" class="menu-price-filter">
           149 DH
         </button>
 
@@ -1408,33 +1401,21 @@
 
         <h4>Trier par</h4>
 
-        <button
-          data-menu-sort="default"
-          class="menu-sort-filter active"
-        >
+        <button data-menu-sort="default" class="menu-sort-filter active">
           Recommandés
         </button>
 
-        <button
-          data-menu-sort="low"
-          class="menu-sort-filter"
-        >
+        <button data-menu-sort="low" class="menu-sort-filter">
           Prix croissant
         </button>
 
-        <button
-          data-menu-sort="high"
-          class="menu-sort-filter"
-        >
+        <button data-menu-sort="high" class="menu-sort-filter">
           Prix décroissant
         </button>
 
       </div>
 
-      <button
-        class="menu-reset-filter"
-        id="menuResetFilter"
-      >
+      <button class="menu-reset-filter" id="menuResetFilter">
         Réinitialiser
       </button>
 
@@ -1535,6 +1516,42 @@
 
           <div class="collection-overlay">
             <h3>Colliers</h3>
+            <span>Découvrir</span>
+          </div>
+
+        </a>
+
+        <a
+          href="#products"
+          class="collection-card"
+          data-collection="Montres"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1000&q=85"
+            alt="Montres"
+          >
+
+          <div class="collection-overlay">
+            <h3>Montres</h3>
+            <span>Découvrir</span>
+          </div>
+
+        </a>
+
+        <a
+          href="#products"
+          class="collection-card"
+          data-collection="Boucles"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1000&q=85"
+            alt="Boucles d’oreilles"
+          >
+
+          <div class="collection-overlay">
+            <h3>Boucles d’oreilles</h3>
             <span>Découvrir</span>
           </div>
 
@@ -1672,6 +1689,14 @@
 
       <button data-category="Colliers" class="category-filter">
         Colliers
+      </button>
+
+      <button data-category="Montres" class="category-filter">
+        Montres
+      </button>
+
+      <button data-category="Boucles" class="category-filter">
+        Boucles d’oreilles
       </button>
 
     </div>
@@ -2066,8 +2091,6 @@
 
     function updateCategoryButtons(){
 
-      /* FILTER PANEL */
-
       document
         .querySelectorAll(".category-filter")
         .forEach(button => {
@@ -2103,8 +2126,6 @@
 
         });
 
-
-      /* SIDE MENU */
 
       document
         .querySelectorAll(".menu-category-filter")
