@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -64,18 +63,82 @@
       max-width:100%;
     }
 
+
+    /* =====================================================
+       ANNOUNCEMENT BAR
+    ===================================================== */
+
+    .announcement-bar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:32px;
+
+      background:#111;
+      color:#fff;
+
+      overflow:hidden;
+
+      z-index:2500;
+
+      display:flex;
+      align-items:center;
+
+      border-bottom:1px solid rgba(185,151,91,.35);
+    }
+
+    .announcement-track{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      gap:18px;
+
+      width:100%;
+
+      white-space:nowrap;
+
+      font-size:9px;
+      letter-spacing:1.5px;
+
+      text-transform:uppercase;
+
+      animation:announcementFade 1s ease both;
+    }
+
+    .announcement-track .separator{
+      color:var(--gold);
+    }
+
+    @keyframes announcementFade{
+      from{
+        opacity:0;
+        transform:translateY(-7px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+
     /* =====================================================
        HEADER
     ===================================================== */
 
     header{
       position:fixed;
-      top:0;
+
+      top:32px;
       left:0;
+
       width:100%;
       height:82px;
 
       background:rgba(255,255,255,.96);
+
       backdrop-filter:blur(16px);
 
       border-bottom:1px solid rgba(0,0,0,.06);
@@ -85,14 +148,20 @@
 
     .header-inner{
       max-width:1400px;
+
       height:100%;
+
       margin:auto;
+
       padding:0 30px;
 
       display:grid;
+
       grid-template-columns:1fr auto 1fr;
+
       align-items:center;
     }
+
 
     /* MENU 3 LINES */
 
@@ -101,12 +170,15 @@
       height:44px;
 
       border:0;
+
       background:none;
 
       cursor:pointer;
 
       display:flex;
+
       flex-direction:column;
+
       justify-content:center;
 
       gap:6px;
@@ -129,11 +201,14 @@
       background:var(--gold-dark);
     }
 
+
     /* LOGO + NOM */
 
     .brand{
       display:flex;
+
       align-items:center;
+
       justify-content:center;
 
       gap:10px;
@@ -150,16 +225,20 @@
       font-family:'Cormorant Garamond',serif;
 
       font-size:25px;
+
       font-weight:600;
 
       letter-spacing:3px;
     }
 
+
     /* CART */
 
     .header-actions{
       display:flex;
+
       justify-content:flex-end;
+
       align-items:center;
     }
 
@@ -168,6 +247,7 @@
       height:44px;
 
       border:0;
+
       background:none;
 
       cursor:pointer;
@@ -175,7 +255,9 @@
       position:relative;
 
       display:flex;
+
       justify-content:center;
+
       align-items:center;
     }
 
@@ -184,7 +266,9 @@
       height:23px;
 
       fill:none;
+
       stroke:#111;
+
       stroke-width:1.5;
     }
 
@@ -200,15 +284,20 @@
       border-radius:50%;
 
       background:var(--gold);
+
       color:#fff;
 
       display:flex;
+
       justify-content:center;
+
       align-items:center;
 
       font-size:9px;
+
       font-weight:600;
     }
+
 
     /* =====================================================
        SIDE MENU
@@ -216,11 +305,13 @@
 
     .menu-overlay{
       position:fixed;
+
       inset:0;
 
       background:rgba(0,0,0,.42);
 
       opacity:0;
+
       visibility:hidden;
 
       transition:.3s;
@@ -230,6 +321,7 @@
 
     .menu-overlay.active{
       opacity:1;
+
       visibility:visible;
     }
 
@@ -240,6 +332,7 @@
       left:-350px;
 
       width:330px;
+
       height:100vh;
 
       background:#fff;
@@ -259,6 +352,7 @@
 
     .menu-close{
       border:0;
+
       background:none;
 
       font-size:29px;
@@ -272,6 +366,7 @@
       font-family:'Cormorant Garamond',serif;
 
       font-size:30px;
+
       font-weight:500;
 
       letter-spacing:3px;
@@ -299,20 +394,22 @@
       color:var(--gold-dark);
     }
 
+
     /* =====================================================
        HERO
     ===================================================== */
 
     main{
-      padding-top:82px;
+      padding-top:114px;
     }
 
     .hero{
       position:relative;
 
-      min-height:calc(100vh - 82px);
+      min-height:calc(100vh - 114px);
 
       display:flex;
+
       align-items:center;
 
       overflow:hidden;
@@ -322,6 +419,7 @@
 
     .hero-image{
       position:absolute;
+
       inset:0;
 
       background-image:
@@ -333,14 +431,17 @@
         url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=2200&q=90");
 
       background-size:cover;
+
       background-position:center;
     }
 
     .hero-content{
       position:relative;
+
       z-index:2;
 
       max-width:1400px;
+
       width:100%;
 
       margin:auto;
@@ -398,14 +499,17 @@
       display:inline-flex;
 
       align-items:center;
+
       justify-content:center;
 
       min-width:190px;
+
       height:54px;
 
       padding:0 28px;
 
       background:#fff;
+
       color:#111;
 
       font-size:10px;
@@ -421,8 +525,10 @@
 
     .hero-button:hover{
       background:var(--gold);
+
       color:#fff;
     }
+
 
     /* =====================================================
        COLLECTIONS
@@ -484,6 +590,7 @@
 
     .collection-card img{
       width:100%;
+
       height:100%;
 
       object-fit:cover;
@@ -505,6 +612,7 @@
       flex-direction:column;
 
       align-items:center;
+
       justify-content:flex-end;
 
       padding:35px;
@@ -538,6 +646,7 @@
       text-transform:uppercase;
     }
 
+
     /* =====================================================
        PRODUCTS
     ===================================================== */
@@ -554,12 +663,11 @@
       margin:auto;
     }
 
-    /* FILTER */
-
     .products-toolbar{
       display:flex;
 
       justify-content:space-between;
+
       align-items:center;
 
       margin-bottom:40px;
@@ -595,6 +703,7 @@
 
     .filter-open:hover{
       border-color:var(--gold);
+
       color:var(--gold-dark);
     }
 
@@ -646,7 +755,9 @@
       position:absolute;
 
       left:15px;
+
       right:15px;
+
       bottom:15px;
 
       height:44px;
@@ -677,6 +788,8 @@
     }
 
     .product-info{
+      display:block;
+
       padding:17px 15px 20px;
 
       background:#fff;
@@ -696,6 +809,7 @@
       display:flex;
 
       justify-content:space-between;
+
       align-items:center;
     }
 
@@ -715,12 +829,14 @@
       color:#222;
     }
 
+
     /* =====================================================
        FILTER PANEL
     ===================================================== */
 
     .filter-overlay{
       position:fixed;
+
       inset:0;
 
       background:rgba(0,0,0,.4);
@@ -728,6 +844,7 @@
       z-index:3000;
 
       opacity:0;
+
       visibility:hidden;
 
       transition:.3s;
@@ -735,6 +852,7 @@
 
     .filter-overlay.active{
       opacity:1;
+
       visibility:visible;
     }
 
@@ -742,9 +860,11 @@
       position:fixed;
 
       top:0;
+
       left:-390px;
 
       width:370px;
+
       max-width:92%;
 
       height:100vh;
@@ -768,6 +888,7 @@
       display:flex;
 
       justify-content:space-between;
+
       align-items:center;
 
       padding-bottom:25px;
@@ -787,6 +908,7 @@
 
     .filter-close{
       width:36px;
+
       height:36px;
 
       border:1px solid var(--border);
@@ -863,6 +985,7 @@
       text-transform:uppercase;
     }
 
+
     /* =====================================================
        ABOUT
     ===================================================== */
@@ -929,6 +1052,7 @@
       max-width:500px;
     }
 
+
     /* =====================================================
        CONTACT
     ===================================================== */
@@ -963,6 +1087,7 @@
       display:inline-flex;
 
       align-items:center;
+
       justify-content:center;
 
       height:52px;
@@ -986,6 +1111,7 @@
       background:var(--gold-dark);
     }
 
+
     /* =====================================================
        REAL WHATSAPP
     ===================================================== */
@@ -994,9 +1120,11 @@
       position:fixed;
 
       right:24px;
+
       bottom:24px;
 
       width:58px;
+
       height:58px;
 
       border-radius:50%;
@@ -1006,6 +1134,7 @@
       display:flex;
 
       justify-content:center;
+
       align-items:center;
 
       z-index:2500;
@@ -1021,10 +1150,12 @@
 
     .whatsapp-float svg{
       width:31px;
+
       height:31px;
 
       fill:#fff;
     }
+
 
     /* =====================================================
        CART DRAWER
@@ -1032,6 +1163,7 @@
 
     .cart-overlay{
       position:fixed;
+
       inset:0;
 
       background:rgba(0,0,0,.45);
@@ -1039,6 +1171,7 @@
       z-index:3000;
 
       opacity:0;
+
       visibility:hidden;
 
       transition:.3s;
@@ -1046,6 +1179,7 @@
 
     .cart-overlay.active{
       opacity:1;
+
       visibility:visible;
     }
 
@@ -1053,9 +1187,11 @@
       position:fixed;
 
       top:0;
+
       right:-450px;
 
       width:420px;
+
       max-width:94%;
 
       height:100vh;
@@ -1067,6 +1203,7 @@
       transition:.45s ease;
 
       display:flex;
+
       flex-direction:column;
 
       border-radius:22px 0 0 22px;
@@ -1086,6 +1223,7 @@
       display:flex;
 
       justify-content:space-between;
+
       align-items:center;
     }
 
@@ -1099,6 +1237,7 @@
 
     .cart-close{
       width:36px;
+
       height:36px;
 
       border:1px solid var(--border);
@@ -1146,6 +1285,7 @@
 
     .cart-item img{
       width:72px;
+
       height:72px;
 
       object-fit:cover;
@@ -1173,6 +1313,7 @@
 
     .remove-item{
       width:28px;
+
       height:28px;
 
       border:0;
@@ -1234,6 +1375,7 @@
       background:var(--gold-dark);
     }
 
+
     /* =====================================================
        FOOTER
     ===================================================== */
@@ -1266,6 +1408,7 @@
 
     .footer-brand img{
       width:75px;
+
       height:75px;
 
       object-fit:contain;
@@ -1321,6 +1464,7 @@
       letter-spacing:1px;
     }
 
+
     /* =====================================================
        ANIMATIONS
     ===================================================== */
@@ -1341,6 +1485,7 @@
 
     }
 
+
     /* =====================================================
        MOBILE
     ===================================================== */
@@ -1357,14 +1502,31 @@
 
     }
 
+
     @media(max-width:800px){
 
       header{
+        top:32px;
+
         height:72px;
       }
 
       main{
-        padding-top:72px;
+        padding-top:104px;
+      }
+
+      .announcement-bar{
+        height:32px;
+      }
+
+      .announcement-track{
+        justify-content:flex-start;
+
+        width:max-content;
+
+        padding-left:18px;
+
+        gap:15px;
       }
 
       .header-inner{
@@ -1373,16 +1535,18 @@
 
       .brand img{
         width:50px;
+
         height:50px;
       }
 
       .brand-name{
         font-size:21px;
+
         letter-spacing:2px;
       }
 
       .hero{
-        min-height:calc(100vh - 72px);
+        min-height:calc(100vh - 104px);
       }
 
       .hero-content{
@@ -1407,11 +1571,13 @@
 
       .products-grid{
         grid-template-columns:repeat(2,1fr);
+
         gap:12px;
       }
 
       .quick-add{
         opacity:1;
+
         transform:none;
       }
 
@@ -1439,7 +1605,14 @@
 
     }
 
+
     @media(max-width:600px){
+
+      .announcement-track{
+        font-size:8px;
+
+        letter-spacing:1.2px;
+      }
 
       .brand{
         gap:7px;
@@ -1447,11 +1620,13 @@
 
       .brand img{
         width:46px;
+
         height:46px;
       }
 
       .brand-name{
         font-size:19px;
+
         letter-spacing:1.5px;
       }
 
@@ -1505,14 +1680,17 @@
 
       .whatsapp-float{
         width:55px;
+
         height:55px;
 
         right:16px;
+
         bottom:16px;
       }
 
       .cart-panel{
         width:100%;
+
         max-width:100%;
 
         border-radius:20px 0 0 20px;
@@ -1525,6 +1703,44 @@
 
 <body>
 
+
+  <!-- =====================================================
+       ANNOUNCEMENT BAR
+  ===================================================== -->
+
+  <div class="announcement-bar">
+
+    <div class="announcement-track">
+
+      <span>
+        Livraison gratuite
+      </span>
+
+      <span class="separator">
+        •
+      </span>
+
+      <span>
+        Livraison partout au Maroc
+      </span>
+
+      <span class="separator">
+        •
+      </span>
+
+      <span>
+        Bijoux en acier inoxydable
+      </span>
+
+      <span class="separator">
+        •
+      </span>
+
+    </div>
+
+  </div>
+
+
   <!-- =====================================================
        HEADER
   ===================================================== -->
@@ -1533,9 +1749,11 @@
 
     <div class="header-inner">
 
-      <!-- 3 LINES -->
-
-      <button class="menu-btn" id="menuBtn" aria-label="Menu">
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Menu"
+      >
 
         <span></span>
         <span></span>
@@ -1543,11 +1761,16 @@
 
       </button>
 
-      <!-- LOGO + ZOREVA -->
 
-      <a href="index.html" class="brand">
+      <a
+        href="index.html"
+        class="brand"
+      >
 
-        <img src="logo.svg" alt="ZOREVA">
+        <img
+          src="logo.svg"
+          alt="ZOREVA"
+        >
 
         <span class="brand-name">
           ZOREVA
@@ -1555,23 +1778,40 @@
 
       </a>
 
-      <!-- CART -->
 
       <div class="header-actions">
 
-        <button class="cart-btn" id="cartBtn" aria-label="Panier">
+        <button
+          class="cart-btn"
+          id="cartBtn"
+          aria-label="Panier"
+        >
 
-          <svg class="cart-svg" viewBox="0 0 24 24">
+          <svg
+            class="cart-svg"
+            viewBox="0 0 24 24"
+          >
 
             <path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 7H6"/>
 
-            <circle cx="10" cy="20" r="1"/>
+            <circle
+              cx="10"
+              cy="20"
+              r="1"
+            />
 
-            <circle cx="18" cy="20" r="1"/>
+            <circle
+              cx="18"
+              cy="20"
+              r="1"
+            />
 
           </svg>
 
-          <span class="cart-count" id="cartCount">
+          <span
+            class="cart-count"
+            id="cartCount"
+          >
             0
           </span>
 
@@ -1588,15 +1828,27 @@
        SIDE MENU
   ===================================================== -->
 
-  <div class="menu-overlay" id="menuOverlay"></div>
+  <div
+    class="menu-overlay"
+    id="menuOverlay"
+  ></div>
 
-  <aside class="side-menu" id="sideMenu">
 
-    <button class="menu-close" id="menuClose">
+  <aside
+    class="side-menu"
+    id="sideMenu"
+  >
+
+    <button
+      class="menu-close"
+      id="menuClose"
+    >
       ×
     </button>
 
-    <h3>ZOREVA</h3>
+    <h3>
+      ZOREVA
+    </h3>
 
     <a href="#home">
       Accueil
@@ -1627,9 +1879,13 @@
 
   <main>
 
+
     <!-- HERO -->
 
-    <section class="hero" id="home">
+    <section
+      class="hero"
+      id="home"
+    >
 
       <div class="hero-image"></div>
 
@@ -1651,7 +1907,10 @@
           chaque style.
         </p>
 
-        <a href="#products" class="hero-button">
+        <a
+          href="#products"
+          class="hero-button"
+        >
           Découvrir la collection
         </a>
 
@@ -1664,7 +1923,10 @@
          COLLECTIONS
     ===================================================== -->
 
-    <section class="collections" id="collections">
+    <section
+      class="collections"
+      id="collections"
+    >
 
       <div class="section-heading">
 
@@ -1678,9 +1940,14 @@
 
       </div>
 
+
       <div class="collections-grid">
 
-        <a href="#products" class="collection-card">
+
+        <a
+          href="#products"
+          class="collection-card"
+        >
 
           <img
             src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1000&q=85"
@@ -1702,7 +1969,10 @@
         </a>
 
 
-        <a href="#products" class="collection-card">
+        <a
+          href="#products"
+          class="collection-card"
+        >
 
           <img
             src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1000&q=85"
@@ -1724,7 +1994,10 @@
         </a>
 
 
-        <a href="#products" class="collection-card">
+        <a
+          href="#products"
+          class="collection-card"
+        >
 
           <img
             src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85"
@@ -1745,6 +2018,7 @@
 
         </a>
 
+
       </div>
 
     </section>
@@ -1754,7 +2028,10 @@
          PRODUCTS
     ===================================================== -->
 
-    <section class="products-section" id="products">
+    <section
+      class="products-section"
+      id="products"
+    >
 
       <div class="products-inner">
 
@@ -1773,18 +2050,27 @@
 
         <div class="products-toolbar">
 
-          <div class="products-count" id="productsCount">
+          <div
+            class="products-count"
+            id="productsCount"
+          >
             7 produits
           </div>
 
-          <button class="filter-open" id="filterOpen">
+          <button
+            class="filter-open"
+            id="filterOpen"
+          >
             Filtrer & Trier
           </button>
 
         </div>
 
 
-        <div class="products-grid" id="productsGrid"></div>
+        <div
+          class="products-grid"
+          id="productsGrid"
+        ></div>
 
       </div>
 
@@ -1795,7 +2081,10 @@
          ABOUT
     ===================================================== -->
 
-    <section class="about" id="about">
+    <section
+      class="about"
+      id="about"
+    >
 
       <div class="about-image">
 
@@ -1805,6 +2094,7 @@
         >
 
       </div>
+
 
       <div class="about-content">
 
@@ -1832,7 +2122,10 @@
          CONTACT
     ===================================================== -->
 
-    <section class="contact" id="contact">
+    <section
+      class="contact"
+      id="contact"
+    >
 
       <h2>
         Une question ?
@@ -1880,9 +2173,16 @@
        FILTER
   ===================================================== -->
 
-  <div class="filter-overlay" id="filterOverlay"></div>
+  <div
+    class="filter-overlay"
+    id="filterOverlay"
+  ></div>
 
-  <aside class="filter-panel" id="filterPanel">
+
+  <aside
+    class="filter-panel"
+    id="filterPanel"
+  >
 
     <div class="filter-header">
 
@@ -1890,7 +2190,10 @@
         Filtrer
       </h3>
 
-      <button class="filter-close" id="filterClose">
+      <button
+        class="filter-close"
+        id="filterClose"
+      >
         ×
       </button>
 
@@ -1903,19 +2206,31 @@
         Catégorie
       </h4>
 
-      <button data-category="all" class="category-filter active">
+      <button
+        data-category="all"
+        class="category-filter active"
+      >
         Tous les produits
       </button>
 
-      <button data-category="Bagues" class="category-filter">
+      <button
+        data-category="Bagues"
+        class="category-filter"
+      >
         Bagues
       </button>
 
-      <button data-category="Bracelets" class="category-filter">
+      <button
+        data-category="Bracelets"
+        class="category-filter"
+      >
         Bracelets
       </button>
 
-      <button data-category="Colliers" class="category-filter">
+      <button
+        data-category="Colliers"
+        class="category-filter"
+      >
         Colliers
       </button>
 
@@ -1928,15 +2243,24 @@
         Prix
       </h4>
 
-      <button data-price="all" class="price-filter active">
+      <button
+        data-price="all"
+        class="price-filter active"
+      >
         Tous les prix
       </button>
 
-      <button data-price="under120" class="price-filter">
+      <button
+        data-price="under120"
+        class="price-filter"
+      >
         Moins de 120 DH
       </button>
 
-      <button data-price="149" class="price-filter">
+      <button
+        data-price="149"
+        class="price-filter"
+      >
         149 DH
       </button>
 
@@ -1949,7 +2273,10 @@
         Trier par
       </h4>
 
-      <button data-sort="default" class="sort-filter active">
+      <button
+        data-sort="default"
+        class="sort-filter active"
+      >
         Recommandés
       </button>
 
@@ -1964,7 +2291,10 @@
     </div>
 
 
-    <button class="reset-filter" id="resetFilter">
+    <button
+      class="reset-filter"
+      id="resetFilter"
+    >
       Réinitialiser
     </button>
 
@@ -1975,9 +2305,16 @@
        CART
   ===================================================== -->
 
-  <div class="cart-overlay" id="cartOverlay"></div>
+  <div
+    class="cart-overlay"
+    id="cartOverlay"
+  ></div>
 
-  <aside class="cart-panel" id="cartPanel">
+
+  <aside
+    class="cart-panel"
+    id="cartPanel"
+  >
 
     <div class="cart-header">
 
@@ -1985,14 +2322,20 @@
         Votre panier
       </h2>
 
-      <button class="cart-close" id="cartClose">
+      <button
+        class="cart-close"
+        id="cartClose"
+      >
         ×
       </button>
 
     </div>
 
 
-    <div class="cart-items" id="cartItems">
+    <div
+      class="cart-items"
+      id="cartItems"
+    >
 
       <div class="cart-empty">
         Votre panier est vide.
@@ -2015,7 +2358,10 @@
 
       </div>
 
-      <button class="checkout-btn" id="checkoutBtn">
+      <button
+        class="checkout-btn"
+        id="checkoutBtn"
+      >
         Finaliser la commande
       </button>
 
@@ -2490,8 +2836,11 @@
         () => {
 
           currentCategory = "all";
+
           currentPrice = "all";
+
           currentSort = "default";
+
 
           document
             .querySelectorAll(".filter-group button")
@@ -2499,17 +2848,21 @@
               btn.classList.remove("active")
             );
 
+
           document
             .querySelector('[data-category="all"]')
             .classList.add("active");
+
 
           document
             .querySelector('[data-price="all"]')
             .classList.add("active");
 
+
           document
             .querySelector('[data-sort="default"]')
             .classList.add("active");
+
 
           renderProducts();
 
@@ -2546,7 +2899,9 @@
           0
         );
 
-      document.getElementById("cartCount")
+
+      document
+        .getElementById("cartCount")
         .textContent = count;
 
     }
@@ -2627,7 +2982,9 @@
 
         `;
 
-        document.getElementById("cartTotal")
+
+        document
+          .getElementById("cartTotal")
           .textContent = "0 DH";
 
         return;
@@ -2637,7 +2994,6 @@
 
       container.innerHTML = "";
 
-
       let total = 0;
 
 
@@ -2646,11 +3002,13 @@
         const subtotal =
           item.price * item.quantity;
 
+
         total += subtotal;
 
 
         const div =
           document.createElement("div");
+
 
         div.className =
           "cart-item";
@@ -2690,7 +3048,8 @@
       });
 
 
-      document.getElementById("cartTotal")
+      document
+        .getElementById("cartTotal")
         .textContent =
         `${total} DH`;
 
@@ -2781,6 +3140,7 @@
             const subtotal =
               item.price * item.quantity;
 
+
             total += subtotal;
 
 
@@ -2814,11 +3174,14 @@
     const menuBtn =
       document.getElementById("menuBtn");
 
+
     const menuClose =
       document.getElementById("menuClose");
 
+
     const sideMenu =
       document.getElementById("sideMenu");
+
 
     const menuOverlay =
       document.getElementById("menuOverlay");
@@ -2874,4 +3237,3 @@
 
 </body>
 </html>
-```
