@@ -495,15 +495,24 @@
       color:var(--gold-dark);
     }
 
-    /* VISIBLE CATEGORY FILTER */
+    /* VISIBLE FILTERS */
 
     .visible-filters{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      margin-bottom:35px;
+    }
+
+    .visible-filter-row{
       display:flex;
       align-items:center;
       justify-content:center;
       flex-wrap:wrap;
       gap:8px;
-      margin-bottom:35px;
+      width:100%;
     }
 
     .visible-filter{
@@ -1190,16 +1199,22 @@
       }
 
       .visible-filters{
-        justify-content:flex-start;
-        overflow-x:auto;
-        flex-wrap:nowrap;
-        padding-bottom:5px;
+        gap:7px;
         margin-bottom:25px;
+      }
+
+      .visible-filter-row{
+        justify-content:flex-start;
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        width:100%;
+        padding-bottom:2px;
       }
 
       .visible-filter{
         flex:0 0 auto;
-        padding:0 17px;
+        padding:0 15px;
+        height:38px;
       }
 
       .products-grid{
@@ -1448,33 +1463,93 @@
 
         <div class="visible-filters">
 
-          <button
-            class="visible-filter active"
-            data-visible-category="all"
-          >
-            Tous
-          </button>
+          <!-- CATÉGORIE -->
 
-          <button
-            class="visible-filter"
-            data-visible-category="Bagues"
-          >
-            Bagues
-          </button>
+          <div class="visible-filter-row">
 
-          <button
-            class="visible-filter"
-            data-visible-category="Bracelets"
-          >
-            Bracelets
-          </button>
+            <button
+              class="visible-filter active"
+              data-visible-category="all"
+            >
+              Tous
+            </button>
 
-          <button
-            class="visible-filter"
-            data-visible-category="Colliers"
-          >
-            Colliers
-          </button>
+            <button
+              class="visible-filter"
+              data-visible-category="Bagues"
+            >
+              Bagues
+            </button>
+
+            <button
+              class="visible-filter"
+              data-visible-category="Bracelets"
+            >
+              Bracelets
+            </button>
+
+            <button
+              class="visible-filter"
+              data-visible-category="Colliers"
+            >
+              Colliers
+            </button>
+
+          </div>
+
+          <!-- PRIX -->
+
+          <div class="visible-filter-row">
+
+            <button
+              class="visible-filter visible-price active"
+              data-visible-price="all"
+            >
+              Tous les prix
+            </button>
+
+            <button
+              class="visible-filter visible-price"
+              data-visible-price="under120"
+            >
+              Moins de 120 DH
+            </button>
+
+            <button
+              class="visible-filter visible-price"
+              data-visible-price="149"
+            >
+              149 DH
+            </button>
+
+          </div>
+
+          <!-- TRI -->
+
+          <div class="visible-filter-row">
+
+            <button
+              class="visible-filter visible-sort active"
+              data-visible-sort="default"
+            >
+              Recommandés
+            </button>
+
+            <button
+              class="visible-filter visible-sort"
+              data-visible-sort="low"
+            >
+              Prix croissant
+            </button>
+
+            <button
+              class="visible-filter visible-sort"
+              data-visible-sort="high"
+            >
+              Prix décroissant
+            </button>
+
+          </div>
 
         </div>
 
@@ -1970,7 +2045,7 @@
     }
 
 
-    /* UPDATE ALL CATEGORY BUTTONS */
+    /* UPDATE ALL FILTER BUTTONS */
 
     function updateCategoryButtons(){
 
@@ -1990,9 +2065,61 @@
         .querySelectorAll(".visible-filter")
         .forEach(button => {
 
+          if(button.dataset.visibleCategory){
+
+            button.classList.toggle(
+              "active",
+              button.dataset.visibleCategory === currentCategory
+            );
+
+          }
+
+        });
+
+
+      document
+        .querySelectorAll(".price-filter")
+        .forEach(button => {
+
           button.classList.toggle(
             "active",
-            button.dataset.visibleCategory === currentCategory
+            button.dataset.price === currentPrice
+          );
+
+        });
+
+
+      document
+        .querySelectorAll(".visible-price")
+        .forEach(button => {
+
+          button.classList.toggle(
+            "active",
+            button.dataset.visiblePrice === currentPrice
+          );
+
+        });
+
+
+      document
+        .querySelectorAll(".sort-filter")
+        .forEach(button => {
+
+          button.classList.toggle(
+            "active",
+            button.dataset.sort === currentSort
+          );
+
+        });
+
+
+      document
+        .querySelectorAll(".visible-sort")
+        .forEach(button => {
+
+          button.classList.toggle(
+            "active",
+            button.dataset.visibleSort === currentSort
           );
 
         });
@@ -2029,47 +2156,6 @@
 
             updateCategoryButtons();
 
-
-            document
-              .querySelectorAll(".price-filter")
-              .forEach(btn => {
-
-                btn.classList.remove(
-                  "active"
-                );
-
-              });
-
-
-            document
-              .querySelector(
-                '[data-price="all"]'
-              )
-              .classList.add(
-                "active"
-              );
-
-
-            document
-              .querySelectorAll(".sort-filter")
-              .forEach(btn => {
-
-                btn.classList.remove(
-                  "active"
-                );
-
-              });
-
-
-            document
-              .querySelector(
-                '[data-sort="default"]'
-              )
-              .classList.add(
-                "active"
-              );
-
-
             renderProducts();
 
 
@@ -2088,7 +2174,9 @@
     /* VISIBLE CATEGORY FILTER */
 
     document
-      .querySelectorAll(".visible-filter")
+      .querySelectorAll(
+        ".visible-filter[data-visible-category]"
+      )
       .forEach(button => {
 
         button.addEventListener(
@@ -2107,46 +2195,53 @@
 
             updateCategoryButtons();
 
+            renderProducts();
 
-            document
-              .querySelectorAll(".price-filter")
-              .forEach(btn => {
+          }
+        );
 
-                btn.classList.remove(
-                  "active"
-                );
-
-              });
+      });
 
 
-            document
-              .querySelector(
-                '[data-price="all"]'
-              )
-              .classList.add(
-                "active"
-              );
+    /* VISIBLE PRICE FILTER */
+
+    document
+      .querySelectorAll(".visible-price")
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            currentPrice =
+              button.dataset.visiblePrice;
 
 
-            document
-              .querySelectorAll(".sort-filter")
-              .forEach(btn => {
+            updateCategoryButtons();
 
-                btn.classList.remove(
-                  "active"
-                );
+            renderProducts();
 
-              });
+          }
+        );
+
+      });
 
 
-            document
-              .querySelector(
-                '[data-sort="default"]'
-              )
-              .classList.add(
-                "active"
-              );
+    /* VISIBLE SORT */
 
+    document
+      .querySelectorAll(".visible-sort")
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            currentSort =
+              button.dataset.visibleSort;
+
+
+            updateCategoryButtons();
 
             renderProducts();
 
@@ -2233,7 +2328,6 @@
 
             updateCategoryButtons();
 
-
             renderProducts();
 
           }
@@ -2252,25 +2346,11 @@
           "click",
           () => {
 
-            document
-              .querySelectorAll(
-                ".price-filter"
-              )
-              .forEach(btn =>
-                btn.classList.remove(
-                  "active"
-                )
-              );
-
-
-            button.classList.add(
-              "active"
-            );
-
-
             currentPrice =
               button.dataset.price;
 
+
+            updateCategoryButtons();
 
             renderProducts();
 
@@ -2290,25 +2370,11 @@
           "click",
           () => {
 
-            document
-              .querySelectorAll(
-                ".sort-filter"
-              )
-              .forEach(btn =>
-                btn.classList.remove(
-                  "active"
-                )
-              );
-
-
-            button.classList.add(
-              "active"
-            );
-
-
             currentSort =
               button.dataset.sort;
 
+
+            updateCategoryButtons();
 
             renderProducts();
 
@@ -2334,44 +2400,6 @@
 
           currentSort =
             "default";
-
-
-          document
-            .querySelectorAll(
-              ".filter-group button"
-            )
-            .forEach(btn =>
-              btn.classList.remove(
-                "active"
-              )
-            );
-
-
-          document
-            .querySelector(
-              '[data-category="all"]'
-            )
-            .classList.add(
-              "active"
-            );
-
-
-          document
-            .querySelector(
-              '[data-price="all"]'
-            )
-            .classList.add(
-              "active"
-            );
-
-
-          document
-            .querySelector(
-              '[data-sort="default"]'
-            )
-            .classList.add(
-              "active"
-            );
 
 
           updateCategoryButtons();
