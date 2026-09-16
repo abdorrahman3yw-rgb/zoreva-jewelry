@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -1738,10 +1737,12 @@
         card.className =
           "product-card";
 
-        /* فتح صفحة المنتج */
+        /* فتح صفحة المنتج في New Tab */
         card.addEventListener("click", () => {
-          window.location.href =
-            `product.html?id=${product.id}`;
+          window.open(
+            `product.html?id=${product.id}`,
+            "_blank"
+          );
         });
 
         card.innerHTML = `
@@ -2243,4 +2244,3 @@
 
 </body>
 </html>
-```
