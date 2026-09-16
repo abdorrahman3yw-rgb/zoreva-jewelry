@@ -87,7 +87,7 @@
       gap:18px;
       width:100%;
       white-space:nowrap;
-      font-size:11px;
+      font-size:13px;
       letter-spacing:1.4px;
       text-transform:uppercase;
       animation:announcementFade 1s ease both;
@@ -1124,7 +1124,7 @@
     @media(max-width:600px){
 
       .announcement-track{
-        font-size:11px;
+        font-size:13px;
         letter-spacing:1.2px;
       }
 
@@ -1329,7 +1329,7 @@
         <a href="#products" class="collection-card">
 
           <img
-            src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1000&q=85"
+            src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1000&q=85"
             alt="Bracelets"
           >
 
@@ -1738,12 +1738,10 @@
         card.className =
           "product-card";
 
-        /* فتح صفحة المنتج في New Tab */
+        /* فتح صفحة المنتج */
         card.addEventListener("click", () => {
-          window.open(
-            `product.html?id=${product.id}`,
-            "_blank"
-          );
+          window.location.href =
+            `product.html?id=${product.id}`;
         });
 
         card.innerHTML = `
