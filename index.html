@@ -238,14 +238,16 @@
     .side-menu{
       position:fixed;
       top:0;
-      left:-350px;
-      width:330px;
+      left:-390px;
+      width:370px;
+      max-width:92%;
       height:100vh;
       background:#fff;
       padding:28px;
       z-index:2000;
       box-shadow:15px 0 40px rgba(0,0,0,.12);
       transition:.45s ease;
+      overflow-y:auto;
     }
 
     .side-menu.active{
@@ -280,6 +282,67 @@
 
     .side-menu a:hover{
       color:var(--gold-dark);
+    }
+
+    /* MENU FILTER */
+
+    .menu-filter{
+      margin-top:30px;
+      padding-top:28px;
+      border-top:1px solid var(--border);
+    }
+
+    .menu-filter-title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:27px;
+      font-weight:500;
+      margin-bottom:25px;
+    }
+
+    .menu-filter-group{
+      margin-bottom:25px;
+    }
+
+    .menu-filter-group h4{
+      font-size:9px;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      margin-bottom:12px;
+      color:#555;
+    }
+
+    .menu-filter-group button{
+      width:100%;
+      height:40px;
+      margin-bottom:7px;
+      border:1px solid var(--border);
+      background:#fff;
+      color:#222;
+      cursor:pointer;
+      text-align:left;
+      padding:0 13px;
+      font-size:10px;
+      transition:.2s;
+    }
+
+    .menu-filter-group button:hover,
+    .menu-filter-group button.active{
+      border-color:var(--gold);
+      color:var(--gold-dark);
+      background:#faf9f6;
+    }
+
+    .menu-reset-filter{
+      width:100%;
+      height:46px;
+      background:#111;
+      color:#fff;
+      border:0;
+      cursor:pointer;
+      font-size:9px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      margin-top:3px;
     }
 
     /* HERO */
@@ -469,7 +532,7 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
-      margin-bottom:22px;
+      margin-bottom:35px;
     }
 
     .products-count{
@@ -493,46 +556,6 @@
     .filter-open:hover{
       border-color:var(--gold);
       color:var(--gold-dark);
-    }
-
-    /* VISIBLE FILTERS */
-
-    .visible-filters{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:9px;
-      margin-bottom:35px;
-    }
-
-    .visible-filter-row{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:8px;
-      width:100%;
-    }
-
-    .visible-filter{
-      height:40px;
-      padding:0 20px;
-      border:1px solid var(--border);
-      background:#fff;
-      color:#222;
-      cursor:pointer;
-      font-size:9px;
-      letter-spacing:1.3px;
-      text-transform:uppercase;
-      transition:.25s;
-    }
-
-    .visible-filter:hover,
-    .visible-filter.active{
-      background:#111;
-      color:#fff;
-      border-color:#111;
     }
 
     .products-grid{
@@ -1195,26 +1218,7 @@
       }
 
       .products-toolbar{
-        margin-bottom:18px;
-      }
-
-      .visible-filters{
-        gap:7px;
         margin-bottom:25px;
-      }
-
-      .visible-filter-row{
-        justify-content:flex-start;
-        flex-wrap:nowrap;
-        overflow-x:auto;
-        width:100%;
-        padding-bottom:2px;
-      }
-
-      .visible-filter{
-        flex:0 0 auto;
-        padding:0 15px;
-        height:38px;
       }
 
       .products-grid{
@@ -1260,6 +1264,12 @@
         width:100%;
         max-width:100%;
         border-radius:20px 0 0 20px;
+      }
+
+      .side-menu{
+        width:340px;
+        max-width:94%;
+        padding:24px;
       }
 
     }
@@ -1325,6 +1335,111 @@
     <a href="#about">À propos</a>
     <a href="#contact">Contact</a>
 
+    <!-- FILTRATION DANS LE MENU -->
+
+    <div class="menu-filter">
+
+      <div class="menu-filter-title">
+        Filtrer & Trier
+      </div>
+
+      <div class="menu-filter-group">
+
+        <h4>Catégorie</h4>
+
+        <button
+          data-menu-category="all"
+          class="menu-category-filter active"
+        >
+          Tous les produits
+        </button>
+
+        <button
+          data-menu-category="Bagues"
+          class="menu-category-filter"
+        >
+          Bagues
+        </button>
+
+        <button
+          data-menu-category="Bracelets"
+          class="menu-category-filter"
+        >
+          Bracelets
+        </button>
+
+        <button
+          data-menu-category="Colliers"
+          class="menu-category-filter"
+        >
+          Colliers
+        </button>
+
+      </div>
+
+      <div class="menu-filter-group">
+
+        <h4>Prix</h4>
+
+        <button
+          data-menu-price="all"
+          class="menu-price-filter active"
+        >
+          Tous les prix
+        </button>
+
+        <button
+          data-menu-price="under120"
+          class="menu-price-filter"
+        >
+          Moins de 120 DH
+        </button>
+
+        <button
+          data-menu-price="149"
+          class="menu-price-filter"
+        >
+          149 DH
+        </button>
+
+      </div>
+
+      <div class="menu-filter-group">
+
+        <h4>Trier par</h4>
+
+        <button
+          data-menu-sort="default"
+          class="menu-sort-filter active"
+        >
+          Recommandés
+        </button>
+
+        <button
+          data-menu-sort="low"
+          class="menu-sort-filter"
+        >
+          Prix croissant
+        </button>
+
+        <button
+          data-menu-sort="high"
+          class="menu-sort-filter"
+        >
+          Prix décroissant
+        </button>
+
+      </div>
+
+      <button
+        class="menu-reset-filter"
+        id="menuResetFilter"
+      >
+        Réinitialiser
+      </button>
+
+    </div>
+
   </aside>
 
   <main>
@@ -1371,8 +1486,6 @@
 
       <div class="collections-grid">
 
-        <!-- BAGUES -->
-
         <a
           href="#products"
           class="collection-card"
@@ -1391,8 +1504,6 @@
 
         </a>
 
-        <!-- BRACELETS -->
-
         <a
           href="#products"
           class="collection-card"
@@ -1410,8 +1521,6 @@
           </div>
 
         </a>
-
-        <!-- COLLIERS -->
 
         <a
           href="#products"
@@ -1456,100 +1565,6 @@
           <button class="filter-open" id="filterOpen">
             Filtrer & Trier
           </button>
-
-        </div>
-
-        <!-- FILTRATION VISIBLE -->
-
-        <div class="visible-filters">
-
-          <!-- CATÉGORIE -->
-
-          <div class="visible-filter-row">
-
-            <button
-              class="visible-filter active"
-              data-visible-category="all"
-            >
-              Tous
-            </button>
-
-            <button
-              class="visible-filter"
-              data-visible-category="Bagues"
-            >
-              Bagues
-            </button>
-
-            <button
-              class="visible-filter"
-              data-visible-category="Bracelets"
-            >
-              Bracelets
-            </button>
-
-            <button
-              class="visible-filter"
-              data-visible-category="Colliers"
-            >
-              Colliers
-            </button>
-
-          </div>
-
-          <!-- PRIX -->
-
-          <div class="visible-filter-row">
-
-            <button
-              class="visible-filter visible-price active"
-              data-visible-price="all"
-            >
-              Tous les prix
-            </button>
-
-            <button
-              class="visible-filter visible-price"
-              data-visible-price="under120"
-            >
-              Moins de 120 DH
-            </button>
-
-            <button
-              class="visible-filter visible-price"
-              data-visible-price="149"
-            >
-              149 DH
-            </button>
-
-          </div>
-
-          <!-- TRI -->
-
-          <div class="visible-filter-row">
-
-            <button
-              class="visible-filter visible-sort active"
-              data-visible-sort="default"
-            >
-              Recommandés
-            </button>
-
-            <button
-              class="visible-filter visible-sort"
-              data-visible-sort="low"
-            >
-              Prix croissant
-            </button>
-
-            <button
-              class="visible-filter visible-sort"
-              data-visible-sort="high"
-            >
-              Prix décroissant
-            </button>
-
-          </div>
 
         </div>
 
@@ -1624,6 +1639,8 @@
     </svg>
 
   </a>
+
+  <!-- FILTER PANEL -->
 
   <div class="filter-overlay" id="filterOverlay"></div>
 
@@ -2049,6 +2066,8 @@
 
     function updateCategoryButtons(){
 
+      /* FILTER PANEL */
+
       document
         .querySelectorAll(".category-filter")
         .forEach(button => {
@@ -2057,22 +2076,6 @@
             "active",
             button.dataset.category === currentCategory
           );
-
-        });
-
-
-      document
-        .querySelectorAll(".visible-filter")
-        .forEach(button => {
-
-          if(button.dataset.visibleCategory){
-
-            button.classList.toggle(
-              "active",
-              button.dataset.visibleCategory === currentCategory
-            );
-
-          }
 
         });
 
@@ -2090,18 +2093,6 @@
 
 
       document
-        .querySelectorAll(".visible-price")
-        .forEach(button => {
-
-          button.classList.toggle(
-            "active",
-            button.dataset.visiblePrice === currentPrice
-          );
-
-        });
-
-
-      document
         .querySelectorAll(".sort-filter")
         .forEach(button => {
 
@@ -2113,13 +2104,39 @@
         });
 
 
+      /* SIDE MENU */
+
       document
-        .querySelectorAll(".visible-sort")
+        .querySelectorAll(".menu-category-filter")
         .forEach(button => {
 
           button.classList.toggle(
             "active",
-            button.dataset.visibleSort === currentSort
+            button.dataset.menuCategory === currentCategory
+          );
+
+        });
+
+
+      document
+        .querySelectorAll(".menu-price-filter")
+        .forEach(button => {
+
+          button.classList.toggle(
+            "active",
+            button.dataset.menuPrice === currentPrice
+          );
+
+        });
+
+
+      document
+        .querySelectorAll(".menu-sort-filter")
+        .forEach(button => {
+
+          button.classList.toggle(
+            "active",
+            button.dataset.menuSort === currentSort
           );
 
         });
@@ -2171,87 +2188,7 @@
       });
 
 
-    /* VISIBLE CATEGORY FILTER */
-
-    document
-      .querySelectorAll(
-        ".visible-filter[data-visible-category]"
-      )
-      .forEach(button => {
-
-        button.addEventListener(
-          "click",
-          () => {
-
-            currentCategory =
-              button.dataset.visibleCategory;
-
-            currentPrice =
-              "all";
-
-            currentSort =
-              "default";
-
-
-            updateCategoryButtons();
-
-            renderProducts();
-
-          }
-        );
-
-      });
-
-
-    /* VISIBLE PRICE FILTER */
-
-    document
-      .querySelectorAll(".visible-price")
-      .forEach(button => {
-
-        button.addEventListener(
-          "click",
-          () => {
-
-            currentPrice =
-              button.dataset.visiblePrice;
-
-
-            updateCategoryButtons();
-
-            renderProducts();
-
-          }
-        );
-
-      });
-
-
-    /* VISIBLE SORT */
-
-    document
-      .querySelectorAll(".visible-sort")
-      .forEach(button => {
-
-        button.addEventListener(
-          "click",
-          () => {
-
-            currentSort =
-              button.dataset.visibleSort;
-
-
-            updateCategoryButtons();
-
-            renderProducts();
-
-          }
-        );
-
-      });
-
-
-    /* FILTER */
+    /* FILTER PANEL */
 
     const filterPanel =
       document.getElementById(
@@ -2336,7 +2273,7 @@
       });
 
 
-    /* PRICE FILTER */
+    /* PRICE FILTER PANEL */
 
     document
       .querySelectorAll(".price-filter")
@@ -2360,7 +2297,7 @@
       });
 
 
-    /* SORT */
+    /* SORT FILTER PANEL */
 
     document
       .querySelectorAll(".sort-filter")
@@ -2384,10 +2321,108 @@
       });
 
 
-    /* RESET FILTER */
+    /* RESET FILTER PANEL */
 
     document
       .getElementById("resetFilter")
+      .addEventListener(
+        "click",
+        () => {
+
+          currentCategory =
+            "all";
+
+          currentPrice =
+            "all";
+
+          currentSort =
+            "default";
+
+
+          updateCategoryButtons();
+
+          renderProducts();
+
+        }
+      );
+
+
+    /* SIDE MENU CATEGORY FILTER */
+
+    document
+      .querySelectorAll(".menu-category-filter")
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            currentCategory =
+              button.dataset.menuCategory;
+
+
+            updateCategoryButtons();
+
+            renderProducts();
+
+          }
+        );
+
+      });
+
+
+    /* SIDE MENU PRICE FILTER */
+
+    document
+      .querySelectorAll(".menu-price-filter")
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            currentPrice =
+              button.dataset.menuPrice;
+
+
+            updateCategoryButtons();
+
+            renderProducts();
+
+          }
+        );
+
+      });
+
+
+    /* SIDE MENU SORT FILTER */
+
+    document
+      .querySelectorAll(".menu-sort-filter")
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            currentSort =
+              button.dataset.menuSort;
+
+
+            updateCategoryButtons();
+
+            renderProducts();
+
+          }
+        );
+
+      });
+
+
+    /* SIDE MENU RESET */
+
+    document
+      .getElementById("menuResetFilter")
       .addEventListener(
         "click",
         () => {
