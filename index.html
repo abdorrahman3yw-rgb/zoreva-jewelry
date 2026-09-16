@@ -1,2647 +1,1797 @@
 ```html
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-
-  <meta name="google-site-verification" content="6dTShbk4Yt8gvQV6VCmURDFVjkcE3vLr48iIs6aVjt8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>ZOREVA JEWELRY — L'élégance en détail</title>
-
-  <meta name="description" content="ZOREVA JEWELRY — Bijoux élégants et modernes, sélectionnés avec soin.">
-
-  <link rel="icon" type="image/svg+xml" href="logo.svg">
-  <link rel="apple-touch-icon" href="logo.svg">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f8f7f3;
-      color: #111;
-      overflow-x: hidden;
-    }
-
-    body.no-scroll {
-      overflow: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font-family: inherit;
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 76px;
-      background: rgba(248,247,243,0.86);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(184,148,78,0.16);
-      z-index: 1000;
-      transition: 0.4s ease;
-    }
-
-    header.scrolled {
-      background: rgba(255,255,255,0.96);
-      box-shadow: 0 8px 35px rgba(0,0,0,0.06);
-    }
-
-    .header-inner {
-      width: min(1240px, 92%);
-      height: 100%;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 4px;
-      white-space: nowrap;
-    }
-
-    .brand img {
-      width: 39px;
-      height: 39px;
-      object-fit: contain;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
-
-    nav a {
-      font-size: 12px;
-      letter-spacing: 1.4px;
-      position: relative;
-      padding: 10px 0;
-      color: #333;
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      bottom: 3px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: #b8944e;
-      transition: 0.3s ease;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    .cart-button {
-      border: 1px solid #111;
-      background: #111;
-      color: #fff;
-      padding: 11px 18px;
-      cursor: pointer;
-      letter-spacing: 1px;
-      font-size: 11px;
-      transition: 0.3s ease;
-    }
-
-    .cart-button:hover {
-      background: #b8944e;
-      border-color: #b8944e;
-      color: #111;
-      transform: translateY(-2px);
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      min-height: 100vh;
-      padding-top: 76px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      background:
-        radial-gradient(
-          circle at 76% 42%,
-          rgba(184,148,78,0.16),
-          transparent 27%
-        ),
-        radial-gradient(
-          circle at 8% 90%,
-          rgba(184,148,78,0.08),
-          transparent 30%
-        ),
-        #f8f7f3;
-    }
-
-    .hero-noise {
-      position: absolute;
-      inset: 0;
-      opacity: 0.035;
-      pointer-events: none;
-      background-image:
-        radial-gradient(#111 0.5px, transparent 0.5px);
-      background-size: 6px 6px;
-    }
-
-    .hero-orbit {
-      position: absolute;
-      width: 700px;
-      height: 700px;
-      border: 1px solid rgba(184,148,78,0.13);
-      border-radius: 50%;
-      right: -300px;
-      top: 50%;
-      transform: translateY(-50%);
-      animation: slowRotate 22s linear infinite;
-    }
-
-    .hero-orbit::before {
-      content: "";
-      position: absolute;
-      inset: 45px;
-      border: 1px solid rgba(184,148,78,0.10);
-      border-radius: 50%;
-    }
-
-    .hero-inner {
-      width: min(1240px, 92%);
-      margin: auto;
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      align-items: center;
-      gap: 60px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 5;
-      animation: heroText 1s cubic-bezier(.2,.8,.2,1) both;
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #b8944e;
-      font-size: 10px;
-      letter-spacing: 4px;
-      margin-bottom: 25px;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 38px;
-      height: 1px;
-      background: #b8944e;
-    }
-
-    .hero h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(55px, 7vw, 96px);
-      line-height: 0.94;
-      font-weight: 400;
-      letter-spacing: -3px;
-      margin-bottom: 28px;
-    }
-
-    .hero h1 .gold {
-      color: #b8944e;
-      display: inline-block;
-      animation: goldReveal 1.4s ease both;
-      animation-delay: .3s;
-    }
-
-    .hero-description {
-      color: #666;
-      max-width: 470px;
-      line-height: 1.9;
-      font-size: 14px;
-      margin-bottom: 32px;
-      animation: fadeUp 1s ease both;
-      animation-delay: .45s;
-    }
-
-    .hero-buttons {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      animation: fadeUp 1s ease both;
-      animation-delay: .6s;
-    }
-
-    .hero-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 190px;
-      padding: 16px 25px;
-      background: #111;
-      color: #fff;
-      border: 1px solid #111;
-      font-size: 11px;
-      letter-spacing: 1.7px;
-      transition: .35s ease;
-    }
-
-    .hero-btn:hover {
-      background: #b8944e;
-      border-color: #b8944e;
-      color: #111;
-      transform: translateY(-4px);
-    }
-
-    .hero-link {
-      font-size: 11px;
-      letter-spacing: 1px;
-      color: #555;
-      padding: 15px 8px;
-      position: relative;
-    }
-
-    .hero-link::after {
-      content: "";
-      position: absolute;
-      left: 8px;
-      right: 8px;
-      bottom: 8px;
-      height: 1px;
-      background: #b8944e;
-      transform: scaleX(.35);
-      transform-origin: left;
-      transition: .3s;
-    }
-
-    .hero-link:hover::after {
-      transform: scaleX(1);
-    }
-
-    /* =========================
-       HERO PRODUCT
-    ========================= */
-
-    .hero-visual {
-      min-height: 650px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: visualReveal 1.3s ease both;
-      animation-delay: .2s;
-    }
-
-    .visual-ring {
-      position: absolute;
-      width: 510px;
-      height: 510px;
-      border-radius: 50%;
-      border: 1px solid rgba(184,148,78,0.55);
-      animation: floating 5s ease-in-out infinite;
-    }
-
-    .visual-ring::before {
-      content: "";
-      position: absolute;
-      inset: 24px;
-      border-radius: 50%;
-      border: 1px solid rgba(184,148,78,0.25);
-    }
-
-    .visual-ring::after {
-      content: "";
-      position: absolute;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #b8944e;
-      top: 36px;
-      left: 50%;
-      box-shadow:
-        0 0 0 8px rgba(184,148,78,0.08),
-        0 0 25px rgba(184,148,78,0.45);
-    }
-
-    .hero-product {
-      width: 365px;
-      height: 500px;
-      background: #fff;
-      border: 1px solid rgba(184,148,78,0.32);
-      padding: 13px;
-      position: relative;
-      z-index: 4;
-      box-shadow:
-        0 35px 80px rgba(0,0,0,0.13),
-        0 5px 20px rgba(0,0,0,0.04);
-      transform: rotate(3deg);
-      transition: .6s cubic-bezier(.2,.8,.2,1);
-    }
-
-    .hero-product:hover {
-      transform: rotate(0deg) translateY(-12px);
-    }
-
-    .hero-product-image {
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-      background: #fff;
-    }
-
-    .hero-product-image::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        110deg,
-        transparent 30%,
-        rgba(255,255,255,0.65) 50%,
-        transparent 70%
-      );
-      transform: translateX(-130%);
-      animation: shine 4.5s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    .hero-product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-      transition: .8s ease;
-    }
-
-    .hero-product:hover img {
-      transform: scale(1.045);
-    }
-
-    .hero-product-label {
-      position: absolute;
-      z-index: 5;
-      bottom: 22px;
-      left: 22px;
-      right: 22px;
-      padding: 16px 18px;
-      background: rgba(255,255,255,0.94);
-      backdrop-filter: blur(8px);
-      border-top: 1px solid #b8944e;
-      text-align: center;
-    }
-
-    .hero-product-label strong {
-      display: block;
-      font-family: Georgia, serif;
-      font-size: 19px;
-      font-weight: 400;
-      margin-bottom: 5px;
-    }
-
-    .hero-product-label span {
-      color: #777;
-      font-size: 9px;
-      letter-spacing: 3px;
-    }
-
-    .floating-detail {
-      position: absolute;
-      z-index: 6;
-      background: #111;
-      color: white;
-      padding: 13px 18px;
-      font-size: 9px;
-      letter-spacing: 2px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.16);
-      animation: floatingSmall 4s ease-in-out infinite;
-    }
-
-    .detail-one {
-      top: 16%;
-      right: 5%;
-    }
-
-    .detail-two {
-      bottom: 15%;
-      left: 4%;
-      animation-delay: 1.5s;
-    }
-
-    /* =========================
-       MARQUEE
-    ========================= */
-
-    .marquee {
-      overflow: hidden;
-      background: #111;
-      color: #fff;
-      border-top: 1px solid #b8944e;
-      border-bottom: 1px solid #b8944e;
-      white-space: nowrap;
-    }
-
-    .marquee-track {
-      display: inline-flex;
-      min-width: max-content;
-      animation: marquee 22s linear infinite;
-    }
-
-    .marquee-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 30px;
-      padding: 17px 30px;
-      font-size: 10px;
-      letter-spacing: 4px;
-    }
-
-    .marquee-item b {
-      color: #b8944e;
-      font-size: 15px;
-      font-weight: 400;
-    }
-
-    /* =========================
-       GENERAL SECTIONS
-    ========================= */
-
-    section {
-      padding: 105px 0;
-    }
-
-    .section-inner {
-      width: min(1240px, 92%);
-      margin: auto;
-    }
-
-    .section-head {
-      text-align: center;
-      margin-bottom: 55px;
-    }
-
-    .section-head span {
-      color: #b8944e;
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-    }
-
-    .section-head h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(36px, 5vw, 52px);
-      font-weight: 400;
-      margin-top: 13px;
-      letter-spacing: -1px;
-    }
-
-    .section-head p {
-      max-width: 570px;
-      margin: 17px auto 0;
-      color: #777;
-      line-height: 1.8;
-      font-size: 13px;
-    }
-
-    /* =========================
-       COLLECTIONS
-    ========================= */
-
-    .collections {
-      background: #fff;
-    }
-
-    .collection-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .collection-card {
-      min-height: 310px;
-      position: relative;
-      overflow: hidden;
-      background: #eee;
-      cursor: pointer;
-    }
-
-    .collection-card img {
-      width: 100%;
-      height: 100%;
-      min-height: 310px;
-      object-fit: cover;
-      display: block;
-      transition: transform .8s cubic-bezier(.2,.8,.2,1);
-    }
-
-    .collection-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(0,0,0,.72),
-        rgba(0,0,0,.05) 65%
-      );
-    }
-
-    .collection-card:hover img {
-      transform: scale(1.08);
-    }
-
-    .collection-content {
-      position: absolute;
-      left: 25px;
-      right: 25px;
-      bottom: 25px;
-      z-index: 2;
-      color: white;
-    }
-
-    .collection-content small {
-      color: #d4b778;
-      font-size: 9px;
-      letter-spacing: 3px;
-    }
-
-    .collection-content h3 {
-      font-family: Georgia, serif;
-      font-size: 29px;
-      font-weight: 400;
-      margin: 7px 0 13px;
-    }
-
-    .collection-content a {
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      border-bottom: 1px solid #b8944e;
-      padding-bottom: 4px;
-    }
-
-    /* =========================
-       PRODUCTS
-    ========================= */
-
-    .products-section {
-      background: #f8f7f3;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .product-card {
-      background: #fff;
-      border: 1px solid #e9e7e2;
-      overflow: hidden;
-      cursor: pointer;
-      position: relative;
-      transition: .45s cubic-bezier(.2,.8,.2,1);
-    }
-
-    .product-card:hover {
-      transform: translateY(-9px);
-      border-color: rgba(184,148,78,.55);
-      box-shadow: 0 25px 50px rgba(0,0,0,.08);
-    }
-
-    .product-image {
-      height: 315px;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .product-image::after {
-      content: "ZOREVA";
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      font-size: 8px;
-      letter-spacing: 3px;
-      color: #b8944e;
-      opacity: 0;
-      transition: .3s;
-    }
-
-    .product-card:hover .product-image::after {
-      opacity: 1;
-    }
-
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 14px;
-      transition: .65s ease;
-    }
-
-    .product-card:hover .product-image img {
-      transform: scale(1.07);
-    }
-
-    .product-info {
-      padding: 20px;
-      border-top: 1px solid #eee;
-    }
-
-    .product-name {
-      font-family: Georgia, serif;
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .product-price {
-      color: #b8944e;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
-
-    .product-actions {
-      display: flex;
-      gap: 7px;
-    }
-
-    .view-product,
-    .add-product {
-      flex: 1;
-      padding: 11px 8px;
-      cursor: pointer;
-      font-size: 9px;
-      letter-spacing: 1.2px;
-      transition: .3s;
-    }
-
-    .view-product {
-      border: 1px solid #ddd;
-      background: #fff;
-      color: #333;
-    }
-
-    .add-product {
-      border: 1px solid #111;
-      background: #111;
-      color: #fff;
-    }
-
-    .view-product:hover {
-      border-color: #b8944e;
-      color: #b8944e;
-    }
-
-    .add-product:hover {
-      background: #b8944e;
-      border-color: #b8944e;
-      color: #111;
-    }
-
-    /* =========================
-       BRAND
-    ========================= */
-
-    .brand-section {
-      background: #111;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .brand-section::before {
-      content: "Z";
-      position: absolute;
-      right: -30px;
-      top: -160px;
-      font-family: Georgia, serif;
-      font-size: 650px;
-      line-height: 1;
-      color: rgba(184,148,78,.035);
-    }
-
-    .brand-section::after {
-      content: "";
-      position: absolute;
-      width: 480px;
-      height: 480px;
-      border: 1px solid rgba(184,148,78,.12);
-      border-radius: 50%;
-      right: -160px;
-      bottom: -280px;
-    }
-
-    .brand-content {
-      max-width: 720px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .brand-content > span {
-      color: #b8944e;
-      font-size: 10px;
-      letter-spacing: 4px;
-    }
-
-    .brand-content h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(42px, 6vw, 65px);
-      font-weight: 400;
-      line-height: 1.05;
-      margin: 18px 0 25px;
-    }
-
-    .brand-content p {
-      color: #aaa;
-      max-width: 620px;
-      line-height: 2;
-      font-size: 14px;
-    }
-
-    /* =========================
-       FEATURES
-    ========================= */
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid #e5e2dc;
-      border-bottom: 1px solid #e5e2dc;
-    }
-
-    .feature {
-      padding: 48px 28px;
-      text-align: center;
-      border-right: 1px solid #e5e2dc;
-    }
-
-    .feature:last-child {
-      border-right: 0;
-    }
-
-    .feature-icon {
-      color: #b8944e;
-      font-family: Georgia, serif;
-      font-size: 29px;
-      margin-bottom: 15px;
-    }
-
-    .feature h3 {
-      font-family: Georgia, serif;
-      font-size: 19px;
-      font-weight: 400;
-      margin-bottom: 10px;
-    }
-
-    .feature p {
-      color: #777;
-      font-size: 12px;
-      line-height: 1.8;
-      max-width: 260px;
-      margin: auto;
-    }
-
-    /* =========================
-       CONTACT
-    ========================= */
-
-    .contact-section {
-      background: #fff;
-    }
-
-    .contact-box {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(
-          circle at 85% 30%,
-          rgba(184,148,78,.12),
-          transparent 30%
-        ),
-        #f1ede3;
-      padding: 80px 30px;
-      text-align: center;
-      border: 1px solid rgba(184,148,78,.25);
-    }
-
-    .contact-box::before {
-      content: "ZOREVA";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      font-family: Georgia, serif;
-      font-size: 110px;
-      letter-spacing: 10px;
-      color: rgba(184,148,78,.045);
-      white-space: nowrap;
-      pointer-events: none;
-    }
-
-    .contact-box > * {
-      position: relative;
-      z-index: 2;
-    }
-
-    .contact-box h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(35px, 5vw, 48px);
-      font-weight: 400;
-      margin-bottom: 15px;
-    }
-
-    .contact-box p {
-      color: #666;
-      margin-bottom: 28px;
-      font-size: 13px;
-    }
-
-    .whatsapp-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px 30px;
-      background: #111;
-      color: #fff;
-      border: 1px solid #111;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      transition: .35s;
-    }
-
-    .whatsapp-btn:hover {
-      background: #b8944e;
-      border-color: #b8944e;
-      color: #111;
-      transform: translateY(-4px);
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: #0d0d0d;
-      color: #888;
-      padding: 38px 20px;
-      text-align: center;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-    }
-
-    footer strong {
-      color: #b8944e;
-    }
-
-    /* =========================
-       CART
-    ========================= */
-
-    .cart-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.48);
-      z-index: 2000;
-      display: none;
-      opacity: 0;
-      transition: opacity .3s ease;
-    }
-
-    .cart-overlay.active {
-      display: block;
-      opacity: 1;
-    }
-
-    .cart-panel {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: min(430px, 94%);
-      background: #fff;
-      padding: 28px;
-      overflow-y: auto;
-      transform: translateX(100%);
-      transition: transform .4s cubic-bezier(.2,.8,.2,1);
-    }
-
-    .cart-overlay.active .cart-panel {
-      transform: translateX(0);
-    }
-
-    .cart-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #eee;
-      margin-bottom: 20px;
-    }
-
-    .cart-head h3 {
-      font-family: Georgia, serif;
-      font-size: 26px;
-      font-weight: 400;
-    }
-
-    .close-cart {
-      background: none;
-      border: 0;
-      font-size: 28px;
-      cursor: pointer;
-      color: #222;
-    }
-
-    .cart-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-bottom: 1px solid #eee;
-      padding: 14px 0;
-    }
-
-    .cart-item img {
-      width: 66px;
-      height: 66px;
-      object-fit: contain;
-      border: 1px solid #eee;
-    }
-
-    .cart-item-info {
-      flex: 1;
-    }
-
-    .cart-item-info strong {
-      display: block;
-      font-family: Georgia, serif;
-      margin-bottom: 5px;
-      font-weight: 400;
-    }
-
-    .cart-item-info span {
-      color: #b8944e;
-      font-size: 12px;
-    }
-
-    .remove-item {
-      border: 0;
-      background: none;
-      color: #999;
-      cursor: pointer;
-      font-size: 10px;
-    }
-
-    .remove-item:hover {
-      color: #111;
-    }
-
-    .cart-total {
-      display: flex;
-      justify-content: space-between;
-      margin: 25px 0;
-      font-weight: 700;
-      font-size: 16px;
-    }
-
-    .checkout-btn {
-      width: 100%;
-      border: 0;
-      background: #111;
-      color: #fff;
-      padding: 16px;
-      cursor: pointer;
-      letter-spacing: 1px;
-      font-size: 11px;
-      transition: .3s;
-    }
-
-    .checkout-btn:hover {
-      background: #b8944e;
-      color: #111;
-    }
-
-    .empty-cart {
-      text-align: center;
-      color: #888;
-      padding: 50px 10px;
-      font-size: 13px;
-    }
-
-    /* =========================
-       SCROLL REVEAL
-    ========================= */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(35px);
-      transition:
-        opacity .8s ease,
-        transform .8s cubic-bezier(.2,.8,.2,1);
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* =========================
-       ANIMATIONS
-    ========================= */
-
-    @keyframes heroText {
-      from {
-        opacity: 0;
-        transform: translateY(45px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes visualReveal {
-      from {
-        opacity: 0;
-        transform: translateX(50px) scale(.96);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0) scale(1);
-      }
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes goldReveal {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes floating {
-      0%, 100% {
-        transform: translateY(0) rotate(0deg);
-      }
-      50% {
-        transform: translateY(-14px) rotate(2deg);
-      }
-    }
-
-    @keyframes floatingSmall {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    @keyframes slowRotate {
-      from {
-        transform: translateY(-50%) rotate(0);
-      }
-      to {
-        transform: translateY(-50%) rotate(360deg);
-      }
-    }
-
-    @keyframes shine {
-      0% {
-        transform: translateX(-130%);
-      }
-      45%, 100% {
-        transform: translateX(130%);
-      }
-    }
-
-    @keyframes marquee {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 1000px) {
-
-      nav {
-        display: none;
-      }
-
-      .hero-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 15px;
-      }
-
-      .hero-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .eyebrow {
-        justify-content: center;
-      }
-
-      .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-visual {
-        min-height: 570px;
-      }
-
-      .visual-ring {
-        width: 440px;
-        height: 440px;
-      }
-
-      .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 700px) {
-
-      header {
-        height: 68px;
-      }
-
-      .header-inner {
-        width: 94%;
-      }
-
-      .brand {
-        font-size: 14px;
-        letter-spacing: 2.5px;
-      }
-
-      .brand img {
-        width: 34px;
-        height: 34px;
-      }
-
-      .cart-button {
-        padding: 9px 12px;
-        font-size: 9px;
-      }
-
-      .hero {
-        padding-top: 68px;
-      }
-
-      .hero-inner {
-        width: 92%;
-      }
-
-      .hero h1 {
-        font-size: 54px;
-        letter-spacing: -2px;
-      }
-
-      .hero-description {
-        font-size: 13px;
-        max-width: 350px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .hero-btn {
-        width: 100%;
-        max-width: 290px;
-      }
-
-      .hero-visual {
-        min-height: 455px;
-      }
-
-      .visual-ring {
-        width: 300px;
-        height: 300px;
-      }
-
-      .hero-product {
-        width: 245px;
-        height: 335px;
-      }
-
-      .detail-one {
-        top: 12%;
-        right: 0;
-      }
-
-      .detail-two {
-        bottom: 9%;
-        left: 0;
-      }
-
-      section {
-        padding: 75px 0;
-      }
-
-      .section-head {
-        margin-bottom: 38px;
-      }
-
-      .section-head h2 {
-        font-size: 38px;
-      }
-
-      .collection-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .collection-card,
-      .collection-card img {
-        min-height: 300px;
-      }
-
-      .products-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .product-image {
-        height: 350px;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .feature {
-        border-right: 0;
-        border-bottom: 1px solid #e5e2dc;
-      }
-
-      .feature:last-child {
-        border-bottom: 0;
-      }
-
-      .brand-content h2 {
-        font-size: 43px;
-      }
-
-      .contact-box {
-        padding: 60px 20px;
-      }
-
-      .contact-box::before {
-        font-size: 55px;
-      }
-
-      .marquee-item {
-        padding: 15px 20px;
-        font-size: 8px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+
+<meta name="google-site-verification" content="6dTShbk4Yt8gvQV6VCmURDFVjkcE3vLr48iIs6aVjt8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZOREVA JEWELRY | مجوهرات فاخرة</title>
+
+<meta name="description" content="ZOREVA JEWELRY — مجوهرات أنيقة وعصرية بتفاصيل فاخرة.">
+
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --black:#080808;
+  --black2:#111111;
+  --gold:#c7a15a;
+  --gold2:#e0c98e;
+  --cream:#f5f1e9;
+  --white:#ffffff;
+  --gray:#aaa;
+  --line:rgba(255,255,255,.12);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--black);
+  color:#fff;
+  font-family:"Cairo",sans-serif;
+  overflow-x:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font-family:inherit;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:82px;
+  z-index:1000;
+  transition:.4s ease;
+  border-bottom:1px solid transparent;
+}
+
+header.scrolled{
+  height:70px;
+  background:rgba(8,8,8,.92);
+  backdrop-filter:blur(15px);
+  border-bottom-color:var(--line);
+}
+
+.header-inner{
+  width:min(1300px,92%);
+  height:100%;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  width:58px;
+  height:58px;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+  transition:.3s;
+}
+
+header.scrolled .logo{
+  width:48px;
+  height:48px;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:35px;
+}
+
+nav a{
+  font-size:12px;
+  color:#eee;
+  position:relative;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:var(--gold2);
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  bottom:-9px;
+  right:0;
+  width:0;
+  height:1px;
+  background:var(--gold);
+  transition:.3s;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+.header-actions{
+  display:flex;
+  gap:10px;
+}
+
+.cart-btn{
+  width:44px;
+  height:44px;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.04);
+  color:#fff;
+  border-radius:50%;
+  cursor:pointer;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.cart-count{
+  position:absolute;
+  top:-4px;
+  right:-3px;
+  background:var(--gold);
+  color:#000;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  font-size:9px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#050505;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(199,161,90,.15),
+      transparent 30%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.95),
+      rgba(0,0,0,.25),
+      rgba(0,0,0,.95)
+    );
+}
+
+.hero-image{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.72;
+  transform:scale(1.08);
+  animation:heroZoom 10s ease-out forwards;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.45),
+      rgba(0,0,0,.12) 40%,
+      rgba(0,0,0,.85)
+    );
+}
+
+.hero-content{
+  position:relative;
+  z-index:3;
+  width:min(1100px,90%);
+  text-align:center;
+  padding-top:70px;
+  animation:heroText 1.2s ease both;
+}
+
+.hero-small{
+  color:var(--gold2);
+  letter-spacing:7px;
+  font-size:11px;
+  margin-bottom:22px;
+}
+
+.hero h1{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(65px,10vw,145px);
+  font-weight:500;
+  line-height:.78;
+  letter-spacing:-3px;
+  margin-bottom:30px;
+}
+
+.hero h1 span{
+  color:var(--gold2);
+}
+
+.hero p{
+  max-width:580px;
+  margin:auto;
+  color:#ddd;
+  font-size:14px;
+  line-height:2;
+}
+
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:38px;
+}
+
+.btn{
+  min-height:52px;
+  padding:0 30px;
+  border:1px solid var(--gold);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  font-size:12px;
+  transition:.35s;
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:#080808;
+}
+
+.btn-gold:hover{
+  background:var(--gold2);
+  transform:translateY(-3px);
+}
+
+.btn-outline{
+  background:transparent;
+  color:#fff;
+}
+
+.btn-outline:hover{
+  background:#fff;
+  color:#000;
+  border-color:#fff;
+}
+
+.hero-bottom{
+  position:absolute;
+  bottom:35px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:5;
+  color:#aaa;
+  font-size:9px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  animation:float 3s ease-in-out infinite;
+}
+
+
+/* ================= MARQUEE ================= */
+
+.marquee{
+  background:var(--gold);
+  color:#090909;
+  overflow:hidden;
+  white-space:nowrap;
+  padding:14px 0;
+}
+
+.marquee-track{
+  display:inline-block;
+  animation:marquee 25s linear infinite;
+}
+
+.marquee span{
+  margin:0 30px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:19px;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section{
+  width:min(1250px,92%);
+  margin:auto;
+  padding:115px 0;
+}
+
+.section-head{
+  text-align:center;
+  margin-bottom:55px;
+}
+
+.section-kicker{
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:5px;
+  margin-bottom:15px;
+}
+
+.section-title{
+  font-family:"Cormorant Garamond",serif;
+  font-size:58px;
+  font-weight:500;
+}
+
+.section-description{
+  color:#999;
+  font-size:13px;
+  line-height:2;
+  max-width:600px;
+  margin:15px auto 0;
+}
+
+
+/* ================= COLLECTIONS ================= */
+
+.collections{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.collection{
+  position:relative;
+  height:530px;
+  overflow:hidden;
+  cursor:pointer;
+  background:#111;
+}
+
+.collection img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:1s;
+  opacity:.8;
+}
+
+.collection:hover img{
+  transform:scale(1.08);
+  opacity:1;
+}
+
+.collection::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    transparent 30%,
+    rgba(0,0,0,.85)
+  );
+}
+
+.collection-content{
+  position:absolute;
+  z-index:2;
+  bottom:30px;
+  right:30px;
+  left:30px;
+}
+
+.collection-content span{
+  color:var(--gold2);
+  font-size:10px;
+  letter-spacing:3px;
+}
+
+.collection-content h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:39px;
+  font-weight:500;
+  margin:5px 0 10px;
+}
+
+.collection-content a{
+  font-size:11px;
+  border-bottom:1px solid var(--gold);
+  padding-bottom:4px;
+}
+
+
+/* ================= PRODUCTS ================= */
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.product{
+  background:#101010;
+  border:1px solid var(--line);
+  cursor:pointer;
+  transition:.4s;
+}
+
+.product:hover{
+  transform:translateY(-7px);
+  border-color:rgba(199,161,90,.4);
+}
+
+.product-image{
+  aspect-ratio:1/1;
+  overflow:hidden;
+  background:#161616;
+}
+
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.7s;
+}
+
+.product:hover .product-image img{
+  transform:scale(1.07);
+}
+
+.product-info{
+  padding:20px;
+}
+
+.product-info small{
+  color:var(--gold);
+  font-size:9px;
+  letter-spacing:2px;
+}
+
+.product-info h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:24px;
+  font-weight:500;
+  margin:6px 0;
+}
+
+.product-price{
+  color:#ccc;
+  font-size:12px;
+}
+
+
+/* ================= BRAND ================= */
+
+.brand-section{
+  background:
+    linear-gradient(
+      90deg,
+      #080808,
+      #17130c,
+      #080808
+    );
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.brand-content{
+  width:min(1000px,90%);
+  margin:auto;
+  padding:130px 0;
+  text-align:center;
+}
+
+.brand-content h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:70px;
+  font-weight:500;
+}
+
+.brand-content h2 span{
+  color:var(--gold);
+}
+
+.brand-content p{
+  color:#999;
+  line-height:2;
+  max-width:650px;
+  margin:20px auto 0;
+}
+
+
+/* ================= FEATURES ================= */
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.feature{
+  padding:45px 25px;
+  text-align:center;
+  border-left:1px solid var(--line);
+}
+
+.feature:last-child{
+  border-left:0;
+}
+
+.feature-number{
+  color:var(--gold);
+  font-family:"Cormorant Garamond",serif;
+  font-size:25px;
+}
+
+.feature h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:25px;
+  font-weight:500;
+  margin:8px 0;
+}
+
+.feature p{
+  color:#888;
+  font-size:12px;
+  line-height:1.8;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact{
+  text-align:center;
+}
+
+.contact-box{
+  border:1px solid var(--line);
+  padding:80px 30px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(199,161,90,.1),
+      transparent 60%
+    );
+}
+
+.contact-box h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:58px;
+  font-weight:500;
+}
+
+.contact-box p{
+  color:#999;
+  margin:15px auto 30px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:#030303;
+  border-top:1px solid var(--line);
+  padding:60px 0 25px;
+}
+
+.footer-inner{
+  width:min(1200px,92%);
+  margin:auto;
+}
+
+.footer-top{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:50px;
+  padding-bottom:40px;
+  border-bottom:1px solid var(--line);
+}
+
+.footer-logo{
+  width:62px;
+  filter:brightness(0) invert(1);
+  margin-bottom:18px;
+}
+
+.footer-top p{
+  color:#777;
+  font-size:12px;
+  line-height:2;
+  max-width:350px;
+}
+
+.footer-col h4{
+  font-family:"Cormorant Garamond",serif;
+  font-size:23px;
+  font-weight:500;
+  margin-bottom:15px;
+}
+
+.footer-col a{
+  display:block;
+  color:#777;
+  font-size:12px;
+  margin-bottom:10px;
+  transition:.3s;
+}
+
+.footer-col a:hover{
+  color:var(--gold);
+}
+
+.copyright{
+  text-align:center;
+  color:#555;
+  font-size:10px;
+  padding-top:22px;
+}
+
+
+/* ================= CART ================= */
+
+.cart-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  opacity:0;
+  visibility:hidden;
+  transition:.3s;
+  z-index:1998;
+}
+
+.cart-overlay.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.cart-panel{
+  position:fixed;
+  top:0;
+  right:0;
+  width:min(430px,92vw);
+  height:100vh;
+  background:#101010;
+  border-left:1px solid var(--line);
+  z-index:1999;
+  transform:translateX(100%);
+  transition:.45s;
+  display:flex;
+  flex-direction:column;
+}
+
+.cart-panel.active{
+  transform:translateX(0);
+}
+
+.cart-header{
+  height:75px;
+  padding:0 22px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.cart-header h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:28px;
+}
+
+.close-cart{
+  width:36px;
+  height:36px;
+  border:1px solid var(--line);
+  background:transparent;
+  color:#fff;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+#cartItems{
+  flex:1;
+  overflow:auto;
+  padding:20px;
+}
+
+.empty-cart{
+  text-align:center;
+  color:#777;
+  padding-top:60px;
+}
+
+.cart-item{
+  display:flex;
+  gap:14px;
+  padding:14px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.cart-item img{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+}
+
+.cart-item-info{
+  flex:1;
+}
+
+.cart-item-info h4{
+  font-family:"Cormorant Garamond",serif;
+  font-size:20px;
+}
+
+.cart-item-info p{
+  color:var(--gold);
+  font-size:11px;
+  margin-top:5px;
+}
+
+.remove-item{
+  background:none;
+  border:0;
+  color:#666;
+  cursor:pointer;
+  font-size:10px;
+}
+
+.cart-footer{
+  padding:20px;
+  border-top:1px solid var(--line);
+}
+
+.cart-total{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:15px;
+}
+
+.cart-total strong{
+  color:var(--gold);
+}
+
+.checkout{
+  width:100%;
+  min-height:52px;
+  border:0;
+  background:var(--gold);
+  color:#000;
+  cursor:pointer;
+  font-weight:600;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes heroZoom{
+  from{
+    transform:scale(1.08);
+  }
+  to{
+    transform:scale(1);
+  }
+}
+
+@keyframes heroText{
+  from{
+    opacity:0;
+    transform:translateY(35px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes float{
+  0%,100%{
+    transform:translate(-50%,0);
+  }
+  50%{
+    transform:translate(-50%,-8px);
+  }
+}
+
+@keyframes marquee{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+  nav{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:75px;
+  }
+
+  .collections{
+    grid-template-columns:1fr;
+  }
+
+  .collection{
+    height:430px;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .features{
+    grid-template-columns:1fr;
+  }
+
+  .feature{
+    border-left:0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .feature:last-child{
+    border-bottom:0;
+  }
+
+  .footer-top{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:600px){
+
+  .hero{
+    min-height:90vh;
+  }
+
+  .hero-image{
+    object-position:center;
+  }
+
+  .hero h1{
+    font-size:63px;
+    letter-spacing:-1px;
+  }
+
+  .hero p{
+    font-size:12px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+    width:100%;
+  }
+
+  .hero-buttons .btn{
+    width:100%;
+  }
+
+  .section{
+    padding:80px 0;
+  }
+
+  .section-title{
+    font-size:45px;
+  }
+
+  .products{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .product-info{
+    padding:13px;
+  }
+
+  .product-info h3{
+    font-size:20px;
+  }
+
+  .brand-content h2{
+    font-size:52px;
+  }
+
+  .contact-box h2{
+    font-size:44px;
+  }
+
+  .footer-top{
+    grid-template-columns:1fr;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================= -->
 
-  <header id="siteHeader">
+<!-- HEADER -->
 
-    <div class="header-inner">
+<header id="header">
 
-      <a href="index.html" class="brand">
-        <img src="logo.svg" alt="ZOREVA JEWELRY">
-        <span>ZOREVA</span>
-      </a>
+<div class="header-inner">
 
-      <nav>
-        <a href="#home">Accueil</a>
-        <a href="#collections">Collections</a>
-        <a href="#products">Bijoux</a>
-        <a href="#brand">Notre histoire</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<a href="index.html">
+<img src="logo.svg" class="logo" alt="ZOREVA JEWELRY">
+</a>
 
-      <button class="cart-button" onclick="openCart()">
-        Panier (<span id="cartCount">0</span>)
-      </button>
+<nav>
+<a href="#home">الرئيسية</a>
+<a href="#collections">المجموعات</a>
+<a href="#products">المنتجات</a>
+<a href="#about">من نحن</a>
+<a href="#contact">تواصل معنا</a>
+</nav>
 
-    </div>
+<div class="header-actions">
 
-  </header>
+<button class="cart-btn" onclick="openCart()">
+🛒
+<span class="cart-count" id="cartCount">0</span>
+</button>
 
+</div>
 
-  <!-- =========================
-       HERO
-  ========================= -->
+</div>
 
-  <section class="hero" id="home">
+</header>
 
-    <div class="hero-noise"></div>
-    <div class="hero-orbit"></div>
 
-    <div class="hero-inner">
+<!-- HERO -->
 
-      <div class="hero-text">
+<section class="hero" id="home">
 
-        <div class="eyebrow">
-          ZOREVA JEWELRY
-        </div>
+<img
+class="hero-image"
+src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"
+alt="ZOREVA Jewelry"
+>
 
-        <h1>
-          L'élégance<br>
-          en <span class="gold">détail.</span>
-        </h1>
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
 
-        <p class="hero-description">
-          Des bijoux élégants et modernes, sélectionnés pour apporter
-          caractère, simplicité et raffinement à chaque style.
-        </p>
+<div class="hero-content">
 
-        <div class="hero-buttons">
+<div class="hero-small">
+ZOREVA JEWELRY
+</div>
 
-          <a href="#collections" class="hero-btn">
-            Explorer la collection
-          </a>
+<h1>
+أناقة<br>
+<span>تُرى.</span>
+</h1>
 
-          <a href="#products" class="hero-link">
-            Voir les bijoux
-          </a>
+<p>
+اكتشف مجوهرات صُممت لتمنح كل إطلالة
+تفصيلاً مختلفاً، بلمسة عصرية وفاخرة.
+</p>
 
-        </div>
+<div class="hero-buttons">
 
-      </div>
+<a href="#collections" class="btn btn-gold">
+تصفح المجموعة
+</a>
 
+<a href="#products" class="btn btn-outline">
+اكتشف المنتجات
+</a>
 
-      <div class="hero-visual">
+</div>
 
-        <div class="visual-ring"></div>
+</div>
 
-        <div class="floating-detail detail-one">
-          COLLECTION 2026
-        </div>
+<div class="hero-bottom">
+SCROLL TO DISCOVER
+</div>
 
-        <div class="floating-detail detail-two">
-          ZOREVA JEWELRY
-        </div>
+</section>
 
-        <div class="hero-product">
 
-          <div class="hero-product-image">
+<!-- MARQUEE -->
 
-            <img
-              src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"
-              alt="Collier Perla"
-            >
+<div class="marquee">
 
-            <div class="hero-product-label">
+<div class="marquee-track">
 
-              <strong>Collier Perla</strong>
+<span>ZOREVA JEWELRY</span>
+<span>ÉLÉGANCE</span>
+<span>DETAILS</span>
+<span>STYLE</span>
+<span>ZOREVA JEWELRY</span>
+<span>ÉLÉGANCE</span>
+<span>DETAILS</span>
+<span>STYLE</span>
 
-              <span>
-                COLLECTION ZOREVA
-              </span>
+</div>
 
-            </div>
+</div>
 
-          </div>
 
-        </div>
+<!-- COLLECTIONS -->
 
-      </div>
+<section class="section" id="collections">
 
-    </div>
+<div class="section-head">
 
-  </section>
+<div class="section-kicker">
+NOS COLLECTIONS
+</div>
 
+<h2 class="section-title">
+اختَر أسلوبك
+</h2>
 
-  <!-- =========================
-       MARQUEE
-  ========================= -->
+<p class="section-description">
+مجموعة مختارة من الخواتم والقلادات والأساور
+بتصاميم عصرية تناسب مختلف الإطلالات.
+</p>
 
-  <div class="marquee">
+</div>
 
-    <div class="marquee-track">
 
-      <div class="marquee-item">
-        ZOREVA JEWELRY <b>✦</b>
-      </div>
+<div class="collections">
 
-      <div class="marquee-item">
-        ÉLÉGANCE <b>✦</b>
-      </div>
+<div class="collection" onclick="filterProducts('necklace')">
 
-      <div class="marquee-item">
-        STYLE <b>✦</b>
-      </div>
+<img
+src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"
+alt="Colliers"
+>
 
-      <div class="marquee-item">
-        COLLECTION 2026 <b>✦</b>
-      </div>
+<div class="collection-content">
 
-      <div class="marquee-item">
-        ZOREVA JEWELRY <b>✦</b>
-      </div>
+<span>COLLECTION 01</span>
 
-      <div class="marquee-item">
-        ÉLÉGANCE <b>✦</b>
-      </div>
+<h3>قلادات</h3>
 
-      <div class="marquee-item">
-        STYLE <b>✦</b>
-      </div>
+<a href="#products">
+تصفح المجموعة
+</a>
 
-      <div class="marquee-item">
-        COLLECTION 2026 <b>✦</b>
-      </div>
+</div>
 
-    </div>
+</div>
 
-  </div>
 
+<div class="collection" onclick="filterProducts('ring')">
 
-  <!-- =========================
-       COLLECTIONS
-  ========================= -->
+<img
+src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg"
+alt="Bagues"
+>
 
-  <section class="collections" id="collections">
+<div class="collection-content">
 
-    <div class="section-inner">
+<span>COLLECTION 02</span>
 
-      <div class="section-head reveal">
+<h3>خواتم</h3>
 
-        <span>Découvrez</span>
+<a href="#products">
+تصفح المجموعة
+</a>
 
-        <h2>Nos Collections</h2>
+</div>
 
-        <p>
-          Une sélection de pièces pensées pour différents styles
-          et différentes occasions.
-        </p>
+</div>
 
-      </div>
 
+<div class="collection" onclick="filterProducts('bracelet')">
 
-      <div class="collection-grid">
+<img
+src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg"
+alt="Bracelets"
+>
 
-        <div
-          class="collection-card reveal"
-          onclick="scrollToProducts()"
-        >
+<div class="collection-content">
 
-          <img
-            src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg"
-            alt="Collection Colliers"
-          >
+<span>COLLECTION 03</span>
 
-          <div class="collection-content">
+<h3>أساور</h3>
 
-            <small>COLLECTION 01</small>
+<a href="#products">
+تصفح المجموعة
+</a>
 
-            <h3>Colliers</h3>
+</div>
 
-            <a href="#products">
-              EXPLORER
-            </a>
+</div>
 
-          </div>
+</div>
 
-        </div>
+</section>
 
 
-        <div
-          class="collection-card reveal"
-          onclick="scrollToProducts()"
-        >
+<!-- PRODUCTS -->
 
-          <img
-            src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_175331.jpg"
-            alt="Collection Bagues"
-          >
+<section class="section" id="products">
 
-          <div class="collection-content">
+<div class="section-head">
 
-            <small>COLLECTION 02</small>
+<div class="section-kicker">
+ZOREVA SELECTION
+</div>
 
-            <h3>Bagues</h3>
+<h2 class="section-title">
+اختياراتنا
+</h2>
 
-            <a href="#products">
-              EXPLORER
-            </a>
+<p class="section-description">
+قطع مختارة بعناية لإضافة لمسة مميزة إلى أسلوبك.
+</p>
 
-          </div>
+</div>
 
-        </div>
 
+<div class="products" id="productsGrid"></div>
 
-        <div
-          class="collection-card reveal"
-          onclick="scrollToProducts()"
-        >
+</section>
 
-          <img
-            src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg"
-            alt="Collection Bracelets"
-          >
 
-          <div class="collection-content">
+<!-- BRAND -->
 
-            <small>COLLECTION 03</small>
+<section class="brand-section" id="about">
 
-            <h3>Bracelets</h3>
+<div class="brand-content">
 
-            <a href="#products">
-              EXPLORER
-            </a>
+<div class="section-kicker">
+THE ZOREVA STORY
+</div>
 
-          </div>
+<h2>
+أكثر من<br>
+<span>مجوهرات.</span>
+</h2>
 
-        </div>
+<p>
+ZOREVA هي مساحة تجمع بين البساطة والأناقة والتفاصيل.
+نختار قطعاً عصرية يمكن أن تصبح جزءاً من أسلوبك اليومي،
+مع تجربة طلب بسيطة ومباشرة.
+</p>
 
-      </div>
+</div>
 
-    </div>
+</section>
 
-  </section>
 
+<!-- FEATURES -->
 
-  <!-- =========================
-       PRODUCTS
-  ========================= -->
+<section class="section">
 
-  <section class="products-section" id="products">
+<div class="features">
 
-    <div class="section-inner">
+<div class="feature">
 
-      <div class="section-head reveal">
+<div class="feature-number">
+01
+</div>
 
-        <span>Collection ZOREVA</span>
+<h3>
+تصاميم مختارة
+</h3>
 
-        <h2>Nos bijoux</h2>
+<p>
+قطع عصرية بتفاصيل أنيقة.
+</p>
 
-        <p>
-          Découvrez nos pièces disponibles et choisissez
-          celle qui correspond à votre style.
-        </p>
+</div>
 
-      </div>
 
+<div class="feature">
 
-      <div class="products-grid">
+<div class="feature-number">
+02
+</div>
 
+<h3>
+طلب بسيط
+</h3>
 
-        <!-- 1 -->
+<p>
+اطلب مباشرة عبر WhatsApp.
+</p>
 
-        <div
-          class="product-card reveal"
-          onclick="openProduct('collier-eclat')"
-        >
+</div>
 
-          <div class="product-image">
 
-            <img
-              src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg"
-              alt="Collier Éclat"
-            >
+<div class="feature">
 
-          </div>
+<div class="feature-number">
+03
+</div>
 
-          <div class="product-info">
+<h3>
+ZOREVA
+</h3>
 
-            <div class="product-name">
-              Collier Éclat
-            </div>
+<p>
+أسلوب بسيط، تفاصيل مختلفة.
+</p>
 
-            <div class="product-price">
-              119 DH
-            </div>
+</div>
 
-            <div class="product-actions">
+</div>
 
-              <button
-                class="view-product"
-                onclick="event.stopPropagation(); openProduct('collier-eclat')"
-              >
-                VOIR
-              </button>
+</section>
 
-              <button
-                class="add-product"
-                onclick="event.stopPropagation(); addToCart('collier-eclat')"
-              >
-                AJOUTER
-              </button>
 
-            </div>
+<!-- CONTACT -->
 
-          </div>
+<section class="section contact" id="contact">
 
-        </div>
+<div class="contact-box">
 
+<div class="section-kicker">
+CONTACT
+</div>
 
-        <!-- 2 -->
+<h2>
+جاهز تختار قطعتك؟
+</h2>
 
-        <div
-          class="product-card reveal"
-          onclick="openProduct('bague-elegance')"
-        >
+<p>
+تواصل معنا مباشرة عبر WhatsApp للطلب أو الاستفسار.
+</p>
 
-          <div class="product-image">
+<a
+href="https://wa.me/212765333754"
+target="_blank"
+class="btn btn-gold"
+>
+تواصل عبر WhatsApp
+</a>
 
-            <img
-              src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg"
-              alt="Bague Élégance"
-            >
+</div>
 
-          </div>
+</section>
 
-          <div class="product-info">
 
-            <div class="product-name">
-              Bague Élégance
-            </div>
+<!-- FOOTER -->
 
-            <div class="product-price">
-              119 DH
-            </div>
+<footer>
 
-            <div class="product-actions">
+<div class="footer-inner">
 
-              <button
-                class="view-product"
-                onclick="event.stopPropagation(); openProduct('bague-elegance')"
-              >
-                VOIR
-              </button>
+<div class="footer-top">
 
-              <button
-                class="add-product"
-                onclick="event.stopPropagation(); addToCart('bague-elegance')"
-              >
-                AJOUTER
-              </button>
+<div>
 
-            </div>
+<img src="logo.svg" class="footer-logo" alt="ZOREVA">
 
-          </div>
+<p>
+ZOREVA JEWELRY — مجوهرات أنيقة وعصرية
+بتفاصيل صُممت لتكمل أسلوبك.
+</p>
 
-        </div>
+</div>
 
 
-        <!-- 3 -->
+<div class="footer-col">
 
-        <div
-          class="product-card reveal"
-          onclick="openProduct('bracelet-luna')"
-        >
+<h4>
+Navigation
+</h4>
 
-          <div class="product-image">
+<a href="#home">الرئيسية</a>
+<a href="#collections">المجموعات</a>
+<a href="#products">المنتجات</a>
+<a href="#about">من نحن</a>
 
-            <img
-              src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg"
-              alt="Bracelet Luna"
-            >
+</div>
 
-          </div>
 
-          <div class="product-info">
+<div class="footer-col">
 
-            <div class="product-name">
-              Bracelet Luna
-            </div>
+<h4>
+Contact
+</h4>
 
-            <div class="product-price">
-              149 DH
-            </div>
+<a href="https://wa.me/212765333754" target="_blank">
+WhatsApp
+</a>
 
-            <div class="product-actions">
+<a href="#contact">
+تواصل معنا
+</a>
 
-              <button
-                class="view-product"
-                onclick="event.stopPropagation(); openProduct('bracelet-luna')"
-              >
-                VOIR
-              </button>
+</div>
 
-              <button
-                class="add-product"
-                onclick="event.stopPropagation(); addToCart('bracelet-luna')"
-              >
-                AJOUTER
-              </button>
+</div>
 
-            </div>
+<div class="copyright">
+© 2026 ZOREVA JEWELRY — Tous droits réservés.
+</div>
 
-          </div>
+</div>
 
-        </div>
+</footer>
 
 
-        <!-- 4 -->
+<!-- CART -->
 
-        <div
-          class="product-card reveal"
-          onclick="openProduct('bague-signature')"
-        >
+<div
+class="cart-overlay"
+id="cartOverlay"
+onclick="closeCart()"
+></div>
 
-          <div class="product-image">
+<aside class="cart-panel" id="cartPanel">
 
-            <img
-              src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_175331.jpg"
-              alt="Bague Signature"
-            >
+<div class="cart-header">
 
-          </div>
+<h3>
+سلة التسوق
+</h3>
 
-          <div class="product-info">
+<button
+class="close-cart"
+onclick="closeCart()"
+>
+×
+</button>
 
-            <div class="product-name">
-              Bague Signature
-            </div>
+</div>
 
-            <div class="product-price">
-              149 DH
-            </div>
+<div id="cartItems"></div>
 
-            <div class="product-actions">
+<div class="cart-footer">
 
-              <button
-                class="view-product"
-                onclick="event.stopPropagation(); openProduct('bague-signature')"
-              >
-                VOIR
-              </button>
+<div class="cart-total">
 
-              <button
-                class="add-product"
-                onclick="event.stopPropagation(); addToCart('bague-signature')"
-              >
-                AJOUTER
-              </button>
+<span>
+المجموع
+</span>
 
-            </div>
+<strong id="cartTotal">
+0 DH
+</strong>
 
-          </div>
+</div>
 
-        </div>
+<button
+class="checkout"
+onclick="checkoutWhatsApp()"
+>
+اطلب عبر WhatsApp
+</button>
 
+</div>
 
-        <!-- 5 -->
+</aside>
 
-        <div
-          class="product-card reveal"
-          onclick="openProduct('collier-perla')"
-        >
 
-          <div class="product-image">
+<script>
 
-            <img
-              src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"
-              alt="Collier Perla"
-            >
 
-          </div>
+/* ================= PRODUCTS ================= */
 
-          <div class="product-info">
+const products = [
 
-            <div class="product-name">
-              Collier Perla
-            </div>
+{
+id:"collier-eclat",
+name:"Collier Éclat",
+category:"necklace",
+categoryName:"قلادات",
+price:119,
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg"
+},
 
-            <div class="product-price">
-              149 DH
-            </div>
+{
+id:"bague-elegance",
+name:"Bague Élégance",
+category:"ring",
+categoryName:"خواتم",
+price:119,
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg"
+},
 
-            <div class="product-actions">
+{
+id:"bracelet-luna",
+name:"Bracelet Luna",
+category:"bracelet",
+categoryName:"أساور",
+price:149,
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg"
+},
 
-              <button
-                class="view-product"
-                onclick="event.stopPropagation(); openProduct('collier-perla')"
-              >
-                VOIR
-              </button>
+{
+id:"bague-signature",
+name:"Bague Signature",
+category:"ring",
+categoryName:"خواتم",
+price:149,
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_175331.jpg"
+},
 
-              <button
-                class="add-product"
-                onclick="event.stopPropagation(); addToCart('collier-perla')"
-              >
-                AJOUTER
-              </button>
+{
+id:"collier-perla",
+name:"Collier Perla",
+category:"necklace",
+categoryName:"قلادات",
+price:149,
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"
+},
 
-            </div>
+{
+id:"bracelet-elegance",
+name:"Bracelet Élégance",
+category:"bracelet",
+categoryName:"أساور",
+price:149,
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg"
+},
 
-          </div>
+{
+id:"bague-royale",
+name:"Bague Royale",
+category:"ring",
+categoryName:"خواتم",
+price:149,
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg"
+}
 
-        </div>
+];
 
 
-        <!-- 6 -->
+/* ================= RENDER PRODUCTS ================= */
 
-        <div
-          class="product-card reveal"
-          onclick="openProduct('bracelet-elegance')"
-        >
+const grid =
+document.getElementById("productsGrid");
 
-          <div class="product-image">
+function renderProducts(filter="all"){
 
-            <img
-              src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg"
-              alt="Bracelet Élégance"
-            >
+grid.innerHTML="";
 
-          </div>
+const filtered =
+filter==="all"
+? products
+: products.filter(p=>p.category===filter);
 
-          <div class="product-info">
+filtered.forEach(product=>{
 
-            <div class="product-name">
-              Bracelet Élégance
-            </div>
+const card =
+document.createElement("article");
 
-            <div class="product-price">
-              149 DH
-            </div>
+card.className="product";
 
-            <div class="product-actions">
+card.onclick=()=>{
 
-              <button
-                class="view-product"
-                onclick="event.stopPropagation(); openProduct('bracelet-elegance')"
-              >
-                VOIR
-              </button>
+window.location.href=
+`product.html?id=${product.id}`;
 
-              <button
-                class="add-product"
-                onclick="event.stopPropagation(); addToCart('bracelet-elegance')"
-              >
-                AJOUTER
-              </button>
+};
 
-            </div>
+card.innerHTML=`
 
-          </div>
+<div class="product-image">
 
-        </div>
+<img
+src="${product.image}"
+alt="${product.name}"
+loading="lazy"
+>
 
+</div>
 
-        <!-- 7 -->
+<div class="product-info">
 
-        <div
-          class="product-card reveal"
-          onclick="openProduct('bague-royale')"
-        >
+<small>
+${product.categoryName}
+</small>
 
-          <div class="product-image">
+<h3>
+${product.name}
+</h3>
 
-            <img
-              src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg"
-              alt="Bague Royale"
-            >
+<div class="product-price">
+${product.price} DH
+</div>
 
-          </div>
+</div>
 
-          <div class="product-info">
+`;
 
-            <div class="product-name">
-              Bague Royale
-            </div>
+grid.appendChild(card);
 
-            <div class="product-price">
-              149 DH
-            </div>
+});
 
-            <div class="product-actions">
+}
 
-              <button
-                class="view-product"
-                onclick="event.stopPropagation(); openProduct('bague-royale')"
-              >
-                VOIR
-              </button>
+renderProducts();
 
-              <button
-                class="add-product"
-                onclick="event.stopPropagation(); addToCart('bague-royale')"
-              >
-                AJOUTER
-              </button>
 
-            </div>
+/* ================= FILTER ================= */
 
-          </div>
+function filterProducts(category){
 
-        </div>
+document
+.getElementById("products")
+.scrollIntoView({
+behavior:"smooth"
+});
 
-      </div>
+renderProducts(category);
 
-    </div>
+}
 
-  </section>
 
+/* ================= CART ================= */
 
-  <!-- =========================
-       BRAND
-  ========================= -->
+let cart =
+JSON.parse(
+localStorage.getItem("zorevaCart") || "[]"
+);
 
-  <section class="brand-section" id="brand">
 
-    <div class="section-inner">
+function saveCart(){
 
-      <div class="brand-content reveal">
+localStorage.setItem(
+"zorevaCart",
+JSON.stringify(cart)
+);
 
-        <span>L'UNIVERS ZOREVA</span>
+updateCart();
 
-        <h2>
-          La beauté<br>
-          dans les détails.
-        </h2>
+}
 
-        <p>
-          ZOREVA JEWELRY imagine une sélection de bijoux au style
-          élégant, moderne et intemporel. Chaque pièce est choisie
-          pour apporter une touche distinctive à votre style.
-        </p>
 
-      </div>
+function updateCart(){
 
-    </div>
+const count =
+cart.reduce(
+(sum,item)=>sum+(item.quantity||1),
+0
+);
 
-  </section>
+document.getElementById("cartCount")
+.textContent=count;
 
+renderCart();
 
-  <!-- =========================
-       FEATURES
-  ========================= -->
+}
 
-  <section>
 
-    <div class="section-inner">
+function renderCart(){
 
-      <div class="features reveal">
+const container =
+document.getElementById("cartItems");
 
-        <div class="feature">
+if(!cart.length){
 
-          <div class="feature-icon">
-            ✦
-          </div>
+container.innerHTML=`
 
-          <h3>
-            Style raffiné
-          </h3>
+<div class="empty-cart">
+السلة فارغة حالياً.
+</div>
 
-          <p>
-            Des designs pensés pour un style élégant et moderne.
-          </p>
+`;
 
-        </div>
+document.getElementById("cartTotal")
+.textContent="0 DH";
 
+return;
 
-        <div class="feature">
+}
 
-          <div class="feature-icon">
-            ◇
-          </div>
+let total=0;
 
-          <h3>
-            Choix sélectionné
-          </h3>
+container.innerHTML=
+cart.map((item,index)=>{
 
-          <p>
-            Une collection composée de pièces soigneusement sélectionnées.
-          </p>
+const quantity =
+item.quantity||1;
 
-        </div>
+total+=
+item.price*quantity;
 
+return`
 
-        <div class="feature">
+<div class="cart-item">
 
-          <div class="feature-icon">
-            Z
-          </div>
+<img
+src="${item.image}"
+alt="${item.name}"
+>
 
-          <h3>
-            ZOREVA
-          </h3>
+<div class="cart-item-info">
 
-          <p>
-            Une identité inspirée par l'élégance et la simplicité.
-          </p>
+<h4>
+${item.name}
+</h4>
 
-        </div>
+<p>
+${item.price} DH × ${quantity}
+</p>
 
-      </div>
+</div>
 
-    </div>
+<button
+class="remove-item"
+onclick="removeItem(${index})"
+>
+حذف
+</button>
 
-  </section>
+</div>
 
+`;
 
-  <!-- =========================
-       CONTACT
-  ========================= -->
+}).join("");
 
-  <section class="contact-section" id="contact">
+document.getElementById("cartTotal")
+.textContent=
+`${total} DH`;
 
-    <div class="section-inner">
+}
 
-      <div class="contact-box reveal">
 
-        <h2>
-          Une pièce vous plaît ?
-        </h2>
+function removeItem(index){
 
-        <p>
-          Contactez-nous directement sur WhatsApp pour passer votre commande.
-        </p>
+cart.splice(index,1);
 
-        <a
-          class="whatsapp-btn"
-          href="https://wa.me/212765333754"
-          target="_blank"
-          rel="noopener"
-        >
-          COMMANDER SUR WHATSAPP
-        </a>
+saveCart();
 
-      </div>
+}
 
-    </div>
 
-  </section>
+function openCart(){
 
+document
+.getElementById("cartPanel")
+.classList.add("active");
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
+document
+.getElementById("cartOverlay")
+.classList.add("active");
 
-  <footer>
+document.body.style.overflow="hidden";
 
-    © 2026
-    <strong>ZOREVA JEWELRY</strong>
-    — Tous droits réservés.
+}
 
-  </footer>
 
+function closeCart(){
 
-  <!-- =========================
-       CART
-  ========================= -->
+document
+.getElementById("cartPanel")
+.classList.remove("active");
 
-  <div
-    class="cart-overlay"
-    id="cartOverlay"
-    onclick="closeCart(event)"
-  >
+document
+.getElementById("cartOverlay")
+.classList.remove("active");
 
-    <div
-      class="cart-panel"
-      onclick="event.stopPropagation()"
-    >
+document.body.style.overflow="";
 
-      <div class="cart-head">
+}
 
-        <h3>
-          Votre panier
-        </h3>
 
-        <button
-          class="close-cart"
-          onclick="closeCart()"
-          aria-label="Fermer"
-        >
-          ×
-        </button>
+/* ================= WHATSAPP ================= */
 
-      </div>
+function checkoutWhatsApp(){
 
-      <div id="cartItems"></div>
+if(!cart.length){
 
-      <div class="cart-total">
+alert("السلة فارغة");
 
-        <span>
-          Total
-        </span>
+return;
 
-        <span id="cartTotal">
-          0 DH
-        </span>
+}
 
-      </div>
+let message =
+"السلام عليكم، أريد طلب:%0A%0A";
 
-      <button
-        class="checkout-btn"
-        onclick="checkout()"
-      >
-        COMMANDER SUR WHATSAPP
-      </button>
+let total=0;
 
-    </div>
+cart.forEach(item=>{
 
-  </div>
+const quantity =
+item.quantity||1;
 
+const subtotal =
+item.price*quantity;
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
+total+=subtotal;
 
-  <script>
+message+=
+`• ${item.name} × ${quantity} — ${subtotal} DH%0A`;
 
-    const products = {
+});
 
-      "collier-eclat": {
-        name: "Collier Éclat",
-        price: 119,
-        image: "IMG_20260726_171518.jpg"
-      },
+message+=
+`%0Aالمجموع: ${total} DH`;
 
-      "bague-elegance": {
-        name: "Bague Élégance",
-        price: 119,
-        image: "IMG_20260726_171656.jpg"
-      },
+window.open(
+`https://wa.me/212765333754?text=${message}`,
+"_blank"
+);
 
-      "bracelet-luna": {
-        name: "Bracelet Luna",
-        price: 149,
-        image: "IMG_20260726_171921.jpg"
-      },
+}
 
-      "bague-signature": {
-        name: "Bague Signature",
-        price: 149,
-        image: "IMG_20260726_175331.jpg"
-      },
 
-      "collier-perla": {
-        name: "Collier Perla",
-        price: 149,
-        image: "IMG_20260726_180004.jpg"
-      },
+/* ================= HEADER ================= */
 
-      "bracelet-elegance": {
-        name: "Bracelet Élégance",
-        price: 149,
-        image: "IMG_20260726_180304.jpg"
-      },
+const header =
+document.getElementById("header");
 
-      "bague-royale": {
-        name: "Bague Royale",
-        price: 149,
-        image: "IMG_20260726_180430.jpg"
-      }
+window.addEventListener("scroll",()=>{
 
-    };
+if(window.scrollY>30){
 
+header.classList.add("scrolled");
 
-    let cart =
-      JSON.parse(
-        localStorage.getItem("zorevaCart")
-      ) || [];
+}else{
 
+header.classList.remove("scrolled");
 
-    function saveCart() {
+}
 
-      localStorage.setItem(
-        "zorevaCart",
-        JSON.stringify(cart)
-      );
+});
 
-    }
 
+/* ================= INIT ================= */
 
-    function addToCart(id) {
+updateCart();
 
-      const existing =
-        cart.find(item => item.id === id);
 
-      if (existing) {
+/* ESC */
 
-        existing.quantity++;
+document.addEventListener("keydown",e=>{
 
-      } else {
+if(e.key==="Escape"){
 
-        cart.push({
-          id: id,
-          quantity: 1
-        });
+closeCart();
 
-      }
+}
 
-      saveCart();
-      updateCart();
-      openCart();
+});
 
-    }
-
-
-    function removeFromCart(id) {
-
-      cart =
-        cart.filter(
-          item => item.id !== id
-        );
-
-      saveCart();
-      updateCart();
-
-    }
-
-
-    function updateCart() {
-
-      const count =
-        cart.reduce(
-          (total, item) =>
-            total + item.quantity,
-          0
-        );
-
-      document.getElementById(
-        "cartCount"
-      ).textContent = count;
-
-
-      const container =
-        document.getElementById(
-          "cartItems"
-        );
-
-
-      if (cart.length === 0) {
-
-        container.innerHTML = `
-          <div class="empty-cart">
-            Votre panier est vide.
-          </div>
-        `;
-
-        document.getElementById(
-          "cartTotal"
-        ).textContent = "0 DH";
-
-        return;
-
-      }
-
-
-      let total = 0;
-
-
-      container.innerHTML =
-        cart.map(item => {
-
-          const product =
-            products[item.id];
-
-          total +=
-            product.price *
-            item.quantity;
-
-
-          const image =
-            "https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/"
-            + product.image;
-
-
-          return `
-
-            <div class="cart-item">
-
-              <img
-                src="${image}"
-                alt="${product.name}"
-              >
-
-              <div class="cart-item-info">
-
-                <strong>
-                  ${product.name}
-                </strong>
-
-                <span>
-                  ${product.price} DH × ${item.quantity}
-                </span>
-
-              </div>
-
-              <button
-                class="remove-item"
-                onclick="removeFromCart('${item.id}')"
-              >
-                Supprimer
-              </button>
-
-            </div>
-
-          `;
-
-        }).join("");
-
-
-      document.getElementById(
-        "cartTotal"
-      ).textContent =
-        total + " DH";
-
-    }
-
-
-    function openCart() {
-
-      document
-        .getElementById("cartOverlay")
-        .classList.add("active");
-
-      document.body.classList.add(
-        "no-scroll"
-      );
-
-      updateCart();
-
-    }
-
-
-    function closeCart(event) {
-
-      const overlay =
-        document.getElementById(
-          "cartOverlay"
-        );
-
-      if (
-        !event ||
-        event.target === overlay
-      ) {
-
-        overlay.classList.remove(
-          "active"
-        );
-
-        document.body.classList.remove(
-          "no-scroll"
-        );
-
-      }
-
-    }
-
-
-    function checkout() {
-
-      if (cart.length === 0) {
-
-        alert(
-          "Votre panier est vide."
-        );
-
-        return;
-
-      }
-
-
-      let message =
-        "Bonjour ZOREVA JEWELRY,%0A%0A" +
-        "Je souhaite commander :%0A";
-
-
-      let total = 0;
-
-
-      cart.forEach(item => {
-
-        const product =
-          products[item.id];
-
-        const subtotal =
-          product.price *
-          item.quantity;
-
-        total += subtotal;
-
-
-        message +=
-          "- " +
-          product.name +
-          " × " +
-          item.quantity +
-          " = " +
-          subtotal +
-          " DH%0A";
-
-      });
-
-
-      message +=
-        "%0ATotal : " +
-        total +
-        " DH%0A%0A" +
-        "Merci.";
-
-
-      window.open(
-        "https://wa.me/212765333754?text=" +
-        message,
-        "_blank"
-      );
-
-    }
-
-
-    function openProduct(id) {
-
-      window.open(
-        "product.html?id=" +
-        encodeURIComponent(id),
-        "_blank"
-      );
-
-    }
-
-
-    function scrollToProducts() {
-
-      document
-        .getElementById("products")
-        .scrollIntoView({
-          behavior: "smooth"
-        });
-
-    }
-
-
-    /* =========================
-       HEADER SCROLL
-    ========================= */
-
-    const header =
-      document.getElementById(
-        "siteHeader"
-      );
-
-
-    window.addEventListener(
-      "scroll",
-      () => {
-
-        if (window.scrollY > 30) {
-
-          header.classList.add(
-            "scrolled"
-          );
-
-        } else {
-
-          header.classList.remove(
-            "scrolled"
-          );
-
-        }
-
-      }
-    );
-
-
-    /* =========================
-       SCROLL REVEAL
-    ========================= */
-
-    const revealElements =
-      document.querySelectorAll(
-        ".reveal"
-      );
-
-
-    const revealObserver =
-      new IntersectionObserver(
-        entries => {
-
-          entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-              entry.target.classList.add(
-                "visible"
-              );
-
-              revealObserver.unobserve(
-                entry.target
-              );
-
-            }
-
-          });
-
-        },
-        {
-          threshold: 0.12
-        }
-      );
-
-
-    revealElements.forEach(element => {
-
-      revealObserver.observe(element);
-
-    });
-
-
-    /* =========================
-       ESC CLOSE CART
-    ========================= */
-
-    document.addEventListener(
-      "keydown",
-      event => {
-
-        if (event.key === "Escape") {
-
-          closeCart();
-
-        }
-
-      }
-    );
-
-
-    updateCart();
-
-  </script>
+</script>
 
 </body>
 </html>
