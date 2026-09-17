@@ -214,7 +214,6 @@ main{padding-top:104px}
 .footer-brand{grid-column:auto}
 .whatsapp-float{width:55px;height:55px;right:16px;bottom:16px}
 .cart-panel{width:100%;max-width:100%;border-radius:20px 0 0 20px}
-.side-menu{width:340px;max-width:94%;padding:24px}
 }
 </style>
 </head>
@@ -349,7 +348,7 @@ main{padding-top:104px}
 </div>
 
 <div class="products-toolbar">
-<div class="products-count" id="productsCount">7 produits</div>
+<div class="products-count" id="productsCount">40 produits</div>
 <button class="filter-open" id="filterOpen">Filtrer & Trier</button>
 </div>
 
@@ -485,12 +484,8 @@ const products = [
 {id:10,name:"Bijou 10",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_155931.jpg"},
 {id:11,name:"Bijou 11",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_160641.jpg"},
 {id:12,name:"Bijou 12",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_161253.jpg"},
-{id:13,name:"Bijou 13",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180706.jpg"},
-{id:14,name:"Bijou 14",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_181143.jpg"},
-{id:15,name:"Bijou 15",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_181153.jpg"},
 
 {id:16,name:"Bijou 16",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.02%20%281%29.jpeg"},
-{id:17,name:"Bijou 17",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.02.jpeg"},
 {id:18,name:"Bijou 18",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%281%29.jpeg"},
 {id:19,name:"Bijou 19",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%282%29.jpeg"},
 {id:20,name:"Bijou 20",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%283%29.jpeg"},
@@ -505,9 +500,6 @@ const products = [
 {id:28,name:"Bijou 28",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04.jpeg"},
 
 {id:29,name:"Bijou 29",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%281%29.jpeg"},
-{id:30,name:"Bijou 30",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%282%29.jpeg"},
-{id:31,name:"Bijou 31",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%283%29.jpeg"},
-{id:32,name:"Bijou 32",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%284%29.jpeg"},
 {id:33,name:"Bijou 33",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%285%29.jpeg"},
 {id:34,name:"Bijou 34",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%286%29.jpeg"},
 {id:35,name:"Bijou 35",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%287%29.jpeg"},
@@ -517,7 +509,6 @@ const products = [
 {id:38,name:"Bijou 38",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%281%29.jpeg"},
 {id:39,name:"Bijou 39",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%282%29.jpeg"},
 {id:40,name:"Bijou 40",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%283%29.jpeg"},
-{id:41,name:"Bijou 41",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%284%29.jpeg"},
 {id:42,name:"Bijou 42",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%285%29.jpeg"},
 {id:43,name:"Bijou 43",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%286%29.jpeg"},
 {id:44,name:"Bijou 44",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%287%29.jpeg"},
@@ -525,8 +516,7 @@ const products = [
 {id:46,name:"Bijou 46",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06.jpeg"},
 
 {id:47,name:"Bijou 47",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/images%20%282%29.jpeg"},
-{id:48,name:"Bijou 48",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/images.jpeg"},
-{id:49,name:"Bijou 49",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/img_8614-1.webp"}
+{id:48,name:"Bijou 48",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/images.jpeg"}
 
 ];
 
