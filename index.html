@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -7,83 +6,567 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="ZOREVA Jewelry — Bijoux élégants et modernes. Découvrez notre collection de bagues, bracelets, colliers, montres et boucles d’oreilles.">
 <title>ZOREVA — Jewelry</title>
+
+<!-- FAVICON ZOREVA -->
 <link rel="icon" type="image/svg+xml" href="logo.svg">
 <link rel="shortcut icon" href="logo.svg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root{--black:#111111;--gold:#b9975b;--gold-dark:#92733c;--cream:#f8f6f1;--white:#ffffff;--border:#e6e0d5;--muted:#777}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:#fff;color:var(--black);font-family:'Montserrat',sans-serif;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-button{font-family:inherit}
-img{display:block;max-width:100%}
+:root{
+--black:#111111;
+--gold:#b9975b;
+--gold-dark:#92733c;
+--cream:#f8f6f1;
+--white:#ffffff;
+--border:#e6e0d5;
+--muted:#777;
+}
 
-.announcement-bar{position:fixed;top:0;left:0;width:100%;height:32px;background:#111;color:#fff;overflow:hidden;z-index:2500;display:flex;align-items:center;border-bottom:1px solid rgba(185,151,91,.35)}
-.announcement-track{display:flex;align-items:center;justify-content:center;gap:18px;width:100%;white-space:nowrap;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;animation:announcementFade 1s ease both}
-.announcement-track .separator{color:var(--gold)}
-@keyframes announcementFade{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:translateY(0)}}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-header{position:fixed;top:32px;left:0;width:100%;height:82px;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.06);z-index:1000}
-.header-inner{max-width:1400px;height:100%;margin:auto;padding:0 30px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
-.menu-btn{width:44px;height:44px;border:0;background:none;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:8px}
-.menu-btn span{width:25px;height:1.5px;display:block;background:#111;transition:.3s}
-.menu-btn:hover span{background:var(--gold-dark)}
-.brand{display:flex;align-items:center;justify-content:center;gap:10px}
-.brand img{width:58px;height:58px;object-fit:contain}
-.brand-name{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:600;letter-spacing:3px}
-.header-actions{display:flex;justify-content:flex-end;align-items:center}
-.cart-btn{width:44px;height:44px;border:0;background:none;cursor:pointer;position:relative;display:flex;justify-content:center;align-items:center}
-.cart-svg{width:23px;height:23px;fill:none;stroke:#111;stroke-width:1.5}
-.cart-count{position:absolute;top:1px;right:0;width:17px;height:17px;border-radius:50%;background:var(--gold);color:#fff;display:flex;justify-content:center;align-items:center;font-size:9px;font-weight:600}
+html{
+scroll-behavior:smooth;
+}
 
-.menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,.42);opacity:0;visibility:hidden;transition:.3s;z-index:1900}
-.menu-overlay.active{opacity:1;visibility:visible}
-.side-menu{position:fixed;top:0;left:-390px;width:370px;max-width:92%;height:100vh;background:#fff;padding:28px;z-index:2000;box-shadow:15px 0 40px rgba(0,0,0,.12);transition:.45s ease;overflow-y:auto}
-.side-menu.active{left:0}
-.menu-close{border:0;background:none;font-size:29px;cursor:pointer;margin-bottom:45px}
-.side-menu h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;letter-spacing:3px;margin-bottom:30px}
-.side-menu a{display:block;padding:16px 0;border-bottom:1px solid var(--border);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:.2s}
-.side-menu a:hover{color:var(--gold-dark)}
-.menu-filter{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}
-.menu-filter-title{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:500;margin-bottom:25px}
-.menu-filter-group{margin-bottom:25px}
-.menu-filter-group h4{font-size:9px;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;color:#555}
-.menu-filter-group button{width:100%;height:40px;margin-bottom:7px;border:1px solid var(--border);background:#fff;color:#222;cursor:pointer;text-align:left;padding:0 13px;font-size:10px;transition:.2s}
-.menu-filter-group button:hover,.menu-filter-group button.active{border-color:var(--gold);color:var(--gold-dark);background:#faf9f6}
-.menu-reset-filter{width:100%;height:46px;background:#111;color:#fff;border:0;cursor:pointer;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-top:3px}
+body{
+background:#fff;
+color:var(--black);
+font-family:'Montserrat',sans-serif;
+overflow-x:hidden;
+}
 
-main{padding-top:114px}
-.hero{position:relative;min-height:calc(100vh - 114px);display:flex;align-items:center;overflow:hidden;background:#f5f2eb}
-.hero-image{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.10)),url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=2200&q=90");background-size:cover;background-position:center}
-.hero-content{position:relative;z-index:2;max-width:1400px;width:100%;margin:auto;padding:70px 30px;color:#fff}
-.hero-small{font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:22px;opacity:.9;animation:fadeUp .8s ease both}
-.hero h1{max-width:700px;font-family:'Cormorant Garamond',serif;font-size:clamp(55px,8vw,105px);line-height:.88;font-weight:500;margin-bottom:28px;animation:fadeUp .9s .1s ease both}
-.hero p{max-width:500px;font-size:13px;line-height:2;color:rgba(255,255,255,.85);margin-bottom:35px;animation:fadeUp 1s .2s ease both}
-.hero-button{display:inline-flex;align-items:center;justify-content:center;min-width:190px;height:54px;padding:0 28px;background:#fff;color:#111;font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:.3s;animation:fadeUp 1s .3s ease both}
-.hero-button:hover{background:var(--gold);color:#fff}
+a{
+color:inherit;
+text-decoration:none;
+}
 
-.collections{max-width:1400px;margin:auto;padding:110px 30px}
-.section-heading{text-align:center;margin-bottom:55px}
-.section-heading span{display:block;color:var(--gold-dark);font-size:9px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
-.section-heading h2{font-family:'Cormorant Garamond',serif;font-size:50px;font-weight:500}
-.collections-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.collection-card{position:relative;height:470px;overflow:hidden;background:#eee;cursor:pointer}
-.collection-card img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
-.collection-card:hover img{transform:scale(1.05)}
-.collection-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:35px 15px;text-align:center;background:linear-gradient(to top,rgba(0,0,0,.65),transparent 55%);color:#fff}
-.collection-overlay h3{font-family:'Cormorant Garamond',serif;font-size:31px;font-weight:500;margin-bottom:8px}
-.collection-overlay span{font-size:9px;letter-spacing:2px;text-transform:uppercase}
+button{
+font-family:inherit;
+}
 
-.products-section{background:var(--cream);padding:110px 30px}
-.products-inner{max-width:1400px;margin:auto}
-.products-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:35px}
-.products-count{font-size:10px;color:#888;letter-spacing:1px}
-.filter-open{height:44px;padding:0 22px;border:1px solid #ccc;background:#fff;cursor:pointer;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;transition:.3s}
-.filter-open:hover{border-color:var(--gold);color:var(--gold-dark)}
+img{
+display:block;
+max-width:100%;
+}
+
+/* =========================
+   ANNOUNCEMENT BAR
+========================= */
+
+.announcement-bar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:32px;
+background:#111;
+color:#fff;
+overflow:hidden;
+z-index:2500;
+display:flex;
+align-items:center;
+border-bottom:1px solid rgba(185,151,91,.35);
+}
+
+.announcement-track{
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+width:100%;
+height:100%;
+font-size:10px;
+letter-spacing:1.3px;
+text-transform:uppercase;
+}
+
+.announcement-item{
+display:flex;
+align-items:center;
+justify-content:center;
+height:100%;
+white-space:nowrap;
+}
+
+.announcement-item:first-child{
+border-right:1px solid rgba(185,151,91,.45);
+}
+
+@keyframes announcementFade{
+from{
+opacity:0;
+transform:translateY(-7px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.announcement-track{
+animation:announcementFade 1s ease both;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+position:fixed;
+top:32px;
+left:0;
+width:100%;
+height:82px;
+background:rgba(255,255,255,.96);
+backdrop-filter:blur(16px);
+border-bottom:1px solid rgba(0,0,0,.06);
+z-index:1000;
+}
+
+.header-inner{
+max-width:1400px;
+height:100%;
+margin:auto;
+padding:0 30px;
+display:grid;
+grid-template-columns:1fr auto 1fr;
+align-items:center;
+}
+
+.menu-btn{
+width:44px;
+height:44px;
+border:0;
+background:none;
+cursor:pointer;
+display:flex;
+flex-direction:column;
+justify-content:center;
+gap:6px;
+padding:8px;
+}
+
+.menu-btn span{
+width:25px;
+height:1.5px;
+display:block;
+background:#111;
+transition:.3s;
+}
+
+.menu-btn:hover span{
+background:var(--gold-dark);
+}
+
+.brand{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+}
+
+.brand img{
+width:58px;
+height:58px;
+object-fit:contain;
+}
+
+.brand-name{
+font-family:'Cormorant Garamond',serif;
+font-size:25px;
+font-weight:600;
+letter-spacing:3px;
+}
+
+.header-actions{
+display:flex;
+justify-content:flex-end;
+align-items:center;
+}
+
+.cart-btn{
+width:44px;
+height:44px;
+border:0;
+background:none;
+cursor:pointer;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.cart-svg{
+width:23px;
+height:23px;
+fill:none;
+stroke:#111;
+stroke-width:1.5;
+}
+
+.cart-count{
+position:absolute;
+top:1px;
+right:0;
+width:17px;
+height:17px;
+border-radius:50%;
+background:var(--gold);
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:9px;
+font-weight:600;
+}
+
+/* =========================
+   SIDE MENU
+========================= */
+
+.menu-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.42);
+opacity:0;
+visibility:hidden;
+transition:.3s;
+z-index:1900;
+}
+
+.menu-overlay.active{
+opacity:1;
+visibility:visible;
+}
+
+.side-menu{
+position:fixed;
+top:0;
+left:-390px;
+width:370px;
+max-width:92%;
+height:100vh;
+background:#fff;
+padding:28px;
+z-index:2000;
+box-shadow:15px 0 40px rgba(0,0,0,.12);
+transition:.45s ease;
+overflow-y:auto;
+}
+
+.side-menu.active{
+left:0;
+}
+
+.menu-close{
+border:0;
+background:none;
+font-size:29px;
+cursor:pointer;
+margin-bottom:45px;
+}
+
+.side-menu h3{
+font-family:'Cormorant Garamond',serif;
+font-size:30px;
+font-weight:500;
+letter-spacing:3px;
+margin-bottom:30px;
+}
+
+.side-menu a{
+display:block;
+padding:16px 0;
+border-bottom:1px solid var(--border);
+font-size:11px;
+letter-spacing:1.5px;
+text-transform:uppercase;
+transition:.2s;
+}
+
+.side-menu a:hover{
+color:var(--gold-dark);
+}
+
+.menu-filter{
+margin-top:30px;
+padding-top:28px;
+border-top:1px solid var(--border);
+}
+
+.menu-filter-title{
+font-family:'Cormorant Garamond',serif;
+font-size:27px;
+font-weight:500;
+margin-bottom:25px;
+}
+
+.menu-filter-group{
+margin-bottom:25px;
+}
+
+.menu-filter-group h4{
+font-size:9px;
+text-transform:uppercase;
+letter-spacing:2px;
+margin-bottom:12px;
+color:#555;
+}
+
+.menu-filter-group button{
+width:100%;
+height:40px;
+margin-bottom:7px;
+border:1px solid var(--border);
+background:#fff;
+color:#222;
+cursor:pointer;
+text-align:left;
+padding:0 13px;
+font-size:10px;
+transition:.2s;
+}
+
+.menu-filter-group button:hover,
+.menu-filter-group button.active{
+border-color:var(--gold);
+color:var(--gold-dark);
+background:#faf9f6;
+}
+
+.menu-reset-filter{
+width:100%;
+height:46px;
+background:#111;
+color:#fff;
+border:0;
+cursor:pointer;
+font-size:9px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main{
+padding-top:114px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+position:relative;
+min-height:calc(100vh - 114px);
+display:flex;
+align-items:center;
+overflow:hidden;
+background:#f5f2eb;
+}
+
+.hero-image{
+position:absolute;
+inset:0;
+background-image:
+linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.10)),
+url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=2200&q=90");
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:1400px;
+width:100%;
+margin:auto;
+padding:70px 30px;
+color:#fff;
+}
+
+.hero-small{
+font-size:10px;
+letter-spacing:4px;
+text-transform:uppercase;
+margin-bottom:22px;
+opacity:.9;
+animation:fadeUp .8s ease both;
+}
+
+.hero h1{
+max-width:700px;
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(55px,8vw,105px);
+line-height:.88;
+font-weight:500;
+margin-bottom:28px;
+animation:fadeUp .9s .1s ease both;
+}
+
+.hero p{
+max-width:500px;
+font-size:13px;
+line-height:2;
+color:rgba(255,255,255,.85);
+margin-bottom:35px;
+animation:fadeUp 1s .2s ease both;
+}
+
+.hero-button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+min-width:190px;
+height:54px;
+padding:0 28px;
+background:#fff;
+color:#111;
+font-size:10px;
+letter-spacing:2px;
+text-transform:uppercase;
+transition:.3s;
+animation:fadeUp 1s .3s ease both;
+}
+
+.hero-button:hover{
+background:var(--gold);
+color:#fff;
+}
+
+/* =========================
+   COLLECTIONS
+========================= */
+
+.collections{
+max-width:1400px;
+margin:auto;
+padding:110px 30px;
+}
+
+.section-heading{
+text-align:center;
+margin-bottom:55px;
+}
+
+.section-heading span{
+display:block;
+color:var(--gold-dark);
+font-size:9px;
+letter-spacing:3px;
+text-transform:uppercase;
+margin-bottom:12px;
+}
+
+.section-heading h2{
+font-family:'Cormorant Garamond',serif;
+font-size:50px;
+font-weight:500;
+}
+
+.collections-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.collection-card{
+position:relative;
+height:470px;
+overflow:hidden;
+background:#eee;
+cursor:pointer;
+}
+
+.collection-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform .8s ease;
+}
+
+.collection-card:hover img{
+transform:scale(1.05);
+}
+
+.collection-overlay{
+position:absolute;
+inset:0;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:flex-end;
+padding:35px 15px;
+text-align:center;
+background:linear-gradient(to top,rgba(0,0,0,.65),transparent 55%);
+color:#fff;
+}
+
+.collection-overlay h3{
+font-family:'Cormorant Garamond',serif;
+font-size:31px;
+font-weight:500;
+margin-bottom:8px;
+}
+
+.collection-overlay span{
+font-size:9px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products-section{
+background:var(--cream);
+padding:110px 30px;
+}
+
+.products-inner{
+max-width:1400px;
+margin:auto;
+}
+
+.products-toolbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:35px;
+}
+
+.products-count{
+font-size:10px;
+color:#888;
+letter-spacing:1px;
+}
+
+.filter-open{
+height:44px;
+padding:0 22px;
+border:1px solid #ccc;
+background:#fff;
+cursor:pointer;
+font-size:10px;
+letter-spacing:1.5px;
+text-transform:uppercase;
+transition:.3s;
+}
+
+.filter-open:hover{
+border-color:var(--gold);
+color:var(--gold-dark);
+}
 
 .products-grid{
 display:grid;
@@ -186,160 +669,857 @@ flex-shrink:0;
 background:var(--gold-dark);
 }
 
-.filter-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:3000;opacity:0;visibility:hidden;transition:.3s}
-.filter-overlay.active{opacity:1;visibility:visible}
-.filter-panel{position:fixed;top:0;left:-390px;width:370px;max-width:92%;height:100vh;background:#fff;z-index:3100;padding:28px;box-shadow:15px 0 40px rgba(0,0,0,.12);transition:.45s ease}
-.filter-panel.active{left:0}
-.filter-header{display:flex;justify-content:space-between;align-items:center;padding-bottom:25px;border-bottom:1px solid var(--border);margin-bottom:30px}
-.filter-header h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500}
-.filter-close{width:36px;height:36px;border:1px solid var(--border);border-radius:50%;background:#fff;cursor:pointer;font-size:20px}
-.filter-group{margin-bottom:30px}
-.filter-group h4{font-size:10px;text-transform:uppercase;letter-spacing:2px;margin-bottom:15px}
-.filter-group button{width:100%;height:43px;margin-bottom:8px;border:1px solid var(--border);background:#fff;cursor:pointer;text-align:left;padding:0 14px;font-size:11px;transition:.2s}
-.filter-group button:hover,.filter-group button.active{border-color:var(--gold);color:var(--gold-dark)}
-.reset-filter{width:100%;height:50px;background:#111;color:#fff;border:0;cursor:pointer;font-size:10px;letter-spacing:2px;text-transform:uppercase}
+/* =========================
+   FILTER
+========================= */
 
-.about{max-width:1400px;margin:auto;padding:120px 30px;display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
-.about-image{background:#eee;overflow:hidden}
-.about-image img{width:100%;aspect-ratio:1 / 1.08;object-fit:cover}
-.about-content span{color:var(--gold-dark);font-size:9px;letter-spacing:3px;text-transform:uppercase}
-.about-content h2{font-family:'Cormorant Garamond',serif;font-size:58px;line-height:1;font-weight:500;margin:18px 0 25px}
-.about-content p{color:#666;font-size:13px;line-height:2;max-width:500px}
+.filter-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.4);
+z-index:3000;
+opacity:0;
+visibility:hidden;
+transition:.3s;
+}
 
-.contact{background:var(--cream);padding:100px 30px;text-align:center}
-.contact h2{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:500;margin-bottom:15px}
-.contact p{color:#777;font-size:12px;margin-bottom:30px}
-.contact-button{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 30px;background:#111;color:#fff;font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:.3s}
-.contact-button:hover{background:var(--gold-dark)}
+.filter-overlay.active{
+opacity:1;
+visibility:visible;
+}
 
-.whatsapp-float{position:fixed;right:24px;bottom:24px;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;justify-content:center;align-items:center;z-index:2500;box-shadow:0 8px 25px rgba(0,0,0,.18);transition:.3s}
-.whatsapp-float:hover{transform:translateY(-4px) scale(1.04)}
-.whatsapp-float svg{width:31px;height:31px;fill:#fff}
+.filter-panel{
+position:fixed;
+top:0;
+left:-390px;
+width:370px;
+max-width:92%;
+height:100vh;
+background:#fff;
+z-index:3100;
+padding:28px;
+box-shadow:15px 0 40px rgba(0,0,0,.12);
+transition:.45s ease;
+}
 
-.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:3000;opacity:0;visibility:hidden;transition:.3s}
-.cart-overlay.active{opacity:1;visibility:visible}
-.cart-panel{position:fixed;top:0;right:-450px;width:420px;max-width:94%;height:100vh;background:#fff;z-index:3100;transition:.45s ease;display:flex;flex-direction:column;border-radius:22px 0 0 22px;box-shadow:-15px 0 45px rgba(0,0,0,.13)}
-.cart-panel.active{right:0}
-.cart-header{padding:25px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-.cart-header h2{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500}
-.cart-close{width:36px;height:36px;border:1px solid var(--border);border-radius:50%;background:#fff;cursor:pointer;font-size:20px}
-.cart-items{flex:1;overflow-y:auto;padding:10px 22px}
-.cart-empty{text-align:center;color:#888;font-size:12px;padding:70px 20px}
-.cart-item{display:grid;grid-template-columns:72px 1fr 30px;gap:14px;padding:18px 0;border-bottom:1px solid var(--border);align-items:center}
-.cart-item img{width:72px;height:72px;object-fit:cover;background:#f7f5f0;border-radius:4px}
-.cart-item h4{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;margin-bottom:5px}
-.cart-item p{font-size:10px;color:#777}
-.remove-item{width:28px;height:28px;border:0;border-radius:50%;background:#f5f3ef;cursor:pointer;font-size:16px;color:#777}
-.cart-footer{padding:20px 22px 24px;border-top:1px solid var(--border);background:#fff;border-radius:0 0 0 22px}
-.cart-total{display:flex;justify-content:space-between;margin-bottom:17px;font-size:13px}
-.checkout-btn{width:100%;height:52px;border:0;background:#111;color:#fff;cursor:pointer;font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:.3s}
-.checkout-btn:hover{background:var(--gold-dark)}
+.filter-panel.active{
+left:0;
+}
 
-footer{background:#111;color:#fff;padding:70px 30px 30px}
-.footer-inner{max-width:1400px;margin:auto}
-.footer-main{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:70px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,.15)}
-.footer-brand img{width:75px;height:75px;object-fit:contain;margin-bottom:20px}
-.footer-brand p{max-width:350px;color:#aaa;font-size:11px;line-height:2}
-.footer-column h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;margin-bottom:20px}
-.footer-column a{display:block;color:#aaa;font-size:10px;margin-bottom:13px;transition:.2s}
-.footer-column a:hover{color:#fff}
-.copyright{padding-top:25px;text-align:center;color:#777;font-size:9px;letter-spacing:1px}
+.filter-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding-bottom:25px;
+border-bottom:1px solid var(--border);
+margin-bottom:30px;
+}
 
-@keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+.filter-header h3{
+font-family:'Cormorant Garamond',serif;
+font-size:30px;
+font-weight:500;
+}
+
+.filter-close{
+width:36px;
+height:36px;
+border:1px solid var(--border);
+border-radius:50%;
+background:#fff;
+cursor:pointer;
+font-size:20px;
+}
+
+.filter-group{
+margin-bottom:30px;
+}
+
+.filter-group h4{
+font-size:10px;
+text-transform:uppercase;
+letter-spacing:2px;
+margin-bottom:15px;
+}
+
+.filter-group button{
+width:100%;
+height:43px;
+margin-bottom:8px;
+border:1px solid var(--border);
+background:#fff;
+cursor:pointer;
+text-align:left;
+padding:0 14px;
+font-size:11px;
+transition:.2s;
+}
+
+.filter-group button:hover,
+.filter-group button.active{
+border-color:var(--gold);
+color:var(--gold-dark);
+}
+
+.reset-filter{
+width:100%;
+height:50px;
+background:#111;
+color:#fff;
+border:0;
+cursor:pointer;
+font-size:10px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+max-width:1400px;
+margin:auto;
+padding:120px 30px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:90px;
+align-items:center;
+}
+
+.about-image{
+background:#eee;
+overflow:hidden;
+}
+
+.about-image img{
+width:100%;
+aspect-ratio:1 / 1.08;
+object-fit:cover;
+}
+
+.about-content span{
+color:var(--gold-dark);
+font-size:9px;
+letter-spacing:3px;
+text-transform:uppercase;
+}
+
+.about-content h2{
+font-family:'Cormorant Garamond',serif;
+font-size:58px;
+line-height:1;
+font-weight:500;
+margin:18px 0 25px;
+}
+
+.about-content p{
+color:#666;
+font-size:13px;
+line-height:2;
+max-width:500px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+background:var(--cream);
+padding:100px 30px;
+text-align:center;
+}
+
+.contact h2{
+font-family:'Cormorant Garamond',serif;
+font-size:52px;
+font-weight:500;
+margin-bottom:15px;
+}
+
+.contact p{
+color:#777;
+font-size:12px;
+margin-bottom:30px;
+}
+
+.contact-button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+height:52px;
+padding:0 30px;
+background:#111;
+color:#fff;
+font-size:10px;
+letter-spacing:2px;
+text-transform:uppercase;
+transition:.3s;
+}
+
+.contact-button:hover{
+background:var(--gold-dark);
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp-float{
+position:fixed;
+right:24px;
+bottom:24px;
+width:58px;
+height:58px;
+border-radius:50%;
+background:#25D366;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:2500;
+box-shadow:0 8px 25px rgba(0,0,0,.18);
+transition:.3s;
+}
+
+.whatsapp-float:hover{
+transform:translateY(-4px) scale(1.04);
+}
+
+.whatsapp-float svg{
+width:31px;
+height:31px;
+fill:#fff;
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.45);
+z-index:3000;
+opacity:0;
+visibility:hidden;
+transition:.3s;
+}
+
+.cart-overlay.active{
+opacity:1;
+visibility:visible;
+}
+
+.cart-panel{
+position:fixed;
+top:0;
+right:-450px;
+width:420px;
+max-width:94%;
+height:100vh;
+background:#fff;
+z-index:3100;
+transition:.45s ease;
+display:flex;
+flex-direction:column;
+border-radius:22px 0 0 22px;
+box-shadow:-15px 0 45px rgba(0,0,0,.13);
+}
+
+.cart-panel.active{
+right:0;
+}
+
+.cart-header{
+padding:25px;
+border-bottom:1px solid var(--border);
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.cart-header h2{
+font-family:'Cormorant Garamond',serif;
+font-size:30px;
+font-weight:500;
+}
+
+.cart-close{
+width:36px;
+height:36px;
+border:1px solid var(--border);
+border-radius:50%;
+background:#fff;
+cursor:pointer;
+font-size:20px;
+}
+
+.cart-items{
+flex:1;
+overflow-y:auto;
+padding:10px 22px;
+}
+
+.cart-empty{
+text-align:center;
+color:#888;
+font-size:12px;
+padding:70px 20px;
+}
+
+.cart-item{
+display:grid;
+grid-template-columns:72px 1fr 30px;
+gap:14px;
+padding:18px 0;
+border-bottom:1px solid var(--border);
+align-items:center;
+}
+
+.cart-item img{
+width:72px;
+height:72px;
+object-fit:cover;
+background:#f7f5f0;
+border-radius:4px;
+}
+
+.cart-item h4{
+font-family:'Cormorant Garamond',serif;
+font-size:19px;
+font-weight:500;
+margin-bottom:5px;
+}
+
+.cart-item p{
+font-size:10px;
+color:#777;
+}
+
+.remove-item{
+width:28px;
+height:28px;
+border:0;
+border-radius:50%;
+background:#f5f3ef;
+cursor:pointer;
+font-size:16px;
+color:#777;
+}
+
+.cart-footer{
+padding:20px 22px 24px;
+border-top:1px solid var(--border);
+background:#fff;
+border-radius:0 0 0 22px;
+}
+
+.cart-total{
+display:flex;
+justify-content:space-between;
+margin-bottom:17px;
+font-size:13px;
+}
+
+.checkout-btn{
+width:100%;
+height:52px;
+border:0;
+background:#111;
+color:#fff;
+cursor:pointer;
+font-size:10px;
+letter-spacing:2px;
+text-transform:uppercase;
+transition:.3s;
+}
+
+.checkout-btn:hover{
+background:var(--gold-dark);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+background:#111;
+color:#fff;
+padding:70px 30px 30px;
+}
+
+.footer-inner{
+max-width:1400px;
+margin:auto;
+}
+
+.footer-main{
+display:grid;
+grid-template-columns:1.4fr 1fr 1fr;
+gap:70px;
+padding-bottom:60px;
+border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.footer-brand img{
+width:75px;
+height:75px;
+object-fit:contain;
+margin-bottom:20px;
+}
+
+.footer-brand p{
+max-width:350px;
+color:#aaa;
+font-size:11px;
+line-height:2;
+}
+
+.footer-column h3{
+font-family:'Cormorant Garamond',serif;
+font-size:24px;
+font-weight:500;
+margin-bottom:20px;
+}
+
+.footer-column a{
+display:block;
+color:#aaa;
+font-size:10px;
+margin-bottom:13px;
+transition:.2s;
+}
+
+.footer-column a:hover{
+color:#fff;
+}
+
+.copyright{
+padding-top:25px;
+text-align:center;
+color:#777;
+font-size:9px;
+letter-spacing:1px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(25px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* =========================
+   TABLET
+========================= */
 
 @media(max-width:1100px){
-.collections-grid{grid-template-columns:repeat(3,1fr)}
-.collection-card{height:430px}
-.products-grid{grid-template-columns:repeat(3,1fr)}
-.about{gap:50px}
+
+.collections-grid{
+grid-template-columns:repeat(3,1fr);
 }
+
+.collection-card{
+height:430px;
+}
+
+.products-grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+.about{
+gap:50px;
+}
+
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:800px){
-header{top:32px;height:72px}
-main{padding-top:104px}
-.announcement-bar{height:32px}
-.announcement-track{justify-content:flex-start;width:max-content;padding-left:18px;gap:15px}
-.header-inner{padding:0 16px}
-.brand img{width:50px;height:50px}
-.brand-name{font-size:21px;letter-spacing:2px}
-.hero{min-height:calc(100vh - 104px)}
-.hero-content{padding:60px 20px}
-.collections{padding:80px 16px}
-.collections-grid{grid-template-columns:repeat(2,1fr);gap:12px}
-.collection-card{height:330px}
-.collection-overlay{padding:25px 8px}
-.collection-overlay h3{font-size:25px}
-.collection-overlay span{font-size:8px}
-.products-section{padding:80px 16px}
-.products-grid{grid-template-columns:repeat(2,1fr);gap:12px}
-.quick-add{opacity:1;transform:none;height:46px}
-.product-info{min-height:105px;padding:13px 10px 12px}
-.product-info h3{font-size:19px}
-.about{padding:80px 16px;grid-template-columns:1fr;gap:40px}
-.contact{padding:80px 20px}
-.footer-main{grid-template-columns:1fr 1fr;gap:40px}
-.footer-brand{grid-column:1 / -1}
+
+.announcement-bar{
+height:32px;
 }
 
+.announcement-track{
+grid-template-columns:1fr 1fr;
+width:100%;
+height:32px;
+font-size:9px;
+letter-spacing:1px;
+}
+
+.announcement-item{
+width:100%;
+overflow:hidden;
+text-overflow:ellipsis;
+padding:0 5px;
+}
+
+header{
+top:32px;
+height:72px;
+}
+
+main{
+padding-top:104px;
+}
+
+.header-inner{
+padding:0 16px;
+}
+
+.brand img{
+width:50px;
+height:50px;
+}
+
+.brand-name{
+font-size:21px;
+letter-spacing:2px;
+}
+
+.hero{
+min-height:calc(100vh - 104px);
+}
+
+.hero-content{
+padding:60px 20px;
+}
+
+.collections{
+padding:80px 16px;
+}
+
+.collections-grid{
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.collection-card{
+height:330px;
+}
+
+.collection-overlay{
+padding:25px 8px;
+}
+
+.collection-overlay h3{
+font-size:25px;
+}
+
+.collection-overlay span{
+font-size:8px;
+}
+
+.products-section{
+padding:80px 16px;
+}
+
+.products-grid{
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.quick-add{
+opacity:1;
+transform:none;
+height:46px;
+}
+
+.product-info{
+min-height:105px;
+padding:13px 10px 12px;
+}
+
+.product-info h3{
+font-size:19px;
+}
+
+.about{
+padding:80px 16px;
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.contact{
+padding:80px 20px;
+}
+
+.footer-main{
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.footer-brand{
+grid-column:1 / -1;
+}
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
 @media(max-width:600px){
-.announcement-track{font-size:13px;letter-spacing:1.2px}
-.brand{gap:7px}
-.brand img{width:46px;height:46px}
-.brand-name{font-size:19px;letter-spacing:1.5px}
-.hero h1{font-size:58px}
-.hero p{font-size:12px}
-.section-heading h2{font-size:42px}
-.collections-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-.collection-card{height:280px}
-.collection-overlay{padding:20px 5px}
-.collection-overlay h3{font-size:22px}
-.collection-overlay span{font-size:7px;letter-spacing:1.5px}
-.products-toolbar{margin-bottom:25px}
-.products-grid{grid-template-columns:1fr 1fr}
-.product-info{padding:13px 10px 12px}
-.product-info h3{font-size:19px}
-.product-category{font-size:8px}
-.product-price{font-size:11px}
-.about-content h2{font-size:48px}
-.footer-main{grid-template-columns:1fr}
-.footer-brand{grid-column:auto}
-.whatsapp-float{width:55px;height:55px;right:16px;bottom:16px}
-.cart-panel{width:100%;max-width:100%;border-radius:20px 0 0 20px}
+
+.announcement-bar{
+height:34px;
+}
+
+.announcement-track{
+height:34px;
+font-size:8.5px;
+letter-spacing:.8px;
+}
+
+.announcement-item{
+padding:0 3px;
+}
+
+.brand{
+gap:7px;
+}
+
+.brand img{
+width:46px;
+height:46px;
+}
+
+.brand-name{
+font-size:19px;
+letter-spacing:1.5px;
+}
+
+.hero h1{
+font-size:58px;
+}
+
+.hero p{
+font-size:12px;
+}
+
+.section-heading h2{
+font-size:42px;
+}
+
+.collections-grid{
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.collection-card{
+height:280px;
+}
+
+.collection-overlay{
+padding:20px 5px;
+}
+
+.collection-overlay h3{
+font-size:22px;
+}
+
+.collection-overlay span{
+font-size:7px;
+letter-spacing:1.5px;
+}
+
+.products-toolbar{
+margin-bottom:25px;
+}
+
+.products-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.product-info{
+padding:13px 10px 12px;
+}
+
+.product-info h3{
+font-size:19px;
+}
+
+.product-category{
+font-size:8px;
+}
+
+.product-price{
+font-size:11px;
+}
+
+.about-content h2{
+font-size:48px;
+}
+
+.footer-main{
+grid-template-columns:1fr;
+}
+
+.footer-brand{
+grid-column:auto;
+}
+
+.whatsapp-float{
+width:55px;
+height:55px;
+right:16px;
+bottom:16px;
+}
+
+.cart-panel{
+width:100%;
+max-width:100%;
+border-radius:20px 0 0 20px;
+}
+
+}
+
+/* =========================
+   EXTRA SMALL PHONES
+========================= */
+
+@media(max-width:380px){
+
+.announcement-track{
+font-size:7.5px;
+letter-spacing:.5px;
+}
+
+.announcement-item{
+padding:0 2px;
+}
+
+.brand img{
+width:42px;
+height:42px;
+}
+
+.brand-name{
+font-size:17px;
+}
+
+.header-inner{
+padding:0 10px;
+}
+
+.menu-btn{
+width:40px;
+}
+
+.cart-btn{
+width:40px;
+}
+
+.products-grid{
+gap:8px;
+}
+
+.product-info h3{
+font-size:17px;
+}
+
+.quick-add{
+font-size:8px;
+letter-spacing:1px;
+}
+
+}
+
+/* =========================
+   RESET LIST STYLES
+========================= */
+
+ul,
+ol,
+li{
+list-style:none;
 }
 </style>
 </head>
 
 <body>
 
+<!-- =========================
+     ANNOUNCEMENT BAR
+========================= -->
+
 <div class="announcement-bar">
 <div class="announcement-track">
-<span>Livraison gratuite</span><span class="separator">•</span>
-<span>Livraison partout au Maroc</span><span class="separator">•</span>
-<span>Bijoux en acier inoxydable</span><span class="separator">•</span>
+
+<div class="announcement-item">
+<span>Livraison gratuite</span>
+</div>
+
+<div class="announcement-item">
+<span>Acier inoxydable</span>
+</div>
+
 </div>
 </div>
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
+
 <div class="header-inner">
-<button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
-<a href="index.html" class="brand"><img src="logo.svg" alt="ZOREVA"><span class="brand-name">ZOREVA</span></a>
+
+<button class="menu-btn" id="menuBtn" aria-label="Menu">
+<span></span>
+<span></span>
+<span></span>
+</button>
+
+<a href="index.html" class="brand">
+<img src="logo.svg" alt="ZOREVA">
+<span class="brand-name">ZOREVA</span>
+</a>
+
 <div class="header-actions">
+
 <button class="cart-btn" id="cartBtn" aria-label="Panier">
+
 <svg class="cart-svg" viewBox="0 0 24 24">
 <path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 7H6"/>
-<circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/>
+<circle cx="10" cy="20" r="1"/>
+<circle cx="18" cy="20" r="1"/>
 </svg>
+
 <span class="cart-count" id="cartCount">0</span>
+
 </button>
+
 </div>
+
 </div>
+
 </header>
 
 <div class="menu-overlay" id="menuOverlay"></div>
 
+<!-- =========================
+     SIDE MENU
+========================= -->
+
 <aside class="side-menu" id="sideMenu">
+
 <button class="menu-close" id="menuClose">×</button>
+
 <h3>ZOREVA</h3>
+
 <a href="#home">Accueil</a>
 <a href="#collections">Collections</a>
 <a href="#products">Produits</a>
@@ -347,215 +1527,537 @@ main{padding-top:104px}
 <a href="#contact">Contact</a>
 
 <div class="menu-filter">
-<div class="menu-filter-title">Filtrer & Trier</div>
+
+<div class="menu-filter-title">
+Filtrer & Trier
+</div>
 
 <div class="menu-filter-group">
+
 <h4>Catégorie</h4>
-<button data-menu-category="all" class="menu-category-filter active">Tous les produits</button>
-<button data-menu-category="Bagues" class="menu-category-filter">Bagues</button>
-<button data-menu-category="Bracelets" class="menu-category-filter">Bracelets</button>
-<button data-menu-category="Colliers" class="menu-category-filter">Colliers</button>
-<button data-menu-category="Montres" class="menu-category-filter">Montres</button>
-<button data-menu-category="Boucles" class="menu-category-filter">Boucles d’oreilles</button>
-<button data-menu-category="Packs" class="menu-category-filter">Packs</button>
+
+<button data-menu-category="all" class="menu-category-filter active">
+Tous les produits
+</button>
+
+<button data-menu-category="Bagues" class="menu-category-filter">
+Bagues
+</button>
+
+<button data-menu-category="Bracelets" class="menu-category-filter">
+Bracelets
+</button>
+
+<button data-menu-category="Colliers" class="menu-category-filter">
+Colliers
+</button>
+
+<button data-menu-category="Montres" class="menu-category-filter">
+Montres
+</button>
+
+<button data-menu-category="Boucles" class="menu-category-filter">
+Boucles d’oreilles
+</button>
+
+<button data-menu-category="Packs" class="menu-category-filter">
+Packs
+</button>
+
 </div>
 
 <div class="menu-filter-group">
+
 <h4>Prix</h4>
-<button data-menu-price="all" class="menu-price-filter active">Tous les prix</button>
-<button data-menu-price="under120" class="menu-price-filter">Moins de 120 DH</button>
-<button data-menu-price="149" class="menu-price-filter">149 DH</button>
+
+<button data-menu-price="all" class="menu-price-filter active">
+Tous les prix
+</button>
+
+<button data-menu-price="under120" class="menu-price-filter">
+Moins de 120 DH
+</button>
+
+<button data-menu-price="149" class="menu-price-filter">
+149 DH
+</button>
+
 </div>
 
 <div class="menu-filter-group">
+
 <h4>Trier par</h4>
-<button data-menu-sort="default" class="menu-sort-filter active">Recommandés</button>
-<button data-menu-sort="low" class="menu-sort-filter">Prix croissant</button>
-<button data-menu-sort="high" class="menu-sort-filter">Prix décroissant</button>
+
+<button data-menu-sort="default" class="menu-sort-filter active">
+Recommandés
+</button>
+
+<button data-menu-sort="low" class="menu-sort-filter">
+Prix croissant
+</button>
+
+<button data-menu-sort="high" class="menu-sort-filter">
+Prix décroissant
+</button>
+
 </div>
 
-<button class="menu-reset-filter" id="menuResetFilter">Réinitialiser</button>
+<button class="menu-reset-filter" id="menuResetFilter">
+Réinitialiser
+</button>
+
 </div>
+
 </aside>
 
 <main>
 
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero" id="home">
+
 <div class="hero-image"></div>
+
 <div class="hero-content">
-<div class="hero-small">Jewelry Collection</div>
-<h1>L'élégance<br>dans chaque<br>détail.</h1>
-<p>Découvrez une sélection de bijoux modernes, élégants et intemporels pensés pour accompagner chaque style.</p>
-<a href="#products" class="hero-button">Découvrir la collection</a>
+
+<div class="hero-small">
+Jewelry Collection
 </div>
+
+<h1>
+L'élégance<br>
+dans chaque<br>
+détail.
+</h1>
+
+<p>
+Découvrez une sélection de bijoux modernes, élégants et intemporels pensés pour accompagner chaque style.
+</p>
+
+<a href="#products" class="hero-button">
+Découvrir la collection
+</a>
+
+</div>
+
 </section>
 
+<!-- =========================
+     COLLECTIONS
+========================= -->
+
 <section class="collections" id="collections">
+
 <div class="section-heading">
-<span>Nos collections</span>
-<h2>Choisissez votre style</h2>
+
+<span>
+Nos collections
+</span>
+
+<h2>
+Choisissez votre style
+</h2>
+
 </div>
 
 <div class="collections-grid">
 
 <a href="#products" class="collection-card" data-collection="Bagues">
+
 <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1000&q=85" alt="Bagues">
-<div class="collection-overlay"><h3>Bagues</h3><span>Découvrir</span></div>
+
+<div class="collection-overlay">
+<h3>Bagues</h3>
+<span>Découvrir</span>
+</div>
+
 </a>
 
 <a href="#products" class="collection-card" data-collection="Bracelets">
+
 <img src="https://images.unsplash.com/photo-1668365179846-3333fe14f552?auto=format&fit=crop&w=1000&q=85" alt="Bracelets">
-<div class="collection-overlay"><h3>Bracelets</h3><span>Découvrir</span></div>
+
+<div class="collection-overlay">
+<h3>Bracelets</h3>
+<span>Découvrir</span>
+</div>
+
 </a>
 
 <a href="#products" class="collection-card" data-collection="Colliers">
+
 <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85" alt="Colliers">
-<div class="collection-overlay"><h3>Colliers</h3><span>Découvrir</span></div>
+
+<div class="collection-overlay">
+<h3>Colliers</h3>
+<span>Découvrir</span>
+</div>
+
 </a>
 
 <a href="#products" class="collection-card" data-collection="Montres">
+
 <img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=1000&q=85" alt="Montre">
-<div class="collection-overlay"><h3>Montres</h3><span>Découvrir</span></div>
+
+<div class="collection-overlay">
+<h3>Montres</h3>
+<span>Découvrir</span>
+</div>
+
 </a>
 
 <a href="#products" class="collection-card" data-collection="Boucles">
+
 <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1000&q=85" alt="Boucles d’oreilles">
-<div class="collection-overlay"><h3>Boucles d’oreilles</h3><span>Découvrir</span></div>
+
+<div class="collection-overlay">
+<h3>Boucles d’oreilles</h3>
+<span>Découvrir</span>
+</div>
+
 </a>
 
 <a href="#products" class="collection-card" data-collection="Packs">
+
 <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1000&q=85" alt="Packs bijoux">
-<div class="collection-overlay"><h3>Packs</h3><span>Découvrir</span></div>
+
+<div class="collection-overlay">
+<h3>Packs</h3>
+<span>Découvrir</span>
+</div>
+
 </a>
 
 </div>
+
 </section>
 
+<!-- =========================
+     PRODUCTS
+========================= -->
+
 <section class="products-section" id="products">
+
 <div class="products-inner">
+
 <div class="section-heading">
-<span>Collection</span>
-<h2>Nos bijoux</h2>
+
+<span>
+Collection
+</span>
+
+<h2>
+Nos bijoux
+</h2>
+
 </div>
 
 <div class="products-toolbar">
-<div class="products-count" id="productsCount">58 produits</div>
-<button class="filter-open" id="filterOpen">Filtrer & Trier</button>
+
+<div class="products-count" id="productsCount">
+58 produits
+</div>
+
+<button class="filter-open" id="filterOpen">
+Filtrer & Trier
+</button>
+
 </div>
 
 <div class="products-grid" id="productsGrid"></div>
+
 </div>
+
 </section>
+
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section class="about" id="about">
+
 <div class="about-image">
+
 <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1200&q=85" alt="ZOREVA Jewelry">
+
 </div>
+
 <div class="about-content">
-<span>L'univers ZOREVA</span>
-<h2>Des détails qui font la différence.</h2>
-<p>ZOREVA propose une sélection de bijoux au style élégant et contemporain. Notre objectif est de proposer des pièces faciles à porter et capables d'apporter une touche particulière à chaque tenue.</p>
+
+<span>
+L'univers ZOREVA
+</span>
+
+<h2>
+Des détails qui font la différence.
+</h2>
+
+<p>
+ZOREVA propose une sélection de bijoux au style élégant et contemporain. Notre objectif est de proposer des pièces faciles à porter et capables d'apporter une touche particulière à chaque tenue.
+</p>
+
 </div>
+
 </section>
 
+<!-- =========================
+     CONTACT
+========================= -->
+
 <section class="contact" id="contact">
-<h2>Une question ?</h2>
-<p>Contactez-nous directement pour plus d'informations ou pour votre commande.</p>
-<a href="https://wa.me/212765333754" target="_blank" class="contact-button">Nous contacter</a>
+
+<h2>
+Une question ?
+</h2>
+
+<p>
+Contactez-nous directement pour plus d'informations ou pour votre commande.
+</p>
+
+<a href="https://wa.me/212765333754" target="_blank" class="contact-button">
+Nous contacter
+</a>
+
 </section>
 
 </main>
 
+<!-- =========================
+     WHATSAPP
+========================= -->
+
 <a href="https://wa.me/212765333754" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+
 <svg viewBox="0 0 32 32">
+
 <path d="M16 3C8.82 3 3 8.6 3 15.5c0 2.43.72 4.69 1.96 6.59L3.1 29l7.1-1.82A13.24 13.24 0 0 0 16 28c7.18 0 13-5.6 13-12.5S23.18 3 16 3zm0 22.7c-1.82 0-3.51-.48-4.98-1.32l-.36-.21-4.21 1.08 1.12-3.98-.23-.37a10.8 10.8 0 0 1-1.64-5.4C5.7 9.75 10.32 5.3 16 5.3s10.3 4.45 10.3 10.2S21.68 25.7 16 25.7zm5.65-7.64c-.31-.16-1.84-.9-2.12-1-.29-.1-.5-.16-.71.16-.21.31-.81 1-.99 1.21-.18.21-.37.23-.68.08-.31-.16-1.3-.47-2.47-1.49-.91-.79-1.53-1.77-1.71-2.08-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.63-.52-.54-.71-.55h-.6c-.21 0-.55.08-.84.39-.29.31-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.21 3.36 5.36 4.71.75.32 1.33.51 1.79.65.75.24 1.43.21 1.97.13.6-.09 1.84-.75 2.1-1.47.26-.73.26-1.34.18-1.47-.08-.13-.29-.21-.6-.37z"/>
+
 </svg>
+
 </a>
+
+<!-- =========================
+     FILTER PANEL
+========================= -->
 
 <div class="filter-overlay" id="filterOverlay"></div>
 
 <aside class="filter-panel" id="filterPanel">
+
 <div class="filter-header">
-<h3>Filtrer</h3>
-<button class="filter-close" id="filterClose">×</button>
+
+<h3>
+Filtrer
+</h3>
+
+<button class="filter-close" id="filterClose">
+×
+</button>
+
 </div>
 
 <div class="filter-group">
-<h4>Catégorie</h4>
-<button data-category="all" class="category-filter active">Tous les produits</button>
-<button data-category="Bagues" class="category-filter">Bagues</button>
-<button data-category="Bracelets" class="category-filter">Bracelets</button>
-<button data-category="Colliers" class="category-filter">Colliers</button>
-<button data-category="Montres" class="category-filter">Montres</button>
-<button data-category="Boucles" class="category-filter">Boucles d’oreilles</button>
-<button data-category="Packs" class="category-filter">Packs</button>
+
+<h4>
+Catégorie
+</h4>
+
+<button data-category="all" class="category-filter active">
+Tous les produits
+</button>
+
+<button data-category="Bagues" class="category-filter">
+Bagues
+</button>
+
+<button data-category="Bracelets" class="category-filter">
+Bracelets
+</button>
+
+<button data-category="Colliers" class="category-filter">
+Colliers
+</button>
+
+<button data-category="Montres" class="category-filter">
+Montres
+</button>
+
+<button data-category="Boucles" class="category-filter">
+Boucles d’oreilles
+</button>
+
+<button data-category="Packs" class="category-filter">
+Packs
+</button>
+
 </div>
 
 <div class="filter-group">
-<h4>Prix</h4>
-<button data-price="all" class="price-filter active">Tous les prix</button>
-<button data-price="under120" class="price-filter">Moins de 120 DH</button>
-<button data-price="149" class="price-filter">149 DH</button>
+
+<h4>
+Prix
+</h4>
+
+<button data-price="all" class="price-filter active">
+Tous les prix
+</button>
+
+<button data-price="under120" class="price-filter">
+Moins de 120 DH
+</button>
+
+<button data-price="149" class="price-filter">
+149 DH
+</button>
+
 </div>
 
 <div class="filter-group">
-<h4>Trier par</h4>
-<button data-sort="default" class="sort-filter active">Recommandés</button>
-<button data-sort="low" class="sort-filter">Prix croissant</button>
-<button data-sort="high" class="sort-filter">Prix décroissant</button>
+
+<h4>
+Trier par
+</h4>
+
+<button data-sort="default" class="sort-filter active">
+Recommandés
+</button>
+
+<button data-sort="low" class="sort-filter">
+Prix croissant
+</button>
+
+<button data-sort="high" class="sort-filter">
+Prix décroissant
+</button>
+
 </div>
 
-<button class="reset-filter" id="resetFilter">Réinitialiser</button>
+<button class="reset-filter" id="resetFilter">
+Réinitialiser
+</button>
+
 </aside>
+
+<!-- =========================
+     CART
+========================= -->
 
 <div class="cart-overlay" id="cartOverlay"></div>
 
 <aside class="cart-panel" id="cartPanel">
+
 <div class="cart-header">
-<h2>Votre panier</h2>
-<button class="cart-close" id="cartClose">×</button>
+
+<h2>
+Votre panier
+</h2>
+
+<button class="cart-close" id="cartClose">
+×
+</button>
+
 </div>
 
 <div class="cart-items" id="cartItems">
-<div class="cart-empty">Votre panier est vide.</div>
+
+<div class="cart-empty">
+Votre panier est vide.
+</div>
+
 </div>
 
 <div class="cart-footer">
+
 <div class="cart-total">
-<span>Total</span>
-<strong id="cartTotal">0 DH</strong>
+
+<span>
+Total
+</span>
+
+<strong id="cartTotal">
+0 DH
+</strong>
+
 </div>
-<button class="checkout-btn" id="checkoutBtn">Finaliser la commande</button>
+
+<button class="checkout-btn" id="checkoutBtn">
+Finaliser la commande
+</button>
+
 </div>
+
 </aside>
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
+
 <div class="footer-inner">
+
 <div class="footer-main">
 
 <div class="footer-brand">
+
 <img src="logo.svg" alt="ZOREVA">
-<p>Une sélection de bijoux élégants, modernes et intemporels pour accompagner chaque style.</p>
+
+<p>
+Une sélection de bijoux élégants, modernes et intemporels pour accompagner chaque style.
+</p>
+
 </div>
 
 <div class="footer-column">
-<h3>Navigation</h3>
-<a href="#home">Accueil</a>
-<a href="#collections">Collections</a>
-<a href="#products">Produits</a>
-<a href="#about">À propos</a>
+
+<h3>
+Navigation
+</h3>
+
+<a href="#home">
+Accueil
+</a>
+
+<a href="#collections">
+Collections
+</a>
+
+<a href="#products">
+Produits
+</a>
+
+<a href="#about">
+À propos
+</a>
+
 </div>
 
 <div class="footer-column">
-<h3>Contact</h3>
-<a href="https://wa.me/212765333754" target="_blank">WhatsApp</a>
-<a href="#contact">Nous contacter</a>
+
+<h3>
+Contact
+</h3>
+
+<a href="https://wa.me/212765333754" target="_blank">
+WhatsApp
+</a>
+
+<a href="#contact">
+Nous contacter
+</a>
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 ZOREVA JEWELRY — Tous droits réservés.
 </div>
 
 </div>
 
-<div class="copyright">© 2026 ZOREVA JEWELRY — Tous droits réservés.</div>
-</div>
 </footer>
 
 <script>
@@ -563,74 +2065,115 @@ main{padding-top:104px}
 const products = [
 
 {id:1,name:"Bijou 01",category:"Colliers",price:119,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg"},
+
 {id:2,name:"Bijou 02",category:"Bagues",price:119,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg"},
+
 {id:3,name:"Bijou 03",category:"Bracelets",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg"},
 
 {id:4,name:"Bijou 04",category:"Bagues",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2014.39.04%20%281%29.jpeg"},
 
 {id:5,name:"Bijou 05",category:"Colliers",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"},
+
 {id:6,name:"Bijou 06",category:"Bracelets",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg"},
+
 {id:7,name:"Bijou 07",category:"Bagues",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg"},
 
 {id:8,name:"Bijou 08",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/2.jpg"},
+
 {id:9,name:"Bijou 09",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/71sw32ZElsL._AC_UY1100_.jpg"},
+
 {id:10,name:"Bijou 10",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_155931.jpg"},
+
 {id:11,name:"Bijou 11",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_160641.jpg"},
+
 {id:12,name:"Bijou 12",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_161253.jpg"},
 
 {id:13,name:"Bijou 13",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.02%20%281%29.jpeg"},
+
 {id:14,name:"Bijou 14",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.02.jpeg"},
+
 {id:15,name:"Bijou 15",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%281%29.jpeg"},
+
 {id:16,name:"Bijou 16",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%282%29.jpeg"},
+
 {id:17,name:"Bijou 17",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%283%29.jpeg"},
 
 {id:18,name:"Bijou 18",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06%20%281%29.jpeg"},
 
 {id:19,name:"Bijou 19",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%281%29.jpeg"},
+
 {id:20,name:"Bijou 20",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%282%29.jpeg"},
+
 {id:21,name:"Bijou 21",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%283%29.jpeg"},
+
 {id:22,name:"Bijou 22",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%284%29.jpeg"},
+
 {id:23,name:"Bijou 23",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%285%29.jpeg"},
+
 {id:24,name:"Bijou 24",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%286%29.jpeg"},
+
 {id:25,name:"Bijou 25",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04.jpeg"},
 
 {id:26,name:"Bijou 26",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%281%29.jpeg"},
+
 {id:27,name:"Bijou 27",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%285%29.jpeg"},
+
 {id:28,name:"Bijou 28",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%286%29.jpeg"},
+
 {id:29,name:"Bijou 29",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%287%29.jpeg"},
+
 {id:30,name:"Bijou 30",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%288%29.jpeg"},
+
 {id:31,name:"Bijou 31",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05.jpeg"},
 
 {id:32,name:"Bijou 32",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%281%29.jpeg"},
+
 {id:33,name:"Bijou 33",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%282%29.jpeg"},
+
 {id:34,name:"Bijou 34",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%283%29.jpeg"},
+
 {id:35,name:"Bijou 35",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%285%29.jpeg"},
+
 {id:36,name:"Bijou 36",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%286%29.jpeg"},
+
 {id:37,name:"Bijou 37",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%287%29.jpeg"},
+
 {id:38,name:"Bijou 38",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%288%29.jpeg"},
+
 {id:39,name:"Bijou 39",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06.jpeg"},
 
 {id:40,name:"Bijou 40",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2014.39.04.jpeg"},
+
 {id:41,name:"Bijou 41",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.22%20%282%29.jpeg"},
 
 {id:42,name:"Bijou 42",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06%20%282%29.jpeg"},
+
 {id:43,name:"Bijou 43",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06.jpeg"},
+
 {id:44,name:"Bijou 44",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.07%20%281%29.jpeg"},
+
 {id:45,name:"Bijou 45",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.07.jpeg"},
+
 {id:46,name:"Bijou 46",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%281%29.jpeg"},
+
 {id:47,name:"Bijou 47",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%282%29.jpeg"},
+
 {id:48,name:"Bijou 48",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%283%29.jpeg"},
+
 {id:49,name:"Bijou 49",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%284%29.jpeg"},
 
 {id:50,name:"Bijou 50",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.22.jpeg"},
 
 {id:51,name:"Bijou 51",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%286%29.jpeg"},
+
 {id:52,name:"Bijou 52",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%287%29.jpeg"},
 
 {id:53,name:"Bijou 53",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.23%20%281%29.jpeg"},
 
 {id:54,name:"Bijou 54",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08.jpeg"},
+
 {id:55,name:"Bijou 55",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.09%20%281%29.jpeg"},
+
 {id:56,name:"Bijou 56",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.09%20%282%29.jpeg"},
 
 {id:57,name:"Bijou 57",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.34.50.jpeg"},
@@ -644,6 +2187,7 @@ let currentPrice="all";
 let currentSort="default";
 
 function renderProducts(){
+
 let filtered=[...products];
 
 if(currentCategory!=="all"){
@@ -667,12 +2211,16 @@ filtered.sort((a,b)=>b.price-a.price);
 }
 
 const grid=document.getElementById("productsGrid");
+
 grid.innerHTML="";
 
-document.getElementById("productsCount").textContent=`${filtered.length} produit${filtered.length>1?"s":""}`;
+document.getElementById("productsCount").textContent=
+`${filtered.length} produit${filtered.length>1?"s":""}`;
 
 filtered.forEach(product=>{
+
 const card=document.createElement("article");
+
 card.className="product-card";
 
 card.addEventListener("click",()=>{
@@ -680,33 +2228,56 @@ window.open(`product.html?id=${product.id}`,"_blank");
 });
 
 card.innerHTML=`
+
 <div class="product-image">
-<img src="${product.image}" alt="${product.name}" loading="lazy">
+
+<img
+src="${product.image}"
+alt="${product.name}"
+loading="lazy"
+>
+
 </div>
 
 <div class="product-info">
-<h3>${product.name}</h3>
+
+<h3>
+${product.name}
+</h3>
 
 <div class="product-info-bottom">
-<span class="product-category">${product.category}</span>
-<span class="product-price">${product.price} DH</span>
+
+<span class="product-category">
+${product.category}
+</span>
+
+<span class="product-price">
+${product.price} DH
+</span>
+
 </div>
+
 </div>
 
 <button class="quick-add" data-id="${product.id}">
 Ajouter au panier
 </button>
+
 `;
 
 grid.appendChild(card);
+
 });
 
 document.querySelectorAll(".quick-add").forEach(button=>{
+
 button.addEventListener("click",event=>{
+
 event.preventDefault();
 event.stopPropagation();
 
 const id=Number(button.dataset.id);
+
 const product=products.find(item=>item.id===id);
 
 addToCart(product,1);
@@ -716,42 +2287,71 @@ button.textContent="Ajouté";
 setTimeout(()=>{
 button.textContent="Ajouter au panier";
 },1200);
+
 });
+
 });
+
 }
 
 function updateCategoryButtons(){
 
 document.querySelectorAll(".category-filter").forEach(button=>{
-button.classList.toggle("active",button.dataset.category===currentCategory);
+button.classList.toggle(
+"active",
+button.dataset.category===currentCategory
+);
 });
 
 document.querySelectorAll(".price-filter").forEach(button=>{
-button.classList.toggle("active",button.dataset.price===currentPrice);
+button.classList.toggle(
+"active",
+button.dataset.price===currentPrice
+);
 });
 
 document.querySelectorAll(".sort-filter").forEach(button=>{
-button.classList.toggle("active",button.dataset.sort===currentSort);
+button.classList.toggle(
+"active",
+button.dataset.sort===currentSort
+);
 });
 
 document.querySelectorAll(".menu-category-filter").forEach(button=>{
-button.classList.toggle("active",button.dataset.menuCategory===currentCategory);
+button.classList.toggle(
+"active",
+button.dataset.menuCategory===currentCategory
+);
 });
 
 document.querySelectorAll(".menu-price-filter").forEach(button=>{
-button.classList.toggle("active",button.dataset.menuPrice===currentPrice);
+button.classList.toggle(
+"active",
+button.dataset.menuPrice===currentPrice
+);
 });
 
 document.querySelectorAll(".menu-sort-filter").forEach(button=>{
-button.classList.toggle("active",button.dataset.menuSort===currentSort);
+button.classList.toggle(
+"active",
+button.dataset.menuSort===currentSort
+);
 });
+
 }
 
+/* =========================
+   COLLECTION FILTER
+========================= */
+
 document.querySelectorAll(".collection-card").forEach(card=>{
+
 card.addEventListener("click",event=>{
+
 event.preventDefault();
 
 const category=card.dataset.collection;
+
 currentCategory=category;
 currentPrice="all";
 currentSort="default";
@@ -759,128 +2359,230 @@ currentSort="default";
 updateCategoryButtons();
 renderProducts();
 
-document.getElementById("products").scrollIntoView({behavior:"smooth"});
+document.getElementById("products").scrollIntoView({
+behavior:"smooth"
 });
+
 });
+
+});
+
+/* =========================
+   FILTER PANEL
+========================= */
 
 const filterPanel=document.getElementById("filterPanel");
 const filterOverlay=document.getElementById("filterOverlay");
 
 function openFilter(){
+
 filterPanel.classList.add("active");
 filterOverlay.classList.add("active");
+
 }
 
 function closeFilter(){
+
 filterPanel.classList.remove("active");
 filterOverlay.classList.remove("active");
+
 }
 
-document.getElementById("filterOpen").addEventListener("click",openFilter);
-document.getElementById("filterClose").addEventListener("click",closeFilter);
-filterOverlay.addEventListener("click",closeFilter);
+document.getElementById("filterOpen").addEventListener(
+"click",
+openFilter
+);
+
+document.getElementById("filterClose").addEventListener(
+"click",
+closeFilter
+);
+
+filterOverlay.addEventListener(
+"click",
+closeFilter
+);
+
+/* CATEGORY */
 
 document.querySelectorAll(".category-filter").forEach(button=>{
+
 button.addEventListener("click",()=>{
+
 currentCategory=button.dataset.category;
+
 updateCategoryButtons();
 renderProducts();
+
 });
+
 });
+
+/* PRICE */
 
 document.querySelectorAll(".price-filter").forEach(button=>{
+
 button.addEventListener("click",()=>{
+
 currentPrice=button.dataset.price;
+
 updateCategoryButtons();
 renderProducts();
+
 });
+
 });
+
+/* SORT */
 
 document.querySelectorAll(".sort-filter").forEach(button=>{
+
 button.addEventListener("click",()=>{
+
 currentSort=button.dataset.sort;
+
 updateCategoryButtons();
 renderProducts();
-});
+
 });
 
+});
+
+/* RESET */
+
 document.getElementById("resetFilter").addEventListener("click",()=>{
+
 currentCategory="all";
 currentPrice="all";
 currentSort="default";
+
 updateCategoryButtons();
 renderProducts();
+
 closeFilter();
+
 });
 
+/* =========================
+   MENU FILTER
+========================= */
+
 document.querySelectorAll(".menu-category-filter").forEach(button=>{
+
 button.addEventListener("click",()=>{
+
 currentCategory=button.dataset.menuCategory;
+
 updateCategoryButtons();
 renderProducts();
+
 });
+
 });
 
 document.querySelectorAll(".menu-price-filter").forEach(button=>{
+
 button.addEventListener("click",()=>{
+
 currentPrice=button.dataset.menuPrice;
+
 updateCategoryButtons();
 renderProducts();
+
 });
+
 });
 
 document.querySelectorAll(".menu-sort-filter").forEach(button=>{
+
 button.addEventListener("click",()=>{
+
 currentSort=button.dataset.menuSort;
+
 updateCategoryButtons();
 renderProducts();
+
 });
+
 });
 
 document.getElementById("menuResetFilter").addEventListener("click",()=>{
+
 currentCategory="all";
 currentPrice="all";
 currentSort="default";
+
 updateCategoryButtons();
 renderProducts();
+
 });
+
+/* =========================
+   CART
+========================= */
 
 let cart=JSON.parse(localStorage.getItem("zorevaCart"))||[];
 
 function saveCart(){
-localStorage.setItem("zorevaCart",JSON.stringify(cart));
+
+localStorage.setItem(
+"zorevaCart",
+JSON.stringify(cart)
+);
+
 }
 
 function updateCartCount(){
-const count=cart.reduce((total,item)=>total+item.quantity,0);
+
+const count=cart.reduce(
+(total,item)=>total+item.quantity,
+0
+);
+
 document.getElementById("cartCount").textContent=count;
+
 }
 
 function addToCart(product,quantity=1){
-const existing=cart.find(item=>item.id===product.id);
+
+const existing=cart.find(
+item=>item.id===product.id
+);
 
 if(existing){
+
 existing.quantity+=quantity;
+
 }else{
+
 cart.push({
+
 id:product.id,
 name:product.name,
 price:product.price,
 image:product.image,
 quantity:quantity
+
 });
+
 }
 
 saveCart();
 updateCartCount();
 renderCart();
+
 }
 
 function removeFromCart(id){
-cart=cart.filter(item=>item.id!==id);
+
+cart=cart.filter(
+item=>item.id!==id
+);
+
 saveCart();
 updateCartCount();
 renderCart();
+
 }
 
 function renderCart(){
@@ -888,78 +2590,153 @@ function renderCart(){
 const container=document.getElementById("cartItems");
 
 if(cart.length===0){
-container.innerHTML=`<div class="cart-empty">Votre panier est vide.</div>`;
+
+container.innerHTML=`
+<div class="cart-empty">
+Votre panier est vide.
+</div>
+`;
+
 document.getElementById("cartTotal").textContent="0 DH";
+
 return;
+
 }
 
 container.innerHTML="";
+
 let total=0;
 
 cart.forEach(item=>{
 
 const subtotal=item.price*item.quantity;
+
 total+=subtotal;
 
 const div=document.createElement("div");
+
 div.className="cart-item";
 
 div.innerHTML=`
-<img src="${item.image}" alt="${item.name}">
+
+<img
+src="${item.image}"
+alt="${item.name}"
+>
+
 <div>
-<h4>${item.name}</h4>
-<p>${item.quantity} × ${item.price} DH</p>
+
+<h4>
+${item.name}
+</h4>
+
+<p>
+${item.quantity} × ${item.price} DH
+</p>
+
 </div>
-<button class="remove-item" onclick="removeFromCart(${item.id})">×</button>
+
+<button
+class="remove-item"
+onclick="removeFromCart(${item.id})"
+>
+×
+</button>
+
 `;
 
 container.appendChild(div);
+
 });
 
-document.getElementById("cartTotal").textContent=`${total} DH`;
+document.getElementById("cartTotal").textContent=
+`${total} DH`;
+
 }
+
+/* =========================
+   CART OPEN / CLOSE
+========================= */
 
 const cartPanel=document.getElementById("cartPanel");
 const cartOverlay=document.getElementById("cartOverlay");
 
 function openCart(){
+
 cartPanel.classList.add("active");
 cartOverlay.classList.add("active");
+
 }
 
 function closeCart(){
+
 cartPanel.classList.remove("active");
 cartOverlay.classList.remove("active");
+
 }
 
-document.getElementById("cartBtn").addEventListener("click",openCart);
-document.getElementById("cartClose").addEventListener("click",closeCart);
-cartOverlay.addEventListener("click",closeCart);
+document.getElementById("cartBtn").addEventListener(
+"click",
+openCart
+);
 
-document.getElementById("checkoutBtn").addEventListener("click",()=>{
+document.getElementById("cartClose").addEventListener(
+"click",
+closeCart
+);
+
+cartOverlay.addEventListener(
+"click",
+closeCart
+);
+
+/* =========================
+   CHECKOUT
+========================= */
+
+document.getElementById("checkoutBtn").addEventListener(
+"click",
+()=>{
 
 if(cart.length===0){
+
 alert("Votre panier est vide.");
+
 return;
+
 }
 
-let message="Bonjour ZOREVA, je souhaite passer une commande :\n\n";
+let message=
+"Bonjour ZOREVA, je souhaite passer une commande :\n\n";
+
 let total=0;
 
 cart.forEach(item=>{
-const subtotal=item.price*item.quantity;
+
+const subtotal=
+item.price*item.quantity;
+
 total+=subtotal;
-message+=`${item.name} — ${item.quantity} × ${item.price} DH = ${subtotal} DH\n`;
+
+message+=
+`${item.name} — ${item.quantity} × ${item.price} DH = ${subtotal} DH\n`;
+
 });
 
 message+=`\nTotal : ${total} DH`;
 
 window.open(
-"https://wa.me/212765333754?text="+encodeURIComponent(message),
+"https://wa.me/212765333754?text="+
+encodeURIComponent(message),
 "_blank"
 );
 
-});
+}
+);
+
+/* =========================
+   MENU
+========================= */
 
 const menuBtn=document.getElementById("menuBtn");
 const menuClose=document.getElementById("menuClose");
@@ -967,18 +2744,37 @@ const sideMenu=document.getElementById("sideMenu");
 const menuOverlay=document.getElementById("menuOverlay");
 
 function openMenu(){
+
 sideMenu.classList.add("active");
 menuOverlay.classList.add("active");
+
 }
 
 function closeMenu(){
+
 sideMenu.classList.remove("active");
 menuOverlay.classList.remove("active");
+
 }
 
-menuBtn.addEventListener("click",openMenu);
-menuClose.addEventListener("click",closeMenu);
-menuOverlay.addEventListener("click",closeMenu);
+menuBtn.addEventListener(
+"click",
+openMenu
+);
+
+menuClose.addEventListener(
+"click",
+closeMenu
+);
+
+menuOverlay.addEventListener(
+"click",
+closeMenu
+);
+
+/* =========================
+   INITIALIZE
+========================= */
 
 renderProducts();
 updateCategoryButtons();
@@ -989,4 +2785,3 @@ renderCart();
 
 </body>
 </html>
-```
