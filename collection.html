@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="ZOREVA — Découvrez notre collection de bijoux élégants et modernes.">
+<meta name="description" content="ZOREVA Jewelry — Découvrez notre collection de bijoux élégants et modernes : bagues, bracelets, colliers, montres et packs.">
 
 <title>ZOREVA — Collection</title>
 
+<!-- FAVICON ZOREVA -->
 <link rel="icon" type="image/svg+xml" href="logo.svg">
 <link rel="shortcut icon" type="image/svg+xml" href="logo.svg">
 <link rel="apple-touch-icon" href="logo.svg">
@@ -16,1701 +18,3630 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
-  --black:#111111;
-  --black2:#181818;
-  --gold:#b9975b;
-  --gold-light:#d7bd88;
-  --gold-dark:#92733c;
-  --cream:#f8f6f1;
-  --white:#fff;
-  --muted:#777;
-  --border:#e7e1d6;
+--black:#111111;
+--gold:#b9975b;
+--gold-dark:#92733c;
+--cream:#f8f6f1;
+--white:#ffffff;
+--border:#e6e0d5;
+--muted:#777;
 }
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-  background:var(--cream);
-  color:var(--black);
-  font-family:"Montserrat",sans-serif;
-  overflow-x:hidden;
-}
-
-button,
-input,
-select{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
+background:#fff;
+color:var(--black);
+font-family:'Montserrat',sans-serif;
+overflow-x:hidden;
 }
 
 a{
-  color:inherit;
-  text-decoration:none;
+color:inherit;
+text-decoration:none;
+}
+
+button,
+select{
+font-family:inherit;
+}
+
+img{
+display:block;
+max-width:100%;
+}
+
+ul,
+ol,
+li{
+list-style:none;
 }
 
 /* =========================
-   ANNOUNCEMENT
+ANNOUNCEMENT
 ========================= */
 
-.announcement{
-  height:34px;
-  background:#111;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:45px;
-  font-size:10px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  position:relative;
-  z-index:1001;
+.announcement-bar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:32px;
+background:#111;
+color:#fff;
+overflow:hidden;
+z-index:2500;
+display:flex;
+align-items:center;
+border-bottom:1px solid rgba(185,151,91,.35);
 }
 
-.announcement span{
-  opacity:.9;
+.announcement-track{
+display:flex;
+align-items:center;
+width:max-content;
+min-width:max-content;
+height:100%;
+font-size:10px;
+letter-spacing:1.3px;
+text-transform:uppercase;
+animation:announcementMove 24s linear infinite;
+}
+
+.announcement-item{
+display:flex;
+align-items:center;
+justify-content:center;
+height:100%;
+white-space:nowrap;
+padding:0 55px;
+}
+
+@keyframes announcementMove{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
 }
 
 /* =========================
-   HEADER
+HEADER
 ========================= */
 
-.header{
-  height:82px;
-  background:rgba(255,255,255,.96);
-  border-bottom:1px solid rgba(0,0,0,.08);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 5%;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  backdrop-filter:blur(15px);
+header{
+position:fixed;
+top:32px;
+left:0;
+width:100%;
+height:82px;
+background:rgba(255,255,255,.96);
+backdrop-filter:blur(16px);
+border-bottom:1px solid rgba(0,0,0,.06);
+z-index:1000;
+}
+
+.header-inner{
+max-width:1400px;
+height:100%;
+margin:auto;
+padding:0 30px;
+display:grid;
+grid-template-columns:1fr auto 1fr;
+align-items:center;
+}
+
+.menu-btn{
+width:44px;
+height:44px;
+border:0;
+background:none;
+cursor:pointer;
+display:flex;
+flex-direction:column;
+justify-content:center;
+gap:6px;
+padding:8px;
+transition:.3s;
+}
+
+.menu-btn:hover{
+transform:translateY(-2px);
+}
+
+.menu-btn span{
+width:25px;
+height:1.5px;
+display:block;
+background:#111;
+transition:.3s;
+}
+
+.menu-btn:hover span{
+background:var(--gold-dark);
 }
 
 .brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
 }
 
 .brand img{
-  width:39px;
-  height:39px;
-  object-fit:contain;
+width:58px;
+height:58px;
+object-fit:contain;
 }
 
 .brand-name{
-  font-family:"Cormorant Garamond",serif;
-  font-size:29px;
-  font-weight:600;
-  letter-spacing:4px;
-}
-
-.header-nav{
-  display:flex;
-  align-items:center;
-  gap:34px;
-  font-size:11px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-}
-
-.header-nav a{
-  position:relative;
-  padding:8px 0;
-}
-
-.header-nav a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:0;
-  height:1px;
-  background:var(--gold);
-  transition:.3s;
-}
-
-.header-nav a:hover::after,
-.header-nav a.active::after{
-  width:100%;
+font-family:'Cormorant Garamond',serif;
+font-size:25px;
+font-weight:600;
+letter-spacing:3px;
 }
 
 .header-actions{
-  display:flex;
-  align-items:center;
-  gap:14px;
+display:flex;
+justify-content:flex-end;
+align-items:center;
 }
 
-.home-btn,
 .cart-btn{
-  border:1px solid #ddd;
-  background:#fff;
-  height:43px;
-  padding:0 17px;
-  display:flex;
-  align-items:center;
-  gap:9px;
-  transition:.3s;
+width:44px;
+height:44px;
+border:0;
+background:none;
+cursor:pointer;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+transition:.3s;
 }
 
-.home-btn:hover,
 .cart-btn:hover{
-  border-color:var(--gold);
-  color:var(--gold-dark);
+transform:translateY(-2px);
 }
 
-.cart-icon{
-  font-size:18px;
+.cart-svg{
+width:23px;
+height:23px;
+fill:none;
+stroke:#111;
+stroke-width:1.5;
 }
 
 .cart-count{
-  min-width:19px;
-  height:19px;
-  border-radius:50%;
-  background:var(--black);
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:9px;
+position:absolute;
+top:1px;
+right:0;
+width:17px;
+height:17px;
+border-radius:50%;
+background:var(--gold);
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:9px;
+font-weight:600;
 }
 
 /* =========================
-   HERO
+SIDE MENU
 ========================= */
 
-.hero{
-  min-height:620px;
-  background:
-    linear-gradient(90deg,rgba(10,10,10,.93),rgba(10,10,10,.57),rgba(10,10,10,.25)),
-    url("https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=2000&q=85")
-    center/cover;
-  display:flex;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
+.menu-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.42);
+opacity:0;
+visibility:hidden;
+transition:.3s;
+z-index:1900;
 }
 
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,.35),transparent 50%);
+.menu-overlay.active{
+opacity:1;
+visibility:visible;
 }
 
-.hero-content{
-  width:min(1200px,90%);
-  margin:auto;
-  position:relative;
-  z-index:2;
-  color:#fff;
+.side-menu{
+position:fixed;
+top:0;
+left:-390px;
+width:370px;
+max-width:92%;
+height:100vh;
+background:#fff;
+padding:28px;
+z-index:2000;
+box-shadow:15px 0 40px rgba(0,0,0,.12);
+transition:.45s ease;
+overflow-y:auto;
 }
 
-.hero-small{
-  color:var(--gold-light);
-  text-transform:uppercase;
-  letter-spacing:5px;
-  font-size:11px;
-  margin-bottom:25px;
+.side-menu.active{
+left:0;
 }
 
-.hero h1{
-  font-family:"Cormorant Garamond",serif;
-  font-size:clamp(55px,8vw,105px);
-  font-weight:400;
-  line-height:.85;
-  max-width:800px;
-  margin-bottom:30px;
+.menu-close{
+border:0;
+background:none;
+font-size:29px;
+cursor:pointer;
+margin-bottom:45px;
 }
 
-.hero h1 span{
-  color:var(--gold-light);
-  font-style:italic;
+.side-menu h3{
+font-family:'Cormorant Garamond',serif;
+font-size:30px;
+font-weight:500;
+letter-spacing:3px;
+margin-bottom:30px;
 }
 
-.hero p{
-  max-width:560px;
-  line-height:1.9;
-  font-size:13px;
-  font-weight:300;
-  color:rgba(255,255,255,.82);
-  margin-bottom:38px;
+.side-menu a{
+display:block;
+padding:16px 0;
+border-bottom:1px solid var(--border);
+font-size:11px;
+letter-spacing:1.5px;
+text-transform:uppercase;
+transition:.2s;
 }
 
-.hero-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:18px;
-  background:#fff;
-  color:#111;
-  padding:17px 28px;
-  font-size:10px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  transition:.35s;
+.side-menu a:hover{
+color:var(--gold-dark);
 }
 
-.hero-btn:hover{
-  background:var(--gold);
-  color:#fff;
-  transform:translateY(-2px);
+.menu-filter{
+margin-top:30px;
+padding-top:28px;
+border-top:1px solid var(--border);
 }
 
-.hero-scroll{
-  position:absolute;
-  right:5%;
-  bottom:35px;
-  z-index:3;
-  color:rgba(255,255,255,.7);
-  font-size:9px;
-  letter-spacing:3px;
-  writing-mode:vertical-rl;
+.menu-filter-title{
+font-family:'Cormorant Garamond',serif;
+font-size:27px;
+font-weight:500;
+margin-bottom:25px;
+}
+
+.menu-filter-group{
+margin-bottom:25px;
+}
+
+.menu-filter-group h4{
+font-size:9px;
+text-transform:uppercase;
+letter-spacing:2px;
+margin-bottom:12px;
+color:#555;
+}
+
+.menu-filter-group button{
+width:100%;
+height:40px;
+margin-bottom:7px;
+border:1px solid var(--border);
+background:#fff;
+color:#222;
+cursor:pointer;
+text-align:left;
+padding:0 13px;
+font-size:10px;
+transition:.2s;
+}
+
+.menu-filter-group button:hover,
+.menu-filter-group button.active{
+border-color:var(--gold);
+color:var(--gold-dark);
+background:#faf9f6;
+}
+
+.menu-reset-filter{
+width:100%;
+height:46px;
+background:#111;
+color:#fff;
+border:0;
+cursor:pointer;
+font-size:9px;
+letter-spacing:2px;
+text-transform:uppercase;
 }
 
 /* =========================
-   INTRO
+PRICE SLIDER
 ========================= */
 
-.intro{
-  text-align:center;
-  padding:90px 20px 55px;
+.price-slider{
+position:relative;
+height:48px;
+margin:5px 0 12px;
 }
 
-.eyebrow{
-  color:var(--gold-dark);
-  font-size:10px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  margin-bottom:15px;
+.price-slider input[type="range"]{
+position:absolute;
+left:0;
+top:17px;
+width:100%;
+height:5px;
+margin:0;
+padding:0;
+background:transparent;
+-webkit-appearance:none;
+appearance:none;
+pointer-events:none;
 }
 
-.intro h2{
-  font-family:"Cormorant Garamond",serif;
-  font-size:55px;
-  font-weight:500;
-  margin-bottom:14px;
+.price-slider input[type="range"]::-webkit-slider-runnable-track{
+height:3px;
+background:#ded8cd;
+border-radius:10px;
 }
 
-.intro p{
-  max-width:590px;
-  margin:auto;
-  color:#777;
-  font-size:12px;
-  line-height:1.9;
+.price-slider input[type="range"]::-moz-range-track{
+height:3px;
+background:#ded8cd;
+border-radius:10px;
+}
+
+.price-slider input[type="range"]::-webkit-slider-thumb{
+-webkit-appearance:none;
+appearance:none;
+width:17px;
+height:17px;
+border-radius:50%;
+background:#111;
+border:2px solid #fff;
+box-shadow:0 2px 7px rgba(0,0,0,.18);
+cursor:pointer;
+pointer-events:auto;
+margin-top:-7px;
+}
+
+.price-slider input[type="range"]::-moz-range-thumb{
+width:17px;
+height:17px;
+border-radius:50%;
+background:#111;
+border:2px solid #fff;
+box-shadow:0 2px 7px rgba(0,0,0,.18);
+cursor:pointer;
+pointer-events:auto;
+}
+
+.price-values{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:10px;
+color:#777;
+letter-spacing:.5px;
+}
+
+.price-values strong{
+color:#111;
+font-weight:500;
 }
 
 /* =========================
-   CATEGORIES
+MAIN
 ========================= */
 
-.categories{
-  width:min(1250px,92%);
-  margin:0 auto 65px;
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.category-btn{
-  background:transparent;
-  border:1px solid #d8d0c3;
-  padding:13px 24px;
-  font-size:10px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  transition:.3s;
-}
-
-.category-btn:hover,
-.category-btn.active{
-  background:#111;
-  color:#fff;
-  border-color:#111;
+main{
+padding-top:114px;
 }
 
 /* =========================
-   COLLECTION AREA
+PAGE HERO
 ========================= */
 
-.collection-wrap{
-  width:min(1400px,92%);
-  margin:auto;
-  padding-bottom:100px;
+.collection-hero{
+position:relative;
+min-height:430px;
+display:flex;
+align-items:center;
+overflow:hidden;
+background:#151515;
 }
 
-.collection-top{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  border-bottom:1px solid var(--border);
-  padding-bottom:18px;
-  margin-bottom:28px;
+.collection-hero-image{
+position:absolute;
+inset:-3%;
+
+background-image:
+linear-gradient(
+90deg,
+rgba(0,0,0,.72),
+rgba(0,0,0,.30),
+rgba(0,0,0,.12)
+),
+url("https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=2200&q=90");
+
+background-size:cover;
+background-position:center;
+
+animation:heroZoom 14s ease-in-out infinite alternate;
 }
 
-.collection-title{
-  font-family:"Cormorant Garamond",serif;
-  font-size:35px;
+.collection-hero-content{
+position:relative;
+z-index:2;
+max-width:1400px;
+width:100%;
+margin:auto;
+padding:80px 30px;
+color:#fff;
 }
 
-.collection-count{
-  color:#888;
-  font-size:10px;
-  letter-spacing:1px;
+.collection-hero-small{
+font-size:10px;
+letter-spacing:4px;
+text-transform:uppercase;
+margin-bottom:22px;
+opacity:.9;
+animation:fadeUp .8s ease both;
 }
 
-.sort{
-  border:0;
-  border-bottom:1px solid #ccc;
-  background:transparent;
-  padding:8px 3px;
-  font-size:10px;
-  outline:none;
+.collection-hero h1{
+max-width:800px;
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(55px,8vw,100px);
+line-height:.88;
+font-weight:500;
+margin-bottom:25px;
+animation:fadeUp .9s .1s ease both;
+}
+
+.collection-hero h1 span{
+color:var(--gold);
+font-style:italic;
+}
+
+.collection-hero p{
+max-width:540px;
+font-size:12px;
+line-height:2;
+color:rgba(255,255,255,.82);
+animation:fadeUp 1s .2s ease both;
 }
 
 /* =========================
-   PRODUCTS GRID
+COLLECTION SECTION
 ========================= */
 
-.products{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:42px 18px;
+.products-section{
+background:var(--cream);
+padding:110px 30px 130px;
 }
 
-.product{
-  position:relative;
-  opacity:0;
-  transform:translateY(25px);
-  animation:appear .7s forwards;
+.products-inner{
+max-width:1400px;
+margin:auto;
 }
 
-@keyframes appear{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+.section-heading{
+text-align:center;
+margin-bottom:55px;
+}
+
+.section-heading span{
+display:block;
+color:var(--gold-dark);
+font-size:9px;
+letter-spacing:3px;
+text-transform:uppercase;
+margin-bottom:12px;
+}
+
+.section-heading h2{
+font-family:'Cormorant Garamond',serif;
+font-size:50px;
+font-weight:500;
+}
+
+.section-subtitle{
+max-width:620px;
+margin:14px auto 0;
+font-size:11px;
+line-height:1.9;
+letter-spacing:.3px;
+color:#777;
+}
+
+/* =========================
+TOOLBAR
+========================= */
+
+.products-toolbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:35px;
+}
+
+.products-count{
+font-size:10px;
+color:#888;
+letter-spacing:1px;
+}
+
+.toolbar-right{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.filter-open{
+height:44px;
+padding:0 22px;
+border:1px solid #ccc;
+background:#fff;
+cursor:pointer;
+font-size:10px;
+letter-spacing:1.5px;
+text-transform:uppercase;
+transition:.3s;
+}
+
+.filter-open:hover{
+border-color:var(--gold);
+color:var(--gold-dark);
+transform:translateY(-2px);
+}
+
+.sort-select{
+height:44px;
+padding:0 14px;
+border:1px solid #ccc;
+background:#fff;
+font-size:10px;
+letter-spacing:1px;
+outline:none;
+cursor:pointer;
+}
+
+.sort-select:focus{
+border-color:var(--gold);
+}
+
+/* =========================
+PRODUCT GRID
+========================= */
+
+.products-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+align-items:stretch;
+}
+
+.product-card{
+background:#fff;
+overflow:hidden;
+cursor:pointer;
+opacity:0;
+transform:translateY(40px);
+transition:
+opacity .8s ease,
+transform .45s cubic-bezier(.22,1,.36,1),
+box-shadow .45s ease;
+display:flex;
+flex-direction:column;
+height:100%;
+}
+
+.product-card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.product-card:hover{
+transform:translateY(-7px);
+box-shadow:0 15px 35px rgba(0,0,0,.10);
 }
 
 .product-image{
-  position:relative;
-  aspect-ratio:1/1.16;
-  background:#eee;
-  overflow:hidden;
-  margin-bottom:17px;
+position:relative;
+overflow:hidden;
+background:#eee;
+flex-shrink:0;
 }
 
 .product-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:transform .7s cubic-bezier(.2,.7,.2,1);
+width:100%;
+aspect-ratio:1 / 1.08;
+object-fit:cover;
+transition:transform .8s cubic-bezier(.22,1,.36,1);
 }
 
-.product:hover .product-image img{
-  transform:scale(1.055);
-}
-
-.product-overlay{
-  position:absolute;
-  left:15px;
-  right:15px;
-  bottom:15px;
-  display:flex;
-  gap:7px;
-  opacity:0;
-  transform:translateY(10px);
-  transition:.35s;
-}
-
-.product:hover .product-overlay{
-  opacity:1;
-  transform:translateY(0);
-}
-
-.overlay-btn{
-  flex:1;
-  height:43px;
-  border:0;
-  background:#fff;
-  color:#111;
-  font-size:9px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-}
-
-.overlay-btn:hover{
-  background:#111;
-  color:#fff;
+.product-card:hover .product-image img{
+transform:scale(1.06);
 }
 
 .product-info{
-  padding:0 3px;
+display:flex;
+flex-direction:column;
+padding:17px 15px 15px;
+background:#fff;
+flex:1;
+min-height:150px;
+}
+
+.product-info h3{
+font-family:'Cormorant Garamond',serif;
+font-size:22px;
+font-weight:500;
+margin-bottom:7px;
+line-height:1.15;
+min-height:26px;
+}
+
+.product-description{
+font-size:10px;
+line-height:1.65;
+color:#777;
+margin-bottom:12px;
+min-height:33px;
+}
+
+.product-info-bottom{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:auto;
+padding-bottom:12px;
 }
 
 .product-category{
-  font-size:8px;
-  color:#9a7a46;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  margin-bottom:7px;
-}
-
-.product-name{
-  font-family:"Cormorant Garamond",serif;
-  font-size:23px;
-  font-weight:600;
-  margin-bottom:5px;
-}
-
-.product-bottom{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+font-size:9px;
+color:#888;
+letter-spacing:1px;
+text-transform:uppercase;
 }
 
 .product-price{
-  font-size:11px;
-  letter-spacing:1px;
+font-size:12px;
+color:#222;
+font-weight:500;
 }
 
-.add-btn{
-  border:0;
-  background:transparent;
-  color:var(--gold-dark);
-  font-size:9px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  padding:5px 0;
-  border-bottom:1px solid var(--gold);
+.quick-add{
+width:100%;
+height:44px;
+background:#111;
+color:#fff;
+border:0;
+cursor:pointer;
+font-size:9px;
+letter-spacing:1.5px;
+text-transform:uppercase;
+transition:.3s;
+flex-shrink:0;
 }
 
-/* =========================
-   EDITORIAL
-========================= */
-
-.editorial{
-  width:100%;
-  margin:30px 0 100px;
-  background:#151515;
-  color:#fff;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:460px;
-}
-
-.editorial-image{
-  background:
-    url("https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1200&q=85")
-    center/cover;
-  min-height:460px;
-}
-
-.editorial-content{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:70px;
-}
-
-.editorial-content .eyebrow{
-  color:var(--gold-light);
-}
-
-.editorial-content h2{
-  font-family:"Cormorant Garamond",serif;
-  font-size:55px;
-  font-weight:400;
-  line-height:.95;
-  margin-bottom:25px;
-}
-
-.editorial-content p{
-  color:#bbb;
-  font-size:12px;
-  line-height:2;
-  max-width:470px;
-  margin-bottom:30px;
-}
-
-.editorial-link{
-  width:max-content;
-  color:#fff;
-  font-size:9px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  padding-bottom:8px;
-  border-bottom:1px solid var(--gold);
+.quick-add:hover{
+background:var(--gold-dark);
 }
 
 /* =========================
-   CART PANEL
+FILTER PANEL
 ========================= */
+
+.filter-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.4);
+z-index:3000;
+opacity:0;
+visibility:hidden;
+transition:.3s;
+}
+
+.filter-overlay.active{
+opacity:1;
+visibility:visible;
+}
+
+.filter-panel{
+position:fixed;
+top:0;
+left:-390px;
+width:370px;
+max-width:92%;
+height:100vh;
+background:#fff;
+z-index:3100;
+padding:28px;
+box-shadow:15px 0 40px rgba(0,0,0,.12);
+transition:.45s ease;
+overflow-y:auto;
+}
+
+.filter-panel.active{
+left:0;
+}
+
+.filter-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding-bottom:25px;
+border-bottom:1px solid var(--border);
+margin-bottom:30px;
+}
+
+.filter-header h3{
+font-family:'Cormorant Garamond',serif;
+font-size:30px;
+font-weight:500;
+}
+
+.filter-close{
+width:36px;
+height:36px;
+border:1px solid var(--border);
+border-radius:50%;
+background:#fff;
+cursor:pointer;
+font-size:20px;
+}
+
+.filter-group{
+margin-bottom:30px;
+}
+
+.filter-group h4{
+font-size:10px;
+text-transform:uppercase;
+letter-spacing:2px;
+margin-bottom:15px;
+}
+
+.filter-group button{
+width:100%;
+height:43px;
+margin-bottom:8px;
+border:1px solid var(--border);
+background:#fff;
+cursor:pointer;
+text-align:left;
+padding:0 14px;
+font-size:11px;
+transition:.2s;
+}
+
+.filter-group button:hover,
+.filter-group button.active{
+border-color:var(--gold);
+color:var(--gold-dark);
+}
+
+.reset-filter{
+width:100%;
+height:50px;
+background:#111;
+color:#fff;
+border:0;
+cursor:pointer;
+font-size:10px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+/* =========================
+WHATSAPP
+========================= */
+
+.whatsapp-float{
+position:fixed;
+right:24px;
+bottom:24px;
+width:58px;
+height:58px;
+border-radius:50%;
+background:#25D366;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:2500;
+box-shadow:0 8px 25px rgba(0,0,0,.18);
+transition:.3s;
+animation:whatsappPulse 2.5s infinite;
+}
+
+.whatsapp-float:hover{
+transform:translateY(-4px) scale(1.04);
+animation:none;
+}
+
+.whatsapp-float svg{
+width:31px;
+height:31px;
+fill:#fff;
+}
+
+/* =========================
+CART
+========================= */
+
+.cart-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.45);
+z-index:3000;
+opacity:0;
+visibility:hidden;
+transition:.3s;
+}
+
+.cart-overlay.active{
+opacity:1;
+visibility:visible;
+}
 
 .cart-panel{
-  position:fixed;
-  top:0;
-  right:-430px;
-  width:410px;
-  max-width:92%;
-  height:100vh;
-  background:#fff;
-  z-index:2000;
-  box-shadow:-15px 0 50px rgba(0,0,0,.15);
-  transition:.45s cubic-bezier(.4,0,.2,1);
-  display:flex;
-  flex-direction:column;
+position:fixed;
+top:0;
+right:-450px;
+width:420px;
+max-width:94%;
+height:100vh;
+background:#fff;
+z-index:3100;
+transition:.45s ease;
+display:flex;
+flex-direction:column;
+border-radius:22px 0 0 22px;
+box-shadow:-15px 0 45px rgba(0,0,0,.13);
 }
 
-.cart-panel.open{
-  right:0;
+.cart-panel.active{
+right:0;
 }
 
-.cart-head{
-  padding:25px;
-  border-bottom:1px solid #eee;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.cart-header{
+padding:25px;
+border-bottom:1px solid var(--border);
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-.cart-head h3{
-  font-family:"Cormorant Garamond",serif;
-  font-size:30px;
-  font-weight:500;
+.cart-header h2{
+font-family:'Cormorant Garamond',serif;
+font-size:30px;
+font-weight:500;
 }
 
-.close-cart{
-  border:0;
-  background:transparent;
-  font-size:25px;
+.cart-close{
+width:36px;
+height:36px;
+border:1px solid var(--border);
+border-radius:50%;
+background:#fff;
+cursor:pointer;
+font-size:20px;
 }
 
 .cart-items{
-  flex:1;
-  overflow-y:auto;
-  padding:20px;
+flex:1;
+overflow-y:auto;
+padding:10px 22px;
 }
 
-.empty-cart{
-  text-align:center;
-  padding:80px 20px;
-  color:#888;
-  font-size:11px;
+.cart-empty{
+text-align:center;
+color:#888;
+font-size:12px;
+padding:70px 20px;
 }
 
 .cart-item{
-  display:grid;
-  grid-template-columns:72px 1fr auto;
-  gap:13px;
-  align-items:center;
-  padding:15px 0;
-  border-bottom:1px solid #eee;
+display:grid;
+grid-template-columns:72px 1fr 30px;
+gap:14px;
+padding:18px 0;
+border-bottom:1px solid var(--border);
+align-items:center;
 }
 
 .cart-item img{
-  width:72px;
-  height:82px;
-  object-fit:cover;
+width:72px;
+height:72px;
+object-fit:cover;
+background:#f7f5f0;
+border-radius:4px;
 }
 
-.cart-item-name{
-  font-family:"Cormorant Garamond",serif;
-  font-size:19px;
+.cart-item h4{
+font-family:'Cormorant Garamond',serif;
+font-size:19px;
+font-weight:500;
+margin-bottom:5px;
 }
 
-.cart-item-price{
-  font-size:10px;
-  color:#777;
-  margin-top:5px;
+.cart-item p{
+font-size:10px;
+color:#777;
 }
 
 .remove-item{
-  border:0;
-  background:none;
-  color:#999;
-  font-size:17px;
+width:28px;
+height:28px;
+border:0;
+border-radius:50%;
+background:#f5f3ef;
+cursor:pointer;
+font-size:16px;
+color:#777;
 }
 
 .cart-footer{
-  border-top:1px solid #eee;
-  padding:22px;
+padding:20px 22px 24px;
+border-top:1px solid var(--border);
+background:#fff;
+border-radius:0 0 0 22px;
 }
 
 .cart-total{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:17px;
-  font-size:12px;
+display:flex;
+justify-content:space-between;
+margin-bottom:17px;
+font-size:13px;
 }
 
-.whatsapp-checkout{
-  width:100%;
-  border:0;
-  background:#111;
-  color:#fff;
-  padding:17px;
-  font-size:10px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  transition:.3s;
+.checkout-btn{
+width:100%;
+height:52px;
+border:0;
+background:#111;
+color:#fff;
+cursor:pointer;
+font-size:10px;
+letter-spacing:2px;
+text-transform:uppercase;
+transition:.3s;
 }
 
-.whatsapp-checkout:hover{
-  background:var(--gold-dark);
-}
-
-.cart-backdrop{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.45);
-  z-index:1900;
-  opacity:0;
-  visibility:hidden;
-  transition:.3s;
-}
-
-.cart-backdrop.open{
-  opacity:1;
-  visibility:visible;
+.checkout-btn:hover{
+background:var(--gold-dark);
 }
 
 /* =========================
-   FOOTER
+EDITORIAL
 ========================= */
 
-.footer{
-  background:#111;
-  color:#fff;
-  padding:70px 6% 30px;
+.editorial{
+max-width:1400px;
+margin:0 auto;
+padding:110px 30px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:0;
+}
+
+.editorial-image{
+min-height:470px;
+background:
+url("https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1200&q=85")
+center/cover;
+}
+
+.editorial-content{
+background:#151515;
+color:#fff;
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding:70px;
+}
+
+.editorial-content span{
+color:var(--gold);
+font-size:9px;
+letter-spacing:3px;
+text-transform:uppercase;
+margin-bottom:15px;
+}
+
+.editorial-content h2{
+font-family:'Cormorant Garamond',serif;
+font-size:55px;
+font-weight:400;
+line-height:.95;
+margin-bottom:25px;
+}
+
+.editorial-content p{
+color:#aaa;
+font-size:12px;
+line-height:2;
+max-width:470px;
+margin-bottom:30px;
+}
+
+.editorial-link{
+width:max-content;
+color:#fff;
+font-size:9px;
+letter-spacing:2px;
+text-transform:uppercase;
+padding-bottom:8px;
+border-bottom:1px solid var(--gold);
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+background:#111;
+color:#fff;
+padding:70px 30px 30px;
+}
+
+.footer-inner{
+max-width:1400px;
+margin:auto;
 }
 
 .footer-main{
-  display:grid;
-  grid-template-columns:1.5fr 1fr 1fr;
-  gap:50px;
-  padding-bottom:50px;
-  border-bottom:1px solid #292929;
+display:grid;
+grid-template-columns:1.4fr 1fr 1fr;
+gap:70px;
+padding-bottom:60px;
+border-bottom:1px solid rgba(255,255,255,.15);
 }
 
-.footer-brand{
-  font-family:"Cormorant Garamond",serif;
-  font-size:42px;
-  letter-spacing:5px;
-  margin-bottom:15px;
+.footer-brand img{
+width:75px;
+height:75px;
+object-fit:contain;
+margin-bottom:20px;
 }
 
-.footer p{
-  color:#999;
-  font-size:11px;
-  line-height:1.9;
-  max-width:400px;
+.footer-brand p{
+max-width:350px;
+color:#aaa;
+font-size:11px;
+line-height:2;
 }
 
-.footer h4{
-  font-size:10px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:var(--gold-light);
-  margin-bottom:20px;
+.footer-column h3{
+font-family:'Cormorant Garamond',serif;
+font-size:24px;
+font-weight:500;
+margin-bottom:20px;
 }
 
-.footer a{
-  display:block;
-  color:#aaa;
-  font-size:10px;
-  margin-bottom:12px;
-  transition:.2s;
+.footer-column a{
+display:block;
+color:#aaa;
+font-size:10px;
+margin-bottom:13px;
+transition:.2s;
 }
 
-.footer a:hover{
-  color:#fff;
+.footer-column a:hover{
+color:#fff;
 }
 
-.footer-bottom{
-  padding-top:25px;
-  display:flex;
-  justify-content:space-between;
-  color:#666;
-  font-size:9px;
-  letter-spacing:1px;
+.copyright{
+padding-top:25px;
+text-align:center;
+color:#777;
+font-size:9px;
+letter-spacing:1px;
 }
 
 /* =========================
-   WHATSAPP
+ANIMATIONS
 ========================= */
 
-.whatsapp{
-  position:fixed;
-  right:24px;
-  bottom:24px;
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  background:#111;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:1200;
-  box-shadow:0 8px 30px rgba(0,0,0,.25);
-  transition:.3s;
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(25px);
 }
 
-.whatsapp:hover{
-  background:var(--gold-dark);
-  transform:translateY(-3px);
+to{
+opacity:1;
+transform:translateY(0);
 }
 
-.whatsapp svg{
-  width:24px;
-  height:24px;
-  fill:#fff;
+}
+
+@keyframes heroZoom{
+
+from{
+transform:scale(1);
+}
+
+to{
+transform:scale(1.07);
+}
+
+}
+
+@keyframes whatsappPulse{
+
+0%{
+box-shadow:
+0 8px 25px rgba(0,0,0,.18),
+0 0 0 0 rgba(37,211,102,.35);
+}
+
+70%{
+box-shadow:
+0 8px 25px rgba(0,0,0,.18),
+0 0 0 13px rgba(37,211,102,0);
+}
+
+100%{
+box-shadow:
+0 8px 25px rgba(0,0,0,.18),
+0 0 0 0 rgba(37,211,102,0);
+}
+
 }
 
 /* =========================
-   MOBILE
+TABLET
 ========================= */
 
 @media(max-width:1100px){
-  .products{
-    grid-template-columns:repeat(3,1fr);
-  }
+
+.products-grid{
+grid-template-columns:repeat(3,1fr);
 }
+
+}
+
+/* =========================
+MOBILE
+========================= */
 
 @media(max-width:800px){
 
-  .announcement{
-    gap:15px;
-    font-size:8px;
-    letter-spacing:1px;
-    height:30px;
-  }
-
-  .announcement span:nth-child(3){
-    display:none;
-  }
-
-  .header{
-    height:72px;
-    padding:0 4%;
-  }
-
-  .header-nav{
-    display:none;
-  }
-
-  .brand-name{
-    font-size:25px;
-  }
-
-  .brand img{
-    width:34px;
-    height:34px;
-  }
-
-  .home-btn{
-    display:none;
-  }
-
-  .cart-btn{
-    height:39px;
-    padding:0 12px;
-  }
-
-  .hero{
-    min-height:560px;
-    background-position:65% center;
-  }
-
-  .hero-content{
-    width:88%;
-  }
-
-  .hero h1{
-    font-size:62px;
-  }
-
-  .hero p{
-    font-size:11px;
-  }
-
-  .hero-scroll{
-    display:none;
-  }
-
-  .intro{
-    padding:70px 20px 40px;
-  }
-
-  .intro h2{
-    font-size:43px;
-  }
-
-  .categories{
-    justify-content:flex-start;
-    overflow-x:auto;
-    flex-wrap:nowrap;
-    width:94%;
-    padding-bottom:8px;
-    scrollbar-width:none;
-  }
-
-  .categories::-webkit-scrollbar{
-    display:none;
-  }
-
-  .category-btn{
-    flex-shrink:0;
-    padding:12px 18px;
-  }
-
-  .collection-wrap{
-    width:94%;
-  }
-
-  .collection-top{
-    align-items:flex-start;
-    flex-direction:column;
-    gap:15px;
-  }
-
-  .collection-title{
-    font-size:31px;
-  }
-
-  .products{
-    grid-template-columns:repeat(2,1fr);
-    gap:35px 10px;
-  }
-
-  .product-image{
-    aspect-ratio:1/1.15;
-  }
-
-  .product-overlay{
-    display:none;
-  }
-
-  .product-name{
-    font-size:20px;
-  }
-
-  .product-category{
-    font-size:7px;
-  }
-
-  .product-price{
-    font-size:10px;
-  }
-
-  .add-btn{
-    font-size:8px;
-  }
-
-  .editorial{
-    grid-template-columns:1fr;
-    margin-bottom:70px;
-  }
-
-  .editorial-image{
-    min-height:330px;
-  }
-
-  .editorial-content{
-    padding:55px 30px;
-  }
-
-  .editorial-content h2{
-    font-size:45px;
-  }
-
-  .footer-main{
-    grid-template-columns:1fr;
-    gap:35px;
-  }
-
-  .footer-bottom{
-    flex-direction:column;
-    gap:10px;
-  }
+.announcement-bar{
+height:32px;
 }
 
-@media(max-width:420px){
-
-  .announcement span:nth-child(2){
-    display:none;
-  }
-
-  .hero h1{
-    font-size:53px;
-  }
-
-  .products{
-    gap:30px 8px;
-  }
-
-  .product-name{
-    font-size:18px;
-  }
+.announcement-track{
+height:32px;
+font-size:9px;
+letter-spacing:1px;
 }
+
+.announcement-item{
+padding:0 30px;
+}
+
+header{
+top:32px;
+height:72px;
+}
+
+main{
+padding-top:104px;
+}
+
+.header-inner{
+padding:0 16px;
+}
+
+.brand img{
+width:50px;
+height:50px;
+}
+
+.brand-name{
+font-size:21px;
+letter-spacing:2px;
+}
+
+.collection-hero{
+min-height:500px;
+}
+
+.collection-hero-content{
+padding:60px 20px;
+}
+
+.collection-hero h1{
+font-size:62px;
+}
+
+.collection-hero p{
+font-size:11px;
+}
+
+.products-section{
+padding:80px 16px;
+}
+
+.section-heading{
+margin-bottom:40px;
+}
+
+.section-heading h2{
+font-size:42px;
+}
+
+.section-subtitle{
+font-size:10px;
+line-height:1.8;
+padding:0 8px;
+}
+
+.products-toolbar{
+margin-bottom:25px;
+gap:10px;
+}
+
+.toolbar-right{
+gap:7px;
+}
+
+.filter-open{
+height:42px;
+padding:0 15px;
+font-size:9px;
+}
+
+.sort-select{
+height:42px;
+padding:0 8px;
+font-size:9px;
+max-width:130px;
+}
+
+.products-grid{
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.product-info{
+min-height:145px;
+padding:13px 10px 12px;
+}
+
+.product-info h3{
+font-size:19px;
+}
+
+.product-description{
+font-size:9px;
+line-height:1.55;
+min-height:30px;
+}
+
+.product-category{
+font-size:8px;
+}
+
+.product-price{
+font-size:11px;
+}
+
+.quick-add{
+height:46px;
+font-size:8px;
+}
+
+.editorial{
+padding:80px 16px;
+grid-template-columns:1fr;
+}
+
+.editorial-image{
+min-height:330px;
+}
+
+.editorial-content{
+padding:55px 30px;
+}
+
+.editorial-content h2{
+font-size:45px;
+}
+
+.footer-main{
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.footer-brand{
+grid-column:1 / -1;
+}
+
+}
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media(max-width:600px){
+
+.announcement-bar{
+height:34px;
+}
+
+.announcement-track{
+height:34px;
+font-size:8.5px;
+letter-spacing:.8px;
+}
+
+.announcement-item{
+padding:0 22px;
+}
+
+.brand{
+gap:7px;
+}
+
+.brand img{
+width:46px;
+height:46px;
+}
+
+.brand-name{
+font-size:19px;
+letter-spacing:1.5px;
+}
+
+.collection-hero h1{
+font-size:55px;
+}
+
+.collection-hero p{
+font-size:11px;
+}
+
+.products-toolbar{
+align-items:flex-start;
+flex-direction:column;
+}
+
+.toolbar-right{
+width:100%;
+justify-content:space-between;
+}
+
+.filter-open{
+flex:1;
+}
+
+.sort-select{
+flex:1;
+max-width:none;
+}
+
+.products-grid{
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.product-info{
+padding:13px 10px 12px;
+min-height:150px;
+}
+
+.product-info h3{
+font-size:19px;
+}
+
+.product-description{
+font-size:8.5px;
+line-height:1.5;
+min-height:38px;
+}
+
+.quick-add{
+height:46px;
+}
+
+.editorial{
+padding:70px 16px;
+}
+
+.footer-main{
+grid-template-columns:1fr;
+}
+
+.footer-brand{
+grid-column:auto;
+}
+
+.whatsapp-float{
+width:55px;
+height:55px;
+right:16px;
+bottom:16px;
+}
+
+.cart-panel{
+width:100%;
+max-width:100%;
+border-radius:20px 0 0 20px;
+}
+
+}
+
+/* =========================
+EXTRA SMALL
+========================= */
+
+@media(max-width:380px){
+
+.announcement-track{
+font-size:7.5px;
+letter-spacing:.5px;
+}
+
+.announcement-item{
+padding:0 18px;
+}
+
+.brand img{
+width:42px;
+height:42px;
+}
+
+.brand-name{
+font-size:17px;
+}
+
+.header-inner{
+padding:0 10px;
+}
+
+.menu-btn,
+.cart-btn{
+width:40px;
+}
+
+.products-grid{
+gap:8px;
+}
+
+.product-info h3{
+font-size:17px;
+}
+
+.product-description{
+font-size:8px;
+}
+
+.quick-add{
+font-size:8px;
+letter-spacing:1px;
+}
+
+}
+
+/* =========================
+REDUCED MOTION
+========================= */
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+scroll-behavior:auto !important;
+animation-duration:.01ms !important;
+animation-iteration-count:1 !important;
+transition-duration:.01ms !important;
+}
+
+.product-card{
+opacity:1 !important;
+transform:none !important;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- ANNOUNCEMENT -->
-<div class="announcement">
-  <span>Livraison gratuite</span>
-  <span>Livraison partout au Maroc</span>
-  <span>Acier inoxydable</span>
+<!-- =========================
+ANNOUNCEMENT
+========================= -->
+
+<div class="announcement-bar">
+
+<div class="announcement-track">
+
+<div class="announcement-item">
+<span>Livraison gratuite</span>
 </div>
 
-<!-- HEADER -->
-<header class="header">
+<div class="announcement-item">
+<span>Livraison partout au Maroc</span>
+</div>
 
-  <a href="index.html" class="brand">
-    <img src="logo.svg" alt="ZOREVA">
-    <span class="brand-name">ZOREVA</span>
-  </a>
+<div class="announcement-item">
+<span>Acier inoxydable</span>
+</div>
 
-  <nav class="header-nav">
-    <a href="index.html">Accueil</a>
-    <a href="collection.html" class="active">Collection</a>
-    <a href="index.html#about">À propos</a>
-    <a href="index.html#contact">Contact</a>
-  </nav>
+<div class="announcement-item">
+<span>Livraison gratuite</span>
+</div>
 
-  <div class="header-actions">
-    <a href="index.html" class="home-btn">Accueil</a>
+<div class="announcement-item">
+<span>Livraison partout au Maroc</span>
+</div>
 
-    <button class="cart-btn" onclick="openCart()">
-      <span class="cart-icon">♧</span>
-      <span>Panier</span>
-      <span class="cart-count" id="cartCount">0</span>
-    </button>
-  </div>
+<div class="announcement-item">
+<span>Acier inoxydable</span>
+</div>
+
+</div>
+
+</div>
+
+<!-- =========================
+HEADER
+========================= -->
+
+<header>
+
+<div class="header-inner">
+
+<button class="menu-btn" id="menuBtn" aria-label="Menu">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+<a href="index.html" class="brand">
+
+<img src="logo.svg" alt="ZOREVA">
+
+<span class="brand-name">ZOREVA</span>
+
+</a>
+
+<div class="header-actions">
+
+<button class="cart-btn" id="cartBtn" aria-label="Panier">
+
+<svg class="cart-svg" viewBox="0 0 24 24">
+
+<path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 7H6"/>
+
+<circle cx="10" cy="20" r="1"/>
+<circle cx="18" cy="20" r="1"/>
+
+</svg>
+
+<span class="cart-count" id="cartCount">0</span>
+
+</button>
+
+</div>
+
+</div>
 
 </header>
 
-<!-- HERO -->
-<section class="hero">
+<!-- =========================
+SIDE MENU
+========================= -->
 
-  <div class="hero-content">
+<div class="menu-overlay" id="menuOverlay"></div>
 
-    <div class="hero-small">ZOREVA JEWELRY</div>
+<aside class="side-menu" id="sideMenu">
 
-    <h1>
-      La collection<br>
-      <span>ZOREVA</span>
-    </h1>
+<button class="menu-close" id="menuClose">×</button>
 
-    <p>
-      Des pièces élégantes et intemporelles pensées pour accompagner
-      chaque style. Découvrez notre sélection de bijoux et trouvez
-      la pièce qui vous ressemble.
-    </p>
+<h3>ZOREVA</h3>
 
-    <a href="#collection" class="hero-btn">
-      Découvrir la collection
-      <span>→</span>
-    </a>
+<a href="index.html">Accueil</a>
+<a href="collection.html">Collections</a>
+<a href="index.html#products">Produits</a>
+<a href="index.html#about">À propos</a>
+<a href="index.html#contact">Contact</a>
 
-  </div>
+<div class="menu-filter">
 
-  <div class="hero-scroll">
-    SCROLL
-  </div>
+<div class="menu-filter-title">
+Filtrer & Trier
+</div>
 
-</section>
+<div class="menu-filter-group">
 
-<!-- INTRO -->
-<section class="intro">
+<h4>Catégorie</h4>
 
-  <div class="eyebrow">L'ESSENCE ZOREVA</div>
+<button data-menu-category="all" class="menu-category-filter active">
+Tous les produits
+</button>
 
-  <h2>Chaque détail compte</h2>
+<button data-menu-category="Bagues" class="menu-category-filter">
+Bagues
+</button>
 
-  <p>
-    Une sélection de bijoux modernes, élégants et accessibles,
-    choisie pour apporter une touche distinctive à chaque tenue.
-  </p>
+<button data-menu-category="Bracelets" class="menu-category-filter">
+Bracelets
+</button>
 
-</section>
+<button data-menu-category="Colliers" class="menu-category-filter">
+Colliers
+</button>
 
-<!-- CATEGORIES -->
-<div class="categories">
+<button data-menu-category="Montres" class="menu-category-filter">
+Montres
+</button>
 
-  <button class="category-btn active" data-category="all">
-    Tous
-  </button>
+<button data-menu-category="Bijoux" class="menu-category-filter">
+Bijoux
+</button>
 
-  <button class="category-btn" data-category="Bagues">
-    Bagues
-  </button>
-
-  <button class="category-btn" data-category="Bracelets">
-    Bracelets
-  </button>
-
-  <button class="category-btn" data-category="Colliers">
-    Colliers
-  </button>
-
-  <button class="category-btn" data-category="Montres">
-    Montres
-  </button>
-
-  <button class="category-btn" data-category="Bijoux">
-    Bijoux
-  </button>
-
-  <button class="category-btn" data-category="Packs">
-    Packs
-  </button>
+<button data-menu-category="Packs" class="menu-category-filter">
+Packs
+</button>
 
 </div>
 
-<!-- COLLECTION -->
-<main class="collection-wrap" id="collection">
+<div class="menu-filter-group">
 
-  <div class="collection-top">
+<h4>Prix</h4>
 
-    <div>
-      <div class="eyebrow" style="margin-bottom:5px;">
-        ZOREVA
-      </div>
+<div class="price-slider">
 
-      <h2 class="collection-title">
-        Nos bijoux
-      </h2>
-    </div>
+<input
+type="range"
+id="menuMinPrice"
+min="20"
+max="179"
+value="20"
+step="1"
+>
 
-    <div style="display:flex;align-items:center;gap:20px;">
+<input
+type="range"
+id="menuMaxPrice"
+min="20"
+max="179"
+value="179"
+step="1"
+>
 
-      <span class="collection-count" id="productCount">
-        57 produits
-      </span>
+</div>
 
-      <select class="sort" id="sortSelect">
-        <option value="default">Trier par</option>
-        <option value="low">Prix croissant</option>
-        <option value="high">Prix décroissant</option>
-        <option value="az">Nom A-Z</option>
-      </select>
+<div class="price-values">
 
-    </div>
+<strong id="menuMinPriceValue">
+20 DH
+</strong>
 
-  </div>
+<span>—</span>
 
-  <div class="products" id="products"></div>
+<strong id="menuMaxPriceValue">
+179 DH
+</strong>
 
-</main>
+</div>
 
-<!-- EDITORIAL -->
-<section class="editorial">
+</div>
 
-  <div class="editorial-image"></div>
+<div class="menu-filter-group">
 
-  <div class="editorial-content">
+<h4>Trier par</h4>
 
-    <div class="eyebrow">
-      L'ART DU DÉTAIL
-    </div>
+<button data-menu-sort="default" class="menu-sort-filter active">
+Recommandés
+</button>
 
-    <h2>
-      L'élégance<br>
-      sans effort.
-    </h2>
+<button data-menu-sort="low" class="menu-sort-filter">
+Prix croissant
+</button>
 
-    <p>
-      Chez ZOREVA, nous croyons que les petits détails peuvent
-      transformer une silhouette. Nos collections sont pensées
-      pour être portées, associées et appréciées au quotidien.
-    </p>
+<button data-menu-sort="high" class="menu-sort-filter">
+Prix décroissant
+</button>
 
-    <a href="#collection" class="editorial-link">
-      Explorer la collection →
-    </a>
+</div>
 
-  </div>
+<button class="menu-reset-filter" id="menuResetFilter">
+Réinitialiser
+</button>
+
+</div>
+
+</aside>
+
+<!-- =========================
+MAIN
+========================= -->
+
+<main>
+
+<section class="collection-hero">
+
+<div class="collection-hero-image"></div>
+
+<div class="collection-hero-content">
+
+<div class="collection-hero-small">
+ZOREVA JEWELRY
+</div>
+
+<h1>
+Notre<br>
+<span>Collection</span>
+</h1>
+
+<p>
+Découvrez notre sélection de bijoux modernes, élégants et intemporels. Des pièces pensées pour accompagner chaque style et chaque occasion.
+</p>
+
+</div>
 
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
+<!-- =========================
+PRODUCTS
+========================= -->
 
-  <div class="footer-main">
+<section class="products-section">
 
-    <div>
-      <div class="footer-brand">ZOREVA</div>
+<div class="products-inner">
 
-      <p>
-        Bijoux élégants et modernes pour accompagner
-        chaque style et chaque moment.
-      </p>
-    </div>
+<div class="section-heading">
 
-    <div>
-      <h4>Navigation</h4>
+<span>
+Collection ZOREVA
+</span>
 
-      <a href="index.html">Accueil</a>
-      <a href="collection.html">Collection</a>
-      <a href="index.html#about">À propos</a>
-      <a href="index.html#contact">Contact</a>
-    </div>
+<h2>
+Nos bijoux
+</h2>
 
-    <div>
-      <h4>Collection</h4>
+<p class="section-subtitle">
+L’élégance dans chaque détail · Une sélection pensée pour accompagner votre style avec caractère et simplicité.
+</p>
 
-      <a href="#collection">Bagues</a>
-      <a href="#collection">Bracelets</a>
-      <a href="#collection">Colliers</a>
-      <a href="#collection">Packs</a>
-    </div>
+</div>
 
-  </div>
+<div class="products-toolbar">
 
-  <div class="footer-bottom">
-    <span>© 2026 ZOREVA JEWELRY</span>
-    <span>Made with attention to detail</span>
-  </div>
+<div class="products-count" id="productsCount">
+57 produits
+</div>
 
-</footer>
+<div class="toolbar-right">
 
-<!-- WHATSAPP -->
-<a
-  class="whatsapp"
-  href="https://wa.me/212765333754"
-  target="_blank"
-  aria-label="WhatsApp"
->
-  <svg viewBox="0 0 24 24">
-    <path d="M20.52 3.48A11.87 11.87 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.6 5.96L.05 24l6.29-1.65a11.9 11.9 0 0 0 5.72 1.46h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.45-8.43ZM12.07 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.73.98 1-3.64-.23-.37a9.87 9.87 0 1 1 8.36 4.62Zm5.42-7.39c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.5 1.71.64.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
-  </svg>
+<select class="sort-select" id="sortSelect">
+
+<option value="default">
+Recommandés
+</option>
+
+<option value="low">
+Prix croissant
+</option>
+
+<option value="high">
+Prix décroissant
+</option>
+
+</select>
+
+<button class="filter-open" id="filterOpen">
+Filtrer & Trier
+</button>
+
+</div>
+
+</div>
+
+<div class="products-grid" id="productsGrid"></div>
+
+</div>
+
+</section>
+
+<!-- =========================
+EDITORIAL
+========================= -->
+
+<section class="editorial">
+
+<div class="editorial-image"></div>
+
+<div class="editorial-content">
+
+<span>
+L'univers ZOREVA
+</span>
+
+<h2>
+L'élégance<br>
+dans chaque détail.
+</h2>
+
+<p>
+ZOREVA propose une sélection de bijoux élégants et modernes, pensés pour accompagner chaque style avec simplicité et caractère.
+</p>
+
+<a href="#top" class="editorial-link">
+Retour à la collection →
 </a>
 
-<!-- CART BACKDROP -->
-<div class="cart-backdrop" id="cartBackdrop" onclick="closeCart()"></div>
+</div>
 
-<!-- CART -->
-<aside class="cart-panel" id="cartPanel">
+</section>
 
-  <div class="cart-head">
-    <h3>Votre panier</h3>
+</main>
 
-    <button class="close-cart" onclick="closeCart()">
-      ×
-    </button>
-  </div>
+<!-- =========================
+WHATSAPP
+========================= -->
 
-  <div class="cart-items" id="cartItems">
-    <div class="empty-cart">
-      Votre panier est vide.
-    </div>
-  </div>
+<a
+href="https://wa.me/212765333754"
+target="_blank"
+class="whatsapp-float"
+aria-label="WhatsApp"
+>
 
-  <div class="cart-footer">
+<svg viewBox="0 0 32 32">
 
-    <div class="cart-total">
-      <span>Total</span>
-      <strong id="cartTotal">0 DH</strong>
-    </div>
+<path d="M16 3C8.82 3 3 8.6 3 15.5c0 2.43.72 4.69 1.96 6.59L3.1 29l7.1-1.82A13.24 13.24 0 0 0 16 28c7.18 0 13-5.6 13-12.5S23.18 3 16 3zm0 22.7c-1.82 0-3.51-.48-4.98-1.32l-.36-.21-4.21 1.08 1.12-3.98-.23-.37a10.8 10.8 0 0 1-1.64-5.4C5.7 9.75 10.32 5.3 16 5.3s10.3 4.45 10.3 10.2S21.68 25.7 16 25.7zm5.65-7.64c-.31-.16-1.84-.9-2.12-1-.29-.1-.5-.16-.71.16-.21.31-.81 1-.99 1.21-.18.21-.37.23-.68.08-.31-.16-1.3-.47-2.47-1.49-.91-.79-1.53-1.77-1.71-2.08-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.63-.52-.54-.71-.55h-.6c-.21 0-.55.08-.84.39-.29.31-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.21 3.36 5.36 4.71.75.32 1.33.51 1.79.65.75.24 1.43.21 1.97.13.6-.09 1.84-.75 2.1-1.47.26-.73.26-1.34.18-1.47-.08-.13-.29-.21-.6-.37z"/>
 
-    <button class="whatsapp-checkout" onclick="checkoutWhatsApp()">
-      Commander sur WhatsApp
-    </button>
+</svg>
 
-  </div>
+</a>
+
+<!-- =========================
+FILTER PANEL
+========================= -->
+
+<div class="filter-overlay" id="filterOverlay"></div>
+
+<aside class="filter-panel" id="filterPanel">
+
+<div class="filter-header">
+
+<h3>
+Filtrer
+</h3>
+
+<button class="filter-close" id="filterClose">
+×
+</button>
+
+</div>
+
+<div class="filter-group">
+
+<h4>
+Catégorie
+</h4>
+
+<button data-category="all" class="category-filter active">
+Tous les produits
+</button>
+
+<button data-category="Bagues" class="category-filter">
+Bagues
+</button>
+
+<button data-category="Bracelets" class="category-filter">
+Bracelets
+</button>
+
+<button data-category="Colliers" class="category-filter">
+Colliers
+</button>
+
+<button data-category="Montres" class="category-filter">
+Montres
+</button>
+
+<button data-category="Bijoux" class="category-filter">
+Bijoux
+</button>
+
+<button data-category="Packs" class="category-filter">
+Packs
+</button>
+
+</div>
+
+<div class="filter-group">
+
+<h4>
+Prix
+</h4>
+
+<div class="price-slider">
+
+<input
+type="range"
+id="filterMinPrice"
+min="20"
+max="179"
+value="20"
+step="1"
+>
+
+<input
+type="range"
+id="filterMaxPrice"
+min="20"
+max="179"
+value="179"
+step="1"
+>
+
+</div>
+
+<div class="price-values">
+
+<strong id="filterMinPriceValue">
+20 DH
+</strong>
+
+<span>—</span>
+
+<strong id="filterMaxPriceValue">
+179 DH
+</strong>
+
+</div>
+
+</div>
+
+<div class="filter-group">
+
+<h4>
+Trier par
+</h4>
+
+<button data-sort="default" class="sort-filter active">
+Recommandés
+</button>
+
+<button data-sort="low" class="sort-filter">
+Prix croissant
+</button>
+
+<button data-sort="high" class="sort-filter">
+Prix décroissant
+</button>
+
+</div>
+
+<button class="reset-filter" id="resetFilter">
+Réinitialiser
+</button>
 
 </aside>
+
+<!-- =========================
+CART
+========================= -->
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<aside class="cart-panel" id="cartPanel">
+
+<div class="cart-header">
+
+<h2>
+Votre panier
+</h2>
+
+<button class="cart-close" id="cartClose">
+×
+</button>
+
+</div>
+
+<div class="cart-items" id="cartItems">
+
+<div class="cart-empty">
+Votre panier est vide.
+</div>
+
+</div>
+
+<div class="cart-footer">
+
+<div class="cart-total">
+
+<span>
+Total
+</span>
+
+<strong id="cartTotal">
+0 DH
+</strong>
+
+</div>
+
+<button class="checkout-btn" id="checkoutBtn">
+Finaliser la commande
+</button>
+
+</div>
+
+</aside>
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-inner">
+
+<div class="footer-main">
+
+<div class="footer-brand">
+
+<img src="logo.svg" alt="ZOREVA">
+
+<p>
+Une sélection de bijoux élégants, modernes et intemporels pour accompagner chaque style.
+</p>
+
+</div>
+
+<div class="footer-column">
+
+<h3>
+Navigation
+</h3>
+
+<a href="index.html">
+Accueil
+</a>
+
+<a href="collection.html">
+Collection
+</a>
+
+<a href="index.html#products">
+Produits
+</a>
+
+<a href="index.html#about">
+À propos
+</a>
+
+</div>
+
+<div class="footer-column">
+
+<h3>
+Contact
+</h3>
+
+<a
+href="https://wa.me/212765333754"
+target="_blank"
+>
+WhatsApp
+</a>
+
+<a href="index.html#contact">
+Nous contacter
+</a>
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 ZOREVA JEWELRY — Tous droits réservés.
+</div>
+
+</div>
+
+</footer>
 
 <script>
 
 /* =========================
-   PRODUCTS
+PRODUCTS
 ========================= */
 
-const BASE =
-"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/";
+const products=[
 
-const productsData = [
+{
+id:1,
+name:"Bijou 01",
+category:"Packs",
+price:129,
+description:"Un pack élégant et harmonieux, pensé pour compléter votre style avec une touche raffinée.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg"
+},
 
-  [1,"Bijou 01","Packs",129,"IMG_20260726_171518.jpg"],
-  [2,"Bijou 02","Packs",129,"IMG_20260726_171656.jpg"],
-  [3,"Bijou 03","Packs",129,"IMG_20260726_171921.jpg"],
+{
+id:2,
+name:"Bijou 02",
+category:"Packs",
+price:129,
+description:"Une combinaison moderne et élégante, idéale pour apporter une finition soignée à votre look.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg"
+},
 
-  [4,"Bijou 04","Colliers",79,"222/WhatsApp Image 2026-09-17 at 14.39.04 (1).jpeg"],
+{
+id:3,
+name:"Bijou 03",
+category:"Packs",
+price:129,
+description:"Un ensemble délicat au style contemporain, facile à porter au quotidien comme en occasion.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg"
+},
 
-  [5,"Bijou 05","Packs",99,"IMG_20260726_180004.jpg"],
-  [6,"Bijou 06","Packs",99,"IMG_20260726_180304.jpg"],
-  [7,"Bijou 07","Packs",99,"IMG_20260726_180430.jpg"],
+{
+id:4,
+name:"Bijou 04",
+category:"Colliers",
+price:79,
+description:"Un collier raffiné au design moderne, parfait pour ajouter une touche élégante à votre tenue.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2014.39.04%20%281%29.jpeg"
+},
 
-  [8,"Bijou 08","Colliers",79,"2.jpg"],
+{
+id:5,
+name:"Bijou 05",
+category:"Packs",
+price:99,
+description:"Un pack tendance aux lignes élégantes, conçu pour accompagner facilement différents styles.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"
+},
 
-  [9,"Bijou 09","Bracelets",59,"71sw32ZElsL._AC_UY1100_.jpg"],
+{
+id:6,
+name:"Bijou 06",
+category:"Packs",
+price:99,
+description:"Une sélection harmonieuse de pièces modernes pour créer un style élégant et équilibré.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg"
+},
 
-  [10,"Bijou 10","Packs",179,"IMG_20260726_155931.jpg"],
-  [11,"Bijou 11","Packs",179,"IMG_20260726_160641.jpg"],
-  [12,"Bijou 12","Packs",179,"IMG_20260726_161253.jpg"],
+{
+id:7,
+name:"Bijou 07",
+category:"Packs",
+price:99,
+description:"Un ensemble chic et facile à porter, parfait pour donner du caractère à votre style.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg"
+},
 
-  [13,"Bijou 13","Colliers",79,"WhatsApp Image 2026-09-17 at 00.53.02 (1).jpeg"],
-  [14,"Bijou 14","Colliers",79,"WhatsApp Image 2026-09-17 at 00.53.02.jpeg"],
-  [15,"Bijou 15","Colliers",79,"WhatsApp Image 2026-09-17 at 00.53.03 (1).jpeg"],
-  [16,"Bijou 16","Colliers",79,"WhatsApp Image 2026-09-17 at 00.53.03 (3).jpeg"],
+{
+id:8,
+name:"Bijou 08",
+category:"Colliers",
+price:79,
+description:"Un collier minimaliste et élégant qui s'accorde facilement avec vos looks de tous les jours.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/2.jpg"
+},
 
-  [17,"Bijou 17","Packs",99,"New folder/WhatsApp Image 2026-09-17 at 03.06.06 (1).jpeg"],
-  [18,"Bijou 18","Packs",129,"WhatsApp Image 2026-09-17 at 00.53.04 (1).jpeg"],
-  [19,"Bijou 19","Bijoux",20,"WhatsApp Image 2026-09-17 at 00.53.04 (2).jpeg"],
-  [20,"Bijou 20","Montres",99,"WhatsApp Image 2026-09-17 at 00.53.04 (3).jpeg"],
-  [21,"Bijou 21","Bracelets",59,"WhatsApp Image 2026-09-17 at 00.53.04 (4).jpeg"],
-  [22,"Bijou 22","Packs",129,"WhatsApp Image 2026-09-17 at 00.53.04 (5).jpeg"],
-  [23,"Bijou 23","Montres",99,"WhatsApp Image 2026-09-17 at 00.53.04 (6).jpeg"],
-  [24,"Bijou 24","Bijoux",79,"WhatsApp Image 2026-09-17 at 00.53.04.jpeg"],
-  [25,"Bijou 25","Bracelets",59,"WhatsApp Image 2026-09-17 at 00.53.05 (1).jpeg"],
-  [26,"Bijou 26","Packs",129,"WhatsApp Image 2026-09-17 at 00.53.05 (5).jpeg"],
-  [27,"Bijou 27","Packs",129,"WhatsApp Image 2026-09-17 at 00.53.05 (6).jpeg"],
-  [28,"Bijou 28","Bracelets",59,"WhatsApp Image 2026-09-17 at 00.53.05 (7).jpeg"],
-  [29,"Bijou 29","Bracelets",79,"WhatsApp Image 2026-09-17 at 00.53.05 (8).jpeg"],
-  [30,"Bijou 30","Colliers",79,"WhatsApp Image 2026-09-17 at 00.53.05.jpeg"],
-  [31,"Bijou 31","Colliers",69,"WhatsApp Image 2026-09-17 at 00.53.06 (1).jpeg"],
-  [32,"Bijou 32","Bracelets",59,"WhatsApp Image 2026-09-17 at 00.53.06 (2).jpeg"],
-  [33,"Bijou 33","Colliers",69,"WhatsApp Image 2026-09-17 at 00.53.06 (3).jpeg"],
-  [34,"Bijou 34","Bracelets",59,"WhatsApp Image 2026-09-17 at 00.53.06 (5).jpeg"],
-  [35,"Bijou 35","Bracelets",59,"WhatsApp Image 2026-09-17 at 00.53.06 (6).jpeg"],
-  [36,"Bijou 36","Bracelets",59,"WhatsApp Image 2026-09-17 at 00.53.06 (7).jpeg"],
-  [37,"Bijou 37","Bracelets",59,"WhatsApp Image 2026-09-17 at 00.53.06 (8).jpeg"],
-  [38,"Bijou 38","Bracelets",59,"WhatsApp Image 2026-09-17 at 00.53.06.jpeg"],
+{
+id:9,
+name:"Bijou 09",
+category:"Bracelets",
+price:59,
+description:"Un bracelet discret et moderne, idéal pour compléter votre tenue avec simplicité.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/71sw32ZElsL._AC_UY1100_.jpg"
+},
 
-  [39,"Bijou 39","Colliers",79,"222/WhatsApp Image 2026-09-17 at 14.39.04.jpeg"],
-  [40,"Bijou 40","Bracelets",59,"222/WhatsApp Image 2026-09-17 at 15.17.22 (2).jpeg"],
+{
+id:10,
+name:"Bijou 10",
+category:"Packs",
+price:179,
+description:"Un pack sophistiqué qui associe élégance et caractère pour une allure distinguée.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_155931.jpg"
+},
 
-  [41,"Bijou 41","Packs",129,"New folder/WhatsApp Image 2026-09-17 at 03.06.06 (2).jpeg"],
-  [42,"Bijou 42","Montres",99,"New folder/WhatsApp Image 2026-09-17 at 03.06.06.jpeg"],
-  [43,"Bijou 43","Packs",149,"New folder/WhatsApp Image 2026-09-17 at 03.06.07 (1).jpeg"],
-  [44,"Bijou 44","Packs",149,"New folder/WhatsApp Image 2026-09-17 at 03.06.07.jpeg"],
-  [45,"Bijou 45","Packs",129,"New folder/WhatsApp Image 2026-09-17 at 03.06.08 (1).jpeg"],
-  [46,"Bijou 46","Packs",129,"New folder/WhatsApp Image 2026-09-17 at 03.06.08 (2).jpeg"],
-  [47,"Bijou 47","Packs",129,"New folder/WhatsApp Image 2026-09-17 at 03.06.08 (3).jpeg"],
-  [48,"Bijou 48","Packs",149,"New folder/WhatsApp Image 2026-09-17 at 03.06.08 (4).jpeg"],
+{
+id:11,
+name:"Bijou 11",
+category:"Packs",
+price:179,
+description:"Une composition élégante aux détails soignés, parfaite pour une allure moderne et raffinée.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_160641.jpg"
+},
 
-  [49,"Bijou 49","Bracelets",59,"222/WhatsApp Image 2026-09-17 at 15.17.22.jpeg"],
-  [50,"Bijou 50","Colliers",79,"New folder/WhatsApp Image 2026-09-17 at 03.06.08 (6).jpeg"],
-  [51,"Bijou 51","Packs",129,"New folder/WhatsApp Image 2026-09-17 at 03.06.08 (7).jpeg"],
-  [52,"Bijou 52","Colliers",79,"222/WhatsApp Image 2026-09-17 at 15.17.23 (1).jpeg"],
-  [53,"Bijou 53","Packs",129,"New folder/WhatsApp Image 2026-09-17 at 03.06.08.jpeg"],
-  [54,"Bijou 54","Packs",129,"New folder/WhatsApp Image 2026-09-17 at 03.06.09 (1).jpeg"],
-  [55,"Bijou 55","Packs",149,"New folder/WhatsApp Image 2026-09-17 at 03.06.09 (2).jpeg"],
-  [56,"Bijou 56","Bijoux",129,"222/WhatsApp Image 2026-09-17 at 15.34.50.jpeg"],
-  [57,"Bijou 57","Colliers",69,"222/WhatsApp Image 2026-09-17 at 16.04.15.jpeg"]
+{
+id:12,
+name:"Bijou 12",
+category:"Packs",
+price:179,
+description:"Un ensemble premium au style intemporel, conçu pour accompagner vos moments importants.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_161253.jpg"
+},
+
+{
+id:13,
+name:"Bijou 13",
+category:"Colliers",
+price:79,
+description:"Un collier élégant aux lignes délicates, parfait pour une touche subtile et raffinée.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.02%20%281%29.jpeg"
+},
+
+{
+id:14,
+name:"Bijou 14",
+category:"Colliers",
+price:79,
+description:"Une pièce moderne et raffinée qui apporte naturellement une touche de sophistication.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.02.jpeg"
+},
+
+{
+id:15,
+name:"Bijou 15",
+category:"Colliers",
+price:79,
+description:"Un collier au style élégant et polyvalent, facile à associer à différentes tenues.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%281%29.jpeg"
+},
+
+{
+id:16,
+name:"Bijou 16",
+category:"Colliers",
+price:79,
+description:"Une pièce raffinée pensée pour celles et ceux qui apprécient les détails simples et élégants.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%283%29.jpeg"
+},
+
+{
+id:17,
+name:"Bijou 17",
+category:"Packs",
+price:99,
+description:"Un pack moderne et équilibré pour créer facilement une silhouette élégante au quotidien.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06%20%281%29.jpeg"
+},
+
+{
+id:18,
+name:"Bijou 18",
+category:"Packs",
+price:129,
+description:"Un ensemble élégant aux détails soignés, idéal pour compléter votre collection personnelle.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%281%29.jpeg"
+},
+
+{
+id:19,
+name:"Bijou 19",
+category:"Bijoux",
+price:20,
+description:"Une petite touche élégante et accessible pour compléter votre style avec simplicité.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%282%29.jpeg"
+},
+
+{
+id:20,
+name:"Bijou 20",
+category:"Montres",
+price:99,
+description:"Une montre au style élégant qui associe fonctionnalité et présence pour accompagner chaque journée.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%283%29.jpeg"
+},
+
+{
+id:21,
+name:"Bijou 21",
+category:"Bracelets",
+price:59,
+description:"Un bracelet moderne et discret, parfait pour ajouter une finition élégante à votre poignet.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%284%29.jpeg"
+},
+
+{
+id:22,
+name:"Bijou 22",
+category:"Packs",
+price:129,
+description:"Un pack harmonieux et tendance, conçu pour accompagner aussi bien les looks simples que sophistiqués.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%285%29.jpeg"
+},
+
+{
+id:23,
+name:"Bijou 23",
+category:"Montres",
+price:99,
+description:"Une montre élégante au design contemporain, idéale pour compléter votre style avec caractère.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%286%29.jpeg"
+},
+
+{
+id:24,
+name:"Bijou 24",
+category:"Bijoux",
+price:79,
+description:"Une pièce élégante et polyvalente qui apporte une touche raffinée à votre quotidien.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04.jpeg"
+},
+
+{
+id:25,
+name:"Bijou 25",
+category:"Bracelets",
+price:59,
+description:"Un bracelet simple et élégant, parfait pour accompagner vos tenues avec une touche moderne.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%281%29.jpeg"
+},
+
+{
+id:26,
+name:"Bijou 26",
+category:"Packs",
+price:129,
+description:"Un ensemble raffiné qui apporte une touche harmonieuse et contemporaine à votre style.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%285%29.jpeg"
+},
+
+{
+id:27,
+name:"Bijou 27",
+category:"Packs",
+price:129,
+description:"Un pack moderne et élégant pensé pour celles et ceux qui aiment les détails soignés.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%286%29.jpeg"
+},
+
+{
+id:28,
+name:"Bijou 28",
+category:"Bracelets",
+price:59,
+description:"Un bracelet léger et tendance qui complète facilement votre style de tous les jours.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%287%29.jpeg"
+},
+
+{
+id:29,
+name:"Bijou 29",
+category:"Bracelets",
+price:79,
+description:"Une pièce élégante au caractère affirmé, idéale pour donner une touche distinctive à votre look.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%288%29.jpeg"
+},
+
+{
+id:30,
+name:"Bijou 30",
+category:"Colliers",
+price:79,
+description:"Un collier élégant et facile à porter, pensé pour sublimer votre style avec discrétion.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05.jpeg"
+},
+
+{
+id:31,
+name:"Bijou 31",
+category:"Colliers",
+price:69,
+description:"Un design délicat et moderne qui apporte une touche raffinée sans en faire trop.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%281%29.jpeg"
+},
+
+{
+id:32,
+name:"Bijou 32",
+category:"Bracelets",
+price:59,
+description:"Un bracelet minimaliste et élégant, parfait pour compléter une tenue avec simplicité.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%282%29.jpeg"
+},
+
+{
+id:33,
+name:"Bijou 33",
+category:"Colliers",
+price:69,
+description:"Une pièce raffinée aux lignes modernes, conçue pour apporter une touche élégante au quotidien.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%283%29.jpeg"
+},
+
+{
+id:34,
+name:"Bijou 34",
+category:"Bracelets",
+price:59,
+description:"Un bracelet discret et moderne qui s'accorde facilement avec différents styles.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%285%29.jpeg"
+},
+
+{
+id:35,
+name:"Bijou 35",
+category:"Bracelets",
+price:59,
+description:"Une touche élégante et simple pour compléter votre poignet avec un style contemporain.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%286%29.jpeg"
+},
+
+{
+id:36,
+name:"Bijou 36",
+category:"Bracelets",
+price:59,
+description:"Un bracelet tendance au design épuré, idéal pour accompagner votre style au quotidien.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%287%29.jpeg"
+},
+
+{
+id:37,
+name:"Bijou 37",
+category:"Bracelets",
+price:59,
+description:"Une pièce légère et élégante qui ajoute naturellement une touche soignée à votre tenue.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%288%29.jpeg"
+},
+
+{
+id:38,
+name:"Bijou 38",
+category:"Bracelets",
+price:59,
+description:"Un bracelet moderne et polyvalent, parfait pour un style élégant et sans effort.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06.jpeg"
+},
+
+{
+id:39,
+name:"Bijou 39",
+category:"Colliers",
+price:79,
+description:"Un collier raffiné au caractère moderne, pensé pour accompagner différentes occasions.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2014.39.04.jpeg"
+},
+
+{
+id:40,
+name:"Bijou 40",
+category:"Bracelets",
+price:59,
+description:"Un bracelet élégant et discret qui apporte une finition moderne à votre style.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.22%20%282%29.jpeg"
+},
+
+{
+id:41,
+name:"Bijou 41",
+category:"Packs",
+price:129,
+description:"Un pack harmonieux et raffiné, idéal pour créer une allure élégante et bien équilibrée.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06%20%282%29.jpeg"
+},
+
+{
+id:42,
+name:"Bijou 42",
+category:"Montres",
+price:99,
+description:"Une montre moderne et élégante qui associe présence, simplicité et style contemporain.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06.jpeg"
+},
+
+{
+id:43,
+name:"Bijou 43",
+category:"Packs",
+price:149,
+description:"Un ensemble sophistiqué pensé pour apporter une finition élégante et distinctive à votre look.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.07%20%281%29.jpeg"
+},
+
+{
+id:44,
+name:"Bijou 44",
+category:"Packs",
+price:149,
+description:"Un pack au style raffiné et contemporain, parfait pour compléter une tenue avec caractère.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.07.jpeg"
+},
+
+{
+id:45,
+name:"Bijou 45",
+category:"Packs",
+price:129,
+description:"Une combinaison élégante et moderne qui s'intègre facilement à votre collection.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%281%29.jpeg"
+},
+
+{
+id:46,
+name:"Bijou 46",
+category:"Packs",
+price:129,
+description:"Un ensemble tendance et équilibré, conçu pour accompagner vos différents styles.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%282%29.jpeg"
+},
+
+{
+id:47,
+name:"Bijou 47",
+category:"Packs",
+price:129,
+description:"Un pack élégant aux détails soignés pour une allure moderne et harmonieuse.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%283%29.jpeg"
+},
+
+{
+id:48,
+name:"Bijou 48",
+category:"Packs",
+price:149,
+description:"Un ensemble sophistiqué qui apporte une touche premium et élégante à votre style.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%284%29.jpeg"
+},
+
+{
+id:49,
+name:"Bijou 49",
+category:"Bracelets",
+price:59,
+description:"Un bracelet moderne et facile à porter, parfait pour une touche élégante au quotidien.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.22.jpeg"
+},
+
+{
+id:50,
+name:"Bijou 50",
+category:"Colliers",
+price:79,
+description:"Un collier raffiné au design intemporel, pensé pour accompagner différents looks.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%286%29.jpeg"
+},
+
+{
+id:51,
+name:"Bijou 51",
+category:"Packs",
+price:129,
+description:"Un pack élégant et polyvalent, idéal pour apporter une finition soignée à votre style.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%287%29.jpeg"
+},
+
+{
+id:52,
+name:"Bijou 52",
+category:"Colliers",
+price:79,
+description:"Une pièce moderne et élégante qui apporte une touche de caractère à chaque tenue.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.23%20%281%29.jpeg"
+},
+
+{
+id:53,
+name:"Bijou 53",
+category:"Packs",
+price:129,
+description:"Un ensemble harmonieux au style contemporain, parfait pour compléter votre collection.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08.jpeg"
+},
+
+{
+id:54,
+name:"Bijou 54",
+category:"Packs",
+price:129,
+description:"Un pack moderne et élégant pensé pour accompagner aussi bien les looks quotidiens que raffinés.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.09%20%281%29.jpeg"
+},
+
+{
+id:55,
+name:"Bijou 55",
+category:"Packs",
+price:149,
+description:"Un ensemble sophistiqué qui ajoute une présence élégante et distinctive à votre style.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.09%20%282%29.jpeg"
+},
+
+{
+id:56,
+name:"Bijou 56",
+category:"Bijoux",
+price:129,
+description:"Une pièce élégante au style contemporain, pensée pour apporter une touche unique à votre look.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.34.50.jpeg"
+},
+
+{
+id:57,
+name:"Bijou 57",
+category:"Colliers",
+price:69,
+description:"Un collier élégant et discret, idéal pour compléter votre style avec une touche raffinée.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2016.04.15.jpeg"
+}
 
 ];
 
 /* =========================
-   VARIABLES
+FILTER STATE
 ========================= */
 
-let currentCategory = "all";
-let cart = JSON.parse(localStorage.getItem("zorevaCart")) || [];
+let currentCategory="all";
+let currentMinPrice=20;
+let currentMaxPrice=179;
+let currentSort="default";
+
+let revealObserver=null;
+
+const PRICE_MIN=20;
+const PRICE_MAX=179;
 
 /* =========================
-   IMAGE URL
+URL CATEGORY
 ========================= */
 
-function imageUrl(file){
+function readURLCategory(){
 
-  return BASE +
-    file
-      .split("/")
-      .map(part => encodeURIComponent(part))
-      .join("/");
+const params=new URLSearchParams(window.location.search);
+
+let category=params.get("category");
+
+if(!category){
+return;
+}
+
+if(category==="Boucles d'oreilles"){
+category="Bijoux";
+}
+
+const exists=products.some(
+product=>product.category===category
+);
+
+if(exists){
+currentCategory=category;
+}
 
 }
 
 /* =========================
-   RENDER PRODUCTS
+PRICE SLIDER
+========================= */
+
+function updatePriceSlider(){
+
+const menuMin=document.getElementById("menuMinPrice");
+const menuMax=document.getElementById("menuMaxPrice");
+
+const filterMin=document.getElementById("filterMinPrice");
+const filterMax=document.getElementById("filterMaxPrice");
+
+if(currentMinPrice>currentMaxPrice){
+
+if(
+document.activeElement===menuMin ||
+document.activeElement===filterMin
+){
+
+currentMinPrice=currentMaxPrice;
+
+}else{
+
+currentMaxPrice=currentMinPrice;
+
+}
+
+}
+
+if(menuMin) menuMin.value=currentMinPrice;
+if(menuMax) menuMax.value=currentMaxPrice;
+
+if(filterMin) filterMin.value=currentMinPrice;
+if(filterMax) filterMax.value=currentMaxPrice;
+
+const menuMinValue=
+document.getElementById("menuMinPriceValue");
+
+const menuMaxValue=
+document.getElementById("menuMaxPriceValue");
+
+const filterMinValue=
+document.getElementById("filterMinPriceValue");
+
+const filterMaxValue=
+document.getElementById("filterMaxPriceValue");
+
+if(menuMinValue)
+menuMinValue.textContent=
+`${currentMinPrice} DH`;
+
+if(menuMaxValue)
+menuMaxValue.textContent=
+`${currentMaxPrice} DH`;
+
+if(filterMinValue)
+filterMinValue.textContent=
+`${currentMinPrice} DH`;
+
+if(filterMaxValue)
+filterMaxValue.textContent=
+`${currentMaxPrice} DH`;
+
+}
+
+function setMinPrice(value){
+
+value=Number(value);
+
+if(value>currentMaxPrice){
+value=currentMaxPrice;
+}
+
+currentMinPrice=value;
+
+updatePriceSlider();
+renderProducts();
+
+}
+
+function setMaxPrice(value){
+
+value=Number(value);
+
+if(value<currentMinPrice){
+value=currentMinPrice;
+}
+
+currentMaxPrice=value;
+
+updatePriceSlider();
+renderProducts();
+
+}
+
+document
+.getElementById("menuMinPrice")
+.addEventListener("input",event=>{
+setMinPrice(event.target.value);
+});
+
+document
+.getElementById("menuMaxPrice")
+.addEventListener("input",event=>{
+setMaxPrice(event.target.value);
+});
+
+document
+.getElementById("filterMinPrice")
+.addEventListener("input",event=>{
+setMinPrice(event.target.value);
+});
+
+document
+.getElementById("filterMaxPrice")
+.addEventListener("input",event=>{
+setMaxPrice(event.target.value);
+});
+
+/* =========================
+SCROLL REVEAL
+========================= */
+
+function initRevealObserver(){
+
+if(revealObserver) return;
+
+revealObserver=
+new IntersectionObserver(
+
+entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+revealObserver.unobserve(entry.target);
+
+}
+
+});
+
+},
+
+{
+threshold:.08,
+rootMargin:"0px 0px -30px 0px"
+}
+
+);
+
+}
+
+function observeRevealElements(){
+
+initRevealObserver();
+
+const elements=
+document.querySelectorAll(".product-card");
+
+elements.forEach((element,index)=>{
+
+if(element.classList.contains("show"))
+return;
+
+element.style.transitionDelay=
+`${Math.min((index%4)*0.07,0.28)}s`;
+
+revealObserver.observe(element);
+
+});
+
+}
+
+/* =========================
+RENDER PRODUCTS
 ========================= */
 
 function renderProducts(){
 
-  const container = document.getElementById("products");
+let filtered=[...products];
 
-  let list = [...productsData];
+if(currentCategory!=="all"){
 
-  if(currentCategory !== "all"){
-    list = list.filter(p => p[2] === currentCategory);
-  }
+filtered=
+filtered.filter(
+product=>
+product.category===currentCategory
+);
 
-  const sort = document.getElementById("sortSelect").value;
+}
 
-  if(sort === "low"){
-    list.sort((a,b) => a[3] - b[3]);
-  }
+filtered=
+filtered.filter(
+product=>
+product.price>=currentMinPrice &&
+product.price<=currentMaxPrice
+);
 
-  if(sort === "high"){
-    list.sort((a,b) => b[3] - a[3]);
-  }
+if(currentSort==="low"){
 
-  if(sort === "az"){
-    list.sort((a,b) => a[1].localeCompare(b[1]));
-  }
+filtered.sort(
+(a,b)=>a.price-b.price
+);
 
-  document.getElementById("productCount").textContent =
-    list.length + (list.length > 1 ? " produits" : " produit");
+}
 
-  container.innerHTML = "";
+if(currentSort==="high"){
 
-  list.forEach((p,index)=>{
+filtered.sort(
+(a,b)=>b.price-a.price
+);
 
-    const [id,name,category,price,file] = p;
+}
 
-    const oldPrice = Math.round(price * 1.25);
+const grid=
+document.getElementById("productsGrid");
 
-    const article = document.createElement("article");
+grid.innerHTML="";
 
-    article.className = "product";
+document.getElementById("productsCount")
+.textContent=
+`${filtered.length} produit${filtered.length>1?"s":""}`;
 
-    article.style.animationDelay = `${Math.min(index * .035,.5)}s`;
+filtered.forEach((product,index)=>{
 
-    article.innerHTML = `
+const card=
+document.createElement("article");
 
-      <div class="product-image">
+card.className="product-card";
 
-        <a href="product.html?id=${id}">
+card.style.transitionDelay=
+`${Math.min((index%4)*0.07,0.28)}s`;
 
-          <img
-            src="${imageUrl(file)}"
-            alt="${name}"
-            loading="lazy"
-          >
+card.addEventListener("click",event=>{
 
-        </a>
+if(
+event.target.closest(".quick-add")
+)
+return;
 
-        <div class="product-overlay">
+window.location.href=
+`product.html?id=${product.id}`;
 
-          <button
-            class="overlay-btn"
-            onclick="addToCart(${id})"
-          >
-            Ajouter au panier
-          </button>
+});
 
-          <a
-            class="overlay-btn"
-            href="product.html?id=${id}"
-            style="display:flex;align-items:center;justify-content:center;"
-          >
-            Voir
-          </a>
+card.innerHTML=`
 
-        </div>
+<div class="product-image">
 
-      </div>
+<img
+src="${product.image}"
+alt="${product.name}"
+loading="lazy"
+>
 
-      <div class="product-info">
+</div>
 
-        <div class="product-category">
-          ${category}
-        </div>
+<div class="product-info">
 
-        <div class="product-name">
-          ${name}
-        </div>
+<h3>
+${product.name}
+</h3>
 
-        <div class="product-bottom">
+<p class="product-description">
+${product.description}
+</p>
 
-          <div class="product-price">
-            <strong>${price} DH</strong>
-          </div>
+<div class="product-info-bottom">
 
-          <button
-            class="add-btn"
-            onclick="addToCart(${id})"
-          >
-            Ajouter
-          </button>
+<span class="product-category">
+${product.category}
+</span>
 
-        </div>
+<span class="product-price">
+${product.price} DH
+</span>
 
-      </div>
+</div>
 
-    `;
+</div>
 
-    container.appendChild(article);
+<button
+class="quick-add"
+data-id="${product.id}"
+>
+Ajouter au panier
+</button>
 
-  });
+`;
+
+grid.appendChild(card);
+
+});
+
+document
+.querySelectorAll(".quick-add")
+.forEach(button=>{
+
+button.addEventListener("click",event=>{
+
+event.preventDefault();
+event.stopPropagation();
+
+const id=
+Number(button.dataset.id);
+
+const product=
+products.find(
+item=>item.id===id
+);
+
+addToCart(product,1);
+
+button.textContent="Ajouté";
+
+setTimeout(()=>{
+
+button.textContent=
+"Ajouter au panier";
+
+},1200);
+
+});
+
+});
+
+observeRevealElements();
 
 }
 
 /* =========================
-   CATEGORY FILTER
+FILTER BUTTONS
 ========================= */
 
-document.querySelectorAll(".category-btn").forEach(btn=>{
+function updateCategoryButtons(){
 
-  btn.addEventListener("click",()=>{
+document
+.querySelectorAll(".category-filter")
+.forEach(button=>{
 
-    document.querySelectorAll(".category-btn")
-      .forEach(b=>b.classList.remove("active"));
+button.classList.toggle(
+"active",
+button.dataset.category===
+currentCategory
+);
 
-    btn.classList.add("active");
+});
 
-    currentCategory = btn.dataset.category;
+document
+.querySelectorAll(".sort-filter")
+.forEach(button=>{
 
-    renderProducts();
+button.classList.toggle(
+"active",
+button.dataset.sort===
+currentSort
+);
 
-    document
-      .getElementById("collection")
-      .scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-      });
+});
 
-  });
+document
+.querySelectorAll(".menu-category-filter")
+.forEach(button=>{
+
+button.classList.toggle(
+"active",
+button.dataset.menuCategory===
+currentCategory
+);
+
+});
+
+document
+.querySelectorAll(".menu-sort-filter")
+.forEach(button=>{
+
+button.classList.toggle(
+"active",
+button.dataset.menuSort===
+currentSort
+);
+
+});
+
+updatePriceSlider();
+
+}
+
+/* =========================
+FILTER PANEL
+========================= */
+
+const filterPanel=
+document.getElementById("filterPanel");
+
+const filterOverlay=
+document.getElementById("filterOverlay");
+
+function openFilter(){
+
+filterPanel.classList.add("active");
+filterOverlay.classList.add("active");
+
+}
+
+function closeFilter(){
+
+filterPanel.classList.remove("active");
+filterOverlay.classList.remove("active");
+
+}
+
+document
+.getElementById("filterOpen")
+.addEventListener(
+"click",
+openFilter
+);
+
+document
+.getElementById("filterClose")
+.addEventListener(
+"click",
+closeFilter
+);
+
+filterOverlay.addEventListener(
+"click",
+closeFilter
+);
+
+/* =========================
+CATEGORY FILTER
+========================= */
+
+document
+.querySelectorAll(".category-filter")
+.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+currentCategory=
+button.dataset.category;
+
+updateCategoryButtons();
+renderProducts();
+
+});
 
 });
 
 /* =========================
-   SORT
+SORT FILTER
 ========================= */
 
 document
-  .getElementById("sortSelect")
-  .addEventListener("change",renderProducts);
+.querySelectorAll(".sort-filter")
+.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+currentSort=
+button.dataset.sort;
+
+document.getElementById("sortSelect")
+.value=currentSort;
+
+updateCategoryButtons();
+renderProducts();
+
+});
+
+});
 
 /* =========================
-   CART
+SORT SELECT
 ========================= */
+
+document
+.getElementById("sortSelect")
+.addEventListener("change",event=>{
+
+currentSort=
+event.target.value;
+
+updateCategoryButtons();
+renderProducts();
+
+});
+
+/* =========================
+RESET FILTER
+========================= */
+
+document
+.getElementById("resetFilter")
+.addEventListener("click",()=>{
+
+currentCategory="all";
+currentMinPrice=PRICE_MIN;
+currentMaxPrice=PRICE_MAX;
+currentSort="default";
+
+document.getElementById("sortSelect")
+.value="default";
+
+updateCategoryButtons();
+renderProducts();
+closeFilter();
+
+});
+
+/* =========================
+MENU CATEGORY
+========================= */
+
+document
+.querySelectorAll(".menu-category-filter")
+.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+currentCategory=
+button.dataset.menuCategory;
+
+updateCategoryButtons();
+renderProducts();
+
+});
+
+});
+
+/* =========================
+MENU SORT
+========================= */
+
+document
+.querySelectorAll(".menu-sort-filter")
+.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+currentSort=
+button.dataset.menuSort;
+
+document.getElementById("sortSelect")
+.value=currentSort;
+
+updateCategoryButtons();
+renderProducts();
+
+});
+
+});
+
+/* =========================
+MENU RESET
+========================= */
+
+document
+.getElementById("menuResetFilter")
+.addEventListener("click",()=>{
+
+currentCategory="all";
+currentMinPrice=PRICE_MIN;
+currentMaxPrice=PRICE_MAX;
+currentSort="default";
+
+document.getElementById("sortSelect")
+.value="default";
+
+updateCategoryButtons();
+renderProducts();
+
+});
+
+/* =========================
+CART
+========================= */
+
+let cart=
+JSON.parse(
+localStorage.getItem("zorevaCart")
+)||[];
+
+/* Compatibility with old cart */
+
+cart=
+cart.map(item=>({
+
+id:item.id,
+name:item.name,
+price:item.price,
+image:item.image,
+quantity:item.quantity || item.qty || 1
+
+}));
 
 function saveCart(){
 
-  localStorage.setItem(
-    "zorevaCart",
-    JSON.stringify(cart)
-  );
+localStorage.setItem(
+"zorevaCart",
+JSON.stringify(cart)
+);
 
 }
 
-function addToCart(id){
+function updateCartCount(){
 
-  const product = productsData.find(p => p[0] === id);
+const count=
+cart.reduce(
+(total,item)=>
+total+(item.quantity || 0),
+0
+);
 
-  if(!product) return;
-
-  const existing = cart.find(item => item.id === id);
-
-  if(existing){
-
-    existing.qty++;
-
-  }else{
-
-    cart.push({
-      id:product[0],
-      name:product[1],
-      category:product[2],
-      price:product[3],
-      image:product[4],
-      qty:1
-    });
-
-  }
-
-  saveCart();
-
-  updateCart();
-
-  openCart();
+document.getElementById("cartCount")
+.textContent=count;
 
 }
 
-function removeFromCart(id){
+function addToCart(product,quantity=1){
 
-  cart = cart.filter(item => item.id !== id);
+if(!product)
+return;
 
-  saveCart();
+const existing=
+cart.find(
+item=>item.id===product.id
+);
 
-  updateCart();
+if(existing){
+
+existing.quantity+=quantity;
+
+}else{
+
+cart.push({
+
+id:product.id,
+name:product.name,
+price:product.price,
+image:product.image,
+quantity:quantity
+
+});
 
 }
 
-function updateCart(){
-
-  const count = cart.reduce(
-    (total,item) => total + item.qty,
-    0
-  );
-
-  document.getElementById("cartCount").textContent = count;
-
-  const container =
-    document.getElementById("cartItems");
-
-  if(cart.length === 0){
-
-    container.innerHTML = `
-      <div class="empty-cart">
-        Votre panier est vide.
-      </div>
-    `;
-
-    document.getElementById("cartTotal").textContent =
-      "0 DH";
-
-    return;
-
-  }
-
-  let total = 0;
-
-  container.innerHTML = cart.map(item=>{
-
-    total += item.price * item.qty;
-
-    return `
-
-      <div class="cart-item">
-
-        <img
-          src="${imageUrl(item.image)}"
-          alt="${item.name}"
-        >
-
-        <div>
-
-          <div class="cart-item-name">
-            ${item.name}
-          </div>
-
-          <div class="cart-item-price">
-            ${item.price} DH × ${item.qty}
-          </div>
-
-        </div>
-
-        <button
-          class="remove-item"
-          onclick="removeFromCart(${item.id})"
-        >
-          ×
-        </button>
-
-      </div>
-
-    `;
-
-  }).join("");
-
-  document.getElementById("cartTotal").textContent =
-    total + " DH";
+saveCart();
+updateCartCount();
+renderCart();
 
 }
 
 /* =========================
-   OPEN / CLOSE CART
+REMOVE CART
 ========================= */
+
+function removeFromCart(id){
+
+cart=
+cart.filter(
+item=>item.id!==id
+);
+
+saveCart();
+updateCartCount();
+renderCart();
+
+}
+
+/* =========================
+RENDER CART
+========================= */
+
+function renderCart(){
+
+const container=
+document.getElementById("cartItems");
+
+if(cart.length===0){
+
+container.innerHTML=`
+
+<div class="cart-empty">
+Votre panier est vide.
+</div>
+
+`;
+
+document.getElementById("cartTotal")
+.textContent="0 DH";
+
+return;
+
+}
+
+container.innerHTML="";
+
+let total=0;
+
+cart.forEach(item=>{
+
+const subtotal=
+item.price*item.quantity;
+
+total+=subtotal;
+
+const div=
+document.createElement("div");
+
+div.className="cart-item";
+
+div.innerHTML=`
+
+<img
+src="${item.image}"
+alt="${item.name}"
+>
+
+<div>
+
+<h4>
+${item.name}
+</h4>
+
+<p>
+${item.quantity} × ${item.price} DH
+</p>
+
+</div>
+
+<button
+class="remove-item"
+onclick="removeFromCart(${item.id})"
+>
+×
+</button>
+
+`;
+
+container.appendChild(div);
+
+});
+
+document.getElementById("cartTotal")
+.textContent=
+`${total} DH`;
+
+}
+
+/* =========================
+CART OPEN CLOSE
+========================= */
+
+const cartPanel=
+document.getElementById("cartPanel");
+
+const cartOverlay=
+document.getElementById("cartOverlay");
 
 function openCart(){
 
-  document
-    .getElementById("cartPanel")
-    .classList.add("open");
-
-  document
-    .getElementById("cartBackdrop")
-    .classList.add("open");
+cartPanel.classList.add("active");
+cartOverlay.classList.add("active");
 
 }
 
 function closeCart(){
 
-  document
-    .getElementById("cartPanel")
-    .classList.remove("open");
-
-  document
-    .getElementById("cartBackdrop")
-    .classList.remove("open");
+cartPanel.classList.remove("active");
+cartOverlay.classList.remove("active");
 
 }
 
+document
+.getElementById("cartBtn")
+.addEventListener(
+"click",
+openCart
+);
+
+document
+.getElementById("cartClose")
+.addEventListener(
+"click",
+closeCart
+);
+
+cartOverlay.addEventListener(
+"click",
+closeCart
+);
+
 /* =========================
-   WHATSAPP CHECKOUT
+CHECKOUT WHATSAPP
 ========================= */
 
-function checkoutWhatsApp(){
+document
+.getElementById("checkoutBtn")
+.addEventListener("click",()=>{
 
-  if(cart.length === 0){
+if(cart.length===0){
 
-    alert("Votre panier est vide.");
+alert("Votre panier est vide.");
 
-    return;
-
-  }
-
-  let message =
-    "Bonjour ZOREVA, je souhaite commander :%0A%0A";
-
-  let total = 0;
-
-  cart.forEach(item=>{
-
-    const subtotal =
-      item.price * item.qty;
-
-    total += subtotal;
-
-    message +=
-      "• " +
-      item.name +
-      " — " +
-      item.qty +
-      " × " +
-      item.price +
-      " DH = " +
-      subtotal +
-      " DH%0A";
-
-  });
-
-  message +=
-    "%0ATotal : " +
-    total +
-    " DH";
-
-  window.open(
-    "https://wa.me/212765333754?text=" + message,
-    "_blank"
-  );
+return;
 
 }
 
+let message=
+"Bonjour ZOREVA, je souhaite passer une commande :\n\n";
+
+let total=0;
+
+cart.forEach(item=>{
+
+const subtotal=
+item.price*item.quantity;
+
+total+=subtotal;
+
+message+=
+`${item.name} — ${item.quantity} × ${item.price} DH = ${subtotal} DH\n`;
+
+});
+
+message+=
+`\nTotal : ${total} DH`;
+
+window.open(
+"https://wa.me/212765333754?text="+
+encodeURIComponent(message),
+"_blank"
+);
+
+});
+
 /* =========================
-   INIT
+MENU
 ========================= */
+
+const menuBtn=
+document.getElementById("menuBtn");
+
+const menuClose=
+document.getElementById("menuClose");
+
+const sideMenu=
+document.getElementById("sideMenu");
+
+const menuOverlay=
+document.getElementById("menuOverlay");
+
+function openMenu(){
+
+sideMenu.classList.add("active");
+menuOverlay.classList.add("active");
+
+}
+
+function closeMenu(){
+
+sideMenu.classList.remove("active");
+menuOverlay.classList.remove("active");
+
+}
+
+menuBtn.addEventListener(
+"click",
+openMenu
+);
+
+menuClose.addEventListener(
+"click",
+closeMenu
+);
+
+menuOverlay.addEventListener(
+"click",
+closeMenu
+);
+
+/* =========================
+INITIALIZE
+========================= */
+
+readURLCategory();
+
+updatePriceSlider();
+
+document.getElementById("sortSelect")
+.value=currentSort;
 
 renderProducts();
 
-updateCart();
+updateCategoryButtons();
+
+updateCartCount();
+
+renderCart();
 
 </script>
 
