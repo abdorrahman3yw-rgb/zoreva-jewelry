@@ -11,7 +11,6 @@
 
 <title>ZOREVA — Produit</title>
 
-<!-- FAVICON ZOREVA -->
 <link rel="icon" type="image/svg+xml" href="logo.svg">
 <link rel="shortcut icon" href="logo.svg">
 
@@ -24,12 +23,12 @@
 <style>
 
 :root{
---black:#111;
+--black:#111111;
 --gold:#b9975b;
 --gold-dark:#92733c;
 --cream:#f8f6f1;
---white:#fff;
---border:#e6e0d5;
+--white:#ffffff;
+--border:#e7e1d7;
 --muted:#777;
 }
 
@@ -70,16 +69,15 @@ max-width:100%;
 ========================= */
 
 .announcement-bar{
-height:32px;
+height:34px;
 background:#111;
 color:#fff;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:10px;
-letter-spacing:1.5px;
+font-size:9px;
+letter-spacing:2px;
 text-transform:uppercase;
-border-bottom:1px solid rgba(185,151,91,.35);
 }
 
 
@@ -88,10 +86,10 @@ border-bottom:1px solid rgba(185,151,91,.35);
 ========================= */
 
 header{
-height:82px;
+height:84px;
 background:rgba(255,255,255,.97);
-backdrop-filter:blur(16px);
-border-bottom:1px solid rgba(0,0,0,.06);
+backdrop-filter:blur(18px);
+border-bottom:1px solid rgba(0,0,0,.07);
 position:sticky;
 top:0;
 z-index:1000;
@@ -99,9 +97,9 @@ z-index:1000;
 
 .header-inner{
 height:100%;
-max-width:1400px;
+max-width:1450px;
 margin:auto;
-padding:0 30px;
+padding:0 35px;
 display:grid;
 grid-template-columns:1fr auto 1fr;
 align-items:center;
@@ -112,7 +110,7 @@ display:flex;
 align-items:center;
 gap:9px;
 font-size:9px;
-letter-spacing:1.5px;
+letter-spacing:1.8px;
 text-transform:uppercase;
 color:#777;
 transition:.3s;
@@ -124,7 +122,7 @@ color:var(--gold-dark);
 }
 
 .back-home span{
-font-size:17px;
+font-size:18px;
 }
 
 .brand{
@@ -142,9 +140,9 @@ object-fit:contain;
 
 .brand-name{
 font-family:'Cormorant Garamond',serif;
-font-size:25px;
+font-size:26px;
 font-weight:600;
-letter-spacing:3px;
+letter-spacing:4px;
 }
 
 .header-actions{
@@ -153,8 +151,8 @@ justify-content:flex-end;
 }
 
 .cart-btn{
-width:44px;
-height:44px;
+width:46px;
+height:46px;
 border:0;
 background:none;
 cursor:pointer;
@@ -165,19 +163,19 @@ justify-content:center;
 }
 
 .cart-svg{
-width:23px;
-height:23px;
+width:24px;
+height:24px;
 fill:none;
 stroke:#111;
-stroke-width:1.5;
+stroke-width:1.4;
 }
 
 .cart-count{
 position:absolute;
 top:1px;
 right:0;
-width:17px;
-height:17px;
+width:18px;
+height:18px;
 border-radius:50%;
 background:var(--gold);
 color:#fff;
@@ -194,36 +192,45 @@ font-weight:600;
 ========================= */
 
 .product-page{
-max-width:1400px;
+max-width:1450px;
 margin:auto;
-padding:55px 30px 100px;
+padding:35px 35px 110px;
 }
 
 .breadcrumb{
 display:flex;
 align-items:center;
-gap:9px;
-font-size:9px;
-letter-spacing:1.4px;
+gap:10px;
+font-size:8px;
+letter-spacing:1.7px;
 text-transform:uppercase;
 color:#999;
 margin-bottom:35px;
+}
+
+.breadcrumb a{
+transition:.3s;
 }
 
 .breadcrumb a:hover{
 color:var(--gold-dark);
 }
 
+
+/* =========================
+   PRODUCT LAYOUT
+========================= */
+
 .product-layout{
 display:grid;
-grid-template-columns:1.08fr .92fr;
-gap:80px;
+grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);
+gap:85px;
 align-items:start;
 }
 
 
 /* =========================
-   IMAGE
+   GALLERY
 ========================= */
 
 .product-gallery{
@@ -237,11 +244,11 @@ animation:fadeImage .8s ease both;
 width:100%;
 aspect-ratio:1 / 1.08;
 object-fit:cover;
-transition:transform 1s ease;
+transition:transform 1.2s cubic-bezier(.2,.7,.2,1);
 }
 
 .product-gallery:hover img{
-transform:scale(1.025);
+transform:scale(1.035);
 }
 
 .image-badge{
@@ -251,19 +258,19 @@ left:22px;
 z-index:2;
 background:#111;
 color:#fff;
-padding:10px 15px;
+padding:11px 16px;
 font-size:8px;
-letter-spacing:2px;
+letter-spacing:2.5px;
 text-transform:uppercase;
 }
 
 
 /* =========================
-   PRODUCT DETAILS
+   DETAILS
 ========================= */
 
 .product-details{
-padding:35px 0 0;
+padding:38px 10px 0 0;
 animation:fadeDetails .9s .1s ease both;
 }
 
@@ -272,26 +279,26 @@ font-size:9px;
 color:var(--gold-dark);
 letter-spacing:3px;
 text-transform:uppercase;
-margin-bottom:17px;
+margin-bottom:18px;
 }
 
 .product-title{
 font-family:'Cormorant Garamond',serif;
-font-size:64px;
+font-size:66px;
 font-weight:500;
-line-height:.95;
+line-height:.92;
 margin-bottom:20px;
 }
 
 .product-price{
-font-size:20px;
+font-size:19px;
 font-weight:500;
 letter-spacing:1px;
-margin-bottom:28px;
+margin-bottom:27px;
 }
 
 .gold-line{
-width:60px;
+width:62px;
 height:1px;
 background:var(--gold);
 margin-bottom:28px;
@@ -300,33 +307,76 @@ margin-bottom:28px;
 .product-description{
 max-width:520px;
 color:#666;
-font-size:12px;
+font-size:11px;
 line-height:2;
-margin-bottom:32px;
+margin-bottom:30px;
 }
 
-.product-specs{
+
+/* =========================
+   PRODUCT INFO
+========================= */
+
+.product-info{
 border-top:1px solid var(--border);
-border-bottom:1px solid var(--border);
-padding:18px 0;
 margin-bottom:30px;
 max-width:520px;
 }
 
-.spec{
+.info-row{
+min-height:48px;
 display:flex;
-justify-content:space-between;
 align-items:center;
-padding:9px 0;
-font-size:10px;
+justify-content:space-between;
+border-bottom:1px solid var(--border);
+font-size:9px;
 }
 
-.spec-label{
-color:#888;
-letter-spacing:1px;
+.info-label{
+color:#999;
+letter-spacing:1.3px;
+text-transform:uppercase;
 }
 
-.spec-value{
+.info-value{
+font-weight:500;
+text-align:right;
+}
+
+
+/* =========================
+   QUANTITY
+========================= */
+
+.quantity-title{
+font-size:9px;
+letter-spacing:1.5px;
+text-transform:uppercase;
+margin-bottom:10px;
+}
+
+.quantity-box{
+width:125px;
+height:48px;
+border:1px solid var(--border);
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:18px;
+}
+
+.quantity-box button{
+width:40px;
+height:100%;
+border:0;
+background:#fff;
+cursor:pointer;
+font-size:18px;
+color:#555;
+}
+
+.quantity-box span{
+font-size:11px;
 font-weight:500;
 }
 
@@ -351,7 +401,7 @@ cursor:pointer;
 font-size:9px;
 letter-spacing:2px;
 text-transform:uppercase;
-transition:.3s;
+transition:.35s;
 }
 
 .add-cart:hover{
@@ -361,19 +411,19 @@ border-color:var(--gold-dark);
 
 .whatsapp-order{
 height:55px;
-border:1px solid var(--border);
+border:1px solid #111;
 background:#fff;
 color:#111;
 cursor:pointer;
 font-size:9px;
 letter-spacing:2px;
 text-transform:uppercase;
-transition:.3s;
+transition:.35s;
 }
 
 .whatsapp-order:hover{
-border-color:#111;
-background:#fafafa;
+background:#111;
+color:#fff;
 }
 
 .continue-shopping{
@@ -394,18 +444,18 @@ color:var(--gold-dark);
 
 
 /* =========================
-   DETAILS
+   PRODUCT STORY
 ========================= */
 
 .product-story{
-max-width:1400px;
+max-width:1450px;
 margin:0 auto;
-padding:80px 30px;
+padding:85px 35px;
 border-top:1px solid var(--border);
 }
 
 .story-inner{
-max-width:800px;
+max-width:850px;
 }
 
 .story-small{
@@ -413,19 +463,91 @@ font-size:9px;
 letter-spacing:3px;
 text-transform:uppercase;
 color:var(--gold-dark);
-margin-bottom:12px;
+margin-bottom:13px;
 }
 
 .story-title{
 font-family:'Cormorant Garamond',serif;
-font-size:46px;
+font-size:48px;
 font-weight:500;
-margin-bottom:20px;
+margin-bottom:22px;
 }
 
 .story-text{
-font-size:12px;
-line-height:2;
+font-size:11px;
+line-height:2.1;
+color:#777;
+max-width:750px;
+}
+
+
+/* =========================
+   RELATED PRODUCTS
+========================= */
+
+.related-section{
+max-width:1450px;
+margin:auto;
+padding:0 35px 100px;
+}
+
+.related-heading{
+margin-bottom:30px;
+}
+
+.related-small{
+font-size:9px;
+letter-spacing:3px;
+text-transform:uppercase;
+color:var(--gold-dark);
+margin-bottom:10px;
+}
+
+.related-title{
+font-family:'Cormorant Garamond',serif;
+font-size:42px;
+font-weight:500;
+}
+
+.related-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+}
+
+.related-card{
+cursor:pointer;
+}
+
+.related-image{
+background:#f5f3ee;
+overflow:hidden;
+}
+
+.related-image img{
+width:100%;
+aspect-ratio:1/1.08;
+object-fit:cover;
+transition:transform .7s ease;
+}
+
+.related-card:hover .related-image img{
+transform:scale(1.035);
+}
+
+.related-info{
+padding:13px 2px 0;
+}
+
+.related-name{
+font-family:'Cormorant Garamond',serif;
+font-size:20px;
+font-weight:500;
+margin-bottom:5px;
+}
+
+.related-price{
+font-size:10px;
 color:#777;
 }
 
@@ -618,7 +740,7 @@ padding:60px 30px 30px;
 }
 
 .footer-inner{
-max-width:1400px;
+max-width:1450px;
 margin:auto;
 }
 
@@ -697,11 +819,11 @@ transform:translateY(0);
    TABLET
 ========================= */
 
-@media(max-width:900px){
+@media(max-width:1000px){
 
 .product-layout{
 grid-template-columns:1fr;
-gap:35px;
+gap:40px;
 }
 
 .product-details{
@@ -709,7 +831,11 @@ padding:5px 0;
 }
 
 .product-title{
-font-size:54px;
+font-size:56px;
+}
+
+.related-grid{
+grid-template-columns:repeat(2,1fr);
 }
 
 }
@@ -723,8 +849,10 @@ font-size:54px;
 
 .announcement-bar{
 height:32px;
-font-size:8px;
+font-size:7px;
 letter-spacing:1px;
+padding:0 10px;
+text-align:center;
 }
 
 header{
@@ -732,21 +860,22 @@ height:72px;
 }
 
 .header-inner{
-padding:0 16px;
+padding:0 15px;
 }
 
 .brand img{
-width:46px;
-height:46px;
+width:45px;
+height:45px;
 }
 
 .brand-name{
 font-size:19px;
-letter-spacing:1.5px;
+letter-spacing:1.8px;
 }
 
 .back-home{
-font-size:8px;
+font-size:7px;
+letter-spacing:1px;
 }
 
 .back-home span{
@@ -759,16 +888,16 @@ height:40px;
 }
 
 .product-page{
-padding:30px 16px 70px;
+padding:25px 15px 70px;
 }
 
 .breadcrumb{
-font-size:8px;
-margin-bottom:22px;
+font-size:7px;
+margin-bottom:20px;
 }
 
 .product-layout{
-gap:25px;
+gap:28px;
 }
 
 .product-gallery img{
@@ -776,8 +905,8 @@ aspect-ratio:1 / 1.08;
 }
 
 .image-badge{
-top:14px;
-left:14px;
+top:13px;
+left:13px;
 padding:8px 11px;
 font-size:7px;
 }
@@ -789,29 +918,32 @@ padding:0;
 .product-category{
 font-size:8px;
 letter-spacing:2.5px;
+margin-bottom:14px;
 }
 
 .product-title{
-font-size:45px;
-margin-bottom:15px;
+font-size:46px;
+margin-bottom:14px;
 }
 
 .product-price{
 font-size:18px;
-margin-bottom:23px;
+margin-bottom:22px;
 }
 
 .product-description{
-font-size:11px;
-line-height:1.9;
+font-size:10px;
+line-height:1.95;
+margin-bottom:25px;
 }
 
-.product-specs{
-margin-bottom:24px;
+.info-row{
+min-height:45px;
+font-size:8px;
 }
 
-.spec{
-font-size:9px;
+.quantity-box{
+height:46px;
 }
 
 .add-cart,
@@ -820,7 +952,7 @@ height:52px;
 }
 
 .product-story{
-padding:60px 16px;
+padding:60px 15px;
 }
 
 .story-title{
@@ -828,14 +960,36 @@ font-size:38px;
 }
 
 .story-text{
-font-size:11px;
+font-size:10px;
+line-height:2;
+}
+
+.related-section{
+padding:0 15px 70px;
+}
+
+.related-title{
+font-size:36px;
+}
+
+.related-grid{
+grid-template-columns:repeat(2,1fr);
+gap:14px;
+}
+
+.related-name{
+font-size:18px;
+}
+
+.related-price{
+font-size:9px;
 }
 
 .whatsapp-float{
 width:54px;
 height:54px;
-right:16px;
-bottom:16px;
+right:15px;
+bottom:15px;
 }
 
 .cart-panel{
@@ -854,7 +1008,7 @@ border-radius:20px 0 0 20px;
 @media(max-width:380px){
 
 .product-title{
-font-size:39px;
+font-size:40px;
 }
 
 .brand-name{
@@ -862,6 +1016,11 @@ font-size:17px;
 }
 
 .product-page{
+padding-left:12px;
+padding-right:12px;
+}
+
+.related-section{
 padding-left:12px;
 padding-right:12px;
 }
@@ -876,14 +1035,10 @@ padding-right:12px;
 <body>
 
 
-<!-- ANNOUNCEMENT -->
-
 <div class="announcement-bar">
 Livraison partout au Maroc · Bijoux élégants · ZOREVA Jewelry
 </div>
 
-
-<!-- HEADER -->
 
 <header>
 
@@ -894,7 +1049,6 @@ Livraison partout au Maroc · Bijoux élégants · ZOREVA Jewelry
 Retour
 </a>
 
-
 <a href="index.html" class="brand">
 
 <img src="logo.svg" alt="ZOREVA Jewelry">
@@ -902,7 +1056,6 @@ Retour
 <span class="brand-name">ZOREVA</span>
 
 </a>
-
 
 <div class="header-actions">
 
@@ -929,12 +1082,8 @@ Retour
 </header>
 
 
-<!-- PRODUCT -->
-
 <div id="productContainer"></div>
 
-
-<!-- CART -->
 
 <div class="cart-overlay" id="cartOverlay"></div>
 
@@ -948,7 +1097,6 @@ Retour
 
 </div>
 
-
 <div class="cart-items" id="cartItems">
 
 <div class="cart-empty">
@@ -956,7 +1104,6 @@ Votre panier est vide.
 </div>
 
 </div>
-
 
 <div class="cart-footer">
 
@@ -976,8 +1123,6 @@ Finaliser la commande
 
 </aside>
 
-
-<!-- WHATSAPP -->
 
 <a
 href="https://wa.me/212765333754"
@@ -1024,480 +1169,130 @@ Jewelry · Elegance · Details
 
 
 /* =========================================
-   نفس المنتجات الموجودة في INDEX.HTML
+   PRODUCTS — 57 PRODUITS
 ========================================= */
 
 const products = [
 
-{
-id:1,
-name:"Bijou 01",
-category:"Colliers",
-price:119,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg"
-},
+{id:1,name:"Bijou 01",category:"Packs",price:119,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg"},
 
-{
-id:2,
-name:"Bijou 02",
-category:"Bagues",
-price:119,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg"
-},
+{id:2,name:"Bijou 02",category:"Packs",price:119,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg"},
 
-{
-id:3,
-name:"Bijou 03",
-category:"Bracelets",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg"
-},
+{id:3,name:"Bijou 03",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg"},
 
-{
-id:4,
-name:"Bijou 04",
-category:"Bagues",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2014.39.04%20%281%29.jpeg"
-},
+{id:4,name:"Bijou 04",category:"Colliers",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2014.39.04%20%281%29.jpeg"},
 
-{
-id:5,
-name:"Bijou 05",
-category:"Colliers",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"
-},
+{id:5,name:"Bijou 05",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"},
 
-{
-id:6,
-name:"Bijou 06",
-category:"Bracelets",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg"
-},
+{id:6,name:"Bijou 06",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg"},
 
-{
-id:7,
-name:"Bijou 07",
-category:"Bagues",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg"
-},
+{id:7,name:"Bijou 07",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg"},
 
-{
-id:8,
-name:"Bijou 08",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/2.jpg"
-},
+{id:8,name:"Bijou 08",category:"Colliers",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/2.jpg"},
 
-{
-id:9,
-name:"Bijou 09",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/71sw32ZElsL._AC_UY1100_.jpg"
-},
+{id:9,name:"Bijou 09",category:"Bracelets",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/71sw32ZElsL._AC_UY1100_.jpg"},
 
-{
-id:10,
-name:"Bijou 10",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_155931.jpg"
-},
+{id:10,name:"Bijou 10",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_155931.jpg"},
 
-{
-id:11,
-name:"Bijou 11",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_160641.jpg"
-},
+{id:11,name:"Bijou 11",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_160641.jpg"},
 
-{
-id:12,
-name:"Bijou 12",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_161253.jpg"
-},
+{id:12,name:"Bijou 12",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_161253.jpg"},
 
-{
-id:13,
-name:"Bijou 13",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.02%20%281%29.jpeg"
-},
+{id:13,name:"Bijou 13",category:"Colliers",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.02%20%281%29.jpeg"},
 
-{
-id:14,
-name:"Bijou 14",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.02.jpeg"
-},
+{id:14,name:"Bijou 14",category:"Colliers",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.02.jpeg"},
 
-{
-id:15,
-name:"Bijou 15",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%281%29.jpeg"
-},
+{id:15,name:"Bijou 15",category:"Colliers",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%281%29.jpeg"},
 
-{
-id:16,
-name:"Bijou 16",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%282%29.jpeg"
-},
+{id:16,name:"Bijou 16",category:"Colliers",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%283%29.jpeg"},
 
-{
-id:17,
-name:"Bijou 17",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%283%29.jpeg"
-},
+{id:17,name:"Bijou 17",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06%20%281%29.jpeg"},
 
-{
-id:18,
-name:"Bijou 18",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06%20%281%29.jpeg"
-},
+{id:18,name:"Bijou 18",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%281%29.jpeg"},
 
-{
-id:19,
-name:"Bijou 19",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%281%29.jpeg"
-},
+{id:19,name:"Bijou 19",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%282%29.jpeg"},
 
-{
-id:20,
-name:"Bijou 20",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%282%29.jpeg"
-},
+{id:20,name:"Bijou 20",category:"Montres",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%283%29.jpeg"},
 
-{
-id:21,
-name:"Bijou 21",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%283%29.jpeg"
-},
+{id:21,name:"Bijou 21",category:"Bracelets",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%284%29.jpeg"},
 
-{
-id:22,
-name:"Bijou 22",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%284%29.jpeg"
-},
+{id:22,name:"Bijou 22",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%285%29.jpeg"},
 
-{
-id:23,
-name:"Bijou 23",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%285%29.jpeg"
-},
+{id:23,name:"Bijou 23",category:"Montres",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%286%29.jpeg"},
 
-{
-id:24,
-name:"Bijou 24",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%286%29.jpeg"
-},
+{id:24,name:"Bijou 24",category:"Colliers",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04.jpeg"},
 
-{
-id:25,
-name:"Bijou 25",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04.jpeg"
-},
+{id:25,name:"Bijou 25",category:"Bracelets",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%281%29.jpeg"},
 
-{
-id:26,
-name:"Bijou 26",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%281%29.jpeg"
-},
+{id:26,name:"Bijou 26",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%285%29.jpeg"},
 
-{
-id:27,
-name:"Bijou 27",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%285%29.jpeg"
-},
+{id:27,name:"Bijou 27",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%286%29.jpeg"},
 
-{
-id:28,
-name:"Bijou 28",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%286%29.jpeg"
-},
+{id:28,name:"Bijou 28",category:"Bracelets",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%287%29.jpeg"},
 
-{
-id:29,
-name:"Bijou 29",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%287%29.jpeg"
-},
+{id:29,name:"Bijou 29",category:"Bracelets",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%288%29.jpeg"},
 
-{
-id:30,
-name:"Bijou 30",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%288%29.jpeg"
-},
+{id:30,name:"Bijou 30",category:"Colliers",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05.jpeg"},
 
-{
-id:31,
-name:"Bijou 31",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05.jpeg"
-},
+{id:31,name:"Bijou 31",category:"Colliers",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%281%29.jpeg"},
 
-{
-id:32,
-name:"Bijou 32",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%281%29.jpeg"
-},
+{id:32,name:"Bijou 32",category:"Bracelets",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%282%29.jpeg"},
 
-{
-id:33,
-name:"Bijou 33",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%282%29.jpeg"
-},
+{id:33,name:"Bijou 33",category:"Colliers",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%283%29.jpeg"},
 
-{
-id:34,
-name:"Bijou 34",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%283%29.jpeg"
-},
+{id:34,name:"Bijou 34",category:"Bracelets",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%285%29.jpeg"},
 
-{
-id:35,
-name:"Bijou 35",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%285%29.jpeg"
-},
+{id:35,name:"Bijou 35",category:"Bracelets",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%286%29.jpeg"},
 
-{
-id:36,
-name:"Bijou 36",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%286%29.jpeg"
-},
+{id:36,name:"Bijou 36",category:"Bracelets",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%287%29.jpeg"},
 
-{
-id:37,
-name:"Bijou 37",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%287%29.jpeg"
-},
+{id:37,name:"Bijou 37",category:"Bracelets",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%288%29.jpeg"},
 
-{
-id:38,
-name:"Bijou 38",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%288%29.jpeg"
-},
+{id:38,name:"Bijou 38",category:"Bracelets",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06.jpeg"},
 
-{
-id:39,
-name:"Bijou 39",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06.jpeg"
-},
+{id:39,name:"Bijou 39",category:"Colliers",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2014.39.04.jpeg"},
 
-{
-id:40,
-name:"Bijou 40",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2014.39.04.jpeg"
-},
+{id:40,name:"Bijou 40",category:"Bracelets",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.22%20%282%29.jpeg"},
 
-{
-id:41,
-name:"Bijou 41",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.22%20%282%29.jpeg"
-},
+{id:41,name:"Bijou 41",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06%20%282%29.jpeg"},
 
-{
-id:42,
-name:"Bijou 42",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06%20%282%29.jpeg"
-},
+{id:42,name:"Bijou 42",category:"Montres",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06.jpeg"},
 
-{
-id:43,
-name:"Bijou 43",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06.jpeg"
-},
+{id:43,name:"Bijou 43",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.07%20%281%29.jpeg"},
 
-{
-id:44,
-name:"Bijou 44",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.07%20%281%29.jpeg"
-},
+{id:44,name:"Bijou 44",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.07.jpeg"},
 
-{
-id:45,
-name:"Bijou 45",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.07.jpeg"
-},
+{id:45,name:"Bijou 45",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%281%29.jpeg"},
 
-{
-id:46,
-name:"Bijou 46",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%281%29.jpeg"
-},
+{id:46,name:"Bijou 46",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%282%29.jpeg"},
 
-{
-id:47,
-name:"Bijou 47",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%282%29.jpeg"
-},
+{id:47,name:"Bijou 47",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%283%29.jpeg"},
 
-{
-id:48,
-name:"Bijou 48",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%283%29.jpeg"
-},
+{id:48,name:"Bijou 48",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%284%29.jpeg"},
 
-{
-id:49,
-name:"Bijou 49",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%284%29.jpeg"
-},
+{id:49,name:"Bijou 49",category:"Bracelets",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.22.jpeg"},
 
-{
-id:50,
-name:"Bijou 50",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.22.jpeg"
-},
+{id:50,name:"Bijou 50",category:"Colliers",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%286%29.jpeg"},
 
-{
-id:51,
-name:"Bijou 51",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%286%29.jpeg"
-},
+{id:51,name:"Bijou 51",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%287%29.jpeg"},
 
-{
-id:52,
-name:"Bijou 52",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%287%29.jpeg"
-},
+{id:52,name:"Bijou 52",category:"Colliers",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.23%20%281%29.jpeg"},
 
-{
-id:53,
-name:"Bijou 53",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.23%20%281%29.jpeg"
-},
+{id:53,name:"Bijou 53",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08.jpeg"},
 
-{
-id:54,
-name:"Bijou 54",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08.jpeg"
-},
+{id:54,name:"Bijou 54",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.09%20%281%29.jpeg"},
 
-{
-id:55,
-name:"Bijou 55",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.09%20%281%29.jpeg"
-},
+{id:55,name:"Bijou 55",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.09%20%282%29.jpeg"},
 
-{
-id:56,
-name:"Bijou 56",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.09%20%282%29.jpeg"
-},
+{id:56,name:"Bijou 56",category:"Bijoux",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.34.50.jpeg"},
 
-{
-id:57,
-name:"Bijou 57",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.34.50.jpeg"
-},
-
-{
-id:58,
-name:"Bijou 58",
-category:"Bijoux",
-price:149,
-image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2016.04.15.jpeg"
-}
+{id:57,name:"Bijou 57",category:"Colliers",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2016.04.15.jpeg"}
 
 ];
 
 
 /* =========================================
-   GET ID FROM URL
+   GET PRODUCT ID
 ========================================= */
 
 const params = new URLSearchParams(window.location.search);
@@ -1513,9 +1308,7 @@ const product = products.find(item => item.id === productId);
 
 function renderProduct(){
 
-const container =
-document.getElementById("productContainer");
-
+const container = document.getElementById("productContainer");
 
 if(!product){
 
@@ -1567,13 +1360,22 @@ return;
 }
 
 
-/* TITLE */
-
 document.title =
 `${product.name} — ZOREVA Jewelry`;
 
 
-/* PRODUCT HTML */
+/* RELATED PRODUCTS */
+
+const relatedProducts =
+products
+.filter(item =>
+item.category === product.category &&
+item.id !== product.id
+)
+.slice(0,4);
+
+
+/* PRODUCT */
 
 container.innerHTML=`
 
@@ -1641,79 +1443,88 @@ ${product.price} DH
 
 Découvrez ${product.name}, une pièce sélectionnée
 par ZOREVA pour apporter une touche élégante et
-moderne à votre style. Un design facile à porter,
-pensé pour accompagner vos différentes occasions.
+moderne à votre style. Une création facile à porter,
+pensée pour accompagner vos différentes occasions.
 
 </p>
 
 
-<div class="product-specs">
+<div class="product-info">
 
 
-<div class="spec">
+<div class="info-row">
 
-<span class="spec-label">
+<span class="info-label">
 Produit
 </span>
 
-<span class="spec-value">
+<span class="info-value">
 ${product.name}
 </span>
 
 </div>
 
 
-<div class="spec">
+<div class="info-row">
 
-<span class="spec-label">
+<span class="info-label">
 Catégorie
 </span>
 
-<span class="spec-value">
+<span class="info-value">
 ${product.category}
 </span>
 
 </div>
 
 
-<div class="spec">
+<div class="info-row">
 
-<span class="spec-label">
-Prix
-</span>
-
-<span class="spec-value">
-${product.price} DH
-</span>
-
-</div>
-
-
-<div class="spec">
-
-<span class="spec-label">
+<span class="info-label">
 Disponibilité
 </span>
 
-<span class="spec-value">
+<span class="info-value">
 Disponible
 </span>
 
 </div>
 
 
-<div class="spec">
+<div class="info-row">
 
-<span class="spec-label">
+<span class="info-label">
 Livraison
 </span>
 
-<span class="spec-value">
+<span class="info-value">
 Partout au Maroc
 </span>
 
 </div>
 
+
+</div>
+
+
+<div class="quantity-title">
+Quantité
+</div>
+
+
+<div class="quantity-box">
+
+<button onclick="changeQuantity(-1)">
+−
+</button>
+
+<span id="quantityValue">
+1
+</span>
+
+<button onclick="changeQuantity(1)">
++
+</button>
 
 </div>
 
@@ -1769,11 +1580,11 @@ L'élégance dans chaque détail.
 
 <p class="story-text">
 
-Chez ZOREVA, nous sélectionnons des pièces pensées
-pour apporter une touche raffinée et contemporaine
-à chaque style. Découvrez votre pièce préférée et
-commandez-la facilement en ligne ou directement
-via WhatsApp.
+Chez ZOREVA, chaque pièce est sélectionnée avec
+attention pour proposer une esthétique élégante,
+moderne et facile à porter. Découvrez votre pièce
+préférée et commandez-la simplement en ligne ou
+directement via WhatsApp.
 
 </p>
 
@@ -1781,7 +1592,92 @@ via WhatsApp.
 
 </section>
 
+
+<section class="related-section">
+
+<div class="related-heading">
+
+<div class="related-small">
+Vous pourriez également aimer
+</div>
+
+<h2 class="related-title">
+Pièces similaires
+</h2>
+
+</div>
+
+
+<div class="related-grid">
+
+${relatedProducts.map(item => `
+
+<a
+class="related-card"
+href="product.html?id=${item.id}"
+>
+
+<div class="related-image">
+
+<img
+src="${item.image}"
+alt="${item.name} — ZOREVA Jewelry"
+loading="lazy"
+>
+
+</div>
+
+<div class="related-info">
+
+<div class="related-name">
+${item.name}
+</div>
+
+<div class="related-price">
+${item.price} DH
+</div>
+
+</div>
+
+</a>
+
+`).join("")}
+
+</div>
+
+</section>
+
 `;
+
+}
+
+
+/* =========================================
+   QUANTITY
+========================================= */
+
+let currentQuantity = 1;
+
+
+function changeQuantity(amount){
+
+currentQuantity += amount;
+
+if(currentQuantity < 1){
+currentQuantity = 1;
+}
+
+if(currentQuantity > 10){
+currentQuantity = 10;
+}
+
+const quantityElement =
+document.getElementById("quantityValue");
+
+if(quantityElement){
+quantityElement.textContent =
+currentQuantity;
+}
 
 }
 
@@ -1796,7 +1692,7 @@ if(!product){
 return;
 }
 
-addToCart(product,1);
+addToCart(product,currentQuantity);
 
 const button =
 document.querySelector(".add-cart");
@@ -1817,7 +1713,7 @@ button.textContent="Ajouter au panier";
 
 
 /* =========================================
-   WHATSAPP CURRENT PRODUCT
+   WHATSAPP PRODUCT
 ========================================= */
 
 function orderCurrentProduct(){
@@ -1834,6 +1730,7 @@ Je souhaite commander :
 Produit : ${product.name}
 Catégorie : ${product.category}
 Prix : ${product.price} DH
+Quantité : ${currentQuantity}
 
 Merci.`;
 
@@ -1944,9 +1841,11 @@ document.getElementById("cartItems");
 if(cart.length===0){
 
 container.innerHTML=`
+
 <div class="cart-empty">
 Votre panier est vide.
 </div>
+
 `;
 
 document.getElementById(
@@ -2020,7 +1919,7 @@ document.getElementById(
 
 
 /* =========================================
-   OPEN CART
+   CART OPEN / CLOSE
 ========================================= */
 
 const cartPanel=
