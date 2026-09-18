@@ -1659,7 +1659,7 @@ Choisissez votre style
 
 <div class="collections-grid">
 
-<a href="#products" class="collection-card" data-collection="Bagues">
+<a href="collection.html?category=Bagues" class="collection-card">
 
 <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1000&q=85" alt="Bagues">
 
@@ -1670,7 +1670,7 @@ Choisissez votre style
 
 </a>
 
-<a href="#products" class="collection-card" data-collection="Bracelets">
+<a href="collection.html?category=Bracelets" class="collection-card">
 
 <img src="https://images.unsplash.com/photo-1668365179846-3333fe14f552?auto=format&fit=crop&w=1000&q=85" alt="Bracelets">
 
@@ -1681,7 +1681,7 @@ Choisissez votre style
 
 </a>
 
-<a href="#products" class="collection-card" data-collection="Colliers">
+<a href="collection.html?category=Colliers" class="collection-card">
 
 <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85" alt="Colliers">
 
@@ -1692,7 +1692,7 @@ Choisissez votre style
 
 </a>
 
-<a href="#products" class="collection-card" data-collection="Montres">
+<a href="collection.html?category=Montres" class="collection-card">
 
 <!-- صورة المنتج القديم 21 = المنتج الجديد 20 -->
 <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%283%29.jpeg" alt="Montres">
@@ -1704,7 +1704,7 @@ Choisissez votre style
 
 </a>
 
-<a href="#products" class="collection-card" data-collection="Boucles">
+<a href="collection.html?category=Boucles%20d%27oreilles" class="collection-card">
 
 <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1000&q=85" alt="Boucles d’oreilles">
 
@@ -1715,7 +1715,7 @@ Choisissez votre style
 
 </a>
 
-<a href="#products" class="collection-card" data-collection="Packs">
+<a href="collection.html?category=Packs" class="collection-card">
 
 <img src="https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%281%29.jpeg" alt="Packs bijoux">
 
@@ -2333,33 +2333,6 @@ button.dataset.menuSort===currentSort
 });
 
 }
-
-/* =========================
-   COLLECTION FILTER
-========================= */
-
-document.querySelectorAll(".collection-card").forEach(card=>{
-
-card.addEventListener("click",event=>{
-
-event.preventDefault();
-
-const category=card.dataset.collection;
-
-currentCategory=category;
-currentPrice="all";
-currentSort="default";
-
-updateCategoryButtons();
-renderProducts();
-
-document.getElementById("products").scrollIntoView({
-behavior:"smooth"
-});
-
-});
-
-});
 
 /* =========================
    FILTER PANEL
