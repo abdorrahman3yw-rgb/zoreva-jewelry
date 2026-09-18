@@ -19,7 +19,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-
 <style>
 
 :root{
@@ -69,7 +68,6 @@ display:block;
 max-width:100%;
 }
 
-
 /* =====================================
    PROMOTION BAR
 ===================================== */
@@ -88,7 +86,6 @@ text-transform:uppercase;
 text-align:center;
 padding:0 12px;
 }
-
 
 /* =====================================
    HEADER
@@ -194,7 +191,6 @@ font-size:9px;
 font-weight:600;
 }
 
-
 /* =====================================
    PRODUCT
 ===================================== */
@@ -226,7 +222,6 @@ grid-template-columns:minmax(0,1.05fr) minmax(390px,.95fr);
 gap:70px;
 align-items:start;
 }
-
 
 /* =====================================
    IMAGE
@@ -271,7 +266,6 @@ padding:8px 12px;
 font-size:8px;
 color:#555;
 }
-
 
 /* =====================================
    DETAILS
@@ -349,7 +343,6 @@ background:var(--gold);
 margin-bottom:25px;
 }
 
-
 /* =====================================
    BENEFITS
 ===================================== */
@@ -366,7 +359,6 @@ font-size:11px;
 line-height:1.6;
 color:#333;
 }
-
 
 /* =====================================
    QUANTITY
@@ -402,7 +394,6 @@ color:#555;
 font-size:11px;
 font-weight:600;
 }
-
 
 /* =====================================
    ACTIONS
@@ -449,7 +440,6 @@ background:#111;
 color:#fff;
 }
 
-
 /* =====================================
    SHIPPING INFO
 ===================================== */
@@ -482,7 +472,6 @@ text-transform:uppercase;
 .shipping-value{
 font-weight:500;
 }
-
 
 /* =====================================
    STORY
@@ -520,7 +509,6 @@ line-height:2.1;
 color:#777;
 max-width:750px;
 }
-
 
 /* =====================================
    RELATED
@@ -591,7 +579,6 @@ margin-bottom:5px;
 font-size:10px;
 color:#777;
 }
-
 
 /* =====================================
    CART
@@ -732,7 +719,6 @@ text-transform:uppercase;
 background:var(--gold-dark);
 }
 
-
 /* =====================================
    WHATSAPP
 ===================================== */
@@ -762,7 +748,6 @@ width:31px;
 height:31px;
 fill:#fff;
 }
-
 
 /* =====================================
    FOOTER
@@ -836,7 +821,6 @@ padding-top:25px;
 border-top:1px solid rgba(255,255,255,.1);
 }
 
-
 /* =====================================
    MOBILE
 ===================================== */
@@ -861,7 +845,6 @@ grid-template-columns:repeat(2,1fr);
 }
 
 }
-
 
 @media(max-width:600px){
 
@@ -1022,7 +1005,6 @@ gap:15px;
 
 }
 
-
 @media(max-width:380px){
 
 .product-title{
@@ -1049,22 +1031,11 @@ padding-right:11px;
 
 </head>
 
-
 <body>
-
-
-<!-- =====================================
-     PROMOTION
-===================================== -->
 
 <div class="promo-bar">
 Livraison partout au Maroc · Paiement à la livraison · ZOREVA Jewelry
 </div>
-
-
-<!-- =====================================
-     HEADER
-===================================== -->
 
 <header>
 
@@ -1107,17 +1078,7 @@ Retour
 
 </header>
 
-
-<!-- =====================================
-     PRODUCT CONTAINER
-===================================== -->
-
 <div id="productContainer"></div>
-
-
-<!-- =====================================
-     CART
-===================================== -->
 
 <div class="cart-overlay" id="cartOverlay"></div>
 
@@ -1161,11 +1122,6 @@ Finaliser la commande
 
 </aside>
 
-
-<!-- =====================================
-     WHATSAPP
-===================================== -->
-
 <a
 href="https://wa.me/212765333754"
 target="_blank"
@@ -1180,11 +1136,6 @@ aria-label="WhatsApp"
 </svg>
 
 </a>
-
-
-<!-- =====================================
-     FOOTER
-===================================== -->
 
 <footer>
 
@@ -1230,9 +1181,7 @@ WhatsApp
 
 </footer>
 
-
 <script>
-
 
 /* =========================================
    PRODUCTS
@@ -1696,6 +1645,7 @@ price:69,
 image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2016.04.15.jpeg"
 }
 
+];
 
 /* =========================================
    GET PRODUCT
@@ -1707,7 +1657,6 @@ const productId = Number(params.get("id"));
 
 const product = products.find(item => item.id === productId);
 
-
 /* =========================================
    SALE PRICE
 ========================================= */
@@ -1718,13 +1667,11 @@ return Math.round(price * 1.25);
 
 }
 
-
 function getDiscount(price){
 
 return 20;
 
 }
-
 
 /* =========================================
    RENDER PRODUCT
@@ -1734,7 +1681,6 @@ function renderProduct(){
 
 const container =
 document.getElementById("productContainer");
-
 
 if(!product){
 
@@ -1784,17 +1730,14 @@ return;
 
 }
 
-
 document.title =
 `${product.name} — ZOREVA Jewelry`;
-
 
 const oldPrice =
 getOldPrice(product.price);
 
 const discount =
 getDiscount(product.price);
-
 
 const relatedProducts =
 products
@@ -1804,11 +1747,9 @@ item.id !== product.id
 )
 .slice(0,4);
 
-
 container.innerHTML = `
 
 <main class="product-page">
-
 
 <div class="breadcrumb">
 
@@ -1828,11 +1769,7 @@ Produits
 
 </div>
 
-
 <div class="product-layout">
-
-
-<!-- IMAGE -->
 
 <div class="product-gallery">
 
@@ -1843,6 +1780,7 @@ ZOREVA
 <img
 src="${product.image}"
 alt="${product.name} — ZOREVA Jewelry"
+onerror="this.style.display='none';"
 >
 
 <div class="image-counter">
@@ -1851,21 +1789,15 @@ alt="${product.name} — ZOREVA Jewelry"
 
 </div>
 
-
-<!-- DETAILS -->
-
 <div class="product-details">
-
 
 <div class="product-category">
 ${product.category}
 </div>
 
-
 <h1 class="product-title">
 ${product.name}
 </h1>
-
 
 <div class="price-area">
 
@@ -1886,16 +1818,11 @@ Promotion
 
 </div>
 
-
 <div class="stock">
 ● Disponible — Expédition partout au Maroc
 </div>
 
-
 <div class="gold-line"></div>
-
-
-<!-- BENEFITS -->
 
 <div class="product-benefits">
 
@@ -1917,13 +1844,9 @@ Promotion
 
 </div>
 
-
-<!-- QUANTITY -->
-
 <div class="quantity-title">
 Quantité
 </div>
-
 
 <div class="quantity-box">
 
@@ -1941,9 +1864,6 @@ Quantité
 
 </div>
 
-
-<!-- ACTIONS -->
-
 <div class="product-actions">
 
 <button
@@ -1953,7 +1873,6 @@ onclick="addCurrentProduct()"
 Ajouter au panier
 </button>
 
-
 <button
 class="whatsapp-order"
 onclick="orderCurrentProduct()"
@@ -1962,9 +1881,6 @@ Commander maintenant
 </button>
 
 </div>
-
-
-<!-- SHIPPING -->
 
 <div class="shipping-box">
 
@@ -1980,7 +1896,6 @@ Partout au Maroc
 
 </div>
 
-
 <div class="shipping-row">
 
 <span class="shipping-label">
@@ -1993,7 +1908,6 @@ Partout au Maroc
 
 </div>
 
-
 <div class="shipping-row">
 
 <span class="shipping-label">
@@ -2005,7 +1919,6 @@ Partout au Maroc
 </span>
 
 </div>
-
 
 <div class="shipping-row">
 
@@ -2021,15 +1934,11 @@ Acier inoxydable
 
 </div>
 
-
 </div>
 
 </div>
 
 </main>
-
-
-<!-- STORY -->
 
 <section class="product-story">
 
@@ -2058,9 +1967,6 @@ avec une touche raffinée.
 
 </section>
 
-
-<!-- RELATED -->
-
 <section class="related-section">
 
 <div class="related-heading">
@@ -2074,7 +1980,6 @@ Pièces similaires
 </h2>
 
 </div>
-
 
 <div class="related-grid">
 
@@ -2119,32 +2024,26 @@ ${item.price}.00 DH
 
 }
 
-
 /* =========================================
    QUANTITY
 ========================================= */
 
 let currentQuantity = 1;
 
-
 function changeQuantity(amount){
 
 currentQuantity += amount;
-
 
 if(currentQuantity < 1){
 currentQuantity = 1;
 }
 
-
 if(currentQuantity > 10){
 currentQuantity = 10;
 }
 
-
 const quantityElement =
 document.getElementById("quantityValue");
-
 
 if(quantityElement){
 quantityElement.textContent =
@@ -2153,14 +2052,12 @@ currentQuantity;
 
 }
 
-
 /* =========================================
    CART
 ========================================= */
 
 let cart =
 JSON.parse(localStorage.getItem("zorevaCart")) || [];
-
 
 function saveCart(){
 
@@ -2171,7 +2068,6 @@ JSON.stringify(cart)
 
 }
 
-
 function updateCartCount(){
 
 const count =
@@ -2180,12 +2076,10 @@ cart.reduce(
 0
 );
 
-
 document.getElementById("cartCount")
 .textContent = count;
 
 }
-
 
 function addToCart(product, quantity = 1){
 
@@ -2193,7 +2087,6 @@ const existing =
 cart.find(
 item => item.id === product.id
 );
-
 
 if(existing){
 
@@ -2217,7 +2110,6 @@ quantity:quantity
 
 }
 
-
 saveCart();
 
 updateCartCount();
@@ -2228,29 +2120,24 @@ openCart();
 
 }
 
-
 function addCurrentProduct(){
 
 if(!product){
 return;
 }
 
-
 addToCart(
 product,
 currentQuantity
 );
 
-
 const button =
 document.querySelector(".add-cart");
-
 
 if(button){
 
 button.textContent =
 "Ajouté au panier ✓";
-
 
 setTimeout(()=>{
 
@@ -2263,7 +2150,6 @@ button.textContent =
 
 }
 
-
 /* =========================================
    REMOVE CART
 ========================================= */
@@ -2275,7 +2161,6 @@ cart.filter(
 item => item.id !== id
 );
 
-
 saveCart();
 
 updateCartCount();
@@ -2283,7 +2168,6 @@ updateCartCount();
 renderCart();
 
 }
-
 
 /* =========================================
    RENDER CART
@@ -2293,7 +2177,6 @@ function renderCart(){
 
 const container =
 document.getElementById("cartItems");
-
 
 if(cart.length === 0){
 
@@ -2305,37 +2188,29 @@ Votre panier est vide.
 
 `;
 
-
 document.getElementById("cartTotal")
 .textContent = "0 DH";
-
 
 return;
 
 }
 
-
 container.innerHTML = "";
 
 let total = 0;
-
 
 cart.forEach(item => {
 
 const subtotal =
 item.price * item.quantity;
 
-
 total += subtotal;
-
 
 const div =
 document.createElement("div");
 
-
 div.className =
 "cart-item";
-
 
 div.innerHTML = `
 
@@ -2365,18 +2240,15 @@ onclick="removeFromCart(${item.id})"
 
 `;
 
-
 container.appendChild(div);
 
 });
-
 
 document.getElementById("cartTotal")
 .textContent =
 `${total} DH`;
 
 }
-
 
 /* =========================================
    WHATSAPP
@@ -2387,7 +2259,6 @@ function orderCurrentProduct(){
 if(!product){
 return;
 }
-
 
 const message =
 
@@ -2402,11 +2273,9 @@ Quantité : ${currentQuantity}
 
 Merci.`;
 
-
 const url =
 "https://wa.me/212765333754?text=" +
 encodeURIComponent(message);
-
 
 window.open(
 url,
@@ -2415,7 +2284,6 @@ url,
 
 }
 
-
 /* =========================================
    CART OPEN
 ========================================= */
@@ -2423,10 +2291,8 @@ url,
 const cartPanel =
 document.getElementById("cartPanel");
 
-
 const cartOverlay =
 document.getElementById("cartOverlay");
-
 
 function openCart(){
 
@@ -2436,7 +2302,6 @@ cartOverlay.classList.add("active");
 
 }
 
-
 function closeCart(){
 
 cartPanel.classList.remove("active");
@@ -2445,14 +2310,12 @@ cartOverlay.classList.remove("active");
 
 }
 
-
 document
 .getElementById("cartBtn")
 .addEventListener(
 "click",
 openCart
 );
-
 
 document
 .getElementById("cartClose")
@@ -2461,12 +2324,10 @@ document
 closeCart
 );
 
-
 cartOverlay.addEventListener(
 "click",
 closeCart
 );
-
 
 /* =========================================
    CHECKOUT
@@ -2478,7 +2339,6 @@ document
 "click",
 ()=>{
 
-
 if(cart.length === 0){
 
 alert(
@@ -2489,32 +2349,25 @@ return;
 
 }
 
-
 let message =
 "Bonjour ZOREVA, je souhaite passer une commande :\n\n";
 
-
 let total = 0;
-
 
 cart.forEach(item => {
 
 const subtotal =
 item.price * item.quantity;
 
-
 total += subtotal;
-
 
 message +=
 `${item.name} — ${item.quantity} × ${item.price} DH = ${subtotal} DH\n`;
 
 });
 
-
 message +=
 `\nTotal : ${total} DH`;
-
 
 window.open(
 
@@ -2526,7 +2379,6 @@ encodeURIComponent(message),
 );
 
 });
-
 
 /* =========================================
    INITIALIZE
