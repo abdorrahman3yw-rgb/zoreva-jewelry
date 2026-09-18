@@ -11,9 +11,10 @@
 
 <title>ZOREVA — Jewelry</title>
 
-<!-- FAVICON ZOREVA — intégré directement dans index.html -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23111111'/%3E%3Ctext x='50' y='70' text-anchor='middle' font-family='Georgia,serif' font-size='64' font-weight='600' fill='%23b9975b'%3EZ%3C/text%3E%3C/svg%3E">
-<link rel="shortcut icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23111111'/%3E%3Ctext x='50' y='70' text-anchor='middle' font-family='Georgia,serif' font-size='64' font-weight='600' fill='%23b9975b'%3EZ%3C/text%3E%3C/svg%3E">
+<!-- FAVICON ZOREVA -->
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="shortcut icon" type="image/svg+xml" href="logo.svg">
+<link rel="apple-touch-icon" href="logo.svg">
 <meta name="theme-color" content="#111111">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -674,16 +675,24 @@ flex-direction:column;
 padding:17px 15px 15px;
 background:#fff;
 flex:1;
-min-height:112px;
+min-height:150px;
 }
 
 .product-info h3{
 font-family:'Cormorant Garamond',serif;
 font-size:22px;
 font-weight:500;
-margin-bottom:8px;
+margin-bottom:7px;
 line-height:1.15;
 min-height:26px;
+}
+
+.product-description{
+font-size:10px;
+line-height:1.65;
+color:#777;
+margin-bottom:12px;
+min-height:33px;
 }
 
 .product-info-bottom{
@@ -704,6 +713,7 @@ text-transform:uppercase;
 .product-price{
 font-size:12px;
 color:#222;
+font-weight:500;
 }
 
 .quick-add{
@@ -1372,12 +1382,19 @@ height:46px;
 }
 
 .product-info{
-min-height:105px;
+min-height:145px;
 padding:13px 10px 12px;
 }
 
 .product-info h3{
 font-size:19px;
+}
+
+.product-description{
+font-size:9px;
+line-height:1.55;
+min-height:30px;
+margin-bottom:9px;
 }
 
 .about{
@@ -1479,10 +1496,17 @@ grid-template-columns:1fr 1fr;
 
 .product-info{
 padding:13px 10px 12px;
+min-height:150px;
 }
 
 .product-info h3{
 font-size:19px;
+}
+
+.product-description{
+font-size:8.5px;
+line-height:1.5;
+min-height:38px;
 }
 
 .product-category{
@@ -1555,6 +1579,10 @@ gap:8px;
 
 .product-info h3{
 font-size:17px;
+}
+
+.product-description{
+font-size:8px;
 }
 
 .quick-add{
@@ -2228,119 +2256,518 @@ PRODUCTS
 
 const products=[
 
-{id:1,name:"Bijou 01",category:"Packs",price:129,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg"},
+{
+id:1,
+name:"Bijou 01",
+category:"Packs",
+price:129,
+description:"Un pack élégant et harmonieux, pensé pour compléter votre style avec une touche raffinée.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171518.jpg"
+},
 
-{id:2,name:"Bijou 02",category:"Packs",price:129,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg"},
+{
+id:2,
+name:"Bijou 02",
+category:"Packs",
+price:129,
+description:"Une combinaison moderne et élégante, idéale pour apporter une finition soignée à votre look.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171656.jpg"
+},
 
-{id:3,name:"Bijou 03",category:"Packs",price:129,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg"},
+{
+id:3,
+name:"Bijou 03",
+category:"Packs",
+price:129,
+description:"Un ensemble délicat au style contemporain, facile à porter au quotidien comme en occasion.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_171921.jpg"
+},
 
-{id:4,name:"Bijou 04",category:"Colliers",price:79,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2014.39.04%20%281%29.jpeg"},
+{
+id:4,
+name:"Bijou 04",
+category:"Colliers",
+price:79,
+description:"Un collier raffiné au design moderne, parfait pour ajouter une touche élégante à votre tenue.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2014.39.04%20%281%29.jpeg"
+},
 
-{id:5,name:"Bijou 05",category:"Packs",price:99,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"},
+{
+id:5,
+name:"Bijou 05",
+category:"Packs",
+price:99,
+description:"Un pack tendance aux lignes élégantes, conçu pour accompagner facilement différents styles.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180004.jpg"
+},
 
-{id:6,name:"Bijou 06",category:"Packs",price:99,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg"},
+{
+id:6,
+name:"Bijou 06",
+category:"Packs",
+price:99,
+description:"Une sélection harmonieuse de pièces modernes pour créer un style élégant et équilibré.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180304.jpg"
+},
 
-{id:7,name:"Bijou 07",category:"Packs",price:99,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg"},
+{
+id:7,
+name:"Bijou 07",
+category:"Packs",
+price:99,
+description:"Un ensemble chic et facile à porter, parfait pour donner du caractère à votre style.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_180430.jpg"
+},
 
-{id:8,name:"Bijou 08",category:"Colliers",price:79,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/2.jpg"},
+{
+id:8,
+name:"Bijou 08",
+category:"Colliers",
+price:79,
+description:"Un collier minimaliste et élégant qui s'accorde facilement avec vos looks de tous les jours.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/2.jpg"
+},
 
-{id:9,name:"Bijou 09",category:"Bracelets",price:59,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/71sw32ZElsL._AC_UY1100_.jpg"},
+{
+id:9,
+name:"Bijou 09",
+category:"Bracelets",
+price:59,
+description:"Un bracelet discret et moderne, idéal pour compléter votre tenue avec simplicité.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/71sw32ZElsL._AC_UY1100_.jpg"
+},
 
-{id:10,name:"Bijou 10",category:"Packs",price:179,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_155931.jpg"},
+{
+id:10,
+name:"Bijou 10",
+category:"Packs",
+price:179,
+description:"Un pack sophistiqué qui associe élégance et caractère pour une allure distinguée.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_155931.jpg"
+},
 
-{id:11,name:"Bijou 11",category:"Packs",price:179,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_160641.jpg"},
+{
+id:11,
+name:"Bijou 11",
+category:"Packs",
+price:179,
+description:"Une composition élégante aux détails soignés, parfaite pour une allure moderne et raffinée.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_160641.jpg"
+},
 
-{id:12,name:"Bijou 12",category:"Packs",price:179,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_161253.jpg"},
+{
+id:12,
+name:"Bijou 12",
+category:"Packs",
+price:179,
+description:"Un ensemble premium au style intemporel, conçu pour accompagner vos moments importants.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/IMG_20260726_161253.jpg"
+},
 
-{id:13,name:"Bijou 13",category:"Colliers",price:79,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.02%20%281%29.jpeg"},
+{
+id:13,
+name:"Bijou 13",
+category:"Colliers",
+price:79,
+description:"Un collier élégant aux lignes délicates, parfait pour une touche subtile et raffinée.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.02%20%281%29.jpeg"
+},
 
-{id:14,name:"Bijou 14",category:"Colliers",price:79,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.02.jpeg"},
+{
+id:14,
+name:"Bijou 14",
+category:"Colliers",
+price:79,
+description:"Une pièce moderne et raffinée qui apporte naturellement une touche de sophistication.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.02.jpeg"
+},
 
-{id:15,name:"Bijou 15",category:"Colliers",price:79,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%281%29.jpeg"},
+{
+id:15,
+name:"Bijou 15",
+category:"Colliers",
+price:79,
+description:"Un collier au style élégant et polyvalent, facile à associer à différentes tenues.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%281%29.jpeg"
+},
 
-{id:16,name:"Bijou 16",category:"Colliers",price:79,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%283%29.jpeg"},
+{
+id:16,
+name:"Bijou 16",
+category:"Colliers",
+price:79,
+description:"Une pièce raffinée pensée pour celles et ceux qui apprécient les détails simples et élégants.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.03%20%283%29.jpeg"
+},
 
-{id:17,name:"Bijou 17",category:"Packs",price:99,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06%20%281%29.jpeg"},
+{
+id:17,
+name:"Bijou 17",
+category:"Packs",
+price:99,
+description:"Un pack moderne et équilibré pour créer facilement une silhouette élégante au quotidien.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06%20%281%29.jpeg"
+},
 
-{id:18,name:"Bijou 18",category:"Packs",price:129,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%281%29.jpeg"},
+{
+id:18,
+name:"Bijou 18",
+category:"Packs",
+price:129,
+description:"Un ensemble élégant aux détails soignés, idéal pour compléter votre collection personnelle.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%281%29.jpeg"
+},
 
-{id:19,name:"Bijou 19",category:"Bijoux",price:20,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%282%29.jpeg"},
+{
+id:19,
+name:"Bijou 19",
+category:"Bijoux",
+price:20,
+description:"Une petite touche élégante et accessible pour compléter votre style avec simplicité.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%282%29.jpeg"
+},
 
-{id:20,name:"Bijou 20",category:"Montres",price:99,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%283%29.jpeg"},
+{
+id:20,
+name:"Bijou 20",
+category:"Montres",
+price:99,
+description:"Une montre au style élégant qui associe fonctionnalité et présence pour accompagner chaque journée.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%283%29.jpeg"
+},
 
-{id:21,name:"Bijou 21",category:"Bracelets",price:59,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%284%29.jpeg"},
+{
+id:21,
+name:"Bijou 21",
+category:"Bracelets",
+price:59,
+description:"Un bracelet moderne et discret, parfait pour ajouter une finition élégante à votre poignet.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%284%29.jpeg"
+},
 
-{id:22,name:"Bijou 22",category:"Packs",price:129,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%285%29.jpeg"},
+{
+id:22,
+name:"Bijou 22",
+category:"Packs",
+price:129,
+description:"Un pack harmonieux et tendance, conçu pour accompagner aussi bien les looks simples que sophistiqués.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%285%29.jpeg"
+},
 
-{id:23,name:"Bijou 23",category:"Montres",price:99,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%286%29.jpeg"},
+{
+id:23,
+name:"Bijou 23",
+category:"Montres",
+price:99,
+description:"Une montre élégante au design contemporain, idéale pour compléter votre style avec caractère.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04%20%286%29.jpeg"
+},
 
-{id:24,name:"Bijou 24",category:"Bijoux",price:79,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04.jpeg"},
+{
+id:24,
+name:"Bijou 24",
+category:"Bijoux",
+price:79,
+description:"Une pièce élégante et polyvalente qui apporte une touche raffinée à votre quotidien.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.04.jpeg"
+},
 
-{id:25,name:"Bijou 25",category:"Bracelets",price:59,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%281%29.jpeg"},
+{
+id:25,
+name:"Bijou 25",
+category:"Bracelets",
+price:59,
+description:"Un bracelet simple et élégant, parfait pour accompagner vos tenues avec une touche moderne.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%281%29.jpeg"
+},
 
-{id:26,name:"Bijou 26",category:"Packs",price:129,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%285%29.jpeg"},
+{
+id:26,
+name:"Bijou 26",
+category:"Packs",
+price:129,
+description:"Un ensemble raffiné qui apporte une touche harmonieuse et contemporaine à votre style.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%285%29.jpeg"
+},
 
-{id:27,name:"Bijou 27",category:"Packs",price:129,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%286%29.jpeg"},
+{
+id:27,
+name:"Bijou 27",
+category:"Packs",
+price:129,
+description:"Un pack moderne et élégant pensé pour celles et ceux qui aiment les détails soignés.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%286%29.jpeg"
+},
 
-{id:28,name:"Bijou 28",category:"Bracelets",price:59,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%287%29.jpeg"},
+{
+id:28,
+name:"Bijou 28",
+category:"Bracelets",
+price:59,
+description:"Un bracelet léger et tendance qui complète facilement votre style de tous les jours.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%287%29.jpeg"
+},
 
-{id:29,name:"Bijou 29",category:"Bracelets",price:79,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%288%29.jpeg"},
+{
+id:29,
+name:"Bijou 29",
+category:"Bracelets",
+price:79,
+description:"Une pièce élégante au caractère affirmé, idéale pour donner une touche distinctive à votre look.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05%20%288%29.jpeg"
+},
 
-{id:30,name:"Bijou 30",category:"Colliers",price:79,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05.jpeg"},
+{
+id:30,
+name:"Bijou 30",
+category:"Colliers",
+price:79,
+description:"Un collier élégant et facile à porter, pensé pour sublimer votre style avec discrétion.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.05.jpeg"
+},
 
-{id:31,name:"Bijou 31",category:"Colliers",price:69,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%281%29.jpeg"},
+{
+id:31,
+name:"Bijou 31",
+category:"Colliers",
+price:69,
+description:"Un design délicat et moderne qui apporte une touche raffinée sans en faire trop.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%281%29.jpeg"
+},
 
-{id:32,name:"Bijou 32",category:"Bracelets",price:59,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%282%29.jpeg"},
+{
+id:32,
+name:"Bijou 32",
+category:"Bracelets",
+price:59,
+description:"Un bracelet minimaliste et élégant, parfait pour compléter une tenue avec simplicité.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%282%29.jpeg"
+},
 
-{id:33,name:"Bijou 33",category:"Colliers",price:69,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%283%29.jpeg"},
+{
+id:33,
+name:"Bijou 33",
+category:"Colliers",
+price:69,
+description:"Une pièce raffinée aux lignes modernes, conçue pour apporter une touche élégante au quotidien.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%283%29.jpeg"
+},
 
-{id:34,name:"Bijou 34",category:"Bracelets",price:59,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%285%29.jpeg"},
+{
+id:34,
+name:"Bijou 34",
+category:"Bracelets",
+price:59,
+description:"Un bracelet discret et moderne qui s'accorde facilement avec différents styles.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%285%29.jpeg"
+},
 
-{id:35,name:"Bijou 35",category:"Bracelets",price:59,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%286%29.jpeg"},
+{
+id:35,
+name:"Bijou 35",
+category:"Bracelets",
+price:59,
+description:"Une touche élégante et simple pour compléter votre poignet avec un style contemporain.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%286%29.jpeg"
+},
 
-{id:36,name:"Bijou 36",category:"Bracelets",price:59,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%287%29.jpeg"},
+{
+id:36,
+name:"Bijou 36",
+category:"Bracelets",
+price:59,
+description:"Un bracelet tendance au design épuré, idéal pour accompagner votre style au quotidien.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%287%29.jpeg"
+},
 
-{id:37,name:"Bijou 37",category:"Bracelets",price:59,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%288%29.jpeg"},
+{
+id:37,
+name:"Bijou 37",
+category:"Bracelets",
+price:59,
+description:"Une pièce légère et élégante qui ajoute naturellement une touche soignée à votre tenue.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%288%29.jpeg"
+},
 
-{id:38,name:"Bijou 38",category:"Bracelets",price:59,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06.jpeg"},
+{
+id:38,
+name:"Bijou 38",
+category:"Bracelets",
+price:59,
+description:"Un bracelet moderne et polyvalent, parfait pour un style élégant et sans effort.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06.jpeg"
+},
 
-{id:39,name:"Bijou 39",category:"Colliers",price:79,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2014.39.04.jpeg"},
+{
+id:39,
+name:"Bijou 39",
+category:"Colliers",
+price:79,
+description:"Un collier raffiné au caractère moderne, pensé pour accompagner différentes occasions.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2014.39.04.jpeg"
+},
 
-{id:40,name:"Bijou 40",category:"Bracelets",price:59,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.22%20%282%29.jpeg"},
+{
+id:40,
+name:"Bijou 40",
+category:"Bracelets",
+price:59,
+description:"Un bracelet élégant et discret qui apporte une finition moderne à votre style.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.22%20%282%29.jpeg"
+},
 
-{id:41,name:"Bijou 41",category:"Packs",price:129,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06%20%282%29.jpeg"},
+{
+id:41,
+name:"Bijou 41",
+category:"Packs",
+price:129,
+description:"Un pack harmonieux et raffiné, idéal pour créer une allure élégante et bien équilibrée.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06%20%282%29.jpeg"
+},
 
-{id:42,name:"Bijou 42",category:"Montres",price:99,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06.jpeg"},
+{
+id:42,
+name:"Bijou 42",
+category:"Montres",
+price:99,
+description:"Une montre moderne et élégante qui associe présence, simplicité et style contemporain.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.06.jpeg"
+},
 
-{id:43,name:"Bijou 43",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.07%20%281%29.jpeg"},
+{
+id:43,
+name:"Bijou 43",
+category:"Packs",
+price:149,
+description:"Un ensemble sophistiqué pensé pour apporter une finition élégante et distinctive à votre look.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.07%20%281%29.jpeg"
+},
 
-{id:44,name:"Bijou 44",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.07.jpeg"},
+{
+id:44,
+name:"Bijou 44",
+category:"Packs",
+price:149,
+description:"Un pack au style raffiné et contemporain, parfait pour compléter une tenue avec caractère.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.07.jpeg"
+},
 
-{id:45,name:"Bijou 45",category:"Packs",price:129,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%281%29.jpeg"},
+{
+id:45,
+name:"Bijou 45",
+category:"Packs",
+price:129,
+description:"Une combinaison élégante et moderne qui s'intègre facilement à votre collection.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%281%29.jpeg"
+},
 
-{id:46,name:"Bijou 46",category:"Packs",price:129,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%282%29.jpeg"},
+{
+id:46,
+name:"Bijou 46",
+category:"Packs",
+price:129,
+description:"Un ensemble tendance et équilibré, conçu pour accompagner vos différents styles.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%282%29.jpeg"
+},
 
-{id:47,name:"Bijou 47",category:"Packs",price:129,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%283%29.jpeg"},
+{
+id:47,
+name:"Bijou 47",
+category:"Packs",
+price:129,
+description:"Un pack élégant aux détails soignés pour une allure moderne et harmonieuse.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%283%29.jpeg"
+},
 
-{id:48,name:"Bijou 48",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%284%29.jpeg"},
+{
+id:48,
+name:"Bijou 48",
+category:"Packs",
+price:149,
+description:"Un ensemble sophistiqué qui apporte une touche premium et élégante à votre style.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%284%29.jpeg"
+},
 
-{id:49,name:"Bijou 49",category:"Bracelets",price:59,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.22.jpeg"},
+{
+id:49,
+name:"Bijou 49",
+category:"Bracelets",
+price:59,
+description:"Un bracelet moderne et facile à porter, parfait pour une touche élégante au quotidien.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.22.jpeg"
+},
 
-{id:50,name:"Bijou 50",category:"Colliers",price:79,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%286%29.jpeg"},
+{
+id:50,
+name:"Bijou 50",
+category:"Colliers",
+price:79,
+description:"Un collier raffiné au design intemporel, pensé pour accompagner différents looks.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%286%29.jpeg"
+},
 
-{id:51,name:"Bijou 51",category:"Packs",price:129,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%287%29.jpeg"},
+{
+id:51,
+name:"Bijou 51",
+category:"Packs",
+price:129,
+description:"Un pack élégant et polyvalent, idéal pour apporter une finition soignée à votre style.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08%20%287%29.jpeg"
+},
 
-{id:52,name:"Bijou 52",category:"Colliers",price:79,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.23%20%281%29.jpeg"},
+{
+id:52,
+name:"Bijou 52",
+category:"Colliers",
+price:79,
+description:"Une pièce moderne et élégante qui apporte une touche de caractère à chaque tenue.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.17.23%20%281%29.jpeg"
+},
 
-{id:53,name:"Bijou 53",category:"Packs",price:129,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08.jpeg"},
+{
+id:53,
+name:"Bijou 53",
+category:"Packs",
+price:129,
+description:"Un ensemble harmonieux au style contemporain, parfait pour compléter votre collection.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.08.jpeg"
+},
 
-{id:54,name:"Bijou 54",category:"Packs",price:129,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.09%20%281%29.jpeg"},
+{
+id:54,
+name:"Bijou 54",
+category:"Packs",
+price:129,
+description:"Un pack moderne et élégant pensé pour accompagner aussi bien les looks quotidiens que raffinés.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.09%20%281%29.jpeg"
+},
 
-{id:55,name:"Bijou 55",category:"Packs",price:149,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.09%20%282%29.jpeg"},
+{
+id:55,
+name:"Bijou 55",
+category:"Packs",
+price:149,
+description:"Un ensemble sophistiqué qui ajoute une présence élégante et distinctive à votre style.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/New%20folder/WhatsApp%20Image%202026-09-17%20at%2003.06.09%20%282%29.jpeg"
+},
 
-{id:56,name:"Bijou 56",category:"Bijoux",price:129,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.34.50.jpeg"},
+{
+id:56,
+name:"Bijou 56",
+category:"Bijoux",
+price:129,
+description:"Une pièce élégante au style contemporain, pensée pour apporter une touche unique à votre look.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2015.34.50.jpeg"
+},
 
-{id:57,name:"Bijou 57",category:"Colliers",price:69,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2016.04.15.jpeg"}
+{
+id:57,
+name:"Bijou 57",
+category:"Colliers",
+price:69,
+description:"Un collier élégant et discret, idéal pour compléter votre style avec une touche raffinée.",
+image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2016.04.15.jpeg"
+}
 
 ];
 
@@ -2503,6 +2930,10 @@ loading="lazy"
 <h3>
 ${product.name}
 </h3>
+
+<p class="product-description">
+${product.description}
+</p>
 
 <div class="product-info-bottom">
 
