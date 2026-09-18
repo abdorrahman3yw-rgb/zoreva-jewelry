@@ -91,14 +91,15 @@ border-bottom:1px solid rgba(185,151,91,.35);
 }
 
 .announcement-track{
-display:grid;
-grid-template-columns:repeat(3,1fr);
+display:flex;
 align-items:center;
-width:100%;
+width:max-content;
+min-width:max-content;
 height:100%;
 font-size:10px;
 letter-spacing:1.3px;
 text-transform:uppercase;
+animation:announcementMove 24s linear infinite;
 }
 
 .announcement-item{
@@ -107,10 +108,16 @@ align-items:center;
 justify-content:center;
 height:100%;
 white-space:nowrap;
+padding:0 55px;
 }
 
-.announcement-item:not(:last-child){
-border-right:1px solid rgba(185,151,91,.45);
+@keyframes announcementMove{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-50%);
+}
 }
 
 /* =========================
@@ -363,6 +370,81 @@ text-transform:uppercase;
 }
 
 /* =========================
+PRICE SLIDER
+========================= */
+
+.price-slider{
+position:relative;
+height:48px;
+margin:5px 0 12px;
+}
+
+.price-slider input[type="range"]{
+position:absolute;
+left:0;
+top:17px;
+width:100%;
+height:5px;
+margin:0;
+padding:0;
+background:transparent;
+-webkit-appearance:none;
+appearance:none;
+pointer-events:none;
+}
+
+.price-slider input[type="range"]::-webkit-slider-runnable-track{
+height:3px;
+background:#ded8cd;
+border-radius:10px;
+}
+
+.price-slider input[type="range"]::-moz-range-track{
+height:3px;
+background:#ded8cd;
+border-radius:10px;
+}
+
+.price-slider input[type="range"]::-webkit-slider-thumb{
+-webkit-appearance:none;
+appearance:none;
+width:17px;
+height:17px;
+border-radius:50%;
+background:#111;
+border:2px solid #fff;
+box-shadow:0 2px 7px rgba(0,0,0,.18);
+cursor:pointer;
+pointer-events:auto;
+margin-top:-7px;
+}
+
+.price-slider input[type="range"]::-moz-range-thumb{
+width:17px;
+height:17px;
+border-radius:50%;
+background:#111;
+border:2px solid #fff;
+box-shadow:0 2px 7px rgba(0,0,0,.18);
+cursor:pointer;
+pointer-events:auto;
+}
+
+.price-values{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:10px;
+color:#777;
+letter-spacing:.5px;
+}
+
+.price-values strong{
+color:#111;
+font-weight:500;
+}
+
+/* =========================
 MAIN
 ========================= */
 
@@ -492,6 +574,15 @@ margin-bottom:12px;
 font-family:'Cormorant Garamond',serif;
 font-size:50px;
 font-weight:500;
+}
+
+.section-subtitle{
+max-width:620px;
+margin:14px auto 0;
+font-size:11px;
+line-height:1.9;
+letter-spacing:.3px;
+color:#777;
 }
 
 /* =========================
@@ -1295,21 +1386,13 @@ height:32px;
 }
 
 .announcement-track{
-grid-template-columns:1fr 1fr;
 height:32px;
 font-size:9px;
 letter-spacing:1px;
 }
 
 .announcement-item{
-width:100%;
-overflow:hidden;
-text-overflow:ellipsis;
-padding:0 5px;
-}
-
-.announcement-item:nth-child(2){
-display:none;
+padding:0 30px;
 }
 
 header{
@@ -1435,7 +1518,7 @@ letter-spacing:.8px;
 }
 
 .announcement-item{
-padding:0 4px;
+padding:0 22px;
 }
 
 .brand{
@@ -1462,6 +1545,12 @@ font-size:12px;
 
 .section-heading h2{
 font-size:42px;
+}
+
+.section-subtitle{
+font-size:10px;
+line-height:1.8;
+padding:0 8px;
 }
 
 .collections-grid{
@@ -1555,6 +1644,10 @@ font-size:7.5px;
 letter-spacing:.5px;
 }
 
+.announcement-item{
+padding:0 18px;
+}
+
 .brand img{
 width:42px;
 height:42px;
@@ -1631,6 +1724,18 @@ ANNOUNCEMENT
 <div class="announcement-bar">
 
 <div class="announcement-track">
+
+<div class="announcement-item">
+<span>Livraison gratuite</span>
+</div>
+
+<div class="announcement-item">
+<span>Livraison partout au Maroc</span>
+</div>
+
+<div class="announcement-item">
+<span>Acier inoxydable</span>
+</div>
 
 <div class="announcement-item">
 <span>Livraison gratuite</span>
@@ -1757,17 +1862,33 @@ Packs
 
 <h4>Prix</h4>
 
-<button data-menu-price="all" class="menu-price-filter active">
-Tous les prix
-</button>
+<div class="price-slider">
 
-<button data-menu-price="under120" class="menu-price-filter">
-Moins de 120 DH
-</button>
+<input
+type="range"
+id="menuMinPrice"
+min="20"
+max="179"
+value="20"
+step="1"
+>
 
-<button data-menu-price="149" class="menu-price-filter">
-149 DH
-</button>
+<input
+type="range"
+id="menuMaxPrice"
+min="20"
+max="179"
+value="179"
+step="1"
+>
+
+</div>
+
+<div class="price-values">
+<strong id="menuMinPriceValue">20 DH</strong>
+<span>—</span>
+<strong id="menuMaxPriceValue">179 DH</strong>
+</div>
 
 </div>
 
@@ -1951,6 +2072,10 @@ Collection
 Nos bijoux
 </h2>
 
+<p class="section-subtitle">
+L’élégance dans chaque détail · Une sélection pensée pour accompagner votre style avec caractère et simplicité.
+</p>
+
 </div>
 
 <div class="products-toolbar">
@@ -2099,17 +2224,33 @@ Packs
 Prix
 </h4>
 
-<button data-price="all" class="price-filter active">
-Tous les prix
-</button>
+<div class="price-slider">
 
-<button data-price="under120" class="price-filter">
-Moins de 120 DH
-</button>
+<input
+type="range"
+id="filterMinPrice"
+min="20"
+max="179"
+value="20"
+step="1"
+>
 
-<button data-price="149" class="price-filter">
-149 DH
-</button>
+<input
+type="range"
+id="filterMaxPrice"
+min="20"
+max="179"
+value="179"
+step="1"
+>
+
+</div>
+
+<div class="price-values">
+<strong id="filterMinPriceValue">20 DH</strong>
+<span>—</span>
+<strong id="filterMaxPriceValue">179 DH</strong>
+</div>
 
 </div>
 
@@ -2771,17 +2912,110 @@ image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/
 
 ];
 
-
 /* =========================
 FILTER STATE
 ========================= */
 
 let currentCategory="all";
-let currentPrice="all";
+let currentMinPrice=20;
+let currentMaxPrice=179;
 let currentSort="default";
 
 let revealObserver=null;
 
+/* =========================
+PRICE SLIDER
+========================= */
+
+const PRICE_MIN=20;
+const PRICE_MAX=179;
+
+function updatePriceSlider(){
+
+const menuMin=document.getElementById("menuMinPrice");
+const menuMax=document.getElementById("menuMaxPrice");
+
+const filterMin=document.getElementById("filterMinPrice");
+const filterMax=document.getElementById("filterMaxPrice");
+
+if(currentMinPrice>currentMaxPrice){
+if(document.activeElement===menuMin ||
+document.activeElement===filterMin){
+currentMinPrice=currentMaxPrice;
+}else{
+currentMaxPrice=currentMinPrice;
+}
+}
+
+if(menuMin) menuMin.value=currentMinPrice;
+if(menuMax) menuMax.value=currentMaxPrice;
+
+if(filterMin) filterMin.value=currentMinPrice;
+if(filterMax) filterMax.value=currentMaxPrice;
+
+const menuMinValue=document.getElementById("menuMinPriceValue");
+const menuMaxValue=document.getElementById("menuMaxPriceValue");
+
+const filterMinValue=document.getElementById("filterMinPriceValue");
+const filterMaxValue=document.getElementById("filterMaxPriceValue");
+
+if(menuMinValue) menuMinValue.textContent=`${currentMinPrice} DH`;
+if(menuMaxValue) menuMaxValue.textContent=`${currentMaxPrice} DH`;
+
+if(filterMinValue) filterMinValue.textContent=`${currentMinPrice} DH`;
+if(filterMaxValue) filterMaxValue.textContent=`${currentMaxPrice} DH`;
+
+}
+
+function setMinPrice(value){
+
+value=Number(value);
+
+if(value>currentMaxPrice){
+value=currentMaxPrice;
+}
+
+currentMinPrice=value;
+
+updatePriceSlider();
+renderProducts();
+
+}
+
+function setMaxPrice(value){
+
+value=Number(value);
+
+if(value<currentMinPrice){
+value=currentMinPrice;
+}
+
+currentMaxPrice=value;
+
+updatePriceSlider();
+renderProducts();
+
+}
+
+document.getElementById("menuMinPrice")
+.addEventListener("input",event=>{
+setMinPrice(event.target.value);
+});
+
+document.getElementById("menuMaxPrice")
+.addEventListener("input",event=>{
+setMaxPrice(event.target.value);
+});
+
+document.getElementById("filterMinPrice")
+.addEventListener("input",event=>{
+setMinPrice(event.target.value);
+});
+
+document.getElementById("filterMaxPrice")
+.addEventListener("input",event=>{
+setMaxPrice(event.target.value);
+});
 
 /* =========================
 SCROLL REVEAL
@@ -2839,7 +3073,6 @@ revealObserver.observe(element);
 
 }
 
-
 /* =========================
 RENDER PRODUCTS
 ========================= */
@@ -2856,21 +3089,11 @@ product=>product.category===currentCategory
 
 }
 
-if(currentPrice==="under120"){
-
 filtered=filtered.filter(
-product=>product.price<120
+product=>
+product.price>=currentMinPrice &&
+product.price<=currentMaxPrice
 );
-
-}
-
-if(currentPrice==="149"){
-
-filtered=filtered.filter(
-product=>product.price===149
-);
-
-}
 
 if(currentSort==="low"){
 
@@ -2993,7 +3216,6 @@ observeRevealElements();
 
 }
 
-
 /* =========================
 FILTER BUTTONS
 ========================= */
@@ -3005,15 +3227,6 @@ document.querySelectorAll(".category-filter").forEach(button=>{
 button.classList.toggle(
 "active",
 button.dataset.category===currentCategory
-);
-
-});
-
-document.querySelectorAll(".price-filter").forEach(button=>{
-
-button.classList.toggle(
-"active",
-button.dataset.price===currentPrice
 );
 
 });
@@ -3036,15 +3249,6 @@ button.dataset.menuCategory===currentCategory
 
 });
 
-document.querySelectorAll(".menu-price-filter").forEach(button=>{
-
-button.classList.toggle(
-"active",
-button.dataset.menuPrice===currentPrice
-);
-
-});
-
 document.querySelectorAll(".menu-sort-filter").forEach(button=>{
 
 button.classList.toggle(
@@ -3054,8 +3258,9 @@ button.dataset.menuSort===currentSort
 
 });
 
-}
+updatePriceSlider();
 
+}
 
 /* =========================
 FILTER PANEL
@@ -3092,7 +3297,6 @@ filterOverlay.addEventListener(
 closeFilter
 );
 
-
 /* CATEGORY */
 
 document.querySelectorAll(".category-filter")
@@ -3109,25 +3313,6 @@ renderProducts();
 });
 
 });
-
-
-/* PRICE */
-
-document.querySelectorAll(".price-filter")
-.forEach(button=>{
-
-button.addEventListener("click",()=>{
-
-currentPrice=
-button.dataset.price;
-
-updateCategoryButtons();
-renderProducts();
-
-});
-
-});
-
 
 /* SORT */
 
@@ -3146,14 +3331,14 @@ renderProducts();
 
 });
 
-
 /* RESET */
 
 document.getElementById("resetFilter")
 .addEventListener("click",()=>{
 
 currentCategory="all";
-currentPrice="all";
+currentMinPrice=PRICE_MIN;
+currentMaxPrice=PRICE_MAX;
 currentSort="default";
 
 updateCategoryButtons();
@@ -3161,7 +3346,6 @@ renderProducts();
 closeFilter();
 
 });
-
 
 /* =========================
 MENU FILTER
@@ -3174,21 +3358,6 @@ button.addEventListener("click",()=>{
 
 currentCategory=
 button.dataset.menuCategory;
-
-updateCategoryButtons();
-renderProducts();
-
-});
-
-});
-
-document.querySelectorAll(".menu-price-filter")
-.forEach(button=>{
-
-button.addEventListener("click",()=>{
-
-currentPrice=
-button.dataset.menuPrice;
 
 updateCategoryButtons();
 renderProducts();
@@ -3216,14 +3385,14 @@ document.getElementById("menuResetFilter")
 .addEventListener("click",()=>{
 
 currentCategory="all";
-currentPrice="all";
+currentMinPrice=PRICE_MIN;
+currentMaxPrice=PRICE_MAX;
 currentSort="default";
 
 updateCategoryButtons();
 renderProducts();
 
 });
-
 
 /* =========================
 CART
@@ -3234,7 +3403,6 @@ JSON.parse(
 localStorage.getItem("zorevaCart")
 )||[];
 
-
 function saveCart(){
 
 localStorage.setItem(
@@ -3243,7 +3411,6 @@ JSON.stringify(cart)
 );
 
 }
-
 
 function updateCartCount(){
 
@@ -3257,7 +3424,6 @@ document.getElementById("cartCount")
 .textContent=count;
 
 }
-
 
 function addToCart(product,quantity=1){
 
@@ -3290,7 +3456,6 @@ renderCart();
 
 }
 
-
 function removeFromCart(id){
 
 cart=
@@ -3303,7 +3468,6 @@ updateCartCount();
 renderCart();
 
 }
-
 
 function renderCart(){
 
@@ -3380,7 +3544,6 @@ document.getElementById("cartTotal")
 
 }
 
-
 /* =========================
 CART OPEN CLOSE
 ========================= */
@@ -3391,7 +3554,6 @@ document.getElementById("cartPanel");
 const cartOverlay=
 document.getElementById("cartOverlay");
 
-
 function openCart(){
 
 cartPanel.classList.add("active");
@@ -3399,14 +3561,12 @@ cartOverlay.classList.add("active");
 
 }
 
-
 function closeCart(){
 
 cartPanel.classList.remove("active");
 cartOverlay.classList.remove("active");
 
 }
-
 
 document.getElementById("cartBtn")
 .addEventListener("click",openCart);
@@ -3418,7 +3578,6 @@ cartOverlay.addEventListener(
 "click",
 closeCart
 );
-
 
 /* =========================
 CHECKOUT WHATSAPP
@@ -3463,7 +3622,6 @@ encodeURIComponent(message),
 
 });
 
-
 /* =========================
 MENU
 ========================= */
@@ -3480,7 +3638,6 @@ document.getElementById("sideMenu");
 const menuOverlay=
 document.getElementById("menuOverlay");
 
-
 function openMenu(){
 
 sideMenu.classList.add("active");
@@ -3488,14 +3645,12 @@ menuOverlay.classList.add("active");
 
 }
 
-
 function closeMenu(){
 
 sideMenu.classList.remove("active");
 menuOverlay.classList.remove("active");
 
 }
-
 
 menuBtn.addEventListener(
 "click",
@@ -3512,10 +3667,11 @@ menuOverlay.addEventListener(
 closeMenu
 );
 
-
 /* =========================
 INITIALIZE
 ========================= */
+
+updatePriceSlider();
 
 renderProducts();
 
