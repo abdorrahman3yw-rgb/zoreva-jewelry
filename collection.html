@@ -1352,7 +1352,7 @@ aria-label="WhatsApp"
 
 <h4>Catégorie</h4>
 
-<button data-category="all" class="category-filter active">
+<button data-category="all" class="category-filter">
 Tous les produits
 </button>
 
@@ -1569,8 +1569,6 @@ const products=[
 
 {id:37,name:"Bijou 37",category:"Bracelets",price:59,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/WhatsApp%20Image%202026-09-17%20at%2000.53.06%20%288%29.jpeg",description:"Une pièce légère et élégante."},
 
-/* BIJOU 38 — NOUVELLE IMAGE */
-
 {id:38,name:"Bijou 38",category:"Bracelets",price:59,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/images.jpeg",description:"Un bracelet moderne et polyvalent, parfait pour un style élégant et sans effort."},
 
 {id:39,name:"Bijou 39",category:"Colliers",price:79,image:"https://raw.githubusercontent.com/abdorrahman3yw-rgb/zoreva-jewelry/main/222/WhatsApp%20Image%202026-09-17%20at%2014.39.04.jpeg",description:"Un collier raffiné au caractère moderne."},
@@ -1615,7 +1613,24 @@ const products=[
 
 /* FILTER */
 
-let currentCategory="all";
+const urlParams = new URLSearchParams(window.location.search);
+const categoryFromURL = urlParams.get("category");
+
+const validCategories = [
+"Bagues",
+"Bracelets",
+"Colliers",
+"Montres",
+"Bijoux",
+"Packs",
+"Boucles d'oreilles"
+];
+
+let currentCategory =
+validCategories.includes(categoryFromURL)
+? categoryFromURL
+: "all";
+
 let currentSort="default";
 
 const grid=document.getElementById("productsGrid");
@@ -1743,6 +1758,20 @@ card.classList.add("show");
 },50);
 
 }
+
+/* ACTIVER LE BOUTON ديال CATEGORY من URL */
+
+document
+.querySelectorAll(".category-filter")
+.forEach(button=>{
+
+if(button.dataset.category===currentCategory){
+
+button.classList.add("active");
+
+}
+
+});
 
 /* FILTER BUTTONS */
 
